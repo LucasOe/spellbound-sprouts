@@ -24,5 +24,6 @@ public uint Height = 1;
             }
         }
     } 
+    _plane.SetActive(false);
     }
 }
