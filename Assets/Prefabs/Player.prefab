@@ -341,7 +341,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 5763384845433299528}
-  playerCamera: {fileID: 5053911396999072649}
+  camera: {fileID: 5053911396999072649}
   movementSpeed: 10
 --- !u!1 &5763384845433299528
 GameObject:
