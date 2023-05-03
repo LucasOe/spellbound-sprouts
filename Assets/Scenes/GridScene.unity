@@ -123,13 +123,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &569615392 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7600111272996424445, guid: c45a78f974d63e74598760b36552a8c9,
-    type: 3}
-  m_PrefabInstance: {fileID: 1495443465}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &1495443465
+--- !u!1001 &223514530
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -144,17 +138,17 @@ PrefabInstance:
     - target: {fileID: 4530811438407366431, guid: c45a78f974d63e74598760b36552a8c9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 20.80462
+      value: -2.5553665
       objectReference: {fileID: 0}
     - target: {fileID: 4530811438407366431, guid: c45a78f974d63e74598760b36552a8c9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 21.844658
+      value: 0.1996257
       objectReference: {fileID: 0}
     - target: {fileID: 4530811438407366431, guid: c45a78f974d63e74598760b36552a8c9,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.853963
+      value: 1.045335
       objectReference: {fileID: 0}
     - target: {fileID: 4530811438407366431, guid: c45a78f974d63e74598760b36552a8c9,
         type: 3}
@@ -194,10 +188,16 @@ PrefabInstance:
     - target: {fileID: 7600111272996424445, guid: c45a78f974d63e74598760b36552a8c9,
         type: 3}
       propertyPath: m_Name
-      value: Plane
+      value: GroundTile
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45a78f974d63e74598760b36552a8c9, type: 3}
+--- !u!1 &1598810549 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7600111272996424445, guid: c45a78f974d63e74598760b36552a8c9,
+    type: 3}
+  m_PrefabInstance: {fileID: 223514530}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2019737959
 GameObject:
   m_ObjectHideFlags: 0
@@ -230,7 +230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f9e1642067b4884696a8036cec736f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _plane: {fileID: 569615392}
+  _plane: {fileID: 1598810549}
   _width: 10
   _depth: 10
   Height: 1
