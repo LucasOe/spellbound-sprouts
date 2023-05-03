@@ -5,15 +5,22 @@ using UnityEngine;
 public class Plane : MonoBehaviour {
     [SerializeField] private Color _baseColor, _offsetColor;
     [SerializeField] private GameObject _highlight;
+    [SerializeField] private GameObject _active;
     bool isActive;
 
     void OnMouseEnter() {
-            Debug.Log("Hello: " + gameObject.name);
-            _highlight.SetActive(true);
+        Debug.Log("Hello: " + gameObject.name);
+        _highlight.SetActive(true);
     }
  
     void OnMouseExit() {
         _highlight.SetActive(false);
-            Debug.Log("Bye: " + gameObject.name);
+        Debug.Log("Bye: " + gameObject.name);
+    }
+
+    void onFire() {
+        Debug.Log("Clicked");
+        _active.SetActive(true);
+        _highlight.SetActive(false);
     }
 }
