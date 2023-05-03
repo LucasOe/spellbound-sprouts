@@ -20,7 +20,7 @@ public uint Height = 1;
                     z > 0 && z < _depth - 1) 
                     continue;
 
-                var plane = Instantiate(_plane, new Vector3(x*5,1,z*5), Quaternion.identity);
+                var plane = Instantiate(_plane, new Vector3(-21 + x * 5, 0.02f, -21 + z * 5), Quaternion.identity);
             }
         }
     } 
