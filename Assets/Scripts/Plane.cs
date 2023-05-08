@@ -3,24 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
  
 public class Plane : MonoBehaviour {
-    [SerializeField] private Color _baseColor, _offsetColor;
-    [SerializeField] private GameObject _highlight;
-    [SerializeField] private GameObject _active;
+    [SerializeField] public GameObject _highlight;
+    [SerializeField] public GameObject _active;
     bool isActive;
 
     void OnMouseEnter() {
-        Debug.Log("Hello: " + gameObject.name);
         _highlight.SetActive(true);
     }
  
     void OnMouseExit() {
         _highlight.SetActive(false);
-        Debug.Log("Bye: " + gameObject.name);
     }
 
-    void onFire() {
-        Debug.Log("Clicked");
+    public void Activate() {
         _active.SetActive(true);
-        _highlight.SetActive(false);
     }
 }

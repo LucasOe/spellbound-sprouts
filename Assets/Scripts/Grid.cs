@@ -5,25 +5,45 @@ using UnityEngine;
 public class Grid : MonoBehaviour
 {
 
-public GameObject _plane;
-[SerializeField] private int _width, _depth;
-public uint Height = 1;
-    // Start is called before the first frame update
-    void Start() {
-          for (uint x = 0; x < _width; ++x) {
-        for (uint y = 0; y < Height; ++y)
-        {
-            for (uint z = 0; z < _depth; ++z)
-            {
-                if (x > 0 && x < _width - 1 && 
-                    y > 0 && y < Height - 1 && 
-                    z > 0 && z < _depth - 1) 
-                    continue;
+    [SerializeField] GameObject _plane;
 
-                var plane = Instantiate(_plane, new Vector3(-21 + x * 5, 0.02f, -21 + z * 5), Quaternion.identity);
+    private static int _width = 20, _depth = 20;
+    public uint Height = 1;
+    public GameObjectExtended[,] plane = new GameObjectExtended[_width, _depth];
+    
+    void Start() {
+        for (uint x = 0; x < _width; ++x) {
+            for (uint y = 0; y < Height; ++y)
+            {
+                for (uint z = 0; z < _depth; ++z)
+                {
+                    if (x > 0 && x < _width - 1 && 
+                        y > 0 && y < Height - 1 && 
+                        z > 0 && z < _depth - 1) 
+                        continue;
+
+                    GameObject planeInstance = Instantiate(_plane, new Vector3(-22.6f + x * 5, 0.02f, -22.6f + z * 5), Quaternion.identity);
+                    planeInstance.name = "Square: " + x + " " + z;
+                    GameObjectExtended planeExtended = new GameObjectExtended(planeInstance);
+                    plane[x,z] = planeExtended;
+                }
             }
-        }
-    } 
-    _plane.SetActive(false);
+        } 
+        _plane.SetActive(false);
+    }
+}
+
+public class GameObjectExtended {
+    private bool isActive = false;
+    public GameObject gameObject = new GameObject();
+
+
+    public GameObjectExtended(GameObject _pGameobject) {
+        this.gameObject = _pGameobject;
+    }
+
+    public void toggleActive() {
+        this.isActive = !isActive;
+        gameObject.GetComponent<Plane>().Activate();
     }
 }
