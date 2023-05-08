@@ -5,12 +5,9 @@ using UnityEngine.InputSystem;
 
 public class Movement : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject player;
-    [SerializeField]
-    private new Camera camera;
-    [SerializeField]
-    private float movementSpeed = 25.0f;
+    [SerializeField] private GameObject player;
+    [SerializeField] private new Camera camera;
+    [SerializeField] private float movementSpeed = 25.0f;
 
     private new Rigidbody rigidbody;
     private Vector3 velocity = new Vector3();
