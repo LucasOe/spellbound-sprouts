@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/OutdoorsScene.unity
-    guid: 8124e5870f4fd4c779e7a5f994e84ad1
+    path: Assets/Scenes/Menu.unity
+    guid: dde5de3c34ce8194094667e7e396f45d
+  - enabled: 1
+    path: Assets/Scenes/Movement.unity
+    guid: 95cdb4aa449dce64fa8880e118e91623
   m_configObjects: {}
