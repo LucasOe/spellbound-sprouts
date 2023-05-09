@@ -63,4 +63,14 @@ public class Movement : MonoBehaviour
             field.toggleActive();
          }
     } 
+
+    
+    public void OnHerb(InputValue value) {
+        Debug.Log("Herb Selected");
+    }
+
+    
+    public void OnPlant(InputValue value) {
+        Debug.Log("Plant Selected");
+    }
 }

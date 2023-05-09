@@ -188,17 +188,17 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 1
   colorMode:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 1
   color:
     m_OverrideState: 1
-    m_Value: {r: 0.0990566, g: 0, b: 0.04875036, a: 1}
+    m_Value: {r: 0.6698113, g: 0.2064198, b: 0.42884773, a: 1}
   tint:
-    m_OverrideState: 0
-    m_Value: {r: 0.119174264, g: 0, b: 0.1981132, a: 1}
+    m_OverrideState: 1
+    m_Value: {r: 1, g: 1, b: 1, a: 1}
   maxFogDistance:
     m_OverrideState: 1
-    m_Value: 10
+    m_Value: 526.82
   mipFogMaxMip:
     m_OverrideState: 0
     m_Value: 0.5
@@ -210,19 +210,19 @@ MonoBehaviour:
     m_Value: 1000
   baseHeight:
     m_OverrideState: 1
-    m_Value: -15
+    m_Value: 25
   maximumHeight:
     m_OverrideState: 0
-    m_Value: 100
+    m_Value: 1840.9
   meanFreePath:
     m_OverrideState: 1
-    m_Value: 32
+    m_Value: 168.3
   enableVolumetricFog:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 1
   albedo:
     m_OverrideState: 1
-    m_Value: {r: 0.24528301, g: 0, b: 0.18718965, a: 0.31764707}
+    m_Value: {r: 0.8396226, g: 0.16369992, b: 0.16369992, a: 0.31764707}
   globalLightProbeDimmer:
     m_OverrideState: 0
     m_Value: 1
