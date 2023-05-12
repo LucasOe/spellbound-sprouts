@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2674156083949954083}
   m_Layer: 0
   m_Name: Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -219,11 +219,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7642728966278867222}
+  - component: {fileID: 3368939963287328089}
   - component: {fileID: 1543812842737496346}
   - component: {fileID: 3315166315397763816}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -245,6 +246,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &3368939963287328089
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5107954962007069713}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &1543812842737496346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -343,6 +358,7 @@ MonoBehaviour:
   player: {fileID: 5763384845433299528}
   camera: {fileID: 5053911396999072649}
   movementSpeed: 10
+  damage: 4
 --- !u!1 &5763384845433299528
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,7 +370,6 @@ GameObject:
   - component: {fileID: 2851718938900602852}
   - component: {fileID: 160482990390209984}
   - component: {fileID: 5703577640783317018}
-  - component: {fileID: 7537416370387875327}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -427,17 +442,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &7537416370387875327
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5763384845433299528}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}

@@ -2,14 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using System.Linq; 
-using System.Collections.Generic;
 
 public class Movement : MonoBehaviour
 {
     [SerializeField] private GameObject player;
     [SerializeField] private new Camera camera;
     [SerializeField] private float movementSpeed = 25.0f;
+    [SerializeField] private float damage = 4.0f;
     
     private new Rigidbody rigidbody;
     private Vector3 velocity = new Vector3();
@@ -42,26 +41,28 @@ public class Movement : MonoBehaviour
     }
 
     public void OnFire(InputValue value) {
-         Ray ray = camera.ScreenPointToRay( mousePosition );
-         RaycastHit hit;
-         
-         if( Physics.Raycast( ray, out hit, 100 ) )
-         {
+        Ray ray = camera.ScreenPointToRay( mousePosition );
+
+        if( Physics.Raycast( ray, out RaycastHit hitInfo, 100 ) ) {
+            var clickedObject = hitInfo.transform.gameObject;
+
+            // Player clicks on enemy
+            if(clickedObject.TryGetComponent(out Enemy enemy)) {
+                enemy.Damage(damage);
+            }
+            
+            // Place plants
             var grid = GameObject.Find("Field").GetComponent<Grid>();
-            var clicked = hit.transform.gameObject.name;;
-            GameObjectExtended? field = null;
-            for(int i = 0; i < grid.plane.GetLength(0); i++) 
-            {
-                for(int j = 0; j < grid.plane.GetLength(1); j++) 
-                {
-                    if(grid.plane[i, j].gameObject.name == clicked)
-                    {
+            GameObjectExtended field = null;
+            for(int i = 0; i < grid.plane.GetLength(0); i++)  {
+                for(int j = 0; j < grid.plane.GetLength(1); j++)  {
+                    if(grid.plane[i, j].gameObject.name == clickedObject.name) {
                         field = grid.plane[i, j];
+                        field.toggleActive();
                     }
                 }
             }
-            field.toggleActive();
-         }
+        }
     } 
 
     
