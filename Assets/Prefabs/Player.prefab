@@ -355,7 +355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc6da8795ab598c44b5b63b9116197d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 5107954962007069713}
+  player: {fileID: 5763384845433299528}
   camera: {fileID: 5053911396999072649}
   movementSpeed: 25
   damage: 4
