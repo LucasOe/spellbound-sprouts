@@ -22,7 +22,7 @@ public class Grid : MonoBehaviour
                         z > 0 && z < _depth - 1) 
                         continue;
 
-                    GameObject tileInstance = Instantiate(_tile, new Vector3(-22.6f + x * 5, 0.02f, -22.6f + z * 5), Quaternion.identity);
+                    GameObject tileInstance = Instantiate(_tile, new Vector3(-22.6f + x * 3, 0.02f, -22.6f + z * 3), Quaternion.identity);
                     tileInstance.name = "Square: " + x + " " + z;
                     tiles[x,z] = new GameObjectExtended(tileInstance);
                 }
@@ -33,16 +33,10 @@ public class Grid : MonoBehaviour
 }
 
 public class GameObjectExtended {
-    private bool isActive = false;
     public GameObject gameObject = new GameObject();
 
 
     public GameObjectExtended(GameObject _pGameobject) {
         this.gameObject = _pGameobject;
-    }
-
-    public void toggleActive() {
-        this.isActive = !isActive;
-        gameObject.GetComponent<Tile>().Activate();
     }
 }

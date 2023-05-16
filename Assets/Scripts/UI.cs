@@ -6,14 +6,14 @@ using static Inventory;
 
 public class UI : MonoBehaviour
 {
-    Label _herb; 
-    Label _plant;
+    Button _herb; 
+    Button _plant;
    
     private void OnEnable() 
     {
         VisualElement root = GetComponent<UIDocument>().rootVisualElement;
-        _herb = root.Q<Label>("Herb");
-        _plant = root.Q<Label>("Plant");
+        _herb = root.Q<Button>("Herb");
+        _plant = root.Q<Button>("Plant");
     }
     // Start is called before the first frame update
     void Start()
@@ -27,15 +27,8 @@ public class UI : MonoBehaviour
         
     }
 
-    public void TogglePlantType(ActiveItem itemType) {
-        if(itemType == ActiveItem.Herb) 
-        {
-            _herb.AddToClassList("active");
-            _plant.RemoveFromClassList("active");
-        }
-        else {
-            _plant.AddToClassList("active");
-            _herb.RemoveFromClassList("active");
-        }
+    public void TogglePlantType() {
+            _herb.ToggleInClassList("active");
+            _plant.ToggleInClassList("active");
     }
 }
