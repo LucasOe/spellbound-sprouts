@@ -1,12 +1,20 @@
-.header {
+.plantType {
     position: relative;
     left: auto;
     width: 50%;
     padding: 15px;
-    background-color: red;
+    background-color: white;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    margin-left: 12px;
+    margin-right: 12px;
+    margin-top: 12px;
+    margin-bottom: 12px;
 }
 
 .active {
-    background-color: green;
-    color: #ffffff;
+    background-color: rgb(75, 47, 31);
+    color: rgb(255, 255, 255);
 }
