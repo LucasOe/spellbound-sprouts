@@ -2,11 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static Inventory;
+using static UI;
 
 public class Player : MonoBehaviour
 {
     [SerializeField] private GameObject player;
     [SerializeField] private new Camera camera;
+    [SerializeField] private Inventory inventory;
+    [SerializeField] private UI ui;
+
+
     [SerializeField] private float movementSpeed = 25.0f;
     [SerializeField] private float damage = 4.0f;
     
@@ -53,12 +59,19 @@ public class Player : MonoBehaviour
             
             // Place plants
             var grid = GameObject.Find("Field").GetComponent<Grid>();
-            GameObjectExtended field = null;
-            for(int i = 0; i < grid.plane.GetLength(0); i++)  {
-                for(int j = 0; j < grid.plane.GetLength(1); j++)  {
-                    if(grid.plane[i, j].gameObject.name == clickedObject.name) {
-                        field = grid.plane[i, j];
-                        field.toggleActive();
+            GameObjectExtended tile = null;
+            for(int i = 0; i < grid.tiles.GetLength(0); i++)  {
+                for(int j = 0; j < grid.tiles.GetLength(1); j++)  {
+                    tile = grid.tiles[i, j];
+                    if(tile.gameObject.name == clickedObject.name) {
+                        if(!tile.gameObject.GetComponent<Tile>()._content) 
+                        {
+                            //tile.toggleActive();
+                            Vector3 position = tile.gameObject.transform.position;
+                            tile.gameObject.GetComponent<Tile>()._content = inventory.getPlant();
+                            GameObject tileContent = Instantiate(tile.gameObject.GetComponent<Tile>()._content, position, Quaternion.identity);
+                        }    
+
                     }
                 }
             }
@@ -66,12 +79,14 @@ public class Player : MonoBehaviour
     } 
 
     
-    public void OnHerb(InputValue value) {
-        Debug.Log("Herb Selected");
+    public void OnSelectHerb(InputValue value) {
+        inventory.SetItem(ActiveItem.Herb);
+        ui.TogglePlantType(ActiveItem.Herb);
     }
 
     
-    public void OnPlant(InputValue value) {
-        Debug.Log("Plant Selected");
+    public void OnSelectPlant(InputValue value) {
+        inventory.SetItem(ActiveItem.Plant);
+        ui.TogglePlantType(ActiveItem.Plant);
     }
 }

@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
  
-public class Plane : MonoBehaviour {
+public class Tile : MonoBehaviour {
     [SerializeField] public GameObject _highlight;
     [SerializeField] public GameObject _active;
+    public GameObject _content;
+
     bool isActive;
 
     void OnMouseEnter() {

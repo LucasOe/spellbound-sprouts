@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/BaseUI.uss?fileID=7433441132597879392&amp;guid=a45ee422413450a4ab98c74270d464a1&amp;type=3#BaseUI" />
+    <ui:VisualElement name="Container" style="flex-direction: row; flex-grow: 0; position: absolute; bottom: 0; left: 0; right: 0; align-items: center; justify-content: center;">
+        <ui:Label text="Kräuter" display-tooltip-when-elided="true" name="Herb" class="header" style="width: 200px; -unity-text-align: upper-center; -unity-font-style: bold; font-size: 18px;" />
+        <ui:Label text="Pflanzen" display-tooltip-when-elided="true" name="Plant" class="header" style="width: 200px; -unity-text-align: upper-center; -unity-font-style: bold; font-size: 18px;" />
+    </ui:VisualElement>
+</ui:UXML>

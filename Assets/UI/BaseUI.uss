@@ -1,0 +1,12 @@
+.header {
+    position: relative;
+    left: auto;
+    width: 50%;
+    padding: 15px;
+    background-color: red;
+}
+
+.active {
+    background-color: green;
+    color: #ffffff;
+}

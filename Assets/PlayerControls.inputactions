@@ -33,7 +33,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Herb",
+                    "name": "SelectHerb",
                     "type": "Button",
                     "id": "aa49d165-e80d-4ccb-8e91-7dfdd0a3886b",
                     "expectedControlType": "Button",
@@ -42,7 +42,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Plant",
+                    "name": "SelectPlant",
                     "type": "Button",
                     "id": "41af2676-84af-4b95-b96c-20de2d560886",
                     "expectedControlType": "Button",
@@ -279,7 +279,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Herb",
+                    "action": "SelectHerb",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -290,7 +290,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Plant",
+                    "action": "SelectPlant",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
