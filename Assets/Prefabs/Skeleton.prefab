@@ -312,6 +312,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthbar: {fileID: 9172773670176694367}
   maxHealth: 10
+  outline: {fileID: 3771590794011998299}
   player: {fileID: 0}
   agent: {fileID: 7002567171017448374}
 --- !u!1 &5763384845433299528
@@ -325,6 +326,7 @@ GameObject:
   - component: {fileID: 2851718938900602852}
   - component: {fileID: 160482990390209984}
   - component: {fileID: 5703577640783317018}
+  - component: {fileID: 3771590794011998299}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -397,3 +399,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3771590794011998299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5763384845433299528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4c657a93ac65964a9954b472de72245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMaterial: {fileID: 2100000, guid: 22e9780c925fdad4da0899331c212e6c, type: 2}
+  meshRenderer: {fileID: 5703577640783317018}
