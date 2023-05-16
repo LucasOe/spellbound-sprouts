@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using static Inventory;
 using static UI;
+using static DistanceBetween;
 
 public class Player : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class Player : MonoBehaviour
     private new Rigidbody rigidbody;
     private Vector3 velocity = new Vector3();
     private Vector2 mousePosition;
+    public DistanceBetween distanceBetween = new DistanceBetween();
 
     private void Start() {
         rigidbody = GetComponent<Rigidbody>();
@@ -34,7 +36,7 @@ public class Player : MonoBehaviour
 
     public void OnMove(InputValue value) {
         var vector = value.Get<Vector2>();
-        velocity = new Vector3(vector.x, 0, vector.y);
+        velocity = new Vector3(vector.x/2, 0, vector.y/2);
     }
 
     public void OnLook(InputValue value) {
@@ -43,6 +45,7 @@ public class Player : MonoBehaviour
         if (Physics.Raycast(ray, out RaycastHit hitInfo, 300f)) {
             var target = new Vector3(hitInfo.point.x, player.transform.position.y, hitInfo.point.z);
             player.transform.LookAt(target);
+            distanceBetween.GetDistance(player, hitInfo.transform.gameObject);
         }
     }
 
@@ -64,7 +67,7 @@ public class Player : MonoBehaviour
                 for(int j = 0; j < grid.tiles.GetLength(1); j++)  {
                     tile = grid.tiles[i, j];
                     if(tile.gameObject.name == clickedObject.name) {
-                        if(!tile.gameObject.GetComponent<Tile>()._content) 
+                        if(!tile.gameObject.GetComponent<Tile>()._content && tile.gameObject.GetComponent<Tile>().distance < 10) 
                         {
                             //tile.toggleActive();
                             Vector3 position = tile.gameObject.transform.position;
@@ -81,12 +84,12 @@ public class Player : MonoBehaviour
     
     public void OnSelectHerb(InputValue value) {
         inventory.SetItem(ActiveItem.Herb);
-        ui.TogglePlantType(ActiveItem.Herb);
+        ui.TogglePlantType();
     }
 
     
     public void OnSelectPlant(InputValue value) {
         inventory.SetItem(ActiveItem.Plant);
-        ui.TogglePlantType(ActiveItem.Plant);
+        ui.TogglePlantType();
     }
 }
