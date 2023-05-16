@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    // Start is called before the first frame update
+    
+    private ActiveItem activeItem = ActiveItem.Harvest;
+    [SerializeField] GameObject _plant;
+    [SerializeField] GameObject _herb;
+
+
     void Start()
     {
         
@@ -13,15 +18,20 @@ public class Inventory : MonoBehaviour
     public enum ActiveItem {
         Harvest,
         Attack,
-        Roses,
-        Burdock,
-        Flytrap,
-        Titan,
-        Herb1,
-        Herb2,
-        Herb3
+        Plant,
+        Herb
     }
 
-    public void SetItem(ActiveItem activeItem) {}
+    public void SetItem(ActiveItem activeItem) {
+        this.activeItem = activeItem;
+    }
 
+    public GameObject getPlant() {
+        if(activeItem == ActiveItem.Plant) {
+            return _plant;
+        }
+        else {
+            return _herb;
+        }
+    }
 }

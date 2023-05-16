@@ -710,6 +710,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Skeleton (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5763384845433299528, guid: 9f87bf63365d7c942822474e7b7b0ff1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7220453593274107378, guid: 9f87bf63365d7c942822474e7b7b0ff1,
         type: 3}
       propertyPath: m_FillAmount
