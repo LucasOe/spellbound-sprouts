@@ -345,8 +345,8 @@ Transform:
   m_GameObject: {fileID: 5107954962007069713}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.65, y: 0.65, z: 0.65}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2851718938900602852}
   - {fileID: 637871800275908076}
@@ -466,6 +466,7 @@ MonoBehaviour:
   player: {fileID: 5763384845433299528}
   camera: {fileID: 5053911396999072649}
   inventory: {fileID: 1374843163789428268}
+  ui: {fileID: 0}
   movementSpeed: 25
   damage: 4
 --- !u!114 &1374843163789428268
@@ -480,6 +481,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 536f09ed8f0867e468e30b0ec501dc42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _plant: {fileID: 0}
+  _herb: {fileID: 0}
 --- !u!1 &5763384845433299528
 GameObject:
   m_ObjectHideFlags: 0

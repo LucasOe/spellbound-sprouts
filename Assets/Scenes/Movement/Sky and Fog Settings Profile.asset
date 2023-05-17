@@ -32,8 +32,8 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: {x: 0.09170679, y: 0.25305343, z: 0.5}
   desiredLuxValue:
-    m_OverrideState: 0
-    m_Value: 20000
+    m_OverrideState: 1
+    m_Value: 8000
   updateMode:
     m_OverrideState: 0
     m_Value: 0
@@ -194,11 +194,11 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: {r: 0.6698113, g: 0.2064198, b: 0.42884773, a: 1}
   tint:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: {r: 1, g: 1, b: 1, a: 1}
   maxFogDistance:
     m_OverrideState: 1
-    m_Value: 526.82
+    m_Value: 8.13
   mipFogMaxMip:
     m_OverrideState: 0
     m_Value: 0.5
@@ -216,7 +216,7 @@ MonoBehaviour:
     m_Value: 1840.9
   meanFreePath:
     m_OverrideState: 1
-    m_Value: 168.3
+    m_Value: 49.6
   enableVolumetricFog:
     m_OverrideState: 0
     m_Value: 1
