@@ -60,26 +60,41 @@ public class Player : MonoBehaviour
                 enemy.Damage(damage);
             }
             
-            // Place plants
             var grid = GameObject.Find("Field").GetComponent<Grid>();
-            GameObjectExtended tile = null;
+            GameObjectExtended tileObject = null;
+            Tile tile;
+
+            //Loops through tiles
             for(int i = 0; i < grid.tiles.GetLength(0); i++)  {
                 for(int j = 0; j < grid.tiles.GetLength(1); j++)  {
-                    tile = grid.tiles[i, j];
-                    if(tile.gameObject.name == clickedObject.name) {
-                        if(!tile.gameObject.GetComponent<Tile>()._content && tile.gameObject.GetComponent<Tile>().distance < 10) 
-                        {
-                            //tile.toggleActive();
-                            Vector3 position = tile.gameObject.transform.position;
-                            tile.gameObject.GetComponent<Tile>()._content = inventory.getPlant();
-                            GameObject tileContent = Instantiate(tile.gameObject.GetComponent<Tile>()._content, position, Quaternion.identity);
-                        }    
+                    tileObject = grid.tiles[i, j];
+                    tile = tileObject.gameObject.GetComponent<Tile>();
 
+                    if(tileObject.gameObject == clickedObject) {
+                        Vector3 pos = tileObject.gameObject.transform.position;
+                        HandleFieldInteraction(tile, pos);
                     }
                 }
             }
         }
     } 
+
+    public void HandleFieldInteraction(Tile tile, Vector3 pos) 
+    {
+        
+        //Place plant: Tile is empty and < 10 away
+        if(!tile._content && tile.distance < 10) 
+        {
+            GameObject tileContent = Instantiate(inventory.getPlant(), pos, Quaternion.identity);
+            tile._content = tileContent;
+        } 
+
+        //Harvest plant: Tile is filled with plant and < 10 away
+        else if(tile._content && tile.distance < 10) 
+        {
+            Destroy(tile._content);
+        } 
+    }
 
     
     public void OnSelectHerb(InputValue value) {

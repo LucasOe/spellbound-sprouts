@@ -4,7 +4,7 @@
         <ui:Button text="Kräuter" display-tooltip-when-elided="true" name="Herb" class="plantType active">
             <ui:Label text="Q" display-tooltip-when-elided="true" name="Q" class="shortcut" style="position: absolute;" />
         </ui:Button>
-        <ui:Button text="Pflanzen" display-tooltip-when-elided="true" name="Plant" class="plantType" style="color: rgba(0, 0, 0, 255);">
+        <ui:Button text="Pflanzen" display-tooltip-when-elided="true" name="Plant" class="plantType">
             <ui:Label text="E" display-tooltip-when-elided="true" name="E" class="shortcut" style="position: absolute;" />
         </ui:Button>
     </ui:VisualElement>
