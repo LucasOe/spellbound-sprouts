@@ -2,17 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static Inventory;
+using static UI;
+using static DistanceBetween;
 
 public class Player : MonoBehaviour
 {
     [SerializeField] private GameObject player;
     [SerializeField] private new Camera camera;
+    [SerializeField] private Inventory inventory;
+    [SerializeField] private UI ui;
+
+
     [SerializeField] private float movementSpeed = 25.0f;
     [SerializeField] private float damage = 4.0f;
     
     private new Rigidbody rigidbody;
     private Vector3 velocity = new Vector3();
     private Vector2 mousePosition;
+    public DistanceBetween distanceBetween = new DistanceBetween();
 
     private void Start() {
         rigidbody = GetComponent<Rigidbody>();
@@ -28,7 +36,7 @@ public class Player : MonoBehaviour
 
     public void OnMove(InputValue value) {
         var vector = value.Get<Vector2>();
-        velocity = new Vector3(vector.x, 0, vector.y);
+        velocity = new Vector3(vector.x/2, 0, vector.y/2);
     }
 
     public void OnLook(InputValue value) {
@@ -37,6 +45,7 @@ public class Player : MonoBehaviour
         if (Physics.Raycast(ray, out RaycastHit hitInfo, 300f)) {
             var target = new Vector3(hitInfo.point.x, player.transform.position.y, hitInfo.point.z);
             player.transform.LookAt(target);
+            distanceBetween.GetDistance(player, hitInfo.transform.gameObject);
         }
     }
 
@@ -51,27 +60,51 @@ public class Player : MonoBehaviour
                 enemy.Damage(damage);
             }
             
-            // Place plants
             var grid = GameObject.Find("Field").GetComponent<Grid>();
-            GameObjectExtended field = null;
-            for(int i = 0; i < grid.plane.GetLength(0); i++)  {
-                for(int j = 0; j < grid.plane.GetLength(1); j++)  {
-                    if(grid.plane[i, j].gameObject.name == clickedObject.name) {
-                        field = grid.plane[i, j];
-                        field.toggleActive();
+            GameObjectExtended tileObject = null;
+            Tile tile;
+
+            //Loops through tiles
+            for(int i = 0; i < grid.tiles.GetLength(0); i++)  {
+                for(int j = 0; j < grid.tiles.GetLength(1); j++)  {
+                    tileObject = grid.tiles[i, j];
+                    tile = tileObject.gameObject.GetComponent<Tile>();
+
+                    if(tileObject.gameObject == clickedObject) {
+                        Vector3 pos = tileObject.gameObject.transform.position;
+                        HandleFieldInteraction(tile, pos);
                     }
                 }
             }
         }
     } 
 
-    
-    public void OnHerb(InputValue value) {
-        Debug.Log("Herb Selected");
+    public void HandleFieldInteraction(Tile tile, Vector3 pos) 
+    {
+        
+        //Place plant: Tile is empty and < 10 away
+        if(!tile._content && tile.distance < 10) 
+        {
+            GameObject tileContent = Instantiate(inventory.getPlant(), pos, Quaternion.identity);
+            tile._content = tileContent;
+        } 
+
+        //Harvest plant: Tile is filled with plant and < 10 away
+        else if(tile._content && tile.distance < 10) 
+        {
+            Destroy(tile._content);
+        } 
     }
 
     
-    public void OnPlant(InputValue value) {
-        Debug.Log("Plant Selected");
+    public void OnSelectHerb(InputValue value) {
+        inventory.SetItem(ActiveItem.Herb);
+        ui.TogglePlantType();
+    }
+
+    
+    public void OnSelectPlant(InputValue value) {
+        inventory.SetItem(ActiveItem.Plant);
+        ui.TogglePlantType();
     }
 }

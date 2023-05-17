@@ -1,14 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.AI;
+using UnityEngine.EventSystems;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] private Healthbar healthbar;
     [SerializeField] public float maxHealth = 10.0f;
     private float currentHealth;
+
+    [SerializeField] private Outline outline;
 
     [SerializeField] private GameObject player;
     [SerializeField] private NavMeshAgent agent;
@@ -34,5 +36,13 @@ public class Enemy : MonoBehaviour
     public void Heal(float amount) {
         currentHealth += amount;
         healthbar.UpdateHealthBar(currentHealth, maxHealth);
+    }
+
+    public void OnPointerEnter(PointerEventData eventData) {
+        outline.Enable();
+    }
+
+    public void OnPointerExit(PointerEventData eventData) {
+        outline.Disable();
     }
 }

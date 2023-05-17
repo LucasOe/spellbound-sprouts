@@ -5,11 +5,11 @@ using UnityEngine;
 public class Grid : MonoBehaviour
 {
 
-    [SerializeField] GameObject _plane;
+    [SerializeField] GameObject _tile;
 
     private static int _width = 20, _depth = 20;
     public uint Height = 1;
-    public GameObjectExtended[,] plane = new GameObjectExtended[_width, _depth];
+    public GameObjectExtended[,] tiles = new GameObjectExtended[_width, _depth];
     
     void Start() {
         for (uint x = 0; x < _width; ++x) {
@@ -22,28 +22,21 @@ public class Grid : MonoBehaviour
                         z > 0 && z < _depth - 1) 
                         continue;
 
-                    GameObject planeInstance = Instantiate(_plane, new Vector3(-22.6f + x * 5, 0.02f, -22.6f + z * 5), Quaternion.identity);
-                    planeInstance.name = "Square: " + x + " " + z;
-                    GameObjectExtended planeExtended = new GameObjectExtended(planeInstance);
-                    plane[x,z] = planeExtended;
+                    GameObject tileInstance = Instantiate(_tile, new Vector3(-22.6f + x * 2, 0.02f, -22.6f + z * 2), Quaternion.identity);
+                    tileInstance.name = "Square: " + x + " " + z;
+                    tiles[x,z] = new GameObjectExtended(tileInstance);
                 }
             }
         } 
-        _plane.SetActive(false);
+        _tile.SetActive(false);
     }
 }
 
 public class GameObjectExtended {
-    private bool isActive = false;
     public GameObject gameObject = new GameObject();
 
 
     public GameObjectExtended(GameObject _pGameobject) {
         this.gameObject = _pGameobject;
-    }
-
-    public void toggleActive() {
-        this.isActive = !isActive;
-        gameObject.GetComponent<Plane>().Activate();
     }
 }
