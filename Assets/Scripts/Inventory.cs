@@ -5,7 +5,7 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     
-    private ActiveItem activeItem = ActiveItem.Harvest;
+    public ActiveItem activeItem = ActiveItem.Harvest;
     [SerializeField] GameObject _plant;
     [SerializeField] GameObject _herb;
 

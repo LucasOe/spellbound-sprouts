@@ -1,11 +1,16 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI/BaseUI.uss?fileID=7433441132597879392&amp;guid=a45ee422413450a4ab98c74270d464a1&amp;type=3#BaseUI" />
-    <ui:VisualElement name="Container" style="flex-direction: row; flex-grow: 0; position: absolute; bottom: 0; left: 0; right: 0; align-items: center; justify-content: space-between; width: 346px; -unity-text-align: upper-center; padding-left: 11px; padding-right: 11px; padding-top: 11px; padding-bottom: 11px;">
-        <ui:Button text="Kräuter" display-tooltip-when-elided="true" name="Herb" class="plantType active">
-            <ui:Label text="Q" display-tooltip-when-elided="true" name="Q" class="shortcut" style="position: absolute;" />
+    <ui:VisualElement name="Container" style="flex-direction: row; flex-grow: 0; position: absolute; bottom: 0; left: 0; right: 0; align-items: center; justify-content: space-between; width: 346px; -unity-text-align: upper-center; padding-left: 11px; padding-right: 11px; padding-top: 11px; padding-bottom: 11px; flex-wrap: wrap;">
+        <ui:Button text="Ernten" display-tooltip-when-elided="true" name="Harvest" class="harvest active" style="width: 96%;">
+            <ui:Label text="Tab&#x9;" display-tooltip-when-elided="true" name="Tab" class="shortcut" style="position: absolute; width: 63px;" />
         </ui:Button>
-        <ui:Button text="Pflanzen" display-tooltip-when-elided="true" name="Plant" class="plantType">
-            <ui:Label text="E" display-tooltip-when-elided="true" name="E" class="shortcut" style="position: absolute;" />
-        </ui:Button>
+        <ui:VisualElement style="width: 100%; flex-direction: row;">
+            <ui:Button text="Kräuter" display-tooltip-when-elided="true" name="Herb" class="plantType active">
+                <ui:Label text="Q" display-tooltip-when-elided="true" name="Q" class="shortcut" style="position: absolute;" />
+            </ui:Button>
+            <ui:Button text="Pflanzen" display-tooltip-when-elided="true" name="Plant" class="plantType">
+                <ui:Label text="E" display-tooltip-when-elided="true" name="E" class="shortcut" style="position: absolute;" />
+            </ui:Button>
+        </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
