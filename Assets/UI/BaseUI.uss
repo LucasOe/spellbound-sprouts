@@ -1,7 +1,7 @@
 .plantType {
     position: relative;
     left: auto;
-    width: 50%;
+    width: 44.5%;
     padding: 15px;
     background-color: white;
     border-radius: 12px;
@@ -20,7 +20,34 @@
     border-right-color: rgb(0, 0, 0);
     border-top-color: rgb(0, 0, 0);
     border-bottom-color: rgb(0, 0, 0);
-    color: rgba(0, 0, 0, 255);
+    color: rgb(0, 0, 0);
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+}
+
+.harvest {
+    position: relative;
+    left: auto;
+    width: 100%;
+    padding: 15px;
+    background-color: white;
+    border-radius: 12px;
+    margin-left: 12px;
+    margin-right: 12px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    -unity-font-style: bold;
+    font-size: 20px;
+    overflow: visible;
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
     transition-duration: 0.3s;
     transition-timing-function: ease-in-out;
 }
@@ -34,10 +61,10 @@
     font-size: 14px;
     left: -11px;
     background-color: rgb(255, 255, 255);
-    border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px;
-    border-top-right-radius: 30px;
-    border-bottom-right-radius: 30px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
     width: 30px;
     height: 30px;
     top: -13px;

@@ -83,28 +83,43 @@ public class Player : MonoBehaviour
     {
         
         //Place plant: Tile is empty and < 10 away
-        if(!tile._content && tile.distance < 10) 
+        if(!tile._content && tile.distance < 10 && inventory.activeItem != ActiveItem.Harvest) 
         {
             GameObject tileContent = Instantiate(inventory.getPlant(), pos, Quaternion.identity);
             tile._content = tileContent;
         } 
 
         //Harvest plant: Tile is filled with plant and < 10 away
-        else if(tile._content && tile.distance < 10) 
+        else if(tile._content && tile.distance < 10 && inventory.activeItem == ActiveItem.Harvest) 
         {
             Destroy(tile._content);
         } 
     }
 
-    
-    public void OnSelectHerb(InputValue value) {
-        inventory.SetItem(ActiveItem.Herb);
-        ui.TogglePlantType();
+    public void OnSelectHarvest(InputValue value) 
+    {
+        if(inventory.activeItem != ActiveItem.Harvest) 
+        {
+            inventory.SetItem(ActiveItem.Harvest);
+            ui.ToggleToolType(inventory.activeItem);
+        }
+        else 
+        {
+            inventory.SetItem(ActiveItem.Herb); 
+            ui.ToggleToolType(inventory.activeItem); 
+        }
     }
 
     
-    public void OnSelectPlant(InputValue value) {
+    public void OnSelectHerb(InputValue value) 
+    {
+        inventory.SetItem(ActiveItem.Herb);
+        ui.ToggleToolType(inventory.activeItem);
+    }
+
+    public void OnSelectPlant(InputValue value) 
+    {
         inventory.SetItem(ActiveItem.Plant);
-        ui.TogglePlantType();
+        ui.ToggleToolType(inventory.activeItem);
     }
 }
