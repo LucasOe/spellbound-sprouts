@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     [SerializeField] private Outline outline;
 
-    [SerializeField] private GameObject player;
+    public GameObject player; // Set by Spanwer script on spawn
     [SerializeField] private NavMeshAgent agent;
 
     private void Start() {
