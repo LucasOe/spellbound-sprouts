@@ -9,6 +9,8 @@ public class Plant : MonoBehaviour
     [SerializeField] private GameObject plant;
     [SerializeField] public float maxHealth = 10.0f;
     private float currentHealth;
+    private int growthDuration = 2;
+    private int age = 0;
     
     public Plant(GameObject plant) {
         this.plant = plant;
@@ -35,5 +37,10 @@ public class Plant : MonoBehaviour
         if(currentHealth <= 0) {
             Destroy(this.gameObject);
         }
+    }
+
+    public void Grow() {
+        this.age++;
+        plant.transform.localScale = new Vector3(age*2f + 1f, age*2f + 1f, age*2f + 1f);
     }
 }

@@ -9,6 +9,11 @@ public class UI : MonoBehaviour
     Button _herb; 
     Button _plant;
     Button _harvest;
+    List<Button> _activeItems = new List<Button>();
+    Button _1P;
+    Button _2P;
+    Button _3P;
+    Button _4P;
    
     private void OnEnable() 
     {
@@ -16,6 +21,14 @@ public class UI : MonoBehaviour
         _herb = root.Q<Button>("Herb");
         _plant = root.Q<Button>("Plant");
         _harvest = root.Q<Button>("Harvest");
+        Button _1P = root.Q<Button>("1P");
+        Button _2P = root.Q<Button>("2P");
+        Button _3P = root.Q<Button>("3P");
+        Button _4P = root.Q<Button>("4P");
+        _activeItems.Add(_1P);
+        _activeItems.Add(_2P);
+        _activeItems.Add(_3P);
+        _activeItems.Add(_4P);
     }
     // Start is called before the first frame update
     void Start()
@@ -27,6 +40,19 @@ public class UI : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void selectActiveItem(int i) {
+      int j = 0;
+      foreach (var _activeItem in _activeItems) {
+          if(j == i) {
+                _activeItem.AddToClassList("active");
+          }
+          else {
+            _activeItem.RemoveFromClassList("active");
+          }
+        j++;
+      }
     }
 
     public void ToggleToolType(ActiveItem activeItem) {

@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
         var relativeVelocity = Quaternion.Euler(0, camera.gameObject.transform.eulerAngles.y, 0) * velocity;
         // Move player
         // transform.Translate(relativeVelocity * movementSpeed * Time.deltaTime);
-        rigidbody.MovePosition(transform.position + relativeVelocity * movementSpeed * Time.deltaTime);   
+        rigidbody.MovePosition(transform.position + relativeVelocity * movementSpeed * Time.deltaTime);
     }
 
     public void OnMove(InputValue value) {
@@ -61,7 +61,7 @@ public class Player : MonoBehaviour
             }
             
             var grid = GameObject.Find("Field").GetComponent<Grid>();
-            GameObjectExtended tileObject = null;
+            GameObject tileObject = null;
             Tile tile;
 
             //Loops through tiles
@@ -121,5 +121,25 @@ public class Player : MonoBehaviour
     {
         inventory.SetItem(ActiveItem.Plant);
         ui.ToggleToolType(inventory.activeItem);
+    }
+
+    public void OnSelectItem1(InputValue value) {
+        inventory.SetItemIndex(0);
+        ui.selectActiveItem(0);
+    }
+
+    public void OnSelectItem2(InputValue value) {
+        inventory.SetItemIndex(1);
+        ui.selectActiveItem(1);
+    }
+
+    public void OnSelectItem3(InputValue value) {
+        inventory.SetItemIndex(2);
+        ui.selectActiveItem(2);
+    }
+
+    public void OnSelectItem4(InputValue value) {
+        inventory.SetItemIndex(3);
+        ui.selectActiveItem(3);
     }
 }
