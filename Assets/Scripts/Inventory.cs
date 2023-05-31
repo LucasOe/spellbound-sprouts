@@ -5,9 +5,11 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     
-    public ActiveItem activeItem = ActiveItem.Harvest;
-    [SerializeField] GameObject _plant;
-    [SerializeField] GameObject _herb;
+    public ActiveItem activeItem = ActiveItem.Plant;
+    [SerializeField] GameObject[] _plants;
+    [SerializeField] GameObject[] _herbs;
+    public GameObject activePlant = null;
+    public GameObject activeHerb = null;
 
 
     void Start()
@@ -26,12 +28,17 @@ public class Inventory : MonoBehaviour
         this.activeItem = activeItem;
     }
 
+    public void SetItemIndex(int i) {
+            this.activePlant = _plants[i];
+            this.activeHerb = _herbs[i];
+    }
+
     public GameObject getPlant() {
         if(activeItem == ActiveItem.Plant) {
-            return _plant;
+            return activePlant;
         }
         else {
-            return _herb;
+            return activeHerb;
         }
     }
 }

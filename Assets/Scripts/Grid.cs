@@ -9,7 +9,7 @@ public class Grid : MonoBehaviour
 
     private static int _width = 20, _depth = 20;
     public uint Height = 1;
-    public GameObjectExtended[,] tiles = new GameObjectExtended[_width, _depth];
+    public GameObject[,] tiles = new GameObject[_width, _depth];
     
     void Start() {
         for (uint x = 0; x < _width; ++x) {
@@ -24,19 +24,10 @@ public class Grid : MonoBehaviour
 
                     GameObject tileInstance = Instantiate(_tile, new Vector3(-22.6f + x * 2, 0.02f, -22.6f + z * 2), Quaternion.identity);
                     tileInstance.name = "Square: " + x + " " + z;
-                    tiles[x,z] = new GameObjectExtended(tileInstance);
+                    tiles[x,z] = tileInstance;
                 }
             }
         } 
         _tile.SetActive(false);
-    }
-}
-
-public class GameObjectExtended {
-    public GameObject gameObject = new GameObject();
-
-
-    public GameObjectExtended(GameObject _pGameobject) {
-        this.gameObject = _pGameobject;
     }
 }
