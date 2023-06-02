@@ -11,15 +11,13 @@ public struct EnemySpawnInfo {
 
 public class Spawner : MonoBehaviour
 {
-    public GameObject player;
-    public GameObject skelton;
-    public GameObject spider;
-    public EnemySpawnInfo[] days;
+    public GameManager GameManager;
+    public Enemy Skelton;
+    public Enemy Spider;
+    private EnemySpawnInfo[] Days;
 
     public void Spawn(int day) {
-        GameObject enemyGameObject = Instantiate(skelton, transform.position, transform.rotation);
-        if(enemyGameObject.TryGetComponent(out Enemy enemy)) {
-            enemy.player = player;
-        }
+        Enemy enemy = GameManager.CreateEnemy(Skelton, transform.position, transform.rotation);
+        enemy.Player = GameManager.Player;
     }
 }
