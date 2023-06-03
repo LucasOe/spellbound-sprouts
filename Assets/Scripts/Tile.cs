@@ -4,24 +4,19 @@ using UnityEngine;
 using static Player;
  
 public class Tile : MonoBehaviour {
+    public GameManager GameManager;
     [SerializeField] public GameObject _highlight;
     [SerializeField] public GameObject _disabled;
     public GameObject _content;
-    private Player player;
     public float distance;
-
-    void Start() {
-        player = GameObject.Find("Player").GetComponent<Player>();
-    }
 
     bool isActive;
 
     void OnMouseEnter() {
-        distance = player.distanceBetween.distanceTotal;
+        float distance = GameManager.Player.distanceBetween.distanceTotal;
         if(distance < 10) {
-        _highlight.SetActive(true);
-        }
-        else {
+            _highlight.SetActive(true);
+        } else {
             _disabled.SetActive(true);
         }
     }
