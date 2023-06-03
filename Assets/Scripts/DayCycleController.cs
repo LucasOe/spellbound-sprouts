@@ -83,8 +83,8 @@ public class DayCycleController : MonoBehaviour
         for(int i = 0; i < grid.tiles.GetLength(0); i++)  {
             for(int j = 0; j < grid.tiles.GetLength(1); j++)  {
                 Tile tileObject = grid.tiles[i, j];
-                if(tileObject._content) {
-                    Plant plant = tileObject._content.GetComponent<Plant>();
+                if(tileObject.Plant) {
+                    Plant plant = tileObject.Plant.GetComponent<Plant>();
                     plant.Grow();
                 }
             }

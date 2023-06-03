@@ -7,7 +7,7 @@ public class Tile : MonoBehaviour {
     public GameManager GameManager;
     [SerializeField] public GameObject _highlight;
     [SerializeField] public GameObject _disabled;
-    public GameObject _content;
+    public Plant Plant;
     public float distance;
 
     bool isActive;

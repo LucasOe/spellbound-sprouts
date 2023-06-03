@@ -6,10 +6,10 @@ public class Inventory : MonoBehaviour
 {
     
     public ActiveItem activeItem = ActiveItem.Plant;
-    [SerializeField] GameObject[] _plants;
-    [SerializeField] GameObject[] _herbs;
-    public GameObject activePlant = null;
-    public GameObject activeHerb = null;
+    [SerializeField] Plant[] _plants;
+    [SerializeField] Plant[] _herbs;
+    public Plant activePlant = null;
+    public Plant activeHerb = null;
 
 
     void Start()
@@ -29,15 +29,14 @@ public class Inventory : MonoBehaviour
     }
 
     public void SetItemIndex(int i) {
-            this.activePlant = _plants[i];
-            this.activeHerb = _herbs[i];
+        this.activePlant = _plants[i];
+        this.activeHerb = _herbs[i];
     }
 
-    public GameObject getPlant() {
+    public Plant GetPlant() {
         if(activeItem == ActiveItem.Plant) {
             return activePlant;
-        }
-        else {
+        } else {
             return activeHerb;
         }
     }

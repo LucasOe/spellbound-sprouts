@@ -8,6 +8,7 @@ using static DistanceBetween;
 
 public class Player : MonoBehaviour
 {
+    public GameManager GameManager;
     [SerializeField] private GameObject player;
     [SerializeField] private new Camera camera;
     [SerializeField] private Inventory inventory;
@@ -76,43 +77,34 @@ public class Player : MonoBehaviour
 
     public void HandleFieldInteraction(Tile tile, Vector3 pos) 
     { 
-        //Place plant: Tile is empty and < 10 away
-        if(!tile._content && tile.distance < 10 && inventory.activeItem != ActiveItem.Harvest) 
-        {
-            GameObject tileContent = Instantiate(inventory.getPlant(), pos, Quaternion.identity);
-            tile._content = tileContent;
-        } 
-
-        //Harvest plant: Tile is filled with plant and < 10 away
-        else if(tile._content && tile.distance < 10 && inventory.activeItem == ActiveItem.Harvest) 
-        {
-            Destroy(tile._content);
+        if(!tile.Plant && tile.distance < 10 && inventory.activeItem != ActiveItem.Harvest) {
+            //Place plant: Tile is empty and < 10 away
+            Plant tileContent = GameManager.CreatePlant(inventory.GetPlant(), pos, Quaternion.identity);
+            tile.Plant = tileContent;
+        } else if(tile.Plant && tile.distance < 10 && inventory.activeItem == ActiveItem.Harvest) {
+            //Harvest plant: Tile is filled with plant and < 10 away
+            Destroy(tile.Plant);
         } 
     }
 
     public void OnSelectHarvest(InputValue value) 
     {
-        if(inventory.activeItem != ActiveItem.Harvest) 
-        {
+        if(inventory.activeItem != ActiveItem.Harvest) {
             inventory.SetItem(ActiveItem.Harvest);
             ui.ToggleToolType(inventory.activeItem);
-        }
-        else 
-        {
+        } else {
             inventory.SetItem(ActiveItem.Herb); 
             ui.ToggleToolType(inventory.activeItem); 
         }
     }
 
     
-    public void OnSelectHerb(InputValue value) 
-    {
+    public void OnSelectHerb(InputValue value) {
         inventory.SetItem(ActiveItem.Herb);
         ui.ToggleToolType(inventory.activeItem);
     }
 
-    public void OnSelectPlant(InputValue value) 
-    {
+    public void OnSelectPlant(InputValue value) {
         inventory.SetItem(ActiveItem.Plant);
         ui.ToggleToolType(inventory.activeItem);
     }
