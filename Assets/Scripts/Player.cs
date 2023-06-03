@@ -83,7 +83,7 @@ public class Player : MonoBehaviour
             tile.Plant = tileContent;
         } else if(tile.Plant && tile.distance < 10 && inventory.activeItem == ActiveItem.Harvest) {
             //Harvest plant: Tile is filled with plant and < 10 away
-            Destroy(tile.Plant);
+            GameManager.DestroyPlant(tile.Plant);
         } 
     }
 

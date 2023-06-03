@@ -16,18 +16,9 @@ public class Plant : MonoBehaviour
         this.plant = plant;
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
+    private void Start() {
         currentHealth = maxHealth;
         healthbar.UpdateHealthBar(currentHealth, maxHealth);
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void Damage(float amount) {
