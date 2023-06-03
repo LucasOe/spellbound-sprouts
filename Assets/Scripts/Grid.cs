@@ -14,7 +14,6 @@ public class Grid : MonoBehaviour
         for (uint x = 0; x < Width; x++) {
             for (uint z = 0; z < Depth; z++) {
                 Tile tileInstance = Instantiate(Tile, new Vector3(-22.6f + x * 2, 0.02f, -22.6f + z * 2), Quaternion.identity);
-                GameManager gm = Tile.GameManager;
                 tileInstance.name = "Square: " + x + " " + z;
                 tiles[x,z] = tileInstance;
             }

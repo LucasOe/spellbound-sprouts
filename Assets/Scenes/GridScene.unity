@@ -174,13 +174,13 @@ PrefabInstance:
         type: 3}
       propertyPath: activeHerb
       value: 
-      objectReference: {fileID: 919132149155446097, guid: 55117c89e0765ee4fb7b8f6f0c2a9c74,
+      objectReference: {fileID: 3131694317889342675, guid: 3207d2f1ec9c87e4f9a880e7ea6e3604,
         type: 3}
     - target: {fileID: 1374843163789428268, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
         type: 3}
       propertyPath: activePlant
       value: 
-      objectReference: {fileID: 919132149155446097, guid: a519a65cc94d20047ac5faa2376369ad,
+      objectReference: {fileID: 4313761600849052347, guid: 84c71430073113b4287ba1979f4c4c97,
         type: 3}
     - target: {fileID: 1374843163789428268, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
         type: 3}
@@ -196,49 +196,49 @@ PrefabInstance:
         type: 3}
       propertyPath: _herbs.Array.data[0]
       value: 
-      objectReference: {fileID: 2323245870286837358, guid: 3207d2f1ec9c87e4f9a880e7ea6e3604,
+      objectReference: {fileID: 3131694317889342675, guid: 3207d2f1ec9c87e4f9a880e7ea6e3604,
         type: 3}
     - target: {fileID: 1374843163789428268, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
         type: 3}
       propertyPath: _herbs.Array.data[1]
       value: 
-      objectReference: {fileID: 919132149155446097, guid: b63c2027538b47f4f9f65fbb71c83d69,
+      objectReference: {fileID: 3131694317889342675, guid: 061360cfcb9371d498091aa6cd47d0fa,
         type: 3}
     - target: {fileID: 1374843163789428268, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
         type: 3}
       propertyPath: _herbs.Array.data[2]
       value: 
-      objectReference: {fileID: 919132149155446097, guid: 7b743c0bce0106f449dfde3616afeb0c,
+      objectReference: {fileID: 3131694317889342675, guid: 82dd47658ce3e4d41973da95e27c5fe7,
         type: 3}
     - target: {fileID: 1374843163789428268, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
         type: 3}
       propertyPath: _herbs.Array.data[3]
       value: 
-      objectReference: {fileID: 919132149155446097, guid: e200e20c5f2edd846831e3837c5d4c4d,
+      objectReference: {fileID: 3131694317889342675, guid: 639828925d68a72498a384e75dcd1c9c,
         type: 3}
     - target: {fileID: 1374843163789428268, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
         type: 3}
       propertyPath: _plants.Array.data[0]
       value: 
-      objectReference: {fileID: 3971302425982746600, guid: 84c71430073113b4287ba1979f4c4c97,
+      objectReference: {fileID: 4313761600849052347, guid: 84c71430073113b4287ba1979f4c4c97,
         type: 3}
     - target: {fileID: 1374843163789428268, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
         type: 3}
       propertyPath: _plants.Array.data[1]
       value: 
-      objectReference: {fileID: 919132149155446097, guid: ab4ec1cbf197ed1498ff3a027fd86c41,
+      objectReference: {fileID: 4313761600849052347, guid: 57f778dc68f07e543b5252f585e724c1,
         type: 3}
     - target: {fileID: 1374843163789428268, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
         type: 3}
       propertyPath: _plants.Array.data[2]
       value: 
-      objectReference: {fileID: 919132149155446097, guid: 184cbbb2cbf4a2b47869dde8407dc40f,
+      objectReference: {fileID: 4313761600849052347, guid: 2bbbab7e9c71a344a8250e0b9663c646,
         type: 3}
     - target: {fileID: 1374843163789428268, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
         type: 3}
       propertyPath: _plants.Array.data[3]
       value: 
-      objectReference: {fileID: 919132149155446097, guid: 0ee204db6f8bd864e9ebb55c6a6897e1,
+      objectReference: {fileID: 4313761600849052347, guid: d0114001fce9e2e4f9f4726afeeb90b0,
         type: 3}
     - target: {fileID: 3315166315397763816, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
         type: 3}
@@ -250,6 +250,11 @@ PrefabInstance:
       propertyPath: grid
       value: 
       objectReference: {fileID: 75676294}
+    - target: {fileID: 3315166315397763816, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
+        type: 3}
+      propertyPath: GameManager
+      value: 
+      objectReference: {fileID: 851358643}
     - target: {fileID: 3315166315397763816, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
         type: 3}
       propertyPath: movementSpeed
@@ -6049,6 +6054,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 56270091}
   Enemies: []
+  Plants: []
 --- !u!4 &851358644
 Transform:
   m_ObjectHideFlags: 0
@@ -7116,7 +7122,7 @@ MonoBehaviour:
   GameManager: {fileID: 851358643}
   _highlight: {fileID: 1428404211}
   _disabled: {fileID: 1647346830}
-  _content: {fileID: 0}
+  Plant: {fileID: 0}
   distance: 0
 --- !u!1 &1647346830 stripped
 GameObject:
