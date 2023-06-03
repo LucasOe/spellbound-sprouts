@@ -18,6 +18,5 @@ public class Spawner : MonoBehaviour
 
     public void Spawn(int day) {
         Enemy enemy = GameManager.CreateEnemy(Skelton, transform.position, transform.rotation);
-        enemy.Player = GameManager.Player;
     }
 }
