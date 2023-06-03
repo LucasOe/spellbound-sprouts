@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     [SerializeField] private new Camera camera;
     [SerializeField] private Inventory inventory;
     [SerializeField] private UI ui;
+    [SerializeField] private Grid grid;
 
 
     [SerializeField] private float movementSpeed = 25.0f;
@@ -60,19 +61,13 @@ public class Player : MonoBehaviour
                 enemy.Damage(damage);
             }
             
-            var grid = GameObject.Find("Field").GetComponent<Grid>();
-            GameObject tileObject = null;
-            Tile tile;
-
             //Loops through tiles
             for(int i = 0; i < grid.tiles.GetLength(0); i++)  {
                 for(int j = 0; j < grid.tiles.GetLength(1); j++)  {
-                    tileObject = grid.tiles[i, j];
-                    tile = tileObject.gameObject.GetComponent<Tile>();
+                    Tile tile = grid.tiles[i, j];
 
-                    if(tileObject.gameObject == clickedObject) {
-                        Vector3 pos = tileObject.gameObject.transform.position;
-                        HandleFieldInteraction(tile, pos);
+                    if(tile.gameObject == clickedObject) {
+                        HandleFieldInteraction(tile, tile.gameObject.transform.position);
                     }
                 }
             }
@@ -80,8 +75,7 @@ public class Player : MonoBehaviour
     } 
 
     public void HandleFieldInteraction(Tile tile, Vector3 pos) 
-    {
-        
+    { 
         //Place plant: Tile is empty and < 10 away
         if(!tile._content && tile.distance < 10 && inventory.activeItem != ActiveItem.Harvest) 
         {

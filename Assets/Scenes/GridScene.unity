@@ -247,6 +247,11 @@ PrefabInstance:
       objectReference: {fileID: 557728058}
     - target: {fileID: 3315166315397763816, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
         type: 3}
+      propertyPath: grid
+      value: 
+      objectReference: {fileID: 75676294}
+    - target: {fileID: 3315166315397763816, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
+        type: 3}
       propertyPath: movementSpeed
       value: 50
       objectReference: {fileID: 0}
@@ -435,7 +440,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f9e1642067b4884696a8036cec736f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Tile: {fileID: 1598810549}
+  Tile: {fileID: 1598810556}
   Width: 20
   Depth: 20
 --- !u!1 &89487296
