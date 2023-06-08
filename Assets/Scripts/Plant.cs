@@ -4,34 +4,38 @@ using UnityEngine;
 
 public class Plant : MonoBehaviour
 {
-    
-    [SerializeField] private Healthbar healthbar;
-    [SerializeField] private GameObject plant;
-    [SerializeField] public float maxHealth = 10.0f;
+
+    public Healthbar healthbar;
+    public GameObject plant;
+    public float maxHealth = 10.0f;
     private float currentHealth;
-    private int growthDuration = 2;
     private int age = 0;
-    
-    public Plant(GameObject plant) {
+
+    public Plant(GameObject plant)
+    {
         this.plant = plant;
     }
 
-    private void Start() {
+    private void Start()
+    {
         currentHealth = maxHealth;
         healthbar.UpdateHealthBar(currentHealth, maxHealth);
     }
 
-    public void Damage(float amount) {
+    public void Damage(float amount)
+    {
         currentHealth -= amount;
         healthbar.UpdateHealthBar(currentHealth, maxHealth);
 
-        if(currentHealth <= 0) {
+        if (currentHealth <= 0)
+        {
             Destroy(this.gameObject);
         }
     }
 
-    public void Grow() {
+    public void Grow()
+    {
         this.age++;
-        plant.transform.localScale = new Vector3(age*2f + 1f, age*2f + 1f, age*2f + 1f);
+        plant.transform.localScale = new Vector3(age * 2f + 1f, age * 2f + 1f, age * 2f + 1f);
     }
 }

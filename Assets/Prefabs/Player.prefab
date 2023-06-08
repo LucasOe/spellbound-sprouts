@@ -49,9 +49,17 @@ Camera:
   m_projectionMatrixMode: 2
   m_GateFitMode: 2
   m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 20.78461
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 20.78461
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -136,12 +144,16 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   hasPersistentHistory: 0
+  screenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  screenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
   allowDeepLearningSuperSampling: 1
   deepLearningSuperSamplingUseCustomQualitySettings: 0
   deepLearningSuperSamplingQuality: 0
   deepLearningSuperSamplingUseCustomAttributes: 0
   deepLearningSuperSamplingUseOptimalSettings: 1
   deepLearningSuperSamplingSharpening: 0
+  fsrOverrideSharpness: 0
+  fsrSharpness: 0.92
   exposureTarget: {fileID: 0}
   materialMipBias: 0
   m_RenderingPathCustomFrameSettings:
@@ -362,8 +374,17 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5107954962007069713}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
+  serializedVersion: 2
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
@@ -463,10 +484,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc6da8795ab598c44b5b63b9116197d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 0}
   player: {fileID: 1226964366495572505}
   camera: {fileID: 5053911396999072649}
   inventory: {fileID: 1374843163789428268}
   ui: {fileID: 0}
+  grid: {fileID: 0}
   movementSpeed: 25
   damage: 4
 --- !u!114 &1374843163789428268
@@ -482,15 +505,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeItem: 2
-  _plants: []
-  _herbs: []
-  activePlant: {fileID: 0}
-  activeHerb: {fileID: 0}
+  plants:
+  - {fileID: 4313761600849052347, guid: 84c71430073113b4287ba1979f4c4c97, type: 3}
+  - {fileID: 4313761600849052347, guid: 57f778dc68f07e543b5252f585e724c1, type: 3}
+  - {fileID: 4313761600849052347, guid: 2bbbab7e9c71a344a8250e0b9663c646, type: 3}
+  - {fileID: 4313761600849052347, guid: d0114001fce9e2e4f9f4726afeeb90b0, type: 3}
+  herbs:
+  - {fileID: 3131694317889342675, guid: 3207d2f1ec9c87e4f9a880e7ea6e3604, type: 3}
+  - {fileID: 3131694317889342675, guid: 061360cfcb9371d498091aa6cd47d0fa, type: 3}
+  - {fileID: 3131694317889342675, guid: 82dd47658ce3e4d41973da95e27c5fe7, type: 3}
+  - {fileID: 3131694317889342675, guid: 639828925d68a72498a384e75dcd1c9c, type: 3}
+  activePlant: {fileID: 4313761600849052347, guid: 84c71430073113b4287ba1979f4c4c97,
+    type: 3}
+  activeHerb: {fileID: 3131694317889342675, guid: 3207d2f1ec9c87e4f9a880e7ea6e3604,
+    type: 3}
 --- !u!1001 &2145512527873367880
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 7642728966278867222}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: e6fd1814b6592164482fc13846a59fc9,
@@ -569,6 +603,9 @@ PrefabInstance:
       value: characterDigger
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6fd1814b6592164482fc13846a59fc9, type: 3}
 --- !u!1 &1226964366495572505 stripped
 GameObject:

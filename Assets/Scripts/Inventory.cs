@@ -4,39 +4,40 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    
+
     public ActiveItem activeItem = ActiveItem.Plant;
-    [SerializeField] Plant[] _plants;
-    [SerializeField] Plant[] _herbs;
+    public Plant[] plants;
+    public Plant[] herbs;
     public Plant activePlant = null;
     public Plant activeHerb = null;
 
-
-    void Start()
+    public enum ActiveItem
     {
-        
-    }
-
-    public enum ActiveItem {
         Harvest,
         Attack,
         Plant,
         Herb
     }
 
-    public void SetItem(ActiveItem activeItem) {
+    public void SetItem(ActiveItem activeItem)
+    {
         this.activeItem = activeItem;
     }
 
-    public void SetItemIndex(int i) {
-        this.activePlant = _plants[i];
-        this.activeHerb = _herbs[i];
+    public void SetItemIndex(int i)
+    {
+        this.activePlant = plants[i];
+        this.activeHerb = herbs[i];
     }
 
-    public Plant GetPlant() {
-        if(activeItem == ActiveItem.Plant) {
+    public Plant GetPlant()
+    {
+        if (activeItem == ActiveItem.Plant)
+        {
             return activePlant;
-        } else {
+        }
+        else
+        {
             return activeHerb;
         }
     }

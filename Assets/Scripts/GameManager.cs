@@ -17,7 +17,8 @@ public class GameManager : MonoBehaviour
     public Action<Plant> DestroyedPlant;
     public List<Plant> Plants;
 
-    public Enemy CreateEnemy(Enemy enemy, Vector3 position, Quaternion rotation) {
+    public Enemy CreateEnemy(Enemy enemy, Vector3 position, Quaternion rotation)
+    {
         Enemy spawnedEnemy = Instantiate(enemy, position, rotation);
         spawnedEnemy.Setup(this);
         Enemies.Add(spawnedEnemy);
@@ -25,14 +26,16 @@ public class GameManager : MonoBehaviour
         return spawnedEnemy;
     }
 
-    public void DestroyEnemy(Enemy enemy) {
+    public void DestroyEnemy(Enemy enemy)
+    {
         Enemies.Remove(enemy);
         enemy.Destroy(this);
         DestroyedEnemy?.Invoke(enemy);
         Destroy(enemy.gameObject);
     }
 
-    public Plant CreatePlant(Plant plant, Vector3 position, Quaternion rotation) {
+    public Plant CreatePlant(Plant plant, Vector3 position, Quaternion rotation)
+    {
         Plant spawnedPlant = Instantiate(plant, position, rotation);
         Plants.Add(spawnedPlant);
         CreatedPlant?.Invoke(spawnedPlant);
@@ -40,7 +43,8 @@ public class GameManager : MonoBehaviour
         return spawnedPlant;
     }
 
-    public void DestroyPlant(Plant plant) {
+    public void DestroyPlant(Plant plant)
+    {
         Plants.Remove(plant);
         DestroyedPlant?.Invoke(plant);
         Debug.Log("Destroyed: " + plant.name);

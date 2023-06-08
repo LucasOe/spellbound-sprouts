@@ -35,13 +35,13 @@
         "**/*.MA":true,
         "**/*.obj":true,
         "**/*.OBJ":true,
-        "**/*.asset":false,
+        "**/*.asset":true,
         "**/*.cubemap":true,
         "**/*.flare":true,
         "**/*.mat":true,
         "**/*.meta":true,
         "**/*.prefab":true,
-        "**/*.unity":false,
+        "**/*.unity":true,
         "build/":true,
         "Build/":true,
         "Library/":true,
@@ -51,5 +51,9 @@
         "ProjectSettings/":true,
         "temp/":true,
         "Temp/":true
-    }
+    },
+    "omnisharp.useModernNet": true,
+    "omnisharp.sdkIncludePrereleases": false,
+    "omnisharp.organizeImportsOnFormat": true,
+    "dotnet.defaultSolution": "Spellbound Sprouts.sln",
 }

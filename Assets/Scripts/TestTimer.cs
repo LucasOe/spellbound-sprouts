@@ -10,17 +10,21 @@ public class TestTimer : MonoBehaviour
     private float cooldown;
     private int day = 0;
 
-    private void Start() {
+    private void Start()
+    {
         cooldown = cooldownTime;
     }
 
-    private void Update() {
+    private void Update()
+    {
         cooldown -= Time.deltaTime;
-        if(cooldown <= 0) {
+        if (cooldown <= 0)
+        {
             cooldown = cooldownTime; // Reset cooldown
 
             Debug.Log("Spawn Wave: " + day);
-            foreach(Spawner spawner in spawners) {
+            foreach (Spawner spawner in spawners)
+            {
                 spawner.Spawn(day);
             }
 
