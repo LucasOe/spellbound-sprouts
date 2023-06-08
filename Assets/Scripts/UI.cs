@@ -1,12 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using  UnityEngine.UIElements;
-using static Inventory;
-
+using UnityEngine.UIElements;
 public class UI : MonoBehaviour
 {
-    Button _herb; 
+    Button _herb;
     Button _plant;
     Button _harvest;
     List<Button> _activeItems = new List<Button>();
@@ -14,8 +12,8 @@ public class UI : MonoBehaviour
     Button _2P;
     Button _3P;
     Button _4P;
-   
-    private void OnEnable() 
+
+    private void OnEnable()
     {
         VisualElement root = GetComponent<UIDocument>().rootVisualElement;
         _herb = root.Q<Button>("Herb");
@@ -33,48 +31,53 @@ public class UI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    public void selectActiveItem(int i) {
-      int j = 0;
-      foreach (var _activeItem in _activeItems) {
-          if(j == i) {
-                _activeItem.AddToClassList("active");
-          }
-          else {
-            _activeItem.RemoveFromClassList("active");
-          }
-        j++;
-      }
-    }
-
-    public void ToggleToolType(ActiveItem activeItem) {
-        switch(activeItem) 
+    public void selectActiveItem(int i)
+    {
+        int j = 0;
+        foreach (var _activeItem in _activeItems)
         {
-          case ActiveItem.Harvest:
-            _harvest.AddToClassList("active");
-            _herb.RemoveFromClassList("active");
-            _plant.RemoveFromClassList("active");
-            break;
-          case ActiveItem.Plant:
-            _harvest.RemoveFromClassList("active");
-            _herb.RemoveFromClassList("active");
-            _plant.AddToClassList("active");
-            break;
-          case ActiveItem.Herb:
-            _harvest.RemoveFromClassList("active");
-            _herb.AddToClassList("active");
-            _plant.RemoveFromClassList("active");
-            break;
-          default:
-            break;
+            if (j == i)
+            {
+                _activeItem.AddToClassList("active");
+            }
+            else
+            {
+                _activeItem.RemoveFromClassList("active");
+            }
+            j++;
+        }
+    }
+
+    public void ToggleToolType(Inventory.ActiveItem activeItem)
+    {
+        switch (activeItem)
+        {
+            case Inventory.ActiveItem.Harvest:
+                _harvest.AddToClassList("active");
+                _herb.RemoveFromClassList("active");
+                _plant.RemoveFromClassList("active");
+                break;
+            case Inventory.ActiveItem.Plant:
+                _harvest.RemoveFromClassList("active");
+                _herb.RemoveFromClassList("active");
+                _plant.AddToClassList("active");
+                break;
+            case Inventory.ActiveItem.Herb:
+                _harvest.RemoveFromClassList("active");
+                _herb.AddToClassList("active");
+                _plant.RemoveFromClassList("active");
+                break;
+            default:
+                break;
         }
     }
 }
