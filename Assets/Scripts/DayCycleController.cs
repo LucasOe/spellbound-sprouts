@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Grid;
 
 public class DayCycleController : MonoBehaviour
 {
@@ -10,8 +11,13 @@ public class DayCycleController : MonoBehaviour
     public float orbitSpeed = 1f;
     public Light sun;
     public Light moon;
+    private bool isNight; 
 
-    private bool isNight;
+    private Grid grid;
+
+    void Start() {
+        grid = GameObject.Find("Field").GetComponent<Grid>();
+    }
 
     void Update()
     {
@@ -70,6 +76,7 @@ public class DayCycleController : MonoBehaviour
         isNight = false;
         sun.shadows = LightShadows.Soft;
         moon.shadows = LightShadows.None;
+        GrowAll();
     }
 
     private void StartNight()
@@ -77,5 +84,17 @@ public class DayCycleController : MonoBehaviour
         isNight = true;
         sun.shadows = LightShadows.None;
         moon.shadows = LightShadows.Soft;
+    }
+
+     private void GrowAll() {
+        for(int i = 0; i < grid.tiles.GetLength(0); i++)  {
+            for(int j = 0; j < grid.tiles.GetLength(1); j++)  {
+                Tile tileObject = grid.tiles[i, j];
+                if(tileObject.Plant) {
+                    Plant plant = tileObject.Plant.GetComponent<Plant>();
+                    plant.Grow();
+                }
+            }
+        }
     }
 }
