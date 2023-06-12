@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4348003542467437906}
-  - component: {fileID: 4313761600849052347}
+  - component: {fileID: -8896155725200802332}
   m_Layer: 0
   m_Name: Dornrose
   m_TagString: Untagged
@@ -34,7 +34,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4313761600849052347
+--- !u!114 &-8896155725200802332
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,12 +43,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 3971302425982746600}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b341752db0bf28347bcfdea14bf59c6a, type: 3}
+  m_Script: {fileID: 11500000, guid: bb2c8f1362b40c04b8f54e12912e60d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   healthbar: {fileID: 4313761602220548976}
   plant: {fileID: 702688959366883367}
   maxHealth: 10
+  gameManager: {fileID: 0}
+  damage: 2
+  range: 100
+  dealsAOE: 0
+  focusedEnemy: {fileID: 0}
 --- !u!1 &4313761601174964973
 GameObject:
   m_ObjectHideFlags: 0
@@ -258,7 +263,9 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -280,6 +287,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 4348003542467437906}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: dffc8c447737ade46ac29fc2786b04c9,
@@ -343,6 +351,9 @@ PrefabInstance:
       value: flower_redA
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dffc8c447737ade46ac29fc2786b04c9, type: 3}
 --- !u!4 &183419765913989789 stripped
 Transform:
