@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Plant : MonoBehaviour
 {
+    protected GameManager gameManager;
 
     public Healthbar healthbar;
     public GameObject plant;
@@ -11,6 +12,11 @@ public class Plant : MonoBehaviour
     private float currentHealth;
     private int age = 0;
     private int maxAge = 3;
+
+    public void Setup(GameManager gameManager)
+    {
+        this.gameManager = gameManager;
+    }
 
     private void Start()
     {
