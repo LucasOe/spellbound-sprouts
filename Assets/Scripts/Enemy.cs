@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 public class Enemy : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    private GameManager gameManager;
+    protected GameManager gameManager;
 
     public Healthbar healthbar;
     public float maxHealth = 10.0f;
@@ -61,30 +61,11 @@ public class Enemy : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     private void TargetClosestPlant()
     {
-        Plant closestPlant = GetClosestPlant(gameManager.Plants);
+        Plant closestPlant = this.GetClosestObject(gameManager.Plants);
         if (closestPlant)
         {
             agent.SetDestination(closestPlant.transform.position);
         }
-    }
-
-    private Plant GetClosestPlant(List<Plant> plants)
-    {
-        Plant bestTarget = null;
-        float closestDistanceSqr = Mathf.Infinity;
-        Vector3 currentPosition = transform.position;
-        foreach (Plant potentialTarget in plants)
-        {
-            Vector3 directionToTarget = potentialTarget.transform.position - currentPosition;
-            float dSqrToTarget = directionToTarget.sqrMagnitude;
-            if (dSqrToTarget < closestDistanceSqr)
-            {
-                closestDistanceSqr = dSqrToTarget;
-                bestTarget = potentialTarget;
-            }
-        }
-
-        return bestTarget;
     }
 
     public void Damage(float amount)

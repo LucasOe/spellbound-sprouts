@@ -37,9 +37,9 @@ public class GameManager : MonoBehaviour
     public Plant CreatePlant(Plant plant, Vector3 position, Quaternion rotation)
     {
         Plant spawnedPlant = Instantiate(plant, position, rotation);
+        spawnedPlant.Setup(this);
         Plants.Add(spawnedPlant);
         CreatedPlant?.Invoke(spawnedPlant);
-        Debug.Log("Spawned: " + spawnedPlant.name);
         return spawnedPlant;
     }
 
@@ -47,7 +47,6 @@ public class GameManager : MonoBehaviour
     {
         Plants.Remove(plant);
         DestroyedPlant?.Invoke(plant);
-        Debug.Log("Destroyed: " + plant.name);
         Destroy(plant.gameObject);
     }
 }

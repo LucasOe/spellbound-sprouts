@@ -203,6 +203,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 689768622294163477, guid: c45a78f974d63e74598760b36552a8c9,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2068761713481728515, guid: c45a78f974d63e74598760b36552a8c9,
         type: 3}
       propertyPath: m_Size.x
@@ -293,6 +298,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4711641932823212624, guid: c45a78f974d63e74598760b36552a8c9,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4899788377539782978, guid: c45a78f974d63e74598760b36552a8c9,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -323,7 +333,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: GroundTile
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4711641932823212624, guid: c45a78f974d63e74598760b36552a8c9, type: 3}
+    - {fileID: 689768622294163477, guid: c45a78f974d63e74598760b36552a8c9, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -405,7 +417,7 @@ PrefabInstance:
         type: 3}
       propertyPath: activePlant
       value: 
-      objectReference: {fileID: 4313761600849052347, guid: 84c71430073113b4287ba1979f4c4c97,
+      objectReference: {fileID: -8896155725200802332, guid: 84c71430073113b4287ba1979f4c4c97,
         type: 3}
     - target: {fileID: 1374843163789428268, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
         type: 3}
@@ -450,6 +462,12 @@ PrefabInstance:
       propertyPath: _herbs.Array.data[3]
       value: 
       objectReference: {fileID: 3131694317889342675, guid: 639828925d68a72498a384e75dcd1c9c,
+        type: 3}
+    - target: {fileID: 1374843163789428268, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
+        type: 3}
+      propertyPath: plants.Array.data[0]
+      value: 
+      objectReference: {fileID: -8896155725200802332, guid: 84c71430073113b4287ba1979f4c4c97,
         type: 3}
     - target: {fileID: 1374843163789428268, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
         type: 3}

@@ -176,7 +176,7 @@ MonoBehaviour:
       data1: 0
       data2: 0
   defaultFrameSettings: 0
-  m_Version: 8
+  m_Version: 9
   m_ObsoleteRenderingPath: 0
   m_ObsoleteFrameSettings:
     overrides: 0
@@ -492,6 +492,7 @@ MonoBehaviour:
   grid: {fileID: 0}
   movementSpeed: 25
   damage: 4
+  distanceToCursor: 0
 --- !u!114 &1374843163789428268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -506,7 +507,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activeItem: 2
   plants:
-  - {fileID: 4313761600849052347, guid: 84c71430073113b4287ba1979f4c4c97, type: 3}
+  - {fileID: -8896155725200802332, guid: 84c71430073113b4287ba1979f4c4c97, type: 3}
   - {fileID: 4313761600849052347, guid: 57f778dc68f07e543b5252f585e724c1, type: 3}
   - {fileID: 4313761600849052347, guid: 2bbbab7e9c71a344a8250e0b9663c646, type: 3}
   - {fileID: 4313761600849052347, guid: d0114001fce9e2e4f9f4726afeeb90b0, type: 3}
@@ -515,7 +516,7 @@ MonoBehaviour:
   - {fileID: 3131694317889342675, guid: 061360cfcb9371d498091aa6cd47d0fa, type: 3}
   - {fileID: 3131694317889342675, guid: 82dd47658ce3e4d41973da95e27c5fe7, type: 3}
   - {fileID: 3131694317889342675, guid: 639828925d68a72498a384e75dcd1c9c, type: 3}
-  activePlant: {fileID: 4313761600849052347, guid: 84c71430073113b4287ba1979f4c4c97,
+  activePlant: {fileID: -8896155725200802332, guid: 84c71430073113b4287ba1979f4c4c97,
     type: 3}
   activeHerb: {fileID: 3131694317889342675, guid: 3207d2f1ec9c87e4f9a880e7ea6e3604,
     type: 3}
