@@ -8,4 +8,3 @@ root = true
 indent_style = space
 indent_size = 4
 trim_trailing_whitespace = true
-dotnet_diagnostic.IDE0051.severity = none
