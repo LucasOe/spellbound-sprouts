@@ -36,6 +36,7 @@ public class Enemy : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public void Destroy(GameManager gameManager)
     {
+        // Unsubscribe from events
         gameManager.CreatedPlant -= OnCreatedPlant;
         gameManager.DestroyedPlant -= OnDestroyedPlant;
     }
