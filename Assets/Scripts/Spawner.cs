@@ -17,7 +17,12 @@ public class Spawner : MonoBehaviour
     public Enemy Spider;
     //public EnemySpawnInfo[] Days;
 
-    public void Spawn(int day)
+    void Start()
+    {
+        GameManager.NightStart += OnNightStart;
+    }
+
+    public void OnNightStart(float timeCycle)
     {
         GameManager.CreateEnemy(Skelton, transform.position, transform.rotation);
     }

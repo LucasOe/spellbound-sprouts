@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class TestTimer : MonoBehaviour
 {
-    public GameManager gameManager;
+    public GameManager GameManager;
 
     public float cooldownTime = 5.0f;
-    public Spawner[] spawners;
-
     private float cooldown;
 
     private void Start()
@@ -22,28 +20,24 @@ public class TestTimer : MonoBehaviour
         if (cooldown <= 0)
         {
             cooldown = cooldownTime; // Reset cooldown
-            Execute(gameManager.timeCycle);
+            Execute(GameManager.timeCycle);
         }
     }
 
     private void Execute(int timeCycle)
     {
         Debug.Log("Spawn Wave: " + timeCycle);
-        foreach (Spawner spawner in spawners)
-        {
-            spawner.Spawn(timeCycle);
-        }
 
         // Set Time
-        if (gameManager.timeCycle % 2 == 1)
+        if (GameManager.timeCycle % 2 == 1)
         {
-            gameManager.dayCycleController.StartDay();
-            gameManager.DayStart.Invoke(timeCycle);
+            GameManager.DayStart.Invoke(timeCycle);
         }
         else
         {
-            gameManager.dayCycleController.StartNight();
-            gameManager.NightStart.Invoke(timeCycle);
+            GameManager.NightStart.Invoke(timeCycle);
         }
+
+        GameManager.timeCycle += 1;
     }
 }

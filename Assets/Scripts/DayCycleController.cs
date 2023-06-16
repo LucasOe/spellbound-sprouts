@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class DayCycleController : MonoBehaviour
 {
+    public GameManager GameManager;
+
     [Range(0, 24)] public float timeOfDay;
     public LightingPreset Preset;
     public Light sun;
@@ -13,7 +15,21 @@ public class DayCycleController : MonoBehaviour
     void Start()
     {
         // Set day on start
-        StartDay();
+        SetTime(12f);
+
+        // Subscribe to events
+        GameManager.DayStart += OnDayStart;
+        GameManager.NightStart += OnNightStart;
+    }
+
+    public void OnDayStart(float timeCycle)
+    {
+        SetTime(12f);
+    }
+
+    public void OnNightStart(float timeCycle)
+    {
+        SetTime(0f);
     }
 
     public void SetTime(float time)
@@ -26,20 +42,5 @@ public class DayCycleController : MonoBehaviour
         float moonRotation = sunRotation - 180;
         sun.transform.rotation = Quaternion.Euler(sunRotation, -150f, 0);
         moon.transform.rotation = Quaternion.Euler(moonRotation, -150f, 0);
-
-        // Set lighting
-        RenderSettings.ambientLight = Preset.AmbientColor.Evaluate(timePercent);
-        RenderSettings.fogColor = Preset.FogColor.Evaluate(timePercent);
-        sun.color = Preset.DirectionalColor.Evaluate(timePercent);
-    }
-
-    public void StartDay()
-    {
-        SetTime(12f);
-    }
-
-    public void StartNight()
-    {
-        SetTime(0f);
     }
 }
