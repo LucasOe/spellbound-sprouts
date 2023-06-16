@@ -12,11 +12,6 @@ public class Plant : MonoBehaviour
     private int age = 0;
     private int maxAge = 3;
 
-    public Plant(GameObject plant)
-    {
-     this.plant = plant;
-    }
-
     private void Start()
     {
         currentHealth = maxHealth;
@@ -36,7 +31,8 @@ public class Plant : MonoBehaviour
 
     public void Grow()
     {
-        if(this.age < this.maxAge) {
+        if (this.age < this.maxAge)
+        {
             this.age++;
             plant.transform.localScale = new Vector3(age * 2f + 1f, age * 2f + 1f, age * 2f + 1f);
         }

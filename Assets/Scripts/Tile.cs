@@ -10,19 +10,10 @@ public class Tile : MonoBehaviour
     public Plant Plant;
     public float distance;
 
-    private readonly bool isActive;
-
     void OnMouseEnter()
     {
-        float distance = GameManager.Player.distanceBetween.distanceTotal;
-        if (distance < 10)
-        {
-            highlight.SetActive(true);
-        }
-        else
-        {
-            disabled.SetActive(true);
-        }
+        // Only Tiles within 10 units to the player get highlighted
+        highlight.SetActive(GameManager.Player.distanceToCursor <= 10);
     }
 
     void OnMouseExit()

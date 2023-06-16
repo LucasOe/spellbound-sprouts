@@ -1,33 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static Enemy;
 
 public class DefensivePlant : Plant
 {
     public GameManager gameManager;
     public float damage = 4.0f;
-    public float range; 
+    public float range;
     public bool dealsAOE;
     public Enemy focusedEnemy;
-    
-    public DefensivePlant(GameObject plant) : base(plant)
-    {
-    }
+
     void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-        
     }
 
-    // Update is called once per frame
     void Update()
     {
         SetClosestEnemy(gameManager.Enemies);
-        if(focusedEnemy) {
+        if (focusedEnemy)
+        {
             focusedEnemy.Damage(damage);
         }
-        
     }
 
     private void SetClosestEnemy(List<Enemy> enemies)
@@ -46,6 +40,6 @@ public class DefensivePlant : Plant
             }
         }
 
-        this.focusedEnemy = bestTarget;
+        focusedEnemy = bestTarget;
     }
 }
