@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
     private new Rigidbody rigidbody;
     private Vector3 velocity = new();
     private Vector2 mousePosition;
-    public DistanceBetween distanceBetween = new();
+    public float distanceToCursor;
 
     private void Start()
     {
@@ -32,7 +32,7 @@ public class Player : MonoBehaviour
         var relativeVelocity = Quaternion.Euler(0, camera.gameObject.transform.eulerAngles.y, 0) * velocity;
         // Move player
         // transform.Translate(relativeVelocity * movementSpeed * Time.deltaTime);
-        rigidbody.MovePosition(transform.position + relativeVelocity * movementSpeed * Time.deltaTime);
+        rigidbody.MovePosition(transform.position + movementSpeed * Time.deltaTime * relativeVelocity);
     }
 
     public void OnMove(InputValue value)
@@ -49,7 +49,7 @@ public class Player : MonoBehaviour
         {
             var target = new Vector3(hitInfo.point.x, player.transform.position.y, hitInfo.point.z);
             player.transform.LookAt(target);
-            distanceBetween.GetDistance(player, hitInfo.transform.gameObject);
+            distanceToCursor = Utils.GetDistance(player, hitInfo.transform.gameObject);
         }
     }
 
