@@ -362,6 +362,7 @@ GameObject:
   m_Component:
   - component: {fileID: 262671929}
   - component: {fileID: 262671928}
+  - component: {fileID: 262671930}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -401,6 +402,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &262671930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 262671927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9389b0b97f26ca84892dc7ae529aaa4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &397669651
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -645,7 +658,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12cb7eff6f1e1cb4f8f57d34e632684e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 262671928}
+  GameManager: {fileID: 262671928}
   timeOfDay: 0
   Preset: {fileID: 11400000, guid: 7fa7972e7a6e51243b685e1bdb4c8612, type: 2}
   sun: {fileID: 1856752256}
@@ -1043,7 +1056,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89842e0b341549b4ca82b5b34d58fbe0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 262671928}
+  GameManager: {fileID: 262671928}
   cooldownTime: 5
   spawners:
   - {fileID: 1641638952}
