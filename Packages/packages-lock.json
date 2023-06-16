@@ -5,10 +5,10 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "2e8bc7664a5e46669c56d2bd3c4962b0ad5e1ca4"
+      "hash": "1f28589b99600cdf637c5405114b551a29a64dc1"
     },
     "com.unity.ai.navigation": {
-      "version": "1.1.3",
+      "version": "1.1.4",
       "depth": 0,
       "source": "registry",
       "dependencies": {
