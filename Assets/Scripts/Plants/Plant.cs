@@ -16,6 +16,14 @@ public class Plant : MonoBehaviour
     public void Setup(GameManager gameManager)
     {
         this.gameManager = gameManager;
+        // Subscribe to events
+        gameManager.DayStart += OnDayStart;
+    }
+
+    public void Destroy(GameManager gameManager)
+    {
+        // Unsubscribe from events
+        gameManager.DayStart -= OnDayStart;
     }
 
     private void Start()
@@ -35,8 +43,9 @@ public class Plant : MonoBehaviour
         }
     }
 
-    public void Grow()
+    public void OnDayStart(float timeCycle)
     {
+        // Grow
         if (this.age < this.maxAge)
         {
             this.age++;

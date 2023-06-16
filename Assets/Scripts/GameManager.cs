@@ -17,6 +17,12 @@ public class GameManager : MonoBehaviour
     public Action<Plant> DestroyedPlant;
     public List<Plant> Plants;
 
+    // Day Night Cycle
+    public DayCycleController dayCycleController;
+    public int timeCycle = 1; // increases by one every day and every night
+    public Action<float> DayStart;
+    public Action<float> NightStart;
+
     public Enemy CreateEnemy(Enemy enemy, Vector3 position, Quaternion rotation)
     {
         Enemy spawnedEnemy = Instantiate(enemy, position, rotation);
@@ -46,6 +52,7 @@ public class GameManager : MonoBehaviour
     public void DestroyPlant(Plant plant)
     {
         Plants.Remove(plant);
+        plant.Destroy(this);
         DestroyedPlant?.Invoke(plant);
         Destroy(plant.gameObject);
     }
