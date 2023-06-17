@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 1092.3513, g: 4069.849, b: 7069.259, a: 1}
+  m_IndirectSpecularColor: {r: 262.38358, g: 325.10843, b: 430.30963, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1562,6 +1562,8 @@ MonoBehaviour:
   Player: {fileID: 56270091}
   Enemies: []
   Plants: []
+  dayCycleController: {fileID: 0}
+  timeCycle: 1
 --- !u!4 &851358644
 Transform:
   m_ObjectHideFlags: 0
@@ -1931,9 +1933,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89842e0b341549b4ca82b5b34d58fbe0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 0}
   cooldownTime: 1
-  spawners:
-  - {fileID: 0}
 --- !u!224 &1403269527
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2173,9 +2174,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12cb7eff6f1e1cb4f8f57d34e632684e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 0}
   timeOfDay: 16.48
   Preset: {fileID: 11400000, guid: 7fa7972e7a6e51243b685e1bdb4c8612, type: 2}
-  orbitSpeed: 1.87
   sun: {fileID: 1501785288}
   moon: {fileID: 1051750594}
 --- !u!4 &1465233836
