@@ -148,4 +148,9 @@ public class Player : MonoBehaviour
         inventory.SetItemIndex(3);
         ui.selectActiveItem(3);
     }
+
+    public void OnSkipDay(InputValue value)
+    {
+        Debug.Log("Test");
+    }
 }
