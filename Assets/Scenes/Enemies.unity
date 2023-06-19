@@ -1058,8 +1058,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameManager: {fileID: 262671928}
   cooldownTime: 5
-  spawners:
-  - {fileID: 1641638952}
 --- !u!224 &1465275866
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1266,18 +1264,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 679fccc69100dca48b1840611f7b02ca, type: 3}
---- !u!114 &1641638952 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
-    type: 3}
-  m_PrefabInstance: {fileID: 1641638951}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13923575fc7750845ada17c1c4c46110, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1856752254
 GameObject:
   m_ObjectHideFlags: 0
