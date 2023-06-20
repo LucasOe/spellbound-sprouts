@@ -1,26 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TestTimer : MonoBehaviour
 {
     public GameManager GameManager;
-
-    public float cooldownTime = 5.0f;
-    private float cooldown;
+    public float cooldownTime = 60.0f;
+    public Text timerText;
+    private Timer timer;
 
     private void Start()
     {
-        cooldown = cooldownTime;
+        timer = Timer.CreateTimer(this, cooldownTime, () =>
+        {
+            ChangeTime(GameManager.Day);
+        }, true);
     }
 
     private void Update()
     {
-        cooldown -= Time.deltaTime;
-        if (cooldown <= 0)
+        if (timer.IsRunning)
         {
-            cooldown = cooldownTime; // Reset cooldown
-            ChangeTime(GameManager.Day);
+            timerText.text = timer.DisplayTime();
         }
     }
 
