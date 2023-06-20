@@ -10,8 +10,10 @@ public class Plant : MonoBehaviour
     public GameObject plant;
     public float maxHealth = 10.0f;
     private float currentHealth;
+
     private int age = 0;
-    private int maxAge = 3;
+    private bool mature;
+    public GameObject[] stages;
 
     public void Setup(GameManager gameManager)
     {
@@ -45,11 +47,20 @@ public class Plant : MonoBehaviour
 
     public void OnDayStart(float timeCycle)
     {
-        // Grow
-        if (this.age < this.maxAge)
+        // Grow plants
+        if (!mature && stages.Length >= 1)
         {
-            this.age++;
-            plant.transform.localScale = new Vector3(age * 2f + 1f, age * 2f + 1f, age * 2f + 1f);
+            stages[age].SetActive(false);
+            age++;
+            stages[age].SetActive(true);
+            plant = stages[age];
+
+            // Plant reached max age
+            if (age >= stages.Length - 1)
+            {
+                mature = true;
+            }
         }
+
     }
 }
