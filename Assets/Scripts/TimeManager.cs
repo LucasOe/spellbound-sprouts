@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TestTimer : MonoBehaviour
+public class TimeManger : MonoBehaviour
 {
     public GameManager GameManager;
     public float cooldownTime = 60.0f;
