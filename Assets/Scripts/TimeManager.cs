@@ -1,49 +1,60 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class TimeManger : MonoBehaviour
 {
     public GameManager GameManager;
     public float cooldownTime = 60.0f;
-    public Text timerText;
+    public TextMeshProUGUI timerText;
     private Timer timer;
 
     private void Start()
     {
+        // Subscribe to events
+        GameManager.DestroyedEnemy += OnEnemyDeath;
+
         timer = Timer.CreateTimer(this, cooldownTime, () =>
         {
-            ChangeTime(GameManager.Day);
-        }, true);
+            StartNight(GameManager.Day);
+        });
     }
 
     private void Update()
     {
-        if (timer.IsRunning)
+        if (!GameManager.IsNight && timer.IsRunning)
         {
             timerText.text = timer.DisplayTime();
         }
     }
 
-    private void ChangeTime(int day)
+    private void StartNight(int day)
     {
-        // Note: Currently the first day isn't counted, the first Action that
-        // will be invoked is NightStart(0).
-        if (GameManager.IsNight)
-        {
-            Debug.Log("Starting Day: " + day);
-            GameManager.DayStart.Invoke(day);
-            GameManager.IsNight = false;
+        Debug.Log("Starting Night: " + day);
+        GameManager.NightStart.Invoke(day);
+        GameManager.IsNight = true;
+    }
 
+    private void StartDay(int day)
+    {
+        Debug.Log("Starting Day: " + day);
+        GameManager.DayStart.Invoke(day);
+        GameManager.IsNight = false;
+    }
+
+    private void OnEnemyDeath(Enemy enemy)
+    {
+        // Start next day
+        if (GameManager.IsNight && GameManager.Enemies.Count <= 0)
+        {
             GameManager.Day += 1;
-        }
-        else
-        {
-            Debug.Log("Starting Night: " + day);
-            GameManager.NightStart.Invoke(day);
-            GameManager.IsNight = true;
+            StartDay(GameManager.Day);
 
+            timer = Timer.CreateTimer(this, cooldownTime, () =>
+            {
+                StartNight(GameManager.Day);
+            });
         }
     }
 }
