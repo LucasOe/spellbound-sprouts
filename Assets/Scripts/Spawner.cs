@@ -22,7 +22,7 @@ public class Spawner : MonoBehaviour
         GameManager.NightStart += OnNightStart;
     }
 
-    public void OnNightStart(float timeCycle)
+    public void OnNightStart(int day)
     {
         GameManager.CreateEnemy(Skelton, transform.position, transform.rotation);
     }

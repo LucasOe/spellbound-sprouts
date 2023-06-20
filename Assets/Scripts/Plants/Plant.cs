@@ -45,7 +45,7 @@ public class Plant : MonoBehaviour
         }
     }
 
-    public void OnDayStart(float timeCycle)
+    public void OnDayStart(int day)
     {
         // Grow plants
         if (!mature && stages.Length >= 1)

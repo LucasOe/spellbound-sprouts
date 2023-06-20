@@ -20,24 +20,28 @@ public class TestTimer : MonoBehaviour
         if (cooldown <= 0)
         {
             cooldown = cooldownTime; // Reset cooldown
-            Execute(GameManager.timeCycle);
+            ChangeTime(GameManager.Day);
         }
     }
 
-    private void Execute(int timeCycle)
+    private void ChangeTime(int day)
     {
-        Debug.Log("Spawn Wave: " + timeCycle);
-
-        // Set Time
-        if (GameManager.timeCycle % 2 == 1)
+        // Note: Currently the first day isn't counted, the first Action that
+        // will be invoked is NightStart(0).
+        if (GameManager.IsNight)
         {
-            GameManager.DayStart.Invoke(timeCycle);
+            Debug.Log("Starting Day: " + day);
+            GameManager.DayStart.Invoke(day);
+            GameManager.IsNight = false;
+
+            GameManager.Day += 1;
         }
         else
         {
-            GameManager.NightStart.Invoke(timeCycle);
-        }
+            Debug.Log("Starting Night: " + day);
+            GameManager.NightStart.Invoke(day);
+            GameManager.IsNight = true;
 
-        GameManager.timeCycle += 1;
+        }
     }
 }
