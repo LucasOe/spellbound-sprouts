@@ -385,7 +385,8 @@ MonoBehaviour:
   Player: {fileID: 397669652}
   Enemies: []
   Plants: []
-  DayCycleController: {fileID: 0}
+  TimeManger: {fileID: 262671930}
+  DayCycleController: {fileID: 540525731}
   Day: 0
   IsNight: 0
 --- !u!4 &262671929

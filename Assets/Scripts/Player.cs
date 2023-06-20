@@ -151,6 +151,10 @@ public class Player : MonoBehaviour
 
     public void OnSkipDay(InputValue value)
     {
-        Debug.Log("Test");
+        if (!GameManager.IsNight)
+        {
+            Debug.Log("Skipped to Night");
+            GameManager.TimeManger.StartNight(GameManager.Day);
+        }
     }
 }
