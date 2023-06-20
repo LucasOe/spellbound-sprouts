@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     public List<Plant> Plants;
 
     // Day Night Cycle
+    public TimeManger TimeManger;
     public DayCycleController DayCycleController;
     public int Day = 0;
     public bool IsNight = false;

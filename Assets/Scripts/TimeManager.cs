@@ -29,18 +29,23 @@ public class TimeManger : MonoBehaviour
         }
     }
 
-    private void StartNight(int day)
+    public void StartNight(int day)
     {
         Debug.Log("Starting Night: " + day);
         GameManager.NightStart.Invoke(day);
         GameManager.IsNight = true;
     }
 
-    private void StartDay(int day)
+    public void StartDay(int day)
     {
         Debug.Log("Starting Day: " + day);
         GameManager.DayStart.Invoke(day);
         GameManager.IsNight = false;
+
+        timer = Timer.CreateTimer(this, cooldownTime, () =>
+        {
+            StartNight(GameManager.Day);
+        });
     }
 
     private void OnEnemyDeath(Enemy enemy)
@@ -50,11 +55,6 @@ public class TimeManger : MonoBehaviour
         {
             GameManager.Day += 1;
             StartDay(GameManager.Day);
-
-            timer = Timer.CreateTimer(this, cooldownTime, () =>
-            {
-                StartNight(GameManager.Day);
-            });
         }
     }
 }
