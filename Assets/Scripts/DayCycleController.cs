@@ -22,12 +22,12 @@ public class DayCycleController : MonoBehaviour
         GameManager.NightStart += OnNightStart;
     }
 
-    public void OnDayStart(float timeCycle)
+    public void OnDayStart(int day)
     {
         SetTime(12f);
     }
 
-    public void OnNightStart(float timeCycle)
+    public void OnNightStart(int day)
     {
         SetTime(0f);
     }

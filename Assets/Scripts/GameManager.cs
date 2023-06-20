@@ -18,10 +18,11 @@ public class GameManager : MonoBehaviour
     public List<Plant> Plants;
 
     // Day Night Cycle
-    public DayCycleController dayCycleController;
-    public int timeCycle = 1; // increases by one every day and every night
-    public Action<float> DayStart;
-    public Action<float> NightStart;
+    public DayCycleController DayCycleController;
+    public int Day = 0;
+    public bool IsNight = false;
+    public Action<int> DayStart;
+    public Action<int> NightStart;
 
     public Enemy CreateEnemy(Enemy enemy, Vector3 position, Quaternion rotation)
     {
