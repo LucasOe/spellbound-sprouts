@@ -383,7 +383,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 397669652}
-  Enemies: []
+  Enemies:
+  - {fileID: 0}
+  - {fileID: 0}
   Plants: []
   TimeManger: {fileID: 262671930}
   DayCycleController: {fileID: 540525731}
