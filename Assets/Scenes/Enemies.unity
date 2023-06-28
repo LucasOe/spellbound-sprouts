@@ -535,6 +535,11 @@ PrefabInstance:
       objectReference: {fileID: 2004546540}
     - target: {fileID: 3315166315397763816, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
         type: 3}
+      propertyPath: AudioSource
+      value: 
+      objectReference: {fileID: 966809532}
+    - target: {fileID: 3315166315397763816, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
+        type: 3}
       propertyPath: GameManager
       value: 
       objectReference: {fileID: 262671928}
@@ -1067,6 +1072,12 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!82 &966809532 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3943774334872337552, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
+    type: 3}
+  m_PrefabInstance: {fileID: 397669651}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1276327352
 GameObject:
   m_ObjectHideFlags: 0

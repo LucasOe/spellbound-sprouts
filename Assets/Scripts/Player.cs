@@ -12,7 +12,6 @@ public class Player : MonoBehaviour
     public UI ui;
     public Grid grid;
 
-
     public float movementSpeed = 25.0f;
     public float damage = 4.0f;
 
@@ -20,6 +19,9 @@ public class Player : MonoBehaviour
     private Vector3 velocity = new();
     private Vector2 mousePosition;
     public float distanceToCursor;
+
+    public AudioSource AudioSource;
+    public AudioClip AttackAudioClip;
 
     private void Start()
     {
@@ -65,6 +67,7 @@ public class Player : MonoBehaviour
             if (clickedObject.TryGetComponent(out Enemy enemy))
             {
                 enemy.Damage(damage);
+                AudioSource.PlayOneShot(AttackAudioClip);
             }
 
             //Loops through tiles

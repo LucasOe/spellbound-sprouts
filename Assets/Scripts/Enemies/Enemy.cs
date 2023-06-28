@@ -17,6 +17,9 @@ public class Enemy : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public NavMeshAgent Agent;
     public Animator Animator;
 
+    public AudioSource AudioSource;
+    public AudioClip AttackAudioClip;
+
     public void Setup(GameManager gameManager)
     {
         this.gameManager = gameManager;
@@ -110,6 +113,6 @@ public class Enemy : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public void AttackEvent()
     {
-        Debug.Log("Skelton Attacked");
+        AudioSource.PlayOneShot(AttackAudioClip);
     }
 }
