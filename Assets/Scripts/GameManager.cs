@@ -28,18 +28,23 @@ public class GameManager : MonoBehaviour
     public Action<int> DayStart;
     public Action<int> NightStart;
 
-    public Tile CreateTile(Tile tile, Vector3 position, Quaternion rotation, Transform parent)
+    public Tile CreateTile(Tile tile, Vector3 position, Quaternion rotation, MonoBehaviour parent = null)
     {
-        Vector3 pos = new(position.x * parent.localScale.x, position.y * parent.localScale.y, position.z * parent.localScale.z);
-        Tile spawnedTile = Instantiate(tile, pos, rotation, parent);
+        Tile spawnedTile = Instantiate(tile, position, rotation);
+        if (parent)
+            spawnedTile.transform.SetParent(parent.transform, false);
+
         spawnedTile.Setup(this);
         Tiles.Add(spawnedTile);
         return spawnedTile;
     }
 
-    public Enemy CreateEnemy(Enemy enemy, Vector3 position, Quaternion rotation)
+    public Enemy CreateEnemy(Enemy enemy, Vector3 position, Quaternion rotation, MonoBehaviour parent = null)
     {
         Enemy spawnedEnemy = Instantiate(enemy, position, rotation);
+        if (parent)
+            spawnedEnemy.transform.SetParent(parent.transform, true);
+
         spawnedEnemy.Setup(this);
         Enemies.Add(spawnedEnemy);
         CreatedEnemy?.Invoke(spawnedEnemy);
@@ -54,9 +59,12 @@ public class GameManager : MonoBehaviour
         Destroy(enemy.gameObject);
     }
 
-    public Plant CreatePlant(Plant plant, Vector3 position, Quaternion rotation)
+    public Plant CreatePlant(Plant plant, Vector3 position, Quaternion rotation, MonoBehaviour parent = null)
     {
         Plant spawnedPlant = Instantiate(plant, position, rotation);
+        if (parent)
+            spawnedPlant.transform.SetParent(parent.transform, true);
+
         spawnedPlant.Setup(this);
         Plants.Add(spawnedPlant);
         CreatedPlant?.Invoke(spawnedPlant);

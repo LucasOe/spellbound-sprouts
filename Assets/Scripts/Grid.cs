@@ -26,7 +26,7 @@ public class Grid : MonoBehaviour
                 {
                     var size = Tile.transform.localScale;
                     Debug.Log(data.position.x + x * size.x);
-                    gameManager.CreateTile(Tile, new Vector3(data.position.x + x * size.x, data.position.y, data.position.z + z * size.z), Quaternion.identity, this.transform);
+                    gameManager.CreateTile(Tile, new Vector3(data.position.x + x * size.x, data.position.y, data.position.z + z * size.z), Quaternion.identity, this);
                 }
             }
         }
