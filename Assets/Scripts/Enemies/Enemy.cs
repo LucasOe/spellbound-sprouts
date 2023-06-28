@@ -8,12 +8,13 @@ public class Enemy : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     protected GameManager gameManager;
 
-    public Healthbar healthbar;
-    public float maxHealth = 10.0f;
+    public Healthbar Healthbar;
+    public float MaxHealth = 10.0f;
     private float currentHealth;
 
-    public Outline outline;
-    public NavMeshAgent agent;
+    public Outline Outline;
+    public NavMeshAgent Agent;
+    public Animator Animator;
 
     public void Setup(GameManager gameManager)
     {
@@ -30,8 +31,8 @@ public class Enemy : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     private void Start()
     {
-        currentHealth = maxHealth;
-        healthbar.UpdateHealthBar(currentHealth, maxHealth);
+        currentHealth = MaxHealth;
+        Healthbar.UpdateHealthBar(currentHealth, MaxHealth);
     }
 
     public void Destroy(GameManager gameManager)
@@ -46,8 +47,10 @@ public class Enemy : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         // Target player if no plants exist
         if (gameManager.Plants.Count <= 0)
         {
-            agent.SetDestination(gameManager.Player.transform.position);
+            Agent.SetDestination(gameManager.Player.transform.position);
         }
+
+        Animator.SetBool("isWalking", Agent.velocity.magnitude > 0);
     }
 
     private void OnCreatedPlant(Plant plant)
@@ -65,14 +68,14 @@ public class Enemy : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         Plant closestPlant = this.GetClosestObject(gameManager.Plants);
         if (closestPlant)
         {
-            agent.SetDestination(closestPlant.transform.position);
+            Agent.SetDestination(closestPlant.transform.position);
         }
     }
 
     public void Damage(float amount)
     {
         currentHealth -= amount;
-        healthbar.UpdateHealthBar(currentHealth, maxHealth);
+        Healthbar.UpdateHealthBar(currentHealth, MaxHealth);
 
         if (currentHealth <= 0)
         {
@@ -83,16 +86,16 @@ public class Enemy : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public void Heal(float amount)
     {
         currentHealth += amount;
-        healthbar.UpdateHealthBar(currentHealth, maxHealth);
+        Healthbar.UpdateHealthBar(currentHealth, MaxHealth);
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        outline.Enable();
+        Outline.Enable();
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        outline.Disable();
+        Outline.Disable();
     }
 }
