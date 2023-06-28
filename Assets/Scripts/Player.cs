@@ -46,7 +46,7 @@ public class Player : MonoBehaviour
     public void OnLook(InputValue value)
     {
         mousePosition = value.Get<Vector2>();
-        var ray = camera.ScreenPointToRay(mousePosition);
+        Ray ray = camera.ScreenPointToRay(mousePosition);
         if (Physics.Raycast(ray, out RaycastHit hitInfo, 300f))
         {
             var target = new Vector3(hitInfo.point.x, player.transform.position.y, hitInfo.point.z);
@@ -58,46 +58,37 @@ public class Player : MonoBehaviour
     public void OnFire(InputValue value)
     {
         Ray ray = camera.ScreenPointToRay(mousePosition);
-
         if (Physics.Raycast(ray, out RaycastHit hitInfo, 100))
         {
             var clickedObject = hitInfo.transform.gameObject;
 
-            // Player clicks on enemy
             if (clickedObject.TryGetComponent(out Enemy enemy))
-            {
-                enemy.Damage(damage);
-                AudioSource.PlayOneShot(AttackAudioClip);
-            }
+                ClickedEnemy(enemy);
 
-            //Loops through tiles
-            for (int i = 0; i < grid.tiles.GetLength(0); i++)
-            {
-                for (int j = 0; j < grid.tiles.GetLength(1); j++)
-                {
-                    Tile tile = grid.tiles[i, j];
-
-                    if (tile.gameObject == clickedObject)
-                    {
-                        HandleFieldInteraction(tile, tile.gameObject.transform.position);
-                    }
-                }
-            }
+            if (clickedObject.TryGetComponent(out Tile tile))
+                ClickedTile(tile);
         }
     }
 
-    public void HandleFieldInteraction(Tile tile, Vector3 pos)
+    public void ClickedEnemy(Enemy enemy)
     {
-        if (!tile.Plant && tile.distance < 10 && inventory.activeItem != Inventory.ActiveItem.Harvest)
+        enemy.Damage(damage);
+        AudioSource.PlayOneShot(AttackAudioClip);
+    }
+
+    public void ClickedTile(Tile tile)
+    {
+        if (distanceToCursor <= 10)
         {
-            //Place plant: Tile is empty and < 10 away
-            Plant tileContent = GameManager.CreatePlant(inventory.GetPlant(), pos, Quaternion.identity);
-            tile.Plant = tileContent;
-        }
-        else if (tile.Plant && tile.distance < 10 && inventory.activeItem == Inventory.ActiveItem.Harvest)
-        {
-            //Harvest plant: Tile is filled with plant and < 10 away
-            GameManager.DestroyPlant(tile.Plant);
+            if (!tile.Plant && inventory.activeItem != Inventory.ActiveItem.Harvest)
+            {
+                Plant tileContent = GameManager.CreatePlant(inventory.GetPlant(), tile.transform.position, Quaternion.identity);
+                tile.Plant = tileContent;
+            }
+            else if (tile.Plant && inventory.activeItem == Inventory.ActiveItem.Harvest)
+            {
+                GameManager.DestroyPlant(tile.Plant);
+            }
         }
     }
 

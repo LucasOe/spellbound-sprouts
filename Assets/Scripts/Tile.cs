@@ -8,7 +8,6 @@ public class Tile : MonoBehaviour
     public GameObject highlight;
     public GameObject disabled;
     public Plant Plant;
-    public float distance;
 
     void OnMouseEnter()
     {
