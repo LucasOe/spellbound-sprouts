@@ -1406,8 +1406,8 @@ MonoBehaviour:
   Tile: {fileID: 5445655928565722011, guid: c45a78f974d63e74598760b36552a8c9, type: 3}
   GridData:
   - position: {x: 0, y: 0.01, z: 0}
-    Width: 10
-    Depth: 10
+    Width: 20
+    Depth: 20
 --- !u!64 &2004546541
 MeshCollider:
   m_ObjectHideFlags: 0

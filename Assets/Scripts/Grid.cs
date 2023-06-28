@@ -25,8 +25,11 @@ public class Grid : MonoBehaviour
                 for (int z = 0; z < data.Depth; z++)
                 {
                     var size = Tile.transform.localScale;
-                    Debug.Log(data.position.x + x * size.x);
-                    gameManager.CreateTile(Tile, new Vector3(data.position.x + x * size.x, data.position.y, data.position.z + z * size.z), Quaternion.identity, this);
+                    Vector3 position = new Vector3(data.position.x + x * size.x, data.position.y, data.position.z + z * size.z)
+                        - new Vector3(data.Width * size.x / 2, 0, data.Depth * size.z / 2); // Offset by half so data.position is the center
+
+                    Tile tile = gameManager.CreateTile(Tile, position, Quaternion.identity, this);
+                    tile.name = string.Format("Tile[{0:00},{1:00}]", x, z); ;
                 }
             }
         }
