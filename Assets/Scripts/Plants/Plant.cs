@@ -6,14 +6,14 @@ public class Plant : MonoBehaviour
 {
     protected GameManager gameManager;
 
-    public Healthbar healthbar;
-    public GameObject plant;
-    public float maxHealth = 10.0f;
+    public Healthbar Healthbar;
+    public GameObject ActiveStage;
+    public float MaxHealth = 10.0f;
     private float currentHealth;
 
     private int age = 0;
     private bool mature;
-    public GameObject[] stages;
+    public GameObject[] Stages;
 
     public void Setup(GameManager gameManager)
     {
@@ -30,14 +30,20 @@ public class Plant : MonoBehaviour
 
     private void Start()
     {
-        currentHealth = maxHealth;
-        healthbar.UpdateHealthBar(currentHealth, maxHealth);
+        currentHealth = MaxHealth;
+        Healthbar.UpdateHealthBar(currentHealth, MaxHealth);
+        SetHealthbarActive(false);
+
+        // Set first growth stage active
+        Stages.ForEach(stage => stage.SetActive(false));
+        Stages[0].SetActive(true);
+        ActiveStage = Stages[0];
     }
 
     public void Damage(float amount)
     {
         currentHealth -= amount;
-        healthbar.UpdateHealthBar(currentHealth, maxHealth);
+        Healthbar.UpdateHealthBar(currentHealth, MaxHealth);
 
         if (currentHealth <= 0)
         {
@@ -48,19 +54,24 @@ public class Plant : MonoBehaviour
     public void OnDayStart(int day)
     {
         // Grow plants
-        if (!mature && stages.Length >= 1)
+        if (!mature && Stages.Length >= 1)
         {
-            stages[age].SetActive(false);
+            Stages[age].SetActive(false);
             age++;
-            stages[age].SetActive(true);
-            plant = stages[age];
+            Stages[age].SetActive(true);
+            ActiveStage = Stages[age];
 
             // Plant reached max age
-            if (age >= stages.Length - 1)
+            if (age >= Stages.Length - 1)
             {
                 mature = true;
             }
         }
 
+    }
+
+    public void SetHealthbarActive(bool value)
+    {
+        Healthbar.gameObject.SetActive(value);
     }
 }

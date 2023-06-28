@@ -17,12 +17,18 @@ public class Tile : MonoBehaviour
 
     void OnMouseEnter()
     {
-        // Only Tiles within 10 units to the player get highlighted
-        highlight.SetActive(gameManager.Player.distanceToCursor <= 10);
+        if (gameManager.Player.distanceToCursor <= 10)
+        {
+            highlight.SetActive(true);
+            if (Plant)
+                Plant.SetHealthbarActive(true);
+        }
     }
 
     void OnMouseExit()
     {
         highlight.SetActive(false);
+        if (Plant)
+            Plant.SetHealthbarActive(false);
     }
 }
