@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 262.38358, g: 325.10843, b: 430.30963, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -529,7 +529,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -646,13 +646,13 @@ MonoBehaviour:
   m_MaxDepthBias: 0.001
   m_ShadowResolution:
     m_Override: 512
-    m_UseOverride: 1
-    m_Level: 1
+    m_UseOverride: 0
+    m_Level: 2
   m_ShadowDimmer: 1
   m_VolumetricShadowDimmer: 1
   m_ShadowFadeDistance: 10000
   m_UseContactShadow:
-    m_Override: 0
+    m_Override: 1
     m_UseOverride: 1
     m_Level: 0
   m_RayTracedContactShadow: 0
@@ -5817,7 +5817,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: 195f6d2a60e14d049ad0659cb6ea5796, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 8ba92e2dd7f884a0f88b98fa2d235fe7, type: 2}
 --- !u!4 &704350611 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1814921b47181af468f6a7b3adee44c8,
@@ -15851,6 +15851,36 @@ PrefabInstance:
         type: 3}
       propertyPath: movementSpeed
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5053911396999072649, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
+        type: 3}
+      propertyPath: m_Aperture
+      value: 2.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 5053911396999072649, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
+        type: 3}
+      propertyPath: field of view
+      value: 58.715508
+      objectReference: {fileID: 0}
+    - target: {fileID: 5053911396999072649, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
+        type: 3}
+      propertyPath: m_FOVAxisMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5053911396999072649, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
+        type: 3}
+      propertyPath: m_FocalLength
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 5053911396999072649, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
+        type: 3}
+      propertyPath: m_FocusDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5053911396999072649, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
+        type: 3}
+      propertyPath: m_projectionMatrixMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5107954962007069713, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
         type: 3}
