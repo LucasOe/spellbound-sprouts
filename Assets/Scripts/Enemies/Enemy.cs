@@ -53,7 +53,7 @@ public class Enemy : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         // Target player if no plants exist
         if (gameManager.Plants.Count <= 0)
         {
-            if (Utils.GetDistance(this.gameObject, gameManager.Player.gameObject) > AttackRange)
+            if (this.GetDistance(gameManager.Player) > AttackRange)
             {
                 Agent.SetDestination(gameManager.Player.transform.position);
                 Animator.SetBool("isAttacking", false);

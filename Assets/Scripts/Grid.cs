@@ -2,25 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public struct GridData
+{
+    public Vector3 position;
+    public int Width;
+    public int Depth;
+}
+
 public class Grid : MonoBehaviour
 {
+    public GameManager gameManager;
     public Tile Tile;
-    public int Width = 20;
-    public int Depth = 20;
-    public Tile[,] tiles;
+    public GridData[] GridData;
 
     void Start()
     {
-        tiles = new Tile[Width, Depth];
-        for (uint x = 0; x < Width; x++)
+        foreach (var data in GridData)
         {
-            for (uint z = 0; z < Depth; z++)
+            for (int x = 0; x < data.Width; x++)
             {
-                Tile tileInstance = Instantiate(Tile, new Vector3(-22.6f + x * 2, 0.02f, -22.6f + z * 2), Quaternion.identity);
-                tileInstance.name = "Square: " + x + " " + z;
-                tiles[x, z] = tileInstance;
+                for (int z = 0; z < data.Depth; z++)
+                {
+                    var size = Tile.transform.localScale;
+                    Debug.Log(data.position.x + x * size.x);
+                    gameManager.CreateTile(Tile, new Vector3(data.position.x + x * size.x, data.position.y, data.position.z + z * size.z), Quaternion.identity, this.transform);
+                }
             }
         }
-        Tile.gameObject.SetActive(false);
     }
 }

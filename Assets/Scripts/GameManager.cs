@@ -7,6 +7,9 @@ public class GameManager : MonoBehaviour
 {
     public Player Player;
 
+    // Tiles
+    public List<Tile> Tiles;
+
     // Enemies
     public Action<Enemy> CreatedEnemy;
     public Action<Enemy> DestroyedEnemy;
@@ -24,6 +27,15 @@ public class GameManager : MonoBehaviour
     public bool IsNight = false;
     public Action<int> DayStart;
     public Action<int> NightStart;
+
+    public Tile CreateTile(Tile tile, Vector3 position, Quaternion rotation, Transform parent)
+    {
+        Vector3 pos = new(position.x * parent.localScale.x, position.y * parent.localScale.y, position.z * parent.localScale.z);
+        Tile spawnedTile = Instantiate(tile, pos, rotation, parent);
+        spawnedTile.Setup(this);
+        Tiles.Add(spawnedTile);
+        return spawnedTile;
+    }
 
     public Enemy CreateEnemy(Enemy enemy, Vector3 position, Quaternion rotation)
     {
