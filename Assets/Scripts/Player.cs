@@ -51,7 +51,7 @@ public class Player : MonoBehaviour
         {
             var target = new Vector3(hitInfo.point.x, player.transform.position.y, hitInfo.point.z);
             player.transform.LookAt(target);
-            distanceToCursor = Utils.GetDistance(player, hitInfo.transform.gameObject);
+            distanceToCursor = this.GetDistance(hitInfo.collider.GetComponent<MonoBehaviour>());
         }
     }
 

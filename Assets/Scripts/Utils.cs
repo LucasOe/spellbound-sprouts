@@ -5,9 +5,11 @@ using UnityEngine;
 public static class Utils
 {
     // Get the distance between to GameObjects
-    public static float GetDistance(GameObject target1, GameObject target2)
+    public static float GetDistance<T, U>(this T self, U target)
+        where T : MonoBehaviour
+        where U : MonoBehaviour
     {
-        Vector3 delta = target2.transform.position - target1.transform.position;
+        Vector3 delta = self.transform.position - target.transform.position;
         return delta.magnitude;
     }
 
@@ -20,7 +22,7 @@ public static class Utils
         float closestDistance = Mathf.Infinity;
         foreach (U potentialTarget in objects)
         {
-            float distance = GetDistance(self.gameObject, potentialTarget.gameObject);
+            float distance = self.GetDistance(potentialTarget);
             if (distance < closestDistance)
             {
                 closestDistance = distance;

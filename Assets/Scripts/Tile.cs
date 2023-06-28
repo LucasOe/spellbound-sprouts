@@ -4,20 +4,25 @@ using UnityEngine;
 
 public class Tile : MonoBehaviour
 {
-    public GameManager GameManager;
+    private GameManager gameManager;
+
     public GameObject highlight;
     public GameObject disabled;
     public Plant Plant;
 
+    public void Setup(GameManager gameManager)
+    {
+        this.gameManager = gameManager;
+    }
+
     void OnMouseEnter()
     {
         // Only Tiles within 10 units to the player get highlighted
-        highlight.SetActive(GameManager.Player.distanceToCursor <= 10);
+        highlight.SetActive(gameManager.Player.distanceToCursor <= 10);
     }
 
     void OnMouseExit()
     {
         highlight.SetActive(false);
-        disabled.SetActive(false);
     }
 }
