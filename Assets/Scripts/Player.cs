@@ -82,7 +82,7 @@ public class Player : MonoBehaviour
         {
             if (!tile.Plant && inventory.activeItem != Inventory.ActiveItem.Harvest)
             {
-                Plant tileContent = GameManager.CreatePlant(inventory.GetPlant(), tile.transform.position, Quaternion.identity);
+                Plant tileContent = GameManager.CreatePlant(inventory.GetPlant(), tile.transform.position, Quaternion.identity, tile);
                 tile.Plant = tileContent;
             }
             else if (tile.Plant && inventory.activeItem == Inventory.ActiveItem.Harvest)
