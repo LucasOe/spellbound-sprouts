@@ -15,7 +15,7 @@ public class TimeManger : MonoBehaviour
         // Subscribe to events
         GameManager.DestroyedEnemy += OnEnemyDeath;
 
-        timer = Timer.CreateTimer(this, cooldownTime, () =>
+        timer = Timer.CreateTimer(this.gameObject, cooldownTime, () =>
         {
             StartNight(GameManager.Day);
         });
@@ -42,7 +42,7 @@ public class TimeManger : MonoBehaviour
         GameManager.DayStart.Invoke(day);
         GameManager.IsNight = false;
 
-        timer = Timer.CreateTimer(this, cooldownTime, () =>
+        timer = Timer.CreateTimer(this.gameObject, cooldownTime, () =>
         {
             StartNight(GameManager.Day);
         });

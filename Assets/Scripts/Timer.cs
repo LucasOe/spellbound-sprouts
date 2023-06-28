@@ -11,9 +11,9 @@ public class Timer : MonoBehaviour
     public bool IsRunning;
     private Action callback;
 
-    public static Timer CreateTimer(MonoBehaviour where, float duration, Action callback, bool repeat = false)
+    public static Timer CreateTimer(GameObject where, float duration, Action callback, bool repeat = false)
     {
-        Timer timer = where.gameObject.AddComponent<Timer>();
+        Timer timer = where.AddComponent<Timer>();
         timer.duration = duration;
         timer.timeRemaining = duration;
         timer.callback = callback;

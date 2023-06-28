@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public Healthbar Healthbar;
     public float MaxHealth = 10.0f;
     private float currentHealth;
+    public float AttackRange = 1.0f;
 
     public Outline Outline;
     public NavMeshAgent Agent;
@@ -44,13 +45,21 @@ public class Enemy : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     private void Update()
     {
+        Animator.SetBool("isWalking", Agent.velocity.magnitude > 0);
+
         // Target player if no plants exist
         if (gameManager.Plants.Count <= 0)
         {
-            Agent.SetDestination(gameManager.Player.transform.position);
+            if (Utils.GetDistance(this.gameObject, gameManager.Player.gameObject) > AttackRange)
+            {
+                Agent.SetDestination(gameManager.Player.transform.position);
+                Animator.SetBool("isAttacking", false);
+            }
+            else
+            {
+                Animator.SetBool("isAttacking", true);
+            }
         }
-
-        Animator.SetBool("isWalking", Agent.velocity.magnitude > 0);
     }
 
     private void OnCreatedPlant(Plant plant)
@@ -97,5 +106,10 @@ public class Enemy : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public void OnPointerExit(PointerEventData eventData)
     {
         Outline.Disable();
+    }
+
+    public void AttackEvent()
+    {
+        Debug.Log("Skelton Attacked");
     }
 }
