@@ -47,7 +47,7 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void emptyInventory()
+    public void EmptyInventory()
     {
         for (int i = 0; i < seeds.Length; i++)
         {

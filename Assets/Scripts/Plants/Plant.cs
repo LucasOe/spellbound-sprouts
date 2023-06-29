@@ -62,19 +62,17 @@ public class Plant : MonoBehaviour
 
     public void OnDayStart(int day)
     {
+        // Plant reached max age
+        if (age >= Stages.Length - 1)
+            mature = true;
+
         // Grow plants
-        if (!mature && Stages.Length >= 1)
+        if (!mature)
         {
             Stages[age].SetActive(false);
             age++;
             Stages[age].SetActive(true);
             ActiveStage = Stages[age];
-
-            // Plant reached max age
-            if (age >= Stages.Length - 1)
-            {
-                mature = true;
-            }
         }
 
         var growthPercent = (float)age / (Stages.Length - 1);
