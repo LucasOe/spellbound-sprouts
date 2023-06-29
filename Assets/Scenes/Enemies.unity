@@ -619,6 +619,7 @@ GameObject:
   m_Component:
   - component: {fileID: 540525732}
   - component: {fileID: 540525731}
+  - component: {fileID: 540525733}
   m_Layer: 0
   m_Name: TimeManager
   m_TagString: Untagged
@@ -639,10 +640,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameManager: {fileID: 262671928}
-  timeOfDay: 0
-  Preset: {fileID: 11400000, guid: 7fa7972e7a6e51243b685e1bdb4c8612, type: 2}
-  sun: {fileID: 1856752256}
-  moon: {fileID: 592196223}
+  Animator: {fileID: 540525733}
 --- !u!4 &540525732
 Transform:
   m_ObjectHideFlags: 0
@@ -661,6 +659,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &540525733
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 540525730}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2468cee9d6942b3459f31f76595dad2f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &592196221
 GameObject:
   m_ObjectHideFlags: 0
@@ -691,7 +710,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a68c43fe1f2a47cfa234b5eeaa98012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Intensity: 43929.684
+  m_Intensity: 15000
   m_EnableSpotReflector: 1
   m_LuxAtDistance: 1
   m_InnerSpotPercent: 0
@@ -813,7 +832,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 43929.684
+  m_Intensity: 15000
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -870,14 +889,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 592196221}
-  m_LocalRotation: {x: -0.16023336, y: -0.7585578, z: -0.597999, w: 0.20325497}
+  m_LocalRotation: {x: -0.14845252, y: -0.79124016, z: -0.55403227, w: 0.2120122}
   m_LocalPosition: {x: -1.9265777, y: 14.970981, z: -0.7852921}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 540525732}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 90, y: -180, z: -30}
+  m_LocalEulerAnglesHint: {x: -70, y: -150, z: 0}
 --- !u!1 &966809524 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5107954962007069713, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
@@ -1043,7 +1062,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 1
-  m_AdditionalShaderChannelsFlag: 1
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -1183,7 +1202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a68c43fe1f2a47cfa234b5eeaa98012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Intensity: 130000
+  m_Intensity: 100000
   m_EnableSpotReflector: 1
   m_LuxAtDistance: 1
   m_InnerSpotPercent: 0
@@ -1244,13 +1263,13 @@ MonoBehaviour:
   m_MaxDepthBias: 0.001
   m_ShadowResolution:
     m_Override: 512
-    m_UseOverride: 1
-    m_Level: 1
+    m_UseOverride: 0
+    m_Level: 2
   m_ShadowDimmer: 1
   m_VolumetricShadowDimmer: 1
   m_ShadowFadeDistance: 10000
   m_UseContactShadow:
-    m_Override: 0
+    m_Override: 1
     m_UseOverride: 1
     m_Level: 0
   m_RayTracedContactShadow: 0
@@ -1304,8 +1323,8 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 130000
+  m_Color: {r: 1, g: 0.74656796, b: 0.5137255, a: 1}
+  m_Intensity: 100000
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -1348,7 +1367,7 @@ Light:
   m_LightShadowCasterMode: 2
   m_AreaSize: {x: 0.5, y: 0.5}
   m_BounceIntensity: 1
-  m_ColorTemperature: 4168
+  m_ColorTemperature: 5500
   m_UseColorTemperature: 1
   m_BoundingSphereOverride: {x: 0.044921875, y: 12, z: 12, w: 0}
   m_UseBoundingSphereOverride: 0
@@ -1362,14 +1381,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1856752254}
-  m_LocalRotation: {x: 0.20325498, y: -0.5979989, z: 0.75855786, w: 0.16023335}
+  m_LocalRotation: {x: 0.21201217, y: -0.55403227, z: 0.7912401, w: 0.14845252}
   m_LocalPosition: {x: -1.9265777, y: 14.970981, z: -0.7852921}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 540525732}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 108.61, y: -190, z: 0}
+  m_LocalEulerAnglesHint: {x: 110, y: -150, z: 0}
 --- !u!1 &2004546539
 GameObject:
   m_ObjectHideFlags: 0
@@ -1441,7 +1460,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
+  m_StaticShadowCaster: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
