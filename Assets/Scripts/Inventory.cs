@@ -1,23 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
 
-    public Tool activeTool = Plant;
+    //Tools
+    public Tool Harvest;
+    public Tool Wand;
+    public Tool PlantSeeds;
+    public Tool HerbSeeds;
+    public Tool activeTool;
+    
     public Plant[] plants;
     public Plant[] herbs;
     public Plant activePlant = null;
     public Plant activeHerb = null;
-
-    //Tools
-    public Tool Harvest = new Tool();
-    public Tool Staff = new Tool();
-    public Tool PlantSeeds = new Tool();
-    public Tool HerbSeeds = new Tool();
-
+    
     public void SetTool(Tool activeTool)
     {
         this.activeTool = activeTool;
