@@ -14,6 +14,7 @@ public class Inventory : MonoBehaviour
     
     public Plant[] plants;
     public Plant[] herbs;
+    public Seed[] seeds;
     public Plant activePlant = null;
     public Plant activeHerb = null;
     

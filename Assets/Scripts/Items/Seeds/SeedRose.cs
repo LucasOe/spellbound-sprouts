@@ -2,14 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Seed : Item
+public class SeedRose : Seed
 {
-    public int amount = 0;
-
+    public
     // Start is called before the first frame update
     void Start()
     {
-        
+        this.amount = 2;   
     }
 
     // Update is called once per frame

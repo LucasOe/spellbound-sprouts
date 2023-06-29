@@ -53,12 +53,14 @@ MonoBehaviour:
   Healthbar: {fileID: 2208246371437249420}
   ActiveStage: {fileID: 1766762889676823470}
   MaxHealth: 10
+  seed: {fileID: 5232078356743266990, guid: 74cabf2313f4c314cb285aa0743c0880, type: 3}
   Stages:
   - {fileID: 1766762889676823470}
   - {fileID: 179275873668559408}
   - {fileID: 4518323486129731815}
   - {fileID: 2035111129081251324}
   - {fileID: 6818389839509104977}
+  drops: 2
 --- !u!1001 &1062149831465815905
 PrefabInstance:
   m_ObjectHideFlags: 0
