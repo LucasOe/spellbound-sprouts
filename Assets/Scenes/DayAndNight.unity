@@ -10688,15 +10688,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1374843163789428268, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
         type: 3}
+      propertyPath: herbs.Array.data[2]
+      value: 
+      objectReference: {fileID: 3131694317889342675, guid: 639828925d68a72498a384e75dcd1c9c,
+        type: 3}
+    - target: {fileID: 1374843163789428268, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
+        type: 3}
+      propertyPath: herbs.Array.data[3]
+      value: 
+      objectReference: {fileID: 3131694317889342675, guid: 82dd47658ce3e4d41973da95e27c5fe7,
+        type: 3}
+    - target: {fileID: 1374843163789428268, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
+        type: 3}
       propertyPath: seeds.Array.data[0]
       value: 
-      objectReference: {fileID: 7687475521246593362, guid: f05b95fbf8536ff48837fb306dd77142,
+      objectReference: {fileID: 7986783823863777260, guid: 44863a7c469df3643b3ca4f4621a649b,
         type: 3}
     - target: {fileID: 1374843163789428268, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
         type: 3}
       propertyPath: seeds.Array.data[1]
       value: 
-      objectReference: {fileID: 261099093243472943, guid: 75633cd141531f14ab71343666c31c86,
+      objectReference: {fileID: 3568759655164840476, guid: a9b99467de082eb4793be0b4e27a7fab,
         type: 3}
     - target: {fileID: 1374843163789428268, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
         type: 3}
@@ -10708,31 +10720,31 @@ PrefabInstance:
         type: 3}
       propertyPath: seeds.Array.data[3]
       value: 
-      objectReference: {fileID: 5232078356743266990, guid: 74cabf2313f4c314cb285aa0743c0880,
+      objectReference: {fileID: 1721224714031115576, guid: c84bec33d4cd9774480464b0dc94decc,
         type: 3}
     - target: {fileID: 1374843163789428268, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
         type: 3}
       propertyPath: seeds.Array.data[4]
       value: 
-      objectReference: {fileID: 9097174129967609485, guid: a124e65fb4a6a6242b55910eb47a017b,
+      objectReference: {fileID: 261099093243472943, guid: 75633cd141531f14ab71343666c31c86,
         type: 3}
     - target: {fileID: 1374843163789428268, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
         type: 3}
       propertyPath: seeds.Array.data[5]
       value: 
-      objectReference: {fileID: 7986783823863777260, guid: 44863a7c469df3643b3ca4f4621a649b,
+      objectReference: {fileID: 7687475521246593362, guid: f05b95fbf8536ff48837fb306dd77142,
         type: 3}
     - target: {fileID: 1374843163789428268, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
         type: 3}
       propertyPath: seeds.Array.data[6]
       value: 
-      objectReference: {fileID: 1721224714031115576, guid: c84bec33d4cd9774480464b0dc94decc,
+      objectReference: {fileID: 9097174129967609485, guid: a124e65fb4a6a6242b55910eb47a017b,
         type: 3}
     - target: {fileID: 1374843163789428268, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
         type: 3}
       propertyPath: seeds.Array.data[7]
       value: 
-      objectReference: {fileID: 3568759655164840476, guid: a9b99467de082eb4793be0b4e27a7fab,
+      objectReference: {fileID: 5232078356743266990, guid: 74cabf2313f4c314cb285aa0743c0880,
         type: 3}
     - target: {fileID: 1374843163789428268, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
         type: 3}
@@ -10949,6 +10961,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &1041968242 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1374843163789428268, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1041968237}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1041968240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 536f09ed8f0867e468e30b0ec501dc42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1043739616 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3b187405663f2c942a4c7726a3f9e54e,
@@ -15209,7 +15233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c16ddaa8143009f40b3ae82311a6a1fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 0}
+  inventory: {fileID: 1041968242}
 --- !u!114 &1573927596
 MonoBehaviour:
   m_ObjectHideFlags: 0

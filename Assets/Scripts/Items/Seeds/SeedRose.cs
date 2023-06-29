@@ -8,7 +8,7 @@ public class SeedRose : Seed
     // Start is called before the first frame update
     void Start()
     {
-        this.amount = 2;   
+        this.startAmount = 2; 
     }
 
     // Update is called once per frame

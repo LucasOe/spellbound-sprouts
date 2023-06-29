@@ -25,6 +25,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        inventory.setSeedAmounts(); 
         rigidbody = GetComponent<Rigidbody>();
     }
 
