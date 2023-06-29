@@ -15,6 +15,8 @@ public class Plant : MonoBehaviour
     private bool mature;
     public GameObject[] Stages;
 
+    public int drops = 2;
+
     public void Setup(GameManager gameManager)
     {
         this.gameManager = gameManager;

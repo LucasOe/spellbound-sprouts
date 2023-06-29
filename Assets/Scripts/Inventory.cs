@@ -22,7 +22,7 @@ public class Inventory : MonoBehaviour
         this.activeTool = activeTool;
     }
 
-    public void SetItemIndex(int i)
+    public void SetSeed(int i)
     {
         if(activeTool == PlantSeeds) 
         {

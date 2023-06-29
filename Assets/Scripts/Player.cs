@@ -121,25 +121,25 @@ public class Player : MonoBehaviour
 
     public void OnSelectItem1(InputValue value)
     {
-        inventory.SetItemIndex(0);
+        inventory.SetSeed(0);
         ui.selectActiveSeed(0, inventory.activeTool);
     }
 
     public void OnSelectItem2(InputValue value)
     {
-        inventory.SetItemIndex(1);
+        inventory.SetSeed(1);
         ui.selectActiveSeed(1, inventory.activeTool);
     }
 
     public void OnSelectItem3(InputValue value)
     {
-        inventory.SetItemIndex(2);
+        inventory.SetSeed(2);
         ui.selectActiveSeed(2, inventory.activeTool);
     }
 
     public void OnSelectItem4(InputValue value)
     {
-        inventory.SetItemIndex(3);
+        inventory.SetSeed(3);
         ui.selectActiveSeed(3, inventory.activeTool);
     }
 
