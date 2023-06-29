@@ -78,7 +78,7 @@ public class Player : MonoBehaviour
 
     public void ClickedTile(Tile tile)
     {
-        if (distanceToCursor <= 10)
+        if (distanceToCursor <= 10 && !GameManager.IsNight)
         {
             if (!tile.Plant && inventory.activeItem != Inventory.ActiveItem.Harvest)
             {
