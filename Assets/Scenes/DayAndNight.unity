@@ -10576,9 +10576,39 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1374843163789428268, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
         type: 3}
+      propertyPath: Wand
+      value: 
+      objectReference: {fileID: 6895906114635900474, guid: 8bfce5ab99a63b941835df6b322faca7,
+        type: 3}
+    - target: {fileID: 1374843163789428268, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
+        type: 3}
+      propertyPath: Harvest
+      value: 
+      objectReference: {fileID: -6651510876566905133, guid: ecae77ce23b61f341ae55f9fac358750,
+        type: 3}
+    - target: {fileID: 1374843163789428268, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
+        type: 3}
+      propertyPath: HerbSeeds
+      value: 
+      objectReference: {fileID: 2367349385638177642, guid: 0776ca5c3d913bd47a2b4ccd488b6218,
+        type: 3}
+    - target: {fileID: 1374843163789428268, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
+        type: 3}
+      propertyPath: PlantSeeds
+      value: 
+      objectReference: {fileID: 805571449171057945, guid: 3c4146d6cd4a2c7479845a441bc474bb,
+        type: 3}
+    - target: {fileID: 1374843163789428268, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
+        type: 3}
       propertyPath: activeHerb
       value: 
       objectReference: {fileID: 3131694317889342675, guid: 3207d2f1ec9c87e4f9a880e7ea6e3604,
+        type: 3}
+    - target: {fileID: 1374843163789428268, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
+        type: 3}
+      propertyPath: activeTool
+      value: 
+      objectReference: {fileID: 805571449171057945, guid: 3c4146d6cd4a2c7479845a441bc474bb,
         type: 3}
     - target: {fileID: 1374843163789428268, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
         type: 3}
@@ -13059,6 +13089,7 @@ MonoBehaviour:
   Tiles: []
   Enemies: []
   Plants: []
+  Seeds: []
   TimeManger: {fileID: 1328368776}
   DayCycleController: {fileID: 1029318140}
   Day: 0
@@ -15081,6 +15112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c16ddaa8143009f40b3ae82311a6a1fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventory: {fileID: 0}
 --- !u!114 &1573927596
 MonoBehaviour:
   m_ObjectHideFlags: 0
