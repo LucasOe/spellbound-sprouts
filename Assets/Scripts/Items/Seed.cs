@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Seed : Item
 {
-    
+    private int amount = 0;
+
     // Start is called before the first frame update
     void Start()
     {
