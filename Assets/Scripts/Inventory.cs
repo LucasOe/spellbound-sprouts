@@ -47,7 +47,7 @@ public class Inventory : MonoBehaviour
         }
     }
     
-    public void setSeedAmounts() 
+    public void emptyInventory() 
     {    
         for(int i = 0; i < seeds.Length; i++) {
             seeds[i].setStartAmount();
