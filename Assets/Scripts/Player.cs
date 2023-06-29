@@ -80,12 +80,12 @@ public class Player : MonoBehaviour
     {
         if (distanceToCursor <= 10 && !GameManager.IsNight)
         {
-            if (!tile.Plant && inventory.activeTool != Inventory.Harvest)
+            if (!tile.Plant && inventory.activeTool != inventory.Harvest)
             {   
                 Plant tileContent = GameManager.CreatePlant(inventory.GetPlant(), tile.transform.position, Quaternion.identity, tile);
                 tile.Plant = tileContent;
             }
-            else if (tile.Plant && inventory.activeTool == Inventory.Harvest)
+            else if (tile.Plant && inventory.activeTool == inventory.Harvest)
             {
                 GameManager.DestroyPlant(tile.Plant);
             }
@@ -94,14 +94,14 @@ public class Player : MonoBehaviour
 
     public void OnSelectHarvest(InputValue value)
     {
-        if (inventory.activeTool != Inventory.Harvest)
+        if (inventory.activeTool != inventory.Harvest)
         {
-            inventory.SetItem(Inventory.Harvest);
+            inventory.SetTool(inventory.Harvest);
             ui.ToggleToolType(inventory.activeTool);
         }
         else
         {
-            inventory.SetItem(Inventory.Herb);
+            inventory.SetTool(inventory.HerbSeeds);
             ui.ToggleToolType(inventory.activeTool);
         }
     }
@@ -109,13 +109,13 @@ public class Player : MonoBehaviour
 
     public void OnSelectHerb(InputValue value)
     {
-        inventory.SetItem(Inventory.Herb);
+        inventory.SetTool(inventory.HerbSeeds);
         ui.ToggleToolType(inventory.activeTool);
     }
 
     public void OnSelectPlant(InputValue value)
     {
-        inventory.SetItem(Inventory.Plant);
+        inventory.SetTool(inventory.PlantSeeds);
         ui.ToggleToolType(inventory.activeTool);
     }
 

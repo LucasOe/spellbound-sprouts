@@ -19,6 +19,8 @@ public class UI : MonoBehaviour
     Button _3H;
     Button _4H;
 
+    public Inventory inventory;
+
     private void OnEnable()
     {
         VisualElement root = GetComponent<UIDocument>().rootVisualElement;
@@ -60,12 +62,12 @@ public class UI : MonoBehaviour
         _seeds = _plantSeeds;
         switch (activeTool)
         {
-            case Inventory.Harvest:
+            case Harvest:
                 break;
-            case Inventory.Plant:
+            case PlantSeeds:
                 _seeds = _plantSeeds;
                 break;
-            case Inventory.Herb:
+            case HerbSeeds:
                 _seeds = _herbSeeds;
                 break;
             default:
@@ -89,17 +91,17 @@ public class UI : MonoBehaviour
     {
         switch (activeTool)
         {
-            case Inventory.Harvest:
+            case Harvest:
                 _harvest.AddToClassList("active");
                 _herb.RemoveFromClassList("active");
                 _plant.RemoveFromClassList("active");
                 break;
-            case Inventory.Plant:
+            case PlantSeeds:
                 _harvest.RemoveFromClassList("active");
                 _herb.RemoveFromClassList("active");
                 _plant.AddToClassList("active");
                 break;
-            case Inventory.Herb:
+            case HerbSeeds:
                 _harvest.RemoveFromClassList("active");
                 _herb.AddToClassList("active");
                 _plant.RemoveFromClassList("active");
