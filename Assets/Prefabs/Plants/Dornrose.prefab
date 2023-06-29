@@ -51,10 +51,12 @@ MonoBehaviour:
   Healthbar: {fileID: 4311443410366598913}
   ActiveStage: {fileID: 702688959366883367}
   MaxHealth: 10
+  seed: {fileID: 7986783823863777260, guid: 44863a7c469df3643b3ca4f4621a649b, type: 3}
   Stages:
   - {fileID: 702688959366883367}
   - {fileID: 2000185077138095911}
   - {fileID: 1390352681353089841}
+  drops: 2
   damage: 4
   range: 5
 --- !u!1001 &360598252966106486

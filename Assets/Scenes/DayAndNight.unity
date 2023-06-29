@@ -10574,6 +10574,51 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 637871800275908076, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 637871800275908076, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 637871800275908076, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 637871800275908076, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.34682897
+      objectReference: {fileID: 0}
+    - target: {fileID: 637871800275908076, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.161729
+      objectReference: {fileID: 0}
+    - target: {fileID: 637871800275908076, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.8373192
+      objectReference: {fileID: 0}
+    - target: {fileID: 637871800275908076, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.39044833
+      objectReference: {fileID: 0}
+    - target: {fileID: 637871800275908076, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 637871800275908076, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -135
+      objectReference: {fileID: 0}
     - target: {fileID: 1374843163789428268, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
         type: 3}
       propertyPath: Wand
@@ -10623,6 +10668,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1374843163789428268, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
         type: 3}
+      propertyPath: seeds.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1374843163789428268, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
+        type: 3}
       propertyPath: _herbs.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -10636,6 +10686,54 @@ PrefabInstance:
       propertyPath: _plants.Array.size
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1374843163789428268, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
+        type: 3}
+      propertyPath: seeds.Array.data[0]
+      value: 
+      objectReference: {fileID: 7687475521246593362, guid: f05b95fbf8536ff48837fb306dd77142,
+        type: 3}
+    - target: {fileID: 1374843163789428268, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
+        type: 3}
+      propertyPath: seeds.Array.data[1]
+      value: 
+      objectReference: {fileID: 261099093243472943, guid: 75633cd141531f14ab71343666c31c86,
+        type: 3}
+    - target: {fileID: 1374843163789428268, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
+        type: 3}
+      propertyPath: seeds.Array.data[2]
+      value: 
+      objectReference: {fileID: 5713623275764549774, guid: a9a56ef5b0a7e04458a93c86f4c91722,
+        type: 3}
+    - target: {fileID: 1374843163789428268, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
+        type: 3}
+      propertyPath: seeds.Array.data[3]
+      value: 
+      objectReference: {fileID: 5232078356743266990, guid: 74cabf2313f4c314cb285aa0743c0880,
+        type: 3}
+    - target: {fileID: 1374843163789428268, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
+        type: 3}
+      propertyPath: seeds.Array.data[4]
+      value: 
+      objectReference: {fileID: 9097174129967609485, guid: a124e65fb4a6a6242b55910eb47a017b,
+        type: 3}
+    - target: {fileID: 1374843163789428268, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
+        type: 3}
+      propertyPath: seeds.Array.data[5]
+      value: 
+      objectReference: {fileID: 7986783823863777260, guid: 44863a7c469df3643b3ca4f4621a649b,
+        type: 3}
+    - target: {fileID: 1374843163789428268, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
+        type: 3}
+      propertyPath: seeds.Array.data[6]
+      value: 
+      objectReference: {fileID: 1721224714031115576, guid: c84bec33d4cd9774480464b0dc94decc,
+        type: 3}
+    - target: {fileID: 1374843163789428268, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
+        type: 3}
+      propertyPath: seeds.Array.data[7]
+      value: 
+      objectReference: {fileID: 3568759655164840476, guid: a9b99467de082eb4793be0b4e27a7fab,
+        type: 3}
     - target: {fileID: 1374843163789428268, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
         type: 3}
       propertyPath: _herbs.Array.data[0]
@@ -13089,7 +13187,6 @@ MonoBehaviour:
   Tiles: []
   Enemies: []
   Plants: []
-  Seeds: []
   TimeManger: {fileID: 1328368776}
   DayCycleController: {fileID: 1029318140}
   Day: 0

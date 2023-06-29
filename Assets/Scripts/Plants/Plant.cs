@@ -10,6 +10,7 @@ public class Plant : MonoBehaviour
     public GameObject ActiveStage;
     public float MaxHealth = 10.0f;
     private float currentHealth;
+    public Seed seed;
 
     private int age = 0;
     private bool mature;
@@ -26,6 +27,7 @@ public class Plant : MonoBehaviour
 
     public void Destroy(GameManager gameManager)
     {
+        seed.amount += 2;
         // Unsubscribe from events
         gameManager.DayStart -= OnDayStart;
     }
