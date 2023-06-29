@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Healthbar : MonoBehaviour
 {
-    public Image healthbarSprite;
+    public Image HealthbarSprite;
     private Quaternion cameraRotation;
 
     private void Start()
@@ -21,6 +21,6 @@ public class Healthbar : MonoBehaviour
 
     public void UpdateHealthBar(float currentHealth, float maxHealth)
     {
-        healthbarSprite.fillAmount = currentHealth / maxHealth;
+        HealthbarSprite.fillAmount = currentHealth / maxHealth;
     }
 }

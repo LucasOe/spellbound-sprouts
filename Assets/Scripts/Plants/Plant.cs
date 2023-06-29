@@ -6,7 +6,7 @@ public class Plant : MonoBehaviour
 {
     protected GameManager gameManager;
 
-    public Healthbar Healthbar;
+    public PlantHealthbar Healthbar;
     public GameObject ActiveStage;
     public float MaxHealth = 10.0f;
     private float currentHealth;
@@ -32,6 +32,7 @@ public class Plant : MonoBehaviour
     {
         currentHealth = MaxHealth;
         Healthbar.UpdateHealthBar(currentHealth, MaxHealth);
+        Healthbar.UpdateGrowth(0);
         SetHealthbarActive(false);
 
         // Set first growth stage active
@@ -68,6 +69,8 @@ public class Plant : MonoBehaviour
             }
         }
 
+        var growthPercent = (float)age / (Stages.Length - 1);
+        Healthbar.UpdateGrowth(growthPercent);
     }
 
     public void SetHealthbarActive(bool value)

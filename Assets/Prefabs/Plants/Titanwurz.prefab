@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14d5986e06cf8774aab719a7644d1237, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Healthbar: {fileID: 6531860009643560145}
+  Healthbar: {fileID: 6533889287906697376}
   ActiveStage: {fileID: 7707439193417762693}
   MaxHealth: 10
   Stages:
@@ -273,24 +273,24 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24c5a8f9870a091458ed0f55268f7d51, type: 3}
---- !u!114 &6531860009643560145 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5590189805588446449, guid: 24c5a8f9870a091458ed0f55268f7d51,
-    type: 3}
-  m_PrefabInstance: {fileID: 1671270940710383648}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1c3edef63e35b14483b62b31fc76549, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &6531860009643560146 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5590189805588446450, guid: 24c5a8f9870a091458ed0f55268f7d51,
     type: 3}
   m_PrefabInstance: {fileID: 1671270940710383648}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6533889287906697376 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5592491762465706112, guid: 24c5a8f9870a091458ed0f55268f7d51,
+    type: 3}
+  m_PrefabInstance: {fileID: 1671270940710383648}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 828fd3f2a722c714fa3578bf6a07b9cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7365420370810895060
 PrefabInstance:
   m_ObjectHideFlags: 0
