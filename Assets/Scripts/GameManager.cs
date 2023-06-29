@@ -20,9 +20,6 @@ public class GameManager : MonoBehaviour
     public Action<Plant> DestroyedPlant;
     public List<Plant> Plants;
 
-    // Seeds
-    public List<Seed> Seeds;
-
     // Day Night Cycle
     public TimeManger TimeManger;
     public DayCycleController DayCycleController;
