@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 6252.6763, g: 12674.424, b: 17410.44, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c16ddaa8143009f40b3ae82311a6a1fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 0}
+  inventory: {fileID: 397669653}
 --- !u!114 &9181342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,7 +225,6 @@ MonoBehaviour:
   Tiles: []
   Enemies: []
   Plants: []
-  Seeds: []
   TimeManger: {fileID: 262671930}
   DayCycleController: {fileID: 540525731}
   Day: 0
@@ -270,59 +269,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1374843163789428268, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
         type: 3}
-      propertyPath: Wand
-      value: 
-      objectReference: {fileID: 6895906114635900474, guid: 8bfce5ab99a63b941835df6b322faca7,
-        type: 3}
-    - target: {fileID: 1374843163789428268, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
-        type: 3}
-      propertyPath: Harvest
-      value: 
-      objectReference: {fileID: -6651510876566905133, guid: ecae77ce23b61f341ae55f9fac358750,
-        type: 3}
-    - target: {fileID: 1374843163789428268, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
-        type: 3}
-      propertyPath: HerbSeeds
-      value: 
-      objectReference: {fileID: 2367349385638177642, guid: 0776ca5c3d913bd47a2b4ccd488b6218,
-        type: 3}
-    - target: {fileID: 1374843163789428268, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
-        type: 3}
-      propertyPath: PlantSeeds
-      value: 
-      objectReference: {fileID: 805571449171057945, guid: 3c4146d6cd4a2c7479845a441bc474bb,
-        type: 3}
-    - target: {fileID: 1374843163789428268, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
-        type: 3}
-      propertyPath: activeHerb
-      value: 
-      objectReference: {fileID: 3131694317889342675, guid: 3207d2f1ec9c87e4f9a880e7ea6e3604,
-        type: 3}
-    - target: {fileID: 1374843163789428268, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
-        type: 3}
-      propertyPath: activeTool
-      value: 
-      objectReference: {fileID: 805571449171057945, guid: 3c4146d6cd4a2c7479845a441bc474bb,
-        type: 3}
-    - target: {fileID: 1374843163789428268, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
-        type: 3}
-      propertyPath: activePlant
-      value: 
-      objectReference: {fileID: 7779657510632051744, guid: 84c71430073113b4287ba1979f4c4c97,
-        type: 3}
-    - target: {fileID: 1374843163789428268, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
-        type: 3}
-      propertyPath: herbs.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1374843163789428268, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
-        type: 3}
       propertyPath: _herbs.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1374843163789428268, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
-        type: 3}
-      propertyPath: plants.Array.size
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1374843163789428268, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
@@ -353,12 +300,6 @@ PrefabInstance:
       propertyPath: _herbs.Array.data[3]
       value: 
       objectReference: {fileID: 3131694317889342675, guid: 639828925d68a72498a384e75dcd1c9c,
-        type: 3}
-    - target: {fileID: 1374843163789428268, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
-        type: 3}
-      propertyPath: plants.Array.data[0]
-      value: 
-      objectReference: {fileID: 7779657510632051744, guid: 84c71430073113b4287ba1979f4c4c97,
         type: 3}
     - target: {fileID: 1374843163789428268, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
         type: 3}
@@ -406,19 +347,9 @@ PrefabInstance:
       objectReference: {fileID: 2004546540}
     - target: {fileID: 3315166315397763816, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
         type: 3}
-      propertyPath: AudioSource
-      value: 
-      objectReference: {fileID: 966809532}
-    - target: {fileID: 3315166315397763816, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
-        type: 3}
       propertyPath: GameManager
       value: 
       objectReference: {fileID: 262671928}
-    - target: {fileID: 3315166315397763816, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
-        type: 3}
-      propertyPath: movementSpeed
-      value: 50
-      objectReference: {fileID: 0}
     - target: {fileID: 5107954962007069713, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
         type: 3}
       propertyPath: m_Name
@@ -488,11 +419,7 @@ PrefabInstance:
     - {fileID: 4396832418978977113, guid: 3e312085b6fd0224c9a8d92b647f3aa2, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5107954962007069713, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 966809528}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e312085b6fd0224c9a8d92b647f3aa2, type: 3}
 --- !u!114 &397669652 stripped
 MonoBehaviour:
@@ -500,10 +427,22 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 397669651}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 966809524}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bc6da8795ab598c44b5b63b9116197d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &397669653 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1374843163789428268, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
+    type: 3}
+  m_PrefabInstance: {fileID: 397669651}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 536f09ed8f0867e468e30b0ec501dc42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &407628299
@@ -929,45 +868,6 @@ Transform:
   m_Father: {fileID: 540525732}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: -70, y: -150, z: 0}
---- !u!1 &966809524 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5107954962007069713, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
-    type: 3}
-  m_PrefabInstance: {fileID: 397669651}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &966809528
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 966809524}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 0
---- !u!82 &966809532 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 3943774334872337552, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
-    type: 3}
-  m_PrefabInstance: {fileID: 397669651}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1276327352
 GameObject:
   m_ObjectHideFlags: 0
@@ -1194,11 +1094,6 @@ PrefabInstance:
       propertyPath: GameManager
       value: 
       objectReference: {fileID: 262671928}
-    - target: {fileID: 6014585723015511486, guid: 679fccc69100dca48b1840611f7b02ca,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
