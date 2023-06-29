@@ -588,7 +588,7 @@ MonoBehaviour:
   inventory: {fileID: 1374843163789428268}
   ui: {fileID: 0}
   grid: {fileID: 0}
-  movementSpeed: 25
+  movementSpeed: 50
   damage: 4
   distanceToCursor: 0
   AudioSource: {fileID: 3943774334872337552}
@@ -605,7 +605,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 536f09ed8f0867e468e30b0ec501dc42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeItem: 2
+  Harvest: {fileID: -6651510876566905133, guid: ecae77ce23b61f341ae55f9fac358750,
+    type: 3}
+  Wand: {fileID: 6895906114635900474, guid: 8bfce5ab99a63b941835df6b322faca7, type: 3}
+  PlantSeeds: {fileID: 805571449171057945, guid: 3c4146d6cd4a2c7479845a441bc474bb,
+    type: 3}
+  HerbSeeds: {fileID: 2367349385638177642, guid: 0776ca5c3d913bd47a2b4ccd488b6218,
+    type: 3}
+  activeTool: {fileID: 805571449171057945, guid: 3c4146d6cd4a2c7479845a441bc474bb,
+    type: 3}
   plants:
   - {fileID: 7779657510632051744, guid: 84c71430073113b4287ba1979f4c4c97, type: 3}
   - {fileID: -4562696070747485204, guid: 57f778dc68f07e543b5252f585e724c1, type: 3}
@@ -614,8 +622,17 @@ MonoBehaviour:
   herbs:
   - {fileID: 3131694317889342675, guid: 3207d2f1ec9c87e4f9a880e7ea6e3604, type: 3}
   - {fileID: 3131694317889342675, guid: 061360cfcb9371d498091aa6cd47d0fa, type: 3}
-  - {fileID: 3131694317889342675, guid: 82dd47658ce3e4d41973da95e27c5fe7, type: 3}
   - {fileID: 3131694317889342675, guid: 639828925d68a72498a384e75dcd1c9c, type: 3}
+  - {fileID: 3131694317889342675, guid: 82dd47658ce3e4d41973da95e27c5fe7, type: 3}
+  seeds:
+  - {fileID: 7986783823863777260, guid: 44863a7c469df3643b3ca4f4621a649b, type: 3}
+  - {fileID: 3568759655164840476, guid: a9b99467de082eb4793be0b4e27a7fab, type: 3}
+  - {fileID: 5713623275764549774, guid: a9a56ef5b0a7e04458a93c86f4c91722, type: 3}
+  - {fileID: 1721224714031115576, guid: c84bec33d4cd9774480464b0dc94decc, type: 3}
+  - {fileID: 261099093243472943, guid: 75633cd141531f14ab71343666c31c86, type: 3}
+  - {fileID: 7687475521246593362, guid: f05b95fbf8536ff48837fb306dd77142, type: 3}
+  - {fileID: 9097174129967609485, guid: a124e65fb4a6a6242b55910eb47a017b, type: 3}
+  - {fileID: 5232078356743266990, guid: 74cabf2313f4c314cb285aa0743c0880, type: 3}
   activePlant: {fileID: 7779657510632051744, guid: 84c71430073113b4287ba1979f4c4c97,
     type: 3}
   activeHerb: {fileID: 3131694317889342675, guid: 3207d2f1ec9c87e4f9a880e7ea6e3604,

@@ -11,13 +11,13 @@ public class Inventory : MonoBehaviour
     public Tool PlantSeeds;
     public Tool HerbSeeds;
     public Tool activeTool;
-    
+
     public Plant[] plants;
     public Plant[] herbs;
     public Seed[] seeds;
     public Plant activePlant = null;
     public Plant activeHerb = null;
-    
+
     public void SetTool(Tool activeTool)
     {
         this.activeTool = activeTool;
@@ -25,11 +25,11 @@ public class Inventory : MonoBehaviour
 
     public void SetSeed(int i)
     {
-        if(activeTool == PlantSeeds) 
+        if (activeTool == PlantSeeds)
         {
             this.activePlant = plants[i];
         }
-        else if (activeTool == HerbSeeds) 
+        else if (activeTool == HerbSeeds)
         {
             this.activeHerb = herbs[i];
         }
@@ -46,11 +46,12 @@ public class Inventory : MonoBehaviour
             return activeHerb;
         }
     }
-    
-    public void emptyInventory() 
-    {    
-        for(int i = 0; i < seeds.Length; i++) {
-            seeds[i].setStartAmount();
+
+    public void emptyInventory()
+    {
+        for (int i = 0; i < seeds.Length; i++)
+        {
+            seeds[i].SetStartAmount();
         }
     }
 }
