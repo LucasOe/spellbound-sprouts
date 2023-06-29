@@ -32,18 +32,24 @@ public class Timer : MonoBehaviour
             }
             else
             {
-                if (!IsRepeating)
-                {
-                    timeRemaining = 0; // avoid values below zero
-                    IsRunning = false;
-                }
-                else
-                {
-                    timeRemaining = duration;
-                }
-                callback();
+                SkipTimer();
             }
         }
+    }
+
+    // Skip remaining time and execute the callback
+    public void SkipTimer()
+    {
+        if (!IsRepeating)
+        {
+            timeRemaining = 0; // avoid values below zero
+            IsRunning = false;
+        }
+        else
+        {
+            timeRemaining = duration;
+        }
+        callback();
     }
 
     public float GetMinutes()

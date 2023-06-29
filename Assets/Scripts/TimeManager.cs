@@ -48,6 +48,11 @@ public class TimeManger : MonoBehaviour
         });
     }
 
+    public void SkipDay()
+    {
+        timer.SkipTimer();
+    }
+
     private void OnEnemyDeath(Enemy enemy)
     {
         // Start next day

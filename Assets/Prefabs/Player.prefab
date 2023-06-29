@@ -585,9 +585,8 @@ MonoBehaviour:
   GameManager: {fileID: 0}
   player: {fileID: 1226964366495572505}
   camera: {fileID: 5053911396999072649}
-  inventory: {fileID: 1374843163789428268}
+  Inventory: {fileID: 1374843163789428268}
   ui: {fileID: 0}
-  grid: {fileID: 0}
   movementSpeed: 50
   damage: 4
   distanceToCursor: 0

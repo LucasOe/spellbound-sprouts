@@ -8,9 +8,8 @@ public class Player : MonoBehaviour
     public GameManager GameManager;
     public GameObject player;
     public new Camera camera;
-    public Inventory inventory;
+    public Inventory Inventory;
     public UI ui;
-    public Grid grid;
 
     public float movementSpeed = 25.0f;
     public float damage = 4.0f;
@@ -25,7 +24,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        inventory.emptyInventory(); 
+        Inventory.EmptyInventory();
         rigidbody = GetComponent<Rigidbody>();
     }
 
@@ -83,21 +82,22 @@ public class Player : MonoBehaviour
     {
         if (distanceToCursor <= 10 && !GameManager.IsNight)
         {
-            handleTileInteraction(tile);
+            HandleTileInteraction(tile);
         }
     }
 
-    private void handleTileInteraction(Tile tile) {
-        Tool ActiveTool = inventory.activeTool;
+    private void HandleTileInteraction(Tile tile)
+    {
+        Tool ActiveTool = Inventory.activeTool;
 
-        if (!tile.Plant && ActiveTool != inventory.Harvest && inventory.GetPlant().seed.amount > 0)
+        if (!tile.Plant && ActiveTool != Inventory.Harvest && Inventory.GetPlant().seed.amount > 0)
         {
-            Plant tileContent = GameManager.CreatePlant(inventory.GetPlant(), tile.transform.position, Quaternion.identity, tile);
+            Plant tileContent = GameManager.CreatePlant(Inventory.GetPlant(), tile.transform.position, Quaternion.identity, tile);
             tile.Plant = tileContent;
-            tileContent.seed.PlantSeed(); 
+            tileContent.seed.PlantSeed();
             ui.RefreshAmounts();
         }
-        else if (tile.Plant && ActiveTool == inventory.Harvest)
+        else if (tile.Plant && ActiveTool == Inventory.Harvest)
         {
             GameManager.DestroyPlant(tile.Plant);
         }
@@ -105,53 +105,53 @@ public class Player : MonoBehaviour
 
     public void OnSelectHarvest(InputValue value)
     {
-        if (inventory.activeTool != inventory.Harvest)
+        if (Inventory.activeTool != Inventory.Harvest)
         {
-            inventory.SetTool(inventory.Harvest);
-            ui.ToggleToolType(inventory.activeTool);
+            Inventory.SetTool(Inventory.Harvest);
+            ui.ToggleToolType(Inventory.activeTool);
         }
         else
         {
-            inventory.SetTool(inventory.HerbSeeds);
-            ui.ToggleToolType(inventory.activeTool);
+            Inventory.SetTool(Inventory.HerbSeeds);
+            ui.ToggleToolType(Inventory.activeTool);
         }
     }
 
 
     public void OnSelectHerb(InputValue value)
     {
-        inventory.SetTool(inventory.HerbSeeds);
-        ui.ToggleToolType(inventory.activeTool);
+        Inventory.SetTool(Inventory.HerbSeeds);
+        ui.ToggleToolType(Inventory.activeTool);
     }
 
     public void OnSelectPlant(InputValue value)
     {
-        inventory.SetTool(inventory.PlantSeeds);
-        ui.ToggleToolType(inventory.activeTool);
+        Inventory.SetTool(Inventory.PlantSeeds);
+        ui.ToggleToolType(Inventory.activeTool);
     }
 
     public void OnSelectItem1(InputValue value)
     {
-        inventory.SetSeed(0);
-        ui.selectActiveSeed(0, inventory.activeTool);
+        Inventory.SetSeed(0);
+        ui.selectActiveSeed(0, Inventory.activeTool);
     }
 
     public void OnSelectItem2(InputValue value)
     {
-        inventory.SetSeed(1);
-        ui.selectActiveSeed(1, inventory.activeTool);
+        Inventory.SetSeed(1);
+        ui.selectActiveSeed(1, Inventory.activeTool);
     }
 
     public void OnSelectItem3(InputValue value)
     {
-        inventory.SetSeed(2);
-        ui.selectActiveSeed(2, inventory.activeTool);
+        Inventory.SetSeed(2);
+        ui.selectActiveSeed(2, Inventory.activeTool);
     }
 
     public void OnSelectItem4(InputValue value)
     {
-        inventory.SetSeed(3);
-        ui.selectActiveSeed(3, inventory.activeTool);
+        Inventory.SetSeed(3);
+        ui.selectActiveSeed(3, Inventory.activeTool);
     }
 
     public void OnSkipDay(InputValue value)
@@ -159,7 +159,7 @@ public class Player : MonoBehaviour
         if (!GameManager.IsNight)
         {
             Debug.Log("Skipped to Night");
-            GameManager.TimeManger.StartNight(GameManager.Day);
+            GameManager.TimeManger.SkipDay();
         }
     }
 }
