@@ -80,12 +80,12 @@ public class Player : MonoBehaviour
     {
         if (distanceToCursor <= 10)
         {
-            if (!tile.Plant && inventory.activeItem != Inventory.ActiveItem.Harvest)
-            {
+            if (!tile.Plant && inventory.activeTool != Inventory.Harvest)
+            {   
                 Plant tileContent = GameManager.CreatePlant(inventory.GetPlant(), tile.transform.position, Quaternion.identity, tile);
                 tile.Plant = tileContent;
             }
-            else if (tile.Plant && inventory.activeItem == Inventory.ActiveItem.Harvest)
+            else if (tile.Plant && inventory.activeTool == Inventory.Harvest)
             {
                 GameManager.DestroyPlant(tile.Plant);
             }
@@ -94,53 +94,53 @@ public class Player : MonoBehaviour
 
     public void OnSelectHarvest(InputValue value)
     {
-        if (inventory.activeItem != Inventory.ActiveItem.Harvest)
+        if (inventory.activeTool != Inventory.Harvest)
         {
-            inventory.SetItem(Inventory.ActiveItem.Harvest);
-            ui.ToggleToolType(inventory.activeItem);
+            inventory.SetItem(Inventory.Harvest);
+            ui.ToggleToolType(inventory.activeTool);
         }
         else
         {
-            inventory.SetItem(Inventory.ActiveItem.Herb);
-            ui.ToggleToolType(inventory.activeItem);
+            inventory.SetItem(Inventory.Herb);
+            ui.ToggleToolType(inventory.activeTool);
         }
     }
 
 
     public void OnSelectHerb(InputValue value)
     {
-        inventory.SetItem(Inventory.ActiveItem.Herb);
-        ui.ToggleToolType(inventory.activeItem);
+        inventory.SetItem(Inventory.Herb);
+        ui.ToggleToolType(inventory.activeTool);
     }
 
     public void OnSelectPlant(InputValue value)
     {
-        inventory.SetItem(Inventory.ActiveItem.Plant);
-        ui.ToggleToolType(inventory.activeItem);
+        inventory.SetItem(Inventory.Plant);
+        ui.ToggleToolType(inventory.activeTool);
     }
 
     public void OnSelectItem1(InputValue value)
     {
         inventory.SetItemIndex(0);
-        ui.selectActiveItem(0);
+        ui.selectActiveSeed(0, inventory.activeTool);
     }
 
     public void OnSelectItem2(InputValue value)
     {
         inventory.SetItemIndex(1);
-        ui.selectActiveItem(1);
+        ui.selectActiveSeed(1, inventory.activeTool);
     }
 
     public void OnSelectItem3(InputValue value)
     {
         inventory.SetItemIndex(2);
-        ui.selectActiveItem(2);
+        ui.selectActiveSeed(2, inventory.activeTool);
     }
 
     public void OnSelectItem4(InputValue value)
     {
         inventory.SetItemIndex(3);
-        ui.selectActiveItem(3);
+        ui.selectActiveSeed(3, inventory.activeTool);
     }
 
     public void OnSkipDay(InputValue value)
