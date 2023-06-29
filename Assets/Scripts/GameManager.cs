@@ -76,6 +76,7 @@ public class GameManager : MonoBehaviour
         Plants.Remove(plant);
         plant.Destroy(this);
         DestroyedPlant?.Invoke(plant);
+        Player.ui.refreshAmounts();
         Destroy(plant.gameObject);
     }
 }

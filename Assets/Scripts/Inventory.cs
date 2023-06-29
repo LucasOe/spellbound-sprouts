@@ -46,4 +46,11 @@ public class Inventory : MonoBehaviour
             return activeHerb;
         }
     }
+    
+    public void setSeedAmounts() 
+    {    
+        for(int i = 0; i < seeds.Length; i++) {
+            seeds[i].setStartAmount();
+        }
+    }
 }
