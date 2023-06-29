@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b341752db0bf28347bcfdea14bf59c6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Healthbar: {fileID: 4941722615408885903}
+  Healthbar: {fileID: 4943926733200747774}
   ActiveStage: {fileID: 9162601310732852332}
   MaxHealth: 10
   Stages:
@@ -189,16 +189,16 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 648763038562647166}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4941722615408885903 stripped
+--- !u!114 &4943926733200747774 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5590189805588446449, guid: 24c5a8f9870a091458ed0f55268f7d51,
+  m_CorrespondingSourceObject: {fileID: 5592491762465706112, guid: 24c5a8f9870a091458ed0f55268f7d51,
     type: 3}
   m_PrefabInstance: {fileID: 648763038562647166}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1c3edef63e35b14483b62b31fc76549, type: 3}
+  m_Script: {fileID: 11500000, guid: 828fd3f2a722c714fa3578bf6a07b9cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &4041113516901195037
