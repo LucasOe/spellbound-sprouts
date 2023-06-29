@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Seed : Item
 {
-    public int startAmount = 0;
-    private int amount;
+    public int startAmount = 2;
+    public int amount;
 
     // Start is called before the first frame update
     void Start()
@@ -23,11 +23,11 @@ public class Seed : Item
         this.amount = startAmount;
     }
 
-    public int getAmount() {
-        return amount;
+    public void AddHarvest(bool mature) {
+        this.amount += mature ?  2 : 1;
     }
 
-    public void AddHarvest() {
-        this.amount += 2;
+    public void PlantSeed() {
+        this.amount -= 1;
     }
 }

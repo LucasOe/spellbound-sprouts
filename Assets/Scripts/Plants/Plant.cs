@@ -27,7 +27,7 @@ public class Plant : MonoBehaviour
 
     public void Destroy(GameManager gameManager)
     {
-        seed.AddHarvest();
+        seed.AddHarvest(mature);
         // Unsubscribe from events
         gameManager.DayStart -= OnDayStart;
     }

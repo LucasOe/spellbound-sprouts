@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        inventory.setSeedAmounts(); 
+        inventory.emptyInventory(); 
         rigidbody = GetComponent<Rigidbody>();
     }
 
@@ -83,15 +83,23 @@ public class Player : MonoBehaviour
     {
         if (distanceToCursor <= 10 && !GameManager.IsNight)
         {
-            if (!tile.Plant && inventory.activeTool != inventory.Harvest)
-            {
-                Plant tileContent = GameManager.CreatePlant(inventory.GetPlant(), tile.transform.position, Quaternion.identity, tile);
-                tile.Plant = tileContent;
-            }
-            else if (tile.Plant && inventory.activeTool == inventory.Harvest)
-            {
-                GameManager.DestroyPlant(tile.Plant);
-            }
+            handleTileInteraction(tile);
+        }
+    }
+
+    private void handleTileInteraction(Tile tile) {
+        Tool ActiveTool = inventory.activeTool;
+
+        if (!tile.Plant && ActiveTool != inventory.Harvest && inventory.GetPlant().seed.amount > 0)
+        {
+            Plant tileContent = GameManager.CreatePlant(inventory.GetPlant(), tile.transform.position, Quaternion.identity, tile);
+            tile.Plant = tileContent;
+            tileContent.seed.PlantSeed(); 
+            ui.RefreshAmounts();
+        }
+        else if (tile.Plant && ActiveTool == inventory.Harvest)
+        {
+            GameManager.DestroyPlant(tile.Plant);
         }
     }
 
