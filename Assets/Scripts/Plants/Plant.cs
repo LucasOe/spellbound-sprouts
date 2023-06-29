@@ -39,6 +39,10 @@ public class Plant : MonoBehaviour
         Stages.ForEach(stage => stage.SetActive(false));
         Stages[0].SetActive(true);
         ActiveStage = Stages[0];
+
+        // Random Rotation
+        var rotation = Random.Range(0.0f, 360.0f);
+        transform.rotation = Quaternion.Euler(0, rotation, 0);
     }
 
     public void Damage(float amount)
