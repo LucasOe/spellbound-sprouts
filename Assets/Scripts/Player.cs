@@ -51,7 +51,9 @@ public class Player : MonoBehaviour
         {
             var target = new Vector3(hitInfo.point.x, player.transform.position.y, hitInfo.point.z);
             player.transform.LookAt(target);
-            distanceToCursor = this.GetDistance(hitInfo.collider.GetComponent<MonoBehaviour>());
+
+            if (TryGetComponent(out MonoBehaviour targetObject))
+                distanceToCursor = this.GetDistance(targetObject);
         }
     }
 
@@ -81,7 +83,7 @@ public class Player : MonoBehaviour
         if (distanceToCursor <= 10 && !GameManager.IsNight)
         {
             if (!tile.Plant && inventory.activeTool != inventory.Harvest)
-            {   
+            {
                 Plant tileContent = GameManager.CreatePlant(inventory.GetPlant(), tile.transform.position, Quaternion.identity, tile);
                 tile.Plant = tileContent;
             }
