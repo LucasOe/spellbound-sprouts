@@ -8045,7 +8045,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 1041968238}
   Tiles: []
-  Enemies: []
+  Enemies:
+  - {fileID: 0}
   Plants: []
   TimeManger: {fileID: 1328368776}
   DayCycleController: {fileID: 1029318140}
