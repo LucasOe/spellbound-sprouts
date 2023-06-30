@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        Inventory.EmptyInventory();
+        Inventory.ResetInventory();
         rigidbody = GetComponent<Rigidbody>();
     }
 
@@ -35,6 +35,16 @@ public class Player : MonoBehaviour
         // Move player
         // transform.Translate(relativeVelocity * movementSpeed * Time.deltaTime);
         rigidbody.MovePosition(transform.position + movementSpeed * Time.deltaTime * relativeVelocity);
+        handleScroll();
+    }
+
+    private void handleScroll() {
+        if (Input.mouseScrollDelta.y > 0) {
+            Inventory.ScrollSeed(1);
+        }
+        else if (Input.mouseScrollDelta.y < 0) {
+            Inventory.ScrollSeed(-1);
+        }
     }
 
     public void OnMove(InputValue value)
@@ -152,10 +162,6 @@ public class Player : MonoBehaviour
     {
         Inventory.SetSeed(3);
         ui.selectActiveSeed(3, Inventory.activeTool);
-    }
-
-    public void OnSelectScroll(InputValue value) {
-        Debug.Log(value);
     }
 
     public void OnSkipDay(InputValue value)
