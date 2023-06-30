@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public float MaxHealth = 10.0f;
     private float currentHealth;
     public float AttackRange = 1.0f;
+    public ItemDrop[] ItemDrops;
 
     public Outline Outline;
     public NavMeshAgent Agent;
