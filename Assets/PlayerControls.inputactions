@@ -106,9 +106,9 @@
                 },
                 {
                     "name": "SelectScroll",
-                    "type": "Button",
+                    "type": "PassThrough",
                     "id": "dfb506eb-5fc0-4aee-9619-54c2b0ef7f8f",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -424,9 +424,20 @@
                     "isPartOfComposite": false
                 },
                 {
+                    "name": "",
+                    "id": "2384892e-4c69-42cb-abbf-fd1bee43ae58",
+                    "path": "<Mouse>/scroll/y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SelectScroll",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
                     "name": "1D Axis",
-                    "id": "2a56bee7-2b22-433e-9ae3-2ef8d63b57f9",
-                    "path": "1DAxis(whichSideWins=1)",
+                    "id": "3c580ffd-5772-409a-916e-6677933ec4a0",
+                    "path": "1DAxis",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -436,7 +447,7 @@
                 },
                 {
                     "name": "negative",
-                    "id": "7c10e5a2-5343-4dad-9202-ee94fb86f075",
+                    "id": "38c6fef8-64fe-4eb9-a707-b2b2ee77cf53",
                     "path": "<Mouse>/scroll/up",
                     "interactions": "",
                     "processors": "",
@@ -447,7 +458,7 @@
                 },
                 {
                     "name": "positive",
-                    "id": "eacc5fbc-0e5d-4922-9bb5-58fc8dcf236f",
+                    "id": "a29a9772-4a2f-4787-8e61-f79d7a48f20e",
                     "path": "<Mouse>/scroll/down",
                     "interactions": "",
                     "processors": "",
