@@ -101,10 +101,10 @@ public class GameManager : MonoBehaviour
         return spawnedItemDrop;
     }
 
-    public void DestroyItemDrop(ItemDrop itemDrop) {
-        ItemDrops.Remove(itemDrop);
-        itemDrop.Destroy(this);
-        DestroyedItemDrop?.Invoke(itemDrop);
-        Destroy(itemDrop.obj);
+    public void DestroyItemDrop(ItemDrop ItemDrop) {
+        ItemDrops.Remove(ItemDrop);
+        ItemDrop.Destroy(this);
+        DestroyedItemDrop?.Invoke(ItemDrop);
+        Destroy(ItemDrop.obj);
     }
 }

@@ -18,6 +18,8 @@ public class Inventory : MonoBehaviour
     public Plant activePlant = null;
     public Plant activeHerb = null;
 
+    public Item[] EnemyDrops;
+
     public void SetTool(Tool activeTool)
     {
         this.activeTool = activeTool;
@@ -54,4 +56,5 @@ public class Inventory : MonoBehaviour
             seeds[i].SetStartAmount();
         }
     }
+
 }
