@@ -103,15 +103,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "SelectScroll",
-                    "type": "PassThrough",
-                    "id": "dfb506eb-5fc0-4aee-9619-54c2b0ef7f8f",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -422,50 +413,6 @@
                     "action": "SkipDay",
                     "isComposite": false,
                     "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "2384892e-4c69-42cb-abbf-fd1bee43ae58",
-                    "path": "<Mouse>/scroll/y",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "SelectScroll",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "1D Axis",
-                    "id": "3c580ffd-5772-409a-916e-6677933ec4a0",
-                    "path": "1DAxis",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "SelectScroll",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "negative",
-                    "id": "38c6fef8-64fe-4eb9-a707-b2b2ee77cf53",
-                    "path": "<Mouse>/scroll/up",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "SelectScroll",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "positive",
-                    "id": "a29a9772-4a2f-4787-8e61-f79d7a48f20e",
-                    "path": "<Mouse>/scroll/down",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "SelectScroll",
-                    "isComposite": false,
-                    "isPartOfComposite": true
                 }
             ]
         },
