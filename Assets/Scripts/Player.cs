@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     public new Camera camera;
     public Inventory Inventory;
     public UI ui;
+    public Animator Animator;
 
     public float movementSpeed = 25.0f;
     public float damage = 4.0f;
@@ -24,7 +25,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        Inventory.EmptyInventory();
+        Inventory.ResetInventory();
         rigidbody = GetComponent<Rigidbody>();
     }
 
@@ -35,6 +36,17 @@ public class Player : MonoBehaviour
         // Move player
         // transform.Translate(relativeVelocity * movementSpeed * Time.deltaTime);
         rigidbody.MovePosition(transform.position + movementSpeed * Time.deltaTime * relativeVelocity);
+        Animator.SetBool("isWalking", relativeVelocity.magnitude > 0);
+        handleScroll();
+    }
+
+    private void handleScroll() {
+        if (Input.mouseScrollDelta.y < 0) {
+            Inventory.ScrollSeed(1);
+        }
+        else if (Input.mouseScrollDelta.y > 0) {
+            Inventory.ScrollSeed(-1);
+        }
     }
 
     public void OnMove(InputValue value)
@@ -162,4 +174,9 @@ public class Player : MonoBehaviour
             GameManager.TimeManger.SkipDay();
         }
     }
+
+    public void PlaySound(AudioClip audioclip, float vol) {
+        AudioSource.PlayOneShot(audioclip, vol);
+    }
+
 }
