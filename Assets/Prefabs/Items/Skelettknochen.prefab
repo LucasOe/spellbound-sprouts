@@ -47,10 +47,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70a8a7015bc3db54ab6f320122867579, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 0}
+  item: {fileID: 6364326429399645585}
+  _dropchance: 1
   obj: {fileID: 6502636153822134533}
   Agent: {fileID: 4030650788085334222}
-  _dropchance: 1
 --- !u!114 &6364326429399645585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63,6 +63,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94704099e70432949b546b1a05d5bc3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  amount: 0
 --- !u!195 &4030650788085334222
 NavMeshAgent:
   m_ObjectHideFlags: 0
