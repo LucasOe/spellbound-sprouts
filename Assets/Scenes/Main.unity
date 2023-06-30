@@ -299,7 +299,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &70863934
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -385,7 +385,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &73488180
 PrefabInstance:
@@ -6109,9 +6109,15 @@ MonoBehaviour:
   gameManager: {fileID: 1328368777}
   Tile: {fileID: 5445655928565722011, guid: c45a78f974d63e74598760b36552a8c9, type: 3}
   GridData:
-  - position: {x: 0, y: 0.01, z: 0}
-    Width: 20
-    Depth: 20
+  - position: {x: 9, y: 0.01, z: 9}
+    Width: 15
+    Depth: 15
+  - position: {x: 9, y: 0.01, z: -9}
+    Width: 15
+    Depth: 15
+  - position: {x: -9, y: 0.01, z: 9}
+    Width: 15
+    Depth: 15
 --- !u!4 &1010288252
 Transform:
   m_ObjectHideFlags: 0
@@ -7409,7 +7415,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &1192124088
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7452,7 +7458,7 @@ MeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 73c176f402d2c2f4d929aa5da7585d17, type: 2}
+  - {fileID: 2100000, guid: 9d0eaae474650594b99336ab0909545d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10719,7 +10725,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &1955799989
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10805,7 +10811,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1989859181
 PrefabInstance:
