@@ -15,8 +15,14 @@ public class Inventory : MonoBehaviour
     public Plant[] plants;
     public Plant[] herbs;
     public Seed[] seeds;
+    public int plantIndex;
+    public int herbIndex;
     public Plant activePlant = null;
     public Plant activeHerb = null;
+
+    public Item[] EnemyDrops;
+
+    public UI ui;
 
     public void SetTool(Tool activeTool)
     {
@@ -27,11 +33,34 @@ public class Inventory : MonoBehaviour
     {
         if (activeTool == PlantSeeds)
         {
+            plantIndex = i;
             this.activePlant = plants[i];
         }
         else if (activeTool == HerbSeeds)
         {
+            herbIndex = i;
             this.activeHerb = herbs[i];
+        }
+        ui.selectActiveSeed(i, activeTool);
+    }
+
+    public void ScrollSeed(int i) 
+    {
+        if (activeTool == PlantSeeds)
+        {
+            if(plantIndex + i >= 0 && plantIndex + i < plants.Length) {
+            plantIndex = plantIndex + i;
+            this.activePlant = plants[plantIndex];
+            ui.selectActiveSeed(plantIndex, activeTool);
+            }
+        }
+        else if (activeTool == HerbSeeds)
+        {
+            if(herbIndex + i >= 0 && herbIndex + i < plants.Length) {
+            herbIndex = herbIndex + i;
+            this.activeHerb = herbs[herbIndex];
+            ui.selectActiveSeed(herbIndex, activeTool);
+            }
         }
     }
 
@@ -47,11 +76,14 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void EmptyInventory()
+    public void ResetInventory()
     {
         for (int i = 0; i < seeds.Length; i++)
         {
             seeds[i].SetStartAmount();
         }
+        plantIndex = 0;
+        herbIndex = 0;
     }
+
 }
