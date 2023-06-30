@@ -34,8 +34,8 @@ ModelImporter:
     clipAnimations:
     - serializedVersion: 16
       name: Idle
-      takeName: metarig|metarigAction
-      internalID: -887982601649841707
+      takeName: WitchRig|Animation
+      internalID: 3186482789983368098
       firstFrame: 0
       lastFrame: 59
       wrapMode: 0
@@ -44,7 +44,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -63,8 +63,8 @@ ModelImporter:
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Walk
-      takeName: metarig|metarigAction
-      internalID: 14714776983925720
+      takeName: WitchRig|Animation
+      internalID: -6580149833618466872
       firstFrame: 60
       lastFrame: 119
       wrapMode: 0
@@ -73,7 +73,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -92,8 +92,8 @@ ModelImporter:
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Attack
-      takeName: metarig|metarigAction
-      internalID: 4597800159387056593
+      takeName: WitchRig|Animation
+      internalID: -6071656397279310695
       firstFrame: 120
       lastFrame: 179
       wrapMode: 0
@@ -121,8 +121,8 @@ ModelImporter:
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Harvest
-      takeName: metarig|metarigAction
-      internalID: -4630526583149419015
+      takeName: WitchRig|Animation
+      internalID: -3730244472962029728
       firstFrame: 180
       lastFrame: 239
       wrapMode: 0
@@ -207,7 +207,7 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     globalScale: 1
-    rootMotionBoneName: 
+    rootMotionBoneName: WitchRig
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
@@ -215,7 +215,7 @@ ModelImporter:
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   importBlendShapeDeformPercent: 1
   remapMaterialsIfMaterialImportModeIsNone: 0
