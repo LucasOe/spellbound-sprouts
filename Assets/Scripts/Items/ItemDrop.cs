@@ -12,6 +12,9 @@ public class ItemDrop : MonoBehaviour
     public GameObject obj = null;
     public NavMeshAgent Agent;
 
+    public AudioSource AudioSource;
+    public AudioClip CollectEffect;
+
 
     public void Setup(GameManager gameManager)
     {
@@ -35,6 +38,7 @@ public class ItemDrop : MonoBehaviour
     }
     public void Destroy(GameManager gameManager)
     {
+        AudioSource.PlayOneShot(CollectEffect);
         item.amount++;
     }
 }
