@@ -154,6 +154,10 @@ public class Player : MonoBehaviour
         ui.selectActiveSeed(3, Inventory.activeTool);
     }
 
+    public void OnSelectScroll(InputValue value) {
+        Debug.Log(value);
+    }
+
     public void OnSkipDay(InputValue value)
     {
         if (!GameManager.IsNight)
@@ -162,4 +166,5 @@ public class Player : MonoBehaviour
             GameManager.TimeManger.SkipDay();
         }
     }
+
 }
