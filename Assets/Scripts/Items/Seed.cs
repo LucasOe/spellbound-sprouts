@@ -4,26 +4,26 @@ using UnityEngine;
 
 public class Seed : Item
 {
-    public int startAmount = 2;
-    public int amount;
+    public int _startAmount = 2;
+    public int _amount;
 
     void Start()
     {
-        this.amount = startAmount;
+        this._amount = _startAmount;
     }
 
     public void SetStartAmount()
     {
-        this.amount = startAmount;
+        this._amount = _startAmount;
     }
 
     public void AddHarvest(bool mature)
     {
-        this.amount += mature ? 2 : 1;
+        this._amount += mature ? 2 : 1;
     }
 
     public void PlantSeed()
     {
-        this.amount -= 1;
+        this._amount -= 1;
     }
 }

@@ -90,7 +90,7 @@ public class Player : MonoBehaviour
     {
         Tool ActiveTool = Inventory.activeTool;
 
-        if (!tile.Plant && ActiveTool != Inventory.Harvest && Inventory.GetPlant().seed.amount > 0)
+        if (!tile.Plant && ActiveTool != Inventory.Harvest && Inventory.GetPlant().seed._amount > 0)
         {
             Plant tileContent = GameManager.CreatePlant(Inventory.GetPlant(), tile.transform.position, Quaternion.identity, tile);
             tile.Plant = tileContent;

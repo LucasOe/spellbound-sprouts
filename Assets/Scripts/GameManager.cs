@@ -20,6 +20,11 @@ public class GameManager : MonoBehaviour
     public Action<Plant> DestroyedPlant;
     public List<Plant> Plants;
 
+    //Item Drops
+    public Action<ItemDrop> CreatedItemDrop;
+    public Action<ItemDrop> DestroyedItemDrop;
+    public List<ItemDrop> ItemDrops;
+
     // Day Night Cycle
     public TimeManger TimeManger;
     public DayCycleController DayCycleController;
@@ -56,7 +61,11 @@ public class GameManager : MonoBehaviour
         Enemies.Remove(enemy);
         enemy.Destroy(this);
         DestroyedEnemy?.Invoke(enemy);
-        Destroy(enemy.gameObject);
+
+        GameObject obj = enemy.gameObject;
+
+        CreateItemDrop(enemy.ItemDrops[0], obj.transform.position);
+        Destroy(obj);
     }
 
     public Plant CreatePlant(Plant plant, Vector3 position, Quaternion rotation, MonoBehaviour parent = null)
@@ -78,5 +87,24 @@ public class GameManager : MonoBehaviour
         DestroyedPlant?.Invoke(plant);
         Player.ui.RefreshAmounts();
         Destroy(plant.gameObject);
+    }
+
+    public ItemDrop CreateItemDrop(ItemDrop itemDrop, Vector3 position, MonoBehaviour parent = null)
+    {
+        ItemDrop spawnedItemDrop = Instantiate(itemDrop, position, Quaternion.Euler(0, UnityEngine.Random.Range(0.0f, 360.0f), 0));
+        if (parent)
+            spawnedItemDrop.transform.SetParent(parent.transform, true);
+
+        spawnedItemDrop.Setup(this);
+        ItemDrops.Add(spawnedItemDrop);
+        CreatedItemDrop?.Invoke(spawnedItemDrop);
+        return spawnedItemDrop;
+    }
+
+    public void DestroyItemDrop(ItemDrop itemDrop) {
+        ItemDrops.Remove(itemDrop);
+        itemDrop.Destroy(this);
+        DestroyedItemDrop?.Invoke(itemDrop);
+        Destroy(itemDrop.obj);
     }
 }

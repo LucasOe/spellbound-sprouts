@@ -89,7 +89,7 @@ public class UI : MonoBehaviour
     {
         for (int i = 0; i < inventory.seeds.Length; i++)
         {
-            _seedAmountLabels[i].text = inventory.seeds[i].amount.ToString();
+            _seedAmountLabels[i].text = inventory.seeds[i]._amount.ToString();
         }
     }
 
