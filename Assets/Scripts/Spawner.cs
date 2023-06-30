@@ -24,6 +24,13 @@ public class Spawner : MonoBehaviour
 
     public void OnNightStart(int day)
     {
-        GameManager.CreateEnemy(Skelton, transform.position, transform.rotation);
+        if (Random.value >= 0.5)
+        {
+            GameManager.CreateEnemy(Skelton, transform.position, transform.rotation);
+        }
+        else
+        {
+            GameManager.CreateEnemy(Spider, transform.position, transform.rotation);
+        }
     }
 }
