@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     public new Camera camera;
     public Inventory Inventory;
     public UI ui;
+    public Animator Animator;
 
     public float movementSpeed = 25.0f;
     public float damage = 4.0f;
@@ -35,6 +36,7 @@ public class Player : MonoBehaviour
         // Move player
         // transform.Translate(relativeVelocity * movementSpeed * Time.deltaTime);
         rigidbody.MovePosition(transform.position + movementSpeed * Time.deltaTime * relativeVelocity);
+        Animator.SetBool("isWalking", relativeVelocity.magnitude > 0);
         handleScroll();
     }
 
