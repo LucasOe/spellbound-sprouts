@@ -48,8 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameManager: {fileID: 0}
   Skelton: {fileID: 1817795642227795184, guid: 9f87bf63365d7c942822474e7b7b0ff1, type: 3}
-  Spider: {fileID: 1817795642227795184, guid: 9f87bf63365d7c942822474e7b7b0ff1, type: 3}
-  Days: []
+  Spider: {fileID: 1817795642227795184, guid: f66f251f55169a8478f77a669f3b6183, type: 3}
 --- !u!33 &6014585723015511487
 MeshFilter:
   m_ObjectHideFlags: 0
