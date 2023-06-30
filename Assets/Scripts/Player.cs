@@ -41,10 +41,10 @@ public class Player : MonoBehaviour
     }
 
     private void handleScroll() {
-        if (Input.mouseScrollDelta.y > 0) {
+        if (Input.mouseScrollDelta.y < 0) {
             Inventory.ScrollSeed(1);
         }
-        else if (Input.mouseScrollDelta.y < 0) {
+        else if (Input.mouseScrollDelta.y > 0) {
             Inventory.ScrollSeed(-1);
         }
     }
