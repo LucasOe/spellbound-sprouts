@@ -175,4 +175,8 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void PlaySound(AudioClip audioclip, float vol) {
+        AudioSource.PlayOneShot(audioclip, vol);
+    }
+
 }

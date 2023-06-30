@@ -21,8 +21,6 @@ public class GameManager : MonoBehaviour
     public List<Plant> Plants;
 
     //Item Drops
-    public Action<ItemDrop> CreatedItemDrop;
-    public Action<ItemDrop> DestroyedItemDrop;
     public List<ItemDrop> ItemDrops;
 
     // Day Night Cycle
@@ -97,14 +95,12 @@ public class GameManager : MonoBehaviour
 
         spawnedItemDrop.Setup(this);
         ItemDrops.Add(spawnedItemDrop);
-        CreatedItemDrop?.Invoke(spawnedItemDrop);
         return spawnedItemDrop;
     }
 
     public void DestroyItemDrop(ItemDrop ItemDrop) {
         ItemDrops.Remove(ItemDrop);
         ItemDrop.Destroy(this);
-        DestroyedItemDrop?.Invoke(ItemDrop);
-        Destroy(ItemDrop.obj);
+        Destroy(ItemDrop.gameObject);
     }
 }
