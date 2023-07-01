@@ -64,6 +64,7 @@ MonoBehaviour:
     spiderCount: 2
   - skeletonCount: 2
     spiderCount: 2
+  IsFinished: 1
 --- !u!33 &6014585723015511487
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -79,7 +80,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6014585723015511475}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
