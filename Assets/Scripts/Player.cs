@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     public GameManager GameManager;
     public GameObject player;
     public new Camera camera;
+    public CharacterController Controller;
     public Inventory Inventory;
     public UI ui;
     public Animator Animator;
@@ -15,7 +16,6 @@ public class Player : MonoBehaviour
     public float movementSpeed = 25.0f;
     public float damage = 4.0f;
 
-    private new Rigidbody rigidbody;
     private Vector3 velocity = new();
     private Vector2 mousePosition;
     public float distanceToCursor;
@@ -26,25 +26,28 @@ public class Player : MonoBehaviour
     private void Start()
     {
         Inventory.ResetInventory();
-        rigidbody = GetComponent<Rigidbody>();
     }
 
     private void Update()
     {
         // Roatate velocity vector so that the player moves relative to the camera
         var relativeVelocity = Quaternion.Euler(0, camera.gameObject.transform.eulerAngles.y, 0) * velocity;
+        relativeVelocity.y += -9.81f * Time.deltaTime; // Apply gravity
         // Move player
-        // transform.Translate(relativeVelocity * movementSpeed * Time.deltaTime);
-        rigidbody.MovePosition(transform.position + movementSpeed * Time.deltaTime * relativeVelocity);
+        Controller.Move(movementSpeed * Time.deltaTime * relativeVelocity);
+
         Animator.SetBool("isWalking", relativeVelocity.magnitude > 0);
         handleScroll();
     }
 
-    private void handleScroll() {
-        if (Input.mouseScrollDelta.y < 0) {
+    private void handleScroll()
+    {
+        if (Input.mouseScrollDelta.y < 0)
+        {
             Inventory.ScrollSeed(1);
         }
-        else if (Input.mouseScrollDelta.y > 0) {
+        else if (Input.mouseScrollDelta.y > 0)
+        {
             Inventory.ScrollSeed(-1);
         }
     }
@@ -52,7 +55,7 @@ public class Player : MonoBehaviour
     public void OnMove(InputValue value)
     {
         var vector = value.Get<Vector2>();
-        velocity = new Vector3(vector.x / 2, 0, vector.y / 2);
+        velocity = new Vector3(vector.x, 0, vector.y);
     }
 
     public void OnLook(InputValue value)
@@ -175,7 +178,8 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void PlaySound(AudioClip audioclip, float vol) {
+    public void PlaySound(AudioClip audioclip, float vol)
+    {
         AudioSource.PlayOneShot(audioclip, vol);
     }
 
