@@ -7,17 +7,17 @@ public class Timer : MonoBehaviour
 {
     public float duration;
     public float timeRemaining;
-    public bool IsRepeating;
+    public int RepeatCount;
     public bool IsRunning;
     private Action callback;
 
-    public static Timer CreateTimer(GameObject where, float duration, Action callback, bool repeat = false)
+    public static Timer CreateTimer(GameObject where, float duration, Action callback, int repeat = 0)
     {
         Timer timer = where.AddComponent<Timer>();
         timer.duration = duration;
         timer.timeRemaining = duration;
         timer.callback = callback;
-        timer.IsRepeating = repeat;
+        timer.RepeatCount = repeat;
         timer.IsRunning = true;
         return timer;
     }
@@ -40,14 +40,15 @@ public class Timer : MonoBehaviour
     // Skip remaining time and execute the callback
     public void SkipTimer()
     {
-        if (!IsRepeating)
+        if (RepeatCount <= 0)
         {
-            timeRemaining = 0; // avoid values below zero
             IsRunning = false;
+            timeRemaining = 0; // avoid values below zero
         }
         else
         {
             timeRemaining = duration;
+            RepeatCount--;
         }
         callback();
     }

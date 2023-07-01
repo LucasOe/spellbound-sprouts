@@ -56,10 +56,21 @@ public class TimeManger : MonoBehaviour
     private void OnEnemyDeath(Enemy enemy)
     {
         // Start next day
-        if (GameManager.IsNight && GameManager.Enemies.Count <= 0)
+        if (GameManager.IsNight && GameManager.Enemies.Count <= 0 && FinishedSpawners())
         {
             GameManager.Day += 1;
             StartDay(GameManager.Day);
         }
+    }
+
+    // All Spawners have no Enemies remaining
+    private bool FinishedSpawners()
+    {
+        foreach (Spawner spawner in GameManager.Spawners)
+        {
+            if (!spawner.IsFinished)
+                return false;
+        }
+        return true;
     }
 }

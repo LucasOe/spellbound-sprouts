@@ -29,7 +29,7 @@ public class Grid : MonoBehaviour
                         - new Vector3(data.Width * size.x / 2, 0, data.Depth * size.z / 2); // Offset by half so data.position is the center
 
                     Tile tile = gameManager.CreateTile(Tile, position, Quaternion.identity, this);
-                    tile.name = string.Format("Tile[{0:00},{1:00}]", x, z); ;
+                    tile.name = string.Format("Tile[{0:00},{1:00}]", x, z);
                 }
             }
         }
