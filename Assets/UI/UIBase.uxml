@@ -1,6 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI/BaseUI.uss?fileID=7433441132597879392&amp;guid=a45ee422413450a4ab98c74270d464a1&amp;type=3#BaseUI" />
-    <ui:VisualElement name="Container" style="flex-direction: row; flex-grow: 0; position: absolute; bottom: 0; left: -1px; right: 6px; align-items: center; justify-content: space-between; width: 680px; -unity-text-align: upper-center; padding-left: 11px; padding-right: 11px; padding-top: 11px; padding-bottom: 11px; flex-wrap: wrap; height: auto;">
+    <ui:VisualElement name="Container" style="flex-direction: row; flex-grow: 0; position: absolute; bottom: 0; left: -1px; right: 6px; align-items: center; justify-content: space-between; width: 340px; -unity-text-align: upper-center; padding-left: 11px; padding-right: 11px; padding-top: 11px; padding-bottom: 11px; flex-wrap: wrap; height: auto;">
         <ui:Button text="Ernten" display-tooltip-when-elided="true" name="Harvest" class="harvest" style="width: 96%;">
             <ui:Label text="Tab&#x9;" display-tooltip-when-elided="true" name="Tab" class="shortcut" style="position: absolute; width: 63px;" />
         </ui:Button>
