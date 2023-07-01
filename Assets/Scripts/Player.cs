@@ -37,6 +37,12 @@ public class Player : MonoBehaviour
         // Move player
         Controller.Move(movementSpeed * Time.deltaTime * relativeVelocity);
 
+        if (velocity.magnitude != 0)
+        {
+            var toRoation = Quaternion.LookRotation(velocity, Vector3.up);
+            player.transform.rotation = Quaternion.RotateTowards(player.transform.rotation, toRoation, 720.0f * Time.deltaTime);
+        }
+
         Animator.SetBool("isWalking", velocity.magnitude > 0);
         handleScroll();
     }
@@ -65,9 +71,6 @@ public class Player : MonoBehaviour
         Ray ray = camera.ScreenPointToRay(mousePosition);
         if (Physics.Raycast(ray, out RaycastHit hitInfo, 300f))
         {
-            var target = new Vector3(hitInfo.point.x, player.transform.position.y, hitInfo.point.z);
-            player.transform.LookAt(target);
-
             if (hitInfo.transform.gameObject.TryGetComponent(out MonoBehaviour targetObject))
                 distanceToCursor = this.GetDistance(targetObject);
         }
