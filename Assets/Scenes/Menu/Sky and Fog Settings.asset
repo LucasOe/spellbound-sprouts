@@ -176,7 +176,7 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.428
+    m_Value: 0.4
   smoothness:
     m_OverrideState: 0
     m_Value: 0.2
@@ -190,6 +190,52 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: {fileID: 0}
   opacity:
+    m_OverrideState: 0
+    m_Value: 1
+--- !u!114 &-1692667528899653323
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24f077503be6ae942a1e1245dbd53ea9, type: 3}
+  m_Name: Bloom
+  m_EditorClassIdentifier: 
+  active: 1
+  quality:
+    m_OverrideState: 0
+    m_Value: 1
+  threshold:
+    m_OverrideState: 1
+    m_Value: 0.8
+  intensity:
+    m_OverrideState: 1
+    m_Value: 0.5
+  scatter:
+    m_OverrideState: 0
+    m_Value: 0.7
+  tint:
+    m_OverrideState: 0
+    m_Value: {r: 1, g: 1, b: 1, a: 1}
+  dirtTexture:
+    m_OverrideState: 0
+    m_Value: {fileID: 0}
+  dirtIntensity:
+    m_OverrideState: 0
+    m_Value: 1
+  anamorphic:
+    m_OverrideState: 0
+    m_Value: 1
+  m_Resolution:
+    m_OverrideState: 0
+    m_Value: 2
+  m_HighQualityPrefiltering:
+    m_OverrideState: 0
+    m_Value: 0
+  m_HighQualityFiltering:
     m_OverrideState: 0
     m_Value: 1
 --- !u!114 &11400000
@@ -210,6 +256,33 @@ MonoBehaviour:
   - {fileID: -6262468959665876500}
   - {fileID: 7453204093040560393}
   - {fileID: -2744953561686695166}
+  - {fileID: 212293611630645509}
+  - {fileID: -1692667528899653323}
+--- !u!114 &212293611630645509
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a6b00fcf518bb94a90b408492e07b44, type: 3}
+  m_Name: FilmGrain
+  m_EditorClassIdentifier: 
+  active: 1
+  type:
+    m_OverrideState: 1
+    m_Value: 2
+  intensity:
+    m_OverrideState: 1
+    m_Value: 0.2
+  response:
+    m_OverrideState: 0
+    m_Value: 0.8
+  texture:
+    m_OverrideState: 0
+    m_Value: {fileID: 0}
 --- !u!114 &3283535626753966272
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -328,13 +401,13 @@ MonoBehaviour:
     m_Value: 0
   nearFocusEnd:
     m_OverrideState: 1
-    m_Value: 8.3
+    m_Value: 12
   farFocusStart:
     m_OverrideState: 1
-    m_Value: 17.34
+    m_Value: 18
   farFocusEnd:
     m_OverrideState: 1
-    m_Value: 20
+    m_Value: 30
   m_NearSampleCount:
     m_OverrideState: 0
     m_Value: 5
@@ -346,7 +419,7 @@ MonoBehaviour:
     m_Value: 7
   m_FarMaxBlur:
     m_OverrideState: 1
-    m_Value: 6.08
+    m_Value: 8
   m_Resolution:
     m_OverrideState: 0
     m_Value: 2
