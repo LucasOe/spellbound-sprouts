@@ -7,6 +7,9 @@ public class GameManager : MonoBehaviour
 {
     public Player Player;
 
+    // Spawner
+    public List<Spawner> Spawners;
+
     // Tiles
     public List<Tile> Tiles;
 
@@ -98,7 +101,8 @@ public class GameManager : MonoBehaviour
         return spawnedItemDrop;
     }
 
-    public void DestroyItemDrop(ItemDrop ItemDrop) {
+    public void DestroyItemDrop(ItemDrop ItemDrop)
+    {
         ItemDrops.Remove(ItemDrop);
         ItemDrop.Destroy(this);
         Destroy(ItemDrop.gameObject);

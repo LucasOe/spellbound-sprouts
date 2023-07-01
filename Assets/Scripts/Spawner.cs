@@ -13,9 +13,11 @@ public struct EnemySpawnInfo
 public class Spawner : MonoBehaviour
 {
     public GameManager GameManager;
-    public Enemy Skelton;
+    public Enemy Skeleton;
     public Enemy Spider;
-    //public EnemySpawnInfo[] Days;
+    public float SpawnCooldown = 5.0f;
+    public EnemySpawnInfo[] EnemySpawnInfo;
+    public bool IsFinished = true;
 
     void Start()
     {
@@ -24,13 +26,42 @@ public class Spawner : MonoBehaviour
 
     public void OnNightStart(int day)
     {
-        if (Random.value >= 0.5)
+        IsFinished = false;
+        if (day <= EnemySpawnInfo.Length)
         {
-            GameManager.CreateEnemy(Skelton, transform.position, transform.rotation);
+            // Spawn Skeleton
+            if (EnemySpawnInfo[day].skeletonCount > 0)
+            {
+                Timer timer = Timer.CreateTimer(this.gameObject, SpawnCooldown, () =>
+                {
+                    GameManager.CreateEnemy(Skeleton, transform.position, transform.rotation);
+                    EnemySpawnInfo[day].skeletonCount--;
+                    if (EnemySpawnInfo[day].skeletonCount <= 0 && EnemySpawnInfo[day].spiderCount <= 0)
+                    {
+                        IsFinished = true;
+                    }
+                }, EnemySpawnInfo[day].skeletonCount - 1);
+                timer.SkipTimer(); // Skip first cooldown
+            }
+
+            // Spawn Spiders
+            if (EnemySpawnInfo[day].spiderCount > 0)
+            {
+                Timer timer = Timer.CreateTimer(this.gameObject, SpawnCooldown, () =>
+                {
+                    GameManager.CreateEnemy(Spider, transform.position, transform.rotation);
+                    EnemySpawnInfo[day].spiderCount--;
+                    if (EnemySpawnInfo[day].skeletonCount <= 0 && EnemySpawnInfo[day].spiderCount <= 0)
+                    {
+                        IsFinished = true;
+                    }
+                }, EnemySpawnInfo[day].spiderCount - 1);
+                timer.SkipTimer(); // Skip first cooldown
+            }
         }
         else
         {
-            GameManager.CreateEnemy(Spider, transform.position, transform.rotation);
+            Debug.Log("No spawn info");
         }
     }
 }
