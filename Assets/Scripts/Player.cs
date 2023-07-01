@@ -131,7 +131,7 @@ public class Player : MonoBehaviour
         }
         else
         {
-            Inventory.SetTool(Inventory.HerbSeeds);
+            Inventory.SetTool(Inventory.PlantSeeds);
             ui.ToggleToolType(Inventory.activeTool);
         }
     }
