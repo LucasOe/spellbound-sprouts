@@ -23225,10 +23225,10 @@ MonoBehaviour:
   - position: {x: 9, y: 0.01, z: 9}
     Width: 15
     Depth: 15
-  - position: {x: 9, y: 0.01, z: -9}
+  - position: {x: 9, y: 0.01, z: -8}
     Width: 15
     Depth: 15
-  - position: {x: -9, y: 0.01, z: 9}
+  - position: {x: -8, y: 0.01, z: 9}
     Width: 15
     Depth: 15
 --- !u!4 &1010288252
@@ -23833,11 +23833,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 6149167700650982278, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
-        type: 3}
-      propertyPath: m_SlopeLimit
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6856683547410153396, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
         type: 3}
