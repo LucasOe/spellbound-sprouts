@@ -17,7 +17,7 @@ public class Tile : MonoBehaviour
 
     void OnMouseEnter()
     {
-        if (gameManager.Player.distanceToCursor <= 10 && !gameManager.IsNight)
+        if (gameManager.Player.distanceToCursor <= gameManager.Player.Range && !gameManager.IsNight)
         {
             highlight.SetActive(true);
             if (Plant)

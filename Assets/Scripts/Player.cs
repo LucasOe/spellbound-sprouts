@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
 
     public float movementSpeed = 25.0f;
     public float damage = 4.0f;
+    public float Range = 10.0f;
 
     private Vector3 velocity = new();
     private Vector2 mousePosition;
@@ -67,7 +68,7 @@ public class Player : MonoBehaviour
             var target = new Vector3(hitInfo.point.x, player.transform.position.y, hitInfo.point.z);
             player.transform.LookAt(target);
 
-            if (TryGetComponent(out MonoBehaviour targetObject))
+            if (hitInfo.transform.gameObject.TryGetComponent(out MonoBehaviour targetObject))
                 distanceToCursor = this.GetDistance(targetObject);
         }
     }
@@ -95,7 +96,7 @@ public class Player : MonoBehaviour
 
     public void ClickedTile(Tile tile)
     {
-        if (distanceToCursor <= 10 && !GameManager.IsNight)
+        if (distanceToCursor <= Range && !GameManager.IsNight)
         {
             HandleTileInteraction(tile);
         }
