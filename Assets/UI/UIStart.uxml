@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 100%; height: 100%; position: absolute; background-image: url(&apos;project://database/Assets/UI/img/Startscreen.jpg?fileID=2800000&amp;guid=396bd230329fe524498835ca5f8efd0b&amp;type=3#Startscreen&apos;); -unity-background-scale-mode: scale-to-fit;" />
+    <ui:GroupBox style="width: 33%;">
+        <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); background-image: url(&apos;project://database/Assets/UI/img/Logo.png?fileID=2800000&amp;guid=d1c19a6a75f28ca408f88fdec087ded5&amp;type=3#Logo&apos;); -unity-background-scale-mode: scale-to-fit; width: 350px; height: 280px;" />
+        <ui:Button text="Start" display-tooltip-when-elided="true" />
+        <ui:Button text="Setting&#10;" display-tooltip-when-elided="true" />
+        <ui:Button text="Button" display-tooltip-when-elided="true" />
+    </ui:GroupBox>
+</ui:UXML>
