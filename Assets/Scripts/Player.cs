@@ -36,7 +36,7 @@ public class Player : MonoBehaviour
         // Move player
         Controller.Move(movementSpeed * Time.deltaTime * relativeVelocity);
 
-        Animator.SetBool("isWalking", relativeVelocity.magnitude > 0);
+        Animator.SetBool("isWalking", velocity.magnitude > 0);
         handleScroll();
     }
 
