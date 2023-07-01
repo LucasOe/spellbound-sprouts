@@ -7,6 +7,8 @@ public class UI : MonoBehaviour
     Button _herb;
     Button _plant;
     Button _harvest;
+    VisualElement _defensivePlants;
+    VisualElement _herbs;
     List<Button> _plantSeeds = new List<Button>();
     List<Button> _herbSeeds = new List<Button>();
     List<Button> _seeds;
@@ -48,6 +50,8 @@ public class UI : MonoBehaviour
         Button _2H = root.Q<Button>("2H");
         Button _3H = root.Q<Button>("3H");
         Button _4H = root.Q<Button>("4H");
+        _defensivePlants = root.Q<VisualElement>("DefensivePlants");
+        _herbs = root.Q<VisualElement>("Herbs");
         Label _1PAmount = root.Q<Label>("1PAmount");
         Label _2PAmount = root.Q<Label>("2PAmount");
         Label _3PAmount = root.Q<Label>("3PAmount");
@@ -132,16 +136,22 @@ public class UI : MonoBehaviour
                 _harvest.AddToClassList("active");
                 _herb.RemoveFromClassList("active");
                 _plant.RemoveFromClassList("active");
+                _defensivePlants.RemoveFromClassList("open");
+                _herbs.RemoveFromClassList("open");
                 break;
             case PlantSeeds:
                 _harvest.RemoveFromClassList("active");
                 _herb.RemoveFromClassList("active");
                 _plant.AddToClassList("active");
+                _defensivePlants.AddToClassList("open");
+                _herbs.RemoveFromClassList("open");
                 break;
             case HerbSeeds:
                 _harvest.RemoveFromClassList("active");
                 _herb.AddToClassList("active");
                 _plant.RemoveFromClassList("active");
+                _defensivePlants.RemoveFromClassList("open");
+                _herbs.AddToClassList("open");
                 break;
             default:
                 break;
