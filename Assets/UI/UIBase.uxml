@@ -1,19 +1,19 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI/BaseUI.uss?fileID=7433441132597879392&amp;guid=a45ee422413450a4ab98c74270d464a1&amp;type=3#BaseUI" />
     <ui:VisualElement name="Container" style="flex-direction: row; flex-grow: 1; position: absolute; bottom: 0; left: -1px; right: 6px; align-items: center; justify-content: flex-start; width: auto; -unity-text-align: upper-center; padding-left: 11px; padding-right: 11px; padding-top: 11px; padding-bottom: 11px; flex-wrap: wrap; height: auto;">
-        <ui:GroupBox style="background-image: url(&apos;project://database/Assets/UI/img/Wheel.png?fileID=2800000&amp;guid=6a8440c5b3ab89d40868eb3f264813ca&amp;type=3#Wheel&apos;); width: 150px; height: 150px; flex-wrap: nowrap; flex-direction: row;">
+        <ui:GroupBox style="background-image: url(&apos;project://database/Assets/UI/img/wheel.png?fileID=2800000&amp;guid=6a8440c5b3ab89d40868eb3f264813ca&amp;type=3#wheel&apos;); width: 150px; height: 150px; flex-wrap: nowrap; flex-direction: row;">
             <ui:Button text="Pflanzen" display-tooltip-when-elided="true" name="Plant" class="plantType active">
-                <ui:Label text="E" display-tooltip-when-elided="true" name="E" class="shortcut" style="position: absolute;" />
+                <ui:Label text="Q" display-tooltip-when-elided="true" name="E" class="shortcut" style="position: absolute;" />
             </ui:Button>
             <ui:Button text="Kräuter" display-tooltip-when-elided="true" name="Herb" class="plantType">
-                <ui:Label text="Q" display-tooltip-when-elided="true" name="Q" class="shortcut" style="position: absolute;" />
+                <ui:Label text="E" display-tooltip-when-elided="true" name="Q" class="shortcut" style="position: absolute;" />
             </ui:Button>
             <ui:Button text="Ernten" display-tooltip-when-elided="true" name="Harvest" class="harvest" style="width: 96%; position: absolute; top: 79px; background-color: rgba(56, 56, 56, 0); border-left-color: rgba(0, 0, 0, 0); border-right-color: rgba(0, 0, 0, 0); border-top-color: rgba(0, 0, 0, 0); border-bottom-color: rgba(0, 0, 0, 0); left: -4px;">
                 <ui:Label text="Tab&#x9;" display-tooltip-when-elided="true" name="Tab" class="shortcut" style="position: absolute; width: 63px; left: 26px;" />
             </ui:Button>
         </ui:GroupBox>
         <ui:GroupBox name="GroupBox" style="width: 259px; height: 92px; position: relative;">
-            <ui:VisualElement name="DefensivePlants" class="open abilities" style="width: 100%; flex-direction: row; flex-wrap: nowrap; position: absolute; translate: 0 0;">
+            <ui:VisualElement name="DefensivePlants" class="open abilities" style="width: 100%; flex-direction: row; flex-wrap: nowrap; position: absolute;">
                 <ui:VisualElement name="VisualElement" class="seed" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 24%;">
                     <ui:Button text="&#x9;" display-tooltip-when-elided="true" name="1P" class="selectedItem active" style="width: 100%; -unity-background-scale-mode: scale-to-fit;" />
                     <ui:Label tabindex="-1" text="0&#x9;" display-tooltip-when-elided="true" name="1PAmount" class="itemAmount" />
