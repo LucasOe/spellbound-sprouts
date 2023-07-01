@@ -7,6 +7,8 @@ public class DayCycleController : MonoBehaviour
 {
     public GameManager GameManager;
     public Animator Animator;
+    public Light sun;
+    public Light moon;
 
     void Start()
     {
@@ -18,10 +20,14 @@ public class DayCycleController : MonoBehaviour
     public void OnDayStart(int day)
     {
         Animator.SetTrigger("SetDay");
+        sun.shadows = LightShadows.Soft;
+        moon.shadows = LightShadows.None;
     }
 
     public void OnNightStart(int day)
     {
         Animator.SetTrigger("SetNight");
+        moon.shadows = LightShadows.Soft;
+        sun.shadows = LightShadows.None;
     }
 }
