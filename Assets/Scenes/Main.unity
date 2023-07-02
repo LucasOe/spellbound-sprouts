@@ -61544,6 +61544,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c16ddaa8143009f40b3ae82311a6a1fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 1328368777}
   inventory: {fileID: 1789711318}
 --- !u!1001 &2022417933
 PrefabInstance:

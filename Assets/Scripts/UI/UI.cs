@@ -4,11 +4,15 @@ using UnityEngine;
 using UnityEngine.UIElements;
 public class UI : MonoBehaviour
 {
+    public GameManager GameManager;
+    
     Button _herb;
     Button _plant;
     Button _harvest;
     VisualElement _defensivePlants;
     VisualElement _herbs;
+    VisualElement _wheel;
+    VisualElement _nightWand;
     List<Button> _plantSeeds = new List<Button>();
     List<Button> _herbSeeds = new List<Button>();
     List<Button> _seeds;
@@ -36,6 +40,14 @@ public class UI : MonoBehaviour
 
     public Inventory inventory;
 
+    public void Setup(GameManager gameManager)
+    {
+        this.GameManager = gameManager;
+        // Subscribe to events
+        GameManager.DayStart += OnDayStart;
+        GameManager.NightStart += OnDayStart;
+    }
+
     private void OnEnable()
     {
         VisualElement root = GetComponent<UIDocument>().rootVisualElement;
@@ -52,6 +64,8 @@ public class UI : MonoBehaviour
         Button _4H = root.Q<Button>("4H");
         _defensivePlants = root.Q<VisualElement>("DefensivePlants");
         _herbs = root.Q<VisualElement>("Herbs");
+        _wheel = root.Q<VisualElement>("Wheel");
+        _nightWand = root.Q<VisualElement>("NightWand");
         Label _1PAmount = root.Q<Label>("1PAmount");
         Label _2PAmount = root.Q<Label>("2PAmount");
         Label _3PAmount = root.Q<Label>("3PAmount");
@@ -87,6 +101,14 @@ public class UI : MonoBehaviour
     void Update()
     {
 
+    }
+
+    void OnDayStart(int day) {
+        _nightWand.RemoveFromClassList("visible");
+    }
+
+    void OnNightStart() {
+        _nightWand.AddToClassList("visible");
     }
 
     public void RefreshAmounts()
@@ -138,6 +160,8 @@ public class UI : MonoBehaviour
                 _plant.RemoveFromClassList("active");
                 _defensivePlants.RemoveFromClassList("open");
                 _herbs.RemoveFromClassList("open");
+                _wheel.AddToClassList("harvest");
+                _wheel.RemoveFromClassList("herb");
                 break;
             case PlantSeeds:
                 _harvest.RemoveFromClassList("active");
@@ -145,6 +169,8 @@ public class UI : MonoBehaviour
                 _plant.AddToClassList("active");
                 _defensivePlants.AddToClassList("open");
                 _herbs.RemoveFromClassList("open");
+                _wheel.RemoveFromClassList("harvest");
+                _wheel.RemoveFromClassList("herb");
                 break;
             case HerbSeeds:
                 _harvest.RemoveFromClassList("active");
@@ -152,6 +178,8 @@ public class UI : MonoBehaviour
                 _plant.RemoveFromClassList("active");
                 _defensivePlants.RemoveFromClassList("open");
                 _herbs.AddToClassList("open");
+                _wheel.RemoveFromClassList("harvest");
+                _wheel.AddToClassList("herb");
                 break;
             default:
                 break;
