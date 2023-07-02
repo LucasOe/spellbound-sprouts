@@ -8,7 +8,7 @@ public class Timer : MonoBehaviour
     public float duration;
     public float timeRemaining;
     public int RepeatCount;
-    public bool IsRunning;
+    private bool isRunning;
     private Action callback;
     public Action<float> OnUpdate;
 
@@ -19,13 +19,13 @@ public class Timer : MonoBehaviour
         timer.timeRemaining = duration;
         timer.callback = callback;
         timer.RepeatCount = repeat;
-        timer.IsRunning = true;
+        timer.isRunning = true;
         return timer;
     }
 
     void Update()
     {
-        if (IsRunning)
+        if (isRunning)
         {
             if (timeRemaining >= 0)
             {
@@ -44,8 +44,7 @@ public class Timer : MonoBehaviour
     {
         if (RepeatCount <= 0)
         {
-            IsRunning = false;
-            timeRemaining = 0; // avoid values below zero
+            Destroy(this);
         }
         else
         {

@@ -13,15 +13,12 @@ public class TimeManger : MonoBehaviour
     {
         // Subscribe to events
         GameManager.DestroyedEnemy += OnEnemyDeath;
+        GameManager.Spawners.ForEach((spawner) => spawner.SpawnerFinished += OnSpawnerFinished);
 
         timer = Timer.CreateTimer(this.gameObject, cooldownTime, () =>
         {
             StartNight(GameManager.Day);
         });
-    }
-
-    private void Update()
-    {
     }
 
     public void StartNight(int day)
@@ -48,22 +45,30 @@ public class TimeManger : MonoBehaviour
         timer.SkipTimer();
     }
 
-    private void OnEnemyDeath(Enemy enemy)
+    private void NextDay()
     {
-        // Start next day
-        if (GameManager.IsNight && GameManager.Enemies.Count <= 0 && FinishedSpawners())
+        if (GameManager.Enemies.Count <= 0 && FinishedSpawning())
         {
             GameManager.Day += 1;
             StartDay(GameManager.Day);
         }
     }
 
-    // All Spawners have no Enemies remaining
-    private bool FinishedSpawners()
+    private void OnEnemyDeath(Enemy enemy)
+    {
+        NextDay();
+    }
+
+    private void OnSpawnerFinished()
+    {
+        NextDay();
+    }
+
+    private bool FinishedSpawning()
     {
         foreach (Spawner spawner in GameManager.Spawners)
         {
-            if (!spawner.IsFinished)
+            if (!spawner.FinishedSpawning)
                 return false;
         }
         return true;
