@@ -239,8 +239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMaterial: {fileID: 2100000, guid: 22e9780c925fdad4da0899331c212e6c, type: 2}
-  meshRenderers:
-  - {fileID: 3849638382362340694}
+  SkinnedMeshRenderer: {fileID: 3849638382362340694}
 --- !u!114 &1640859530225862544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1170,6 +1169,22 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8417361359673230750, guid: 3ca1911df41a9f245a4d026e88b3ef8f,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8417361359673230750, guid: 3ca1911df41a9f245a4d026e88b3ef8f,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -876546973899608171, guid: 3ca1911df41a9f245a4d026e88b3ef8f,
+        type: 3}
+    - target: {fileID: 8417361359673230750, guid: 3ca1911df41a9f245a4d026e88b3ef8f,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 22e9780c925fdad4da0899331c212e6c, type: 2}
     - target: {fileID: 8663614411843929600, guid: 3ca1911df41a9f245a4d026e88b3ef8f,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
