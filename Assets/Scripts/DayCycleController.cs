@@ -14,6 +14,10 @@ public class DayCycleController : MonoBehaviour
     public GameObject Fireflies;
     public Volume volumeProfile;
 
+    
+    public AudioClip NightAmbienceClip;
+    public AudioClip DayAmbienceClip;
+
     void Start()
     {
         // Subscribe to events
@@ -26,6 +30,7 @@ public class DayCycleController : MonoBehaviour
         Animator.SetTrigger("SetDay");
         sun.shadows = LightShadows.Soft;
         moon.shadows = LightShadows.None;
+        GameManager.Player.PlayAmbience(DayAmbienceClip);
         Fireflies.SetActive(false);
 
         SetFog(false);
@@ -36,6 +41,7 @@ public class DayCycleController : MonoBehaviour
         Animator.SetTrigger("SetNight");
         moon.shadows = LightShadows.Soft;
         sun.shadows = LightShadows.None;
+        GameManager.Player.PlayAmbience(NightAmbienceClip);
         Fireflies.SetActive(true);
 
         SetFog(true);

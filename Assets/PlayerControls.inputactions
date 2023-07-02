@@ -33,24 +33,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "SelectHerb",
-                    "type": "Button",
-                    "id": "aa49d165-e80d-4ccb-8e91-7dfdd0a3886b",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "SelectPlant",
-                    "type": "Button",
-                    "id": "41af2676-84af-4b95-b96c-20de2d560886",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "SelectHarvest",
                     "type": "Button",
                     "id": "c1a273b8-ebed-4f9c-9eb9-634cbe963729",
@@ -323,28 +305,6 @@
                     "processors": "",
                     "groups": "XR",
                     "action": "Fire",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "3fe61413-9d7f-44b2-b227-019db60482c0",
-                    "path": "<Keyboard>/e",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "SelectHerb",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "bab9a63c-3272-4200-bcdd-3e75ba4f6543",
-                    "path": "<Keyboard>/q",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "SelectPlant",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
