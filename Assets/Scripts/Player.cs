@@ -17,8 +17,8 @@ public class Player : MonoBehaviour
     public float movementSpeed = 25.0f;
     public float damage = 4.0f;
     public float Range = 10.0f;
-    public float maxHealth = 100f;
-    public float health = 80f;
+    public float MaxHealth = 100f;
+    public float currentHealth = 100f;
 
     private Vector3 velocity = new();
     private Vector2 mousePosition;
@@ -215,6 +215,16 @@ public class Player : MonoBehaviour
             AttackParticle particle = Instantiate(AttackParticle, transform.position, Quaternion.identity);
             particle.Setup(targetEnemy, damage);
             AudioSource.PlayOneShot(AttackAudioClip);
+        }
+    }
+
+    public void Damage(float amount)
+    {
+        currentHealth -= amount;
+
+        if (currentHealth <= 0)
+        {
+            Debug.Log("Ded");
         }
     }
 }

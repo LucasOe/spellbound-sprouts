@@ -25459,6 +25459,11 @@ PrefabInstance:
       objectReference: {fileID: 1328368777}
     - target: {fileID: 3315166315397763816, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
         type: 3}
+      propertyPath: currentHealth
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3315166315397763816, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
+        type: 3}
       propertyPath: AudioSourceItems
       value: 
       objectReference: {fileID: 516000138}
@@ -63805,7 +63810,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameManager: {fileID: 1328368777}
   inventory: {fileID: 1789711318}
-  player: {fileID: 0}
+  player: {fileID: 1041968238}
 --- !u!1001 &2021604533
 PrefabInstance:
   m_ObjectHideFlags: 0

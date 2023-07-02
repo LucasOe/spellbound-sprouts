@@ -113,7 +113,7 @@ public class UI : MonoBehaviour
             _face.transform.rotation = Quaternion.Euler(0, 0, 270);
             _countdown.text = "00:00"; 
         }
-        _currentHealth.style.width = player.health;
+        _currentHealth.style.width = player.currentHealth * 2;
     }
 
     void OnDayStart(int day) {
