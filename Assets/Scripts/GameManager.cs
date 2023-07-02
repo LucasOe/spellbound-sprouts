@@ -62,11 +62,8 @@ public class GameManager : MonoBehaviour
         Enemies.Remove(enemy);
         enemy.Destroy(this);
         DestroyedEnemy?.Invoke(enemy);
-
-        GameObject obj = enemy.gameObject;
-
-        CreateItemDrop(enemy.ItemDrops[0], obj.transform.position);
-        Destroy(obj);
+        CreateItemDrop(enemy.ItemDrops[0], enemy.transform.position);
+        Destroy(enemy.gameObject);
     }
 
     public Plant CreatePlant(Plant plant, Vector3 position, Quaternion rotation, MonoBehaviour parent = null)
