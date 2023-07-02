@@ -217,7 +217,7 @@ MonoBehaviour:
   Healthbar: {fileID: 9172773670176694367}
   MaxHealth: 10
   AttackRange: 1.5
-  AttackDamage: 1
+  AttackDamage: 5
   ItemDrops:
   - {fileID: 836902625095918240, guid: 0e683959fd42245439c6bd5641f7baf0, type: 3}
   - {fileID: 6463070802350411153, guid: 7c5b76a29c354fe4a9dbab7cb0c1586f, type: 3}

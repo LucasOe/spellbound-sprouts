@@ -216,8 +216,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Healthbar: {fileID: 9172773670176694367}
   MaxHealth: 10
-  AttackRange: 1
-  AttackDamage: 1
+  AttackRange: 1.5
+  AttackDamage: 10
   ItemDrops:
   - {fileID: 6364326429399645585, guid: e0918bca266c5bc428fa0cfc96678756, type: 3}
   Outline: {fileID: 5845701973679248946}

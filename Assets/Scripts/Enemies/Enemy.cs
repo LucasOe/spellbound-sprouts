@@ -114,5 +114,9 @@ public class Enemy : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             AudioSource.PlayOneShot(AttackAudioClip);
             plant.Damage(AttackDamage);
         }
+        if (currentTarget.TryGetComponent(out Player player)) {
+            AudioSource.PlayOneShot(AttackAudioClip);
+            gameManager.Player.Damage(AttackDamage);
+        }
     }
 }
