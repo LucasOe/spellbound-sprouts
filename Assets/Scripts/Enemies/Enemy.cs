@@ -9,9 +9,10 @@ public class Enemy : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     protected GameManager gameManager;
 
     public Healthbar Healthbar;
-    public float MaxHealth = 10.0f;
     private float currentHealth;
+    public float MaxHealth = 10.0f;
     public float AttackRange = 1.0f;
+    public float AttackDamage = 1.0f;
     public ItemDrop[] ItemDrops;
 
     public Outline Outline;
@@ -21,17 +22,11 @@ public class Enemy : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public AudioSource AudioSource;
     public AudioClip AttackAudioClip;
 
+    public MonoBehaviour currentTarget;
+
     public void Setup(GameManager gameManager)
     {
         this.gameManager = gameManager;
-        // Subscribe to events
-        gameManager.CreatedPlant += OnCreatedPlant;
-        gameManager.DestroyedPlant += OnDestroyedPlant;
-
-        if (gameManager.Plants.Count >= 0)
-        {
-            TargetClosestPlant();
-        }
     }
 
     private void Start()
@@ -42,9 +37,7 @@ public class Enemy : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public void Destroy(GameManager gameManager)
     {
-        // Unsubscribe from events
-        gameManager.CreatedPlant -= OnCreatedPlant;
-        gameManager.DestroyedPlant -= OnDestroyedPlant;
+
     }
 
     private void Update()
@@ -55,34 +48,32 @@ public class Enemy : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         if (gameManager.Plants.Count <= 0)
         {
             if (this.GetDistance(gameManager.Player) > AttackRange)
-            {
-                Agent.SetDestination(gameManager.Player.transform.position);
-                Animator.SetBool("isAttacking", false);
-            }
+                TargetGameObject(gameManager.Player);
             else
-            {
-                Animator.SetBool("isAttacking", true);
-            }
+                AttackGameObject(gameManager.Player);
         }
-    }
-
-    private void OnCreatedPlant(Plant plant)
-    {
-        TargetClosestPlant();
-    }
-
-    private void OnDestroyedPlant(Plant plant)
-    {
-        TargetClosestPlant();
-    }
-
-    private void TargetClosestPlant()
-    {
-        Plant closestPlant = this.GetClosestObject(gameManager.Plants);
-        if (closestPlant)
+        else
         {
-            Agent.SetDestination(closestPlant.transform.position);
+            Plant closestPlant = this.GetClosestObject(gameManager.Plants);
+            if (this.GetDistance(closestPlant) > AttackRange)
+                TargetGameObject(closestPlant);
+            else
+                AttackGameObject(closestPlant);
         }
+    }
+
+    private void TargetGameObject(MonoBehaviour target)
+    {
+        currentTarget = target;
+        Agent.SetDestination(target.transform.position);
+        Animator.SetBool("isAttacking", false);
+    }
+
+    private void AttackGameObject(MonoBehaviour target)
+    {
+        currentTarget = target;
+        Agent.SetDestination(this.transform.position);
+        Animator.SetBool("isAttacking", true);
     }
 
     public void Damage(float amount)
@@ -114,6 +105,10 @@ public class Enemy : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public void AttackEvent()
     {
-        AudioSource.PlayOneShot(AttackAudioClip);
+        if (currentTarget.TryGetComponent(out Plant plant))
+        {
+            AudioSource.PlayOneShot(AttackAudioClip);
+            plant.Damage(AttackDamage);
+        }
     }
 }
