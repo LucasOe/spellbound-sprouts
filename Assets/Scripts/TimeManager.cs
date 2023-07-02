@@ -7,8 +7,7 @@ public class TimeManger : MonoBehaviour
 {
     public GameManager GameManager;
     public float cooldownTime = 60.0f;
-    public TextMeshProUGUI timerText;
-    private Timer timer;
+    public Timer timer;
 
     private void Start()
     {
@@ -23,10 +22,6 @@ public class TimeManger : MonoBehaviour
 
     private void Update()
     {
-        if (!GameManager.IsNight && timer.IsRunning)
-        {
-            timerText.text = timer.DisplayTime();
-        }
     }
 
     public void StartNight(int day)
