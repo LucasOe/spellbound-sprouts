@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.HighDefinition;
 
 public class DayCycleController : MonoBehaviour
 {
@@ -10,6 +12,7 @@ public class DayCycleController : MonoBehaviour
     public Light sun;
     public Light moon;
     public GameObject Fireflies;
+    public Volume volumeProfile;
 
     void Start()
     {
@@ -24,6 +27,8 @@ public class DayCycleController : MonoBehaviour
         sun.shadows = LightShadows.Soft;
         moon.shadows = LightShadows.None;
         Fireflies.SetActive(false);
+
+        SetFog(false);
     }
 
     public void OnNightStart(int day)
@@ -32,5 +37,23 @@ public class DayCycleController : MonoBehaviour
         moon.shadows = LightShadows.Soft;
         sun.shadows = LightShadows.None;
         Fireflies.SetActive(true);
+
+        SetFog(true);
+    }
+
+    private void SetFog(bool value)
+    {
+        VolumeProfile profile = volumeProfile.sharedProfile;
+        if (profile.TryGet<Fog>(out var fog))
+        {
+            Timer timer = Timer.CreateTimer(this.gameObject, 1.5f);
+            timer.OnUpdate += (timeRemaining) =>
+            {
+                var min = value ? 25 : 100;
+                var max = value ? 100 : 25;
+                var attenuation = Mathf.Lerp(min, max, timeRemaining / timer.duration);
+                fog.meanFreePath.value = attenuation;
+            };
+        }
     }
 }
