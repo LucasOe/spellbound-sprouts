@@ -10,8 +10,9 @@ public class Timer : MonoBehaviour
     public int RepeatCount;
     public bool IsRunning;
     private Action callback;
+    public Action<float> OnUpdate;
 
-    public static Timer CreateTimer(GameObject where, float duration, Action callback, int repeat = 0)
+    public static Timer CreateTimer(GameObject where, float duration, Action callback = null, int repeat = 0)
     {
         Timer timer = where.AddComponent<Timer>();
         timer.duration = duration;
@@ -29,6 +30,7 @@ public class Timer : MonoBehaviour
             if (timeRemaining >= 0)
             {
                 timeRemaining -= Time.deltaTime;
+                OnUpdate?.Invoke(timeRemaining);
             }
             else
             {
@@ -50,7 +52,12 @@ public class Timer : MonoBehaviour
             timeRemaining = duration;
             RepeatCount--;
         }
-        callback();
+        callback?.Invoke();
+    }
+
+    public float GetPercent()
+    {
+        return duration / timeRemaining;
     }
 
     public float GetMinutes()
