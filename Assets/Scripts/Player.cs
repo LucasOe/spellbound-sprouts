@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
@@ -24,6 +25,7 @@ public class Player : MonoBehaviour
 
     public AudioSource AudioSource;
     public AudioClip AttackAudioClip;
+    public AttackParticle AttackParticle;
 
     private void Start()
     {
@@ -201,7 +203,8 @@ public class Player : MonoBehaviour
     {
         if (targetEnemy)
         {
-            targetEnemy.Damage(damage);
+            AttackParticle particle = Instantiate(AttackParticle, transform.position, Quaternion.identity);
+            particle.Setup(targetEnemy, damage);
             AudioSource.PlayOneShot(AttackAudioClip);
         }
     }
