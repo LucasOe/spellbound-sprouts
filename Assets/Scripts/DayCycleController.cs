@@ -46,7 +46,6 @@ public class DayCycleController : MonoBehaviour
         VolumeProfile profile = volumeProfile.sharedProfile;
         if (profile.TryGet<Fog>(out var fog))
         {
-            fog.enabled.value = value;
             Timer timer = Timer.CreateTimer(this.gameObject, 1.5f);
             timer.OnUpdate += (timeRemaining) =>
             {
