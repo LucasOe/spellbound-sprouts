@@ -25170,6 +25170,7 @@ MonoBehaviour:
   sun: {fileID: 464737630}
   moon: {fileID: 1496368766}
   Fireflies: {fileID: 458776759}
+  volumeProfile: {fileID: 1206530552}
 --- !u!4 &1029318141
 Transform:
   m_ObjectHideFlags: 0
