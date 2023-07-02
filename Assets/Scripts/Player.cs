@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
     private Vector3 velocity = new();
     private Vector2 mousePosition;
     public float distanceToCursor;
+    private Enemy targetEnemy;
 
     public AudioSource AudioSource;
     public AudioClip AttackAudioClip;
@@ -94,8 +95,11 @@ public class Player : MonoBehaviour
 
     public void ClickedEnemy(Enemy enemy)
     {
-        enemy.Damage(damage);
-        AudioSource.PlayOneShot(AttackAudioClip);
+        if (!Animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+        {
+            Animator.SetTrigger("attack");
+            targetEnemy = enemy;
+        }
     }
 
     public void ClickedTile(Tile tile)
@@ -193,4 +197,12 @@ public class Player : MonoBehaviour
         AudioSource.PlayOneShot(audioclip, vol);
     }
 
+    private void AttackEvent()
+    {
+        if (targetEnemy)
+        {
+            targetEnemy.Damage(damage);
+            AudioSource.PlayOneShot(AttackAudioClip);
+        }
+    }
 }
