@@ -56,7 +56,7 @@ public class Plant : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            Destroy(this.gameObject);
+            gameManager.DestroyPlant(this);
         }
     }
 
