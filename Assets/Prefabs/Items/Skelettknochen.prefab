@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1181671952460906872}
-  - component: {fileID: 4823718789281643980}
   - component: {fileID: 6364326429399645585}
   - component: {fileID: 4030650788085334222}
   m_Layer: 0
@@ -35,23 +34,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4823718789281643980
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6143705880108246367}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70a8a7015bc3db54ab6f320122867579, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  item: {fileID: 6364326429399645585}
-  _dropchance: 1
-  obj: {fileID: 6502636153822134533}
-  Agent: {fileID: 4030650788085334222}
-  CollectEffect: {fileID: 8300000, guid: 2b28466736701e243b14607a40619d5f, type: 3}
 --- !u!114 &6364326429399645585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,7 +46,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94704099e70432949b546b1a05d5bc3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 0
+  Dropchance: 0.5
+  Agent: {fileID: 4030650788085334222}
+  CollectEffect: {fileID: 8300000, guid: cde28b4ea44cfd94c8719ebcf912941c, type: 3}
 --- !u!195 &4030650788085334222
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -163,12 +147,6 @@ PrefabInstance:
 --- !u!4 &5869828096065936319 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 74b7967f3b46c98439066197a324af19,
-    type: 3}
-  m_PrefabInstance: {fileID: 6268844589548010580}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &6502636153822134533 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 74b7967f3b46c98439066197a324af19,
     type: 3}
   m_PrefabInstance: {fileID: 6268844589548010580}
   m_PrefabAsset: {fileID: 0}
