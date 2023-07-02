@@ -9,6 +9,7 @@ public class UI : MonoBehaviour
     Button _herb;
     Button _plant;
     Button _harvest;
+    VisualElement _day;
     VisualElement _defensivePlants;
     VisualElement _herbs;
     VisualElement _wheel;
@@ -69,6 +70,7 @@ public class UI : MonoBehaviour
         _wheel = root.Q<VisualElement>("Wheel");
         _nightWand = root.Q<VisualElement>("NightWand");
         _currentHealth = root.Q<VisualElement>("CurrentHealth");
+        _day  = root.Q<VisualElement>("Day");
         Label _1PAmount = root.Q<Label>("1PAmount");
         Label _2PAmount = root.Q<Label>("2PAmount");
         Label _3PAmount = root.Q<Label>("3PAmount");
@@ -106,8 +108,8 @@ public class UI : MonoBehaviour
     void Update()
     {
         if (!GameManager.IsNight && GameManager.TimeManger.timer.IsRunning) { 
-        _face.transform.rotation *= Quaternion.Euler(0, 0, GameManager.TimeManger.timer.GetSeconds()/120);
-        _countdown.text = GameManager.TimeManger.timer.DisplayTime(); 
+            _face.transform.rotation *= Quaternion.Euler(0, 0, GameManager.TimeManger.timer.GetSeconds()/120);
+            _countdown.text = GameManager.TimeManger.timer.DisplayTime(); 
         }
         else if(GameManager.IsNight) {
             _face.transform.rotation = Quaternion.Euler(0, 0, 270);
@@ -118,10 +120,12 @@ public class UI : MonoBehaviour
 
     void OnDayStart(int day) {
         _nightWand.RemoveFromClassList("visible");
+        _day.RemoveFromClassList("hidden");
     }
 
     void OnNightStart(int day) {
         _nightWand.AddToClassList("visible");
+        _day.AddToClassList("hidden");
     }
 
     public void RefreshAmounts()
