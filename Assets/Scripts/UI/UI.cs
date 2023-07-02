@@ -102,10 +102,13 @@ public class UI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!GameManager.IsNight && GameManager.TimeManger.timer.IsRunning) {
-            
+        if (!GameManager.IsNight && GameManager.TimeManger.timer.IsRunning) { 
         _face.transform.rotation *= Quaternion.Euler(0, 0, GameManager.TimeManger.timer.GetSeconds()/120);
         _countdown.text = GameManager.TimeManger.timer.DisplayTime(); 
+        }
+        else if(GameManager.IsNight) {
+            _face.transform.rotation = Quaternion.Euler(0, 0, 270);
+            _countdown.text = "00:00"; 
         }
     }
 
