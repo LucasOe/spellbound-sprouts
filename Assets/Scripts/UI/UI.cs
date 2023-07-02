@@ -5,7 +5,7 @@ using UnityEngine.UIElements;
 public class UI : MonoBehaviour
 {
     public GameManager GameManager;
-    
+
     Button _herb;
     Button _plant;
     Button _harvest;
@@ -70,7 +70,7 @@ public class UI : MonoBehaviour
         _wheel = root.Q<VisualElement>("Wheel");
         _nightWand = root.Q<VisualElement>("NightWand");
         _currentHealth = root.Q<VisualElement>("CurrentHealth");
-        _day  = root.Q<VisualElement>("Day");
+        _day = root.Q<VisualElement>("Day");
         Label _1PAmount = root.Q<Label>("1PAmount");
         Label _2PAmount = root.Q<Label>("2PAmount");
         Label _3PAmount = root.Q<Label>("3PAmount");
@@ -107,23 +107,27 @@ public class UI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!GameManager.IsNight && GameManager.TimeManger.timer.IsRunning) { 
-            _face.transform.rotation *= Quaternion.Euler(0, 0, GameManager.TimeManger.timer.GetSeconds()/120);
-            _countdown.text = GameManager.TimeManger.timer.DisplayTime(); 
+        if (!GameManager.IsNight)
+        {
+            _face.transform.rotation *= Quaternion.Euler(0, 0, GameManager.TimeManger.timer.GetSeconds() / 120);
+            _countdown.text = GameManager.TimeManger.timer.DisplayTime();
         }
-        else if(GameManager.IsNight) {
+        else if (GameManager.IsNight)
+        {
             _face.transform.rotation = Quaternion.Euler(0, 0, 270);
-            _countdown.text = "00:00"; 
+            _countdown.text = "00:00";
         }
         _currentHealth.style.width = player.currentHealth * 2;
     }
 
-    void OnDayStart(int day) {
+    void OnDayStart(int day)
+    {
         _nightWand.RemoveFromClassList("visible");
         _day.RemoveFromClassList("hidden");
     }
 
-    void OnNightStart(int day) {
+    void OnNightStart(int day)
+    {
         _nightWand.AddToClassList("visible");
         _day.AddToClassList("hidden");
     }
