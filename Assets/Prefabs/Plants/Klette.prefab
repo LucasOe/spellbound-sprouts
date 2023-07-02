@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Healthbar: {fileID: 7593561792831349173}
   ActiveStage: {fileID: 664645865070872746}
-  MaxHealth: 10
+  MaxHealth: 70
   seed: {fileID: 5713623275764549774, guid: a9a56ef5b0a7e04458a93c86f4c91722, type: 3}
   Stages:
   - {fileID: 664645865070872746}
