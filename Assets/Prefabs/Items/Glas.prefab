@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Dropchance: 0.5
   Agent: {fileID: 135012687949987866}
-  CollectEffect: {fileID: 8300000, guid: 6fe93a89ff4d61c4783614816bba84fa, type: 3}
+  CollectEffect: {fileID: 8300000, guid: abce6684b4b1a3f43bd649fe2fd6a87d, type: 3}
 --- !u!195 &135012687949987866
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -59,8 +59,8 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.1
-  m_Speed: 12
-  m_Acceleration: 25
+  m_Speed: 6
+  m_Acceleration: 12
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 1
