@@ -6,25 +6,20 @@ using UnityEngine;
 public class Outline : MonoBehaviour
 {
     public Material outlineMaterial;
-    public Renderer[] meshRenderers;
+    public SkinnedMeshRenderer SkinnedMeshRenderer;
 
     public void Enable()
     {
-        foreach (Renderer meshRenderer in meshRenderers)
-        {
-            List<Material> materials = meshRenderer.materials.ToList();
-            materials.Add(outlineMaterial);
-            meshRenderer.materials = materials.ToArray();
-        }
+
+        List<Material> materials = SkinnedMeshRenderer.materials.ToList();
+        materials.Add(outlineMaterial);
+        SkinnedMeshRenderer.materials = materials.ToArray();
     }
 
     public void Disable()
     {
-        foreach (Renderer meshRenderer in meshRenderers)
-        {
-            List<Material> materials = meshRenderer.materials.ToList();
-            materials.RemoveAt(materials.Count - 1);
-            meshRenderer.materials = materials.ToArray();
-        }
+        List<Material> materials = SkinnedMeshRenderer.materials.ToList();
+        materials.RemoveAt(materials.Count - 1);
+        SkinnedMeshRenderer.materials = materials.ToArray();
     }
 }

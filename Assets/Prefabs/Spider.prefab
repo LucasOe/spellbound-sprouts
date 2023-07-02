@@ -240,8 +240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMaterial: {fileID: 2100000, guid: 22e9780c925fdad4da0899331c212e6c, type: 2}
-  meshRenderers:
-  - {fileID: 9049041901635390341}
+  SkinnedMeshRenderer: {fileID: 9049041901635390341}
 --- !u!114 &1640859530225862544
 MonoBehaviour:
   m_ObjectHideFlags: 0
