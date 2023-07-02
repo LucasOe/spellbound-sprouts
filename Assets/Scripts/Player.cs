@@ -17,6 +17,8 @@ public class Player : MonoBehaviour
     public float movementSpeed = 25.0f;
     public float damage = 4.0f;
     public float Range = 10.0f;
+    public float maxHealth = 100f;
+    public float health = 80f;
 
     private Vector3 velocity = new();
     private Vector2 mousePosition;
@@ -132,14 +134,19 @@ public class Player : MonoBehaviour
 
     public void OnSelectHarvest(InputValue value)
     {
-        if (Inventory.activeTool != Inventory.Harvest)
-        {
-            Inventory.SetTool(Inventory.Harvest);
-            ui.ToggleToolType(Inventory.activeTool);
-        }
-        else
+        if (Inventory.activeTool == Inventory.Harvest)
         {
             Inventory.SetTool(Inventory.PlantSeeds);
+            ui.ToggleToolType(Inventory.activeTool);
+        }
+        else if (Inventory.activeTool == Inventory.PlantSeeds)
+        {
+            Inventory.SetTool(Inventory.HerbSeeds);
+            ui.ToggleToolType(Inventory.activeTool);
+        }
+        else if (Inventory.activeTool == Inventory.HerbSeeds)
+        {
+            Inventory.SetTool(Inventory.Harvest);
             ui.ToggleToolType(Inventory.activeTool);
         }
     }

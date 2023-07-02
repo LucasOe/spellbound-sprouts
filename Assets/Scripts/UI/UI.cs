@@ -13,6 +13,7 @@ public class UI : MonoBehaviour
     VisualElement _herbs;
     VisualElement _wheel;
     VisualElement _nightWand;
+    VisualElement _currentHealth;
     List<Button> _plantSeeds = new List<Button>();
     List<Button> _herbSeeds = new List<Button>();
     List<Button> _seeds;
@@ -44,6 +45,7 @@ public class UI : MonoBehaviour
     Label _countdown;
 
     public Inventory inventory;
+    public Player player;
 
     private void OnEnable()
     {
@@ -66,6 +68,7 @@ public class UI : MonoBehaviour
         _herbs = root.Q<VisualElement>("Herbs");
         _wheel = root.Q<VisualElement>("Wheel");
         _nightWand = root.Q<VisualElement>("NightWand");
+        _currentHealth = root.Q<VisualElement>("CurrentHealth");
         Label _1PAmount = root.Q<Label>("1PAmount");
         Label _2PAmount = root.Q<Label>("2PAmount");
         Label _3PAmount = root.Q<Label>("3PAmount");
@@ -110,6 +113,7 @@ public class UI : MonoBehaviour
             _face.transform.rotation = Quaternion.Euler(0, 0, 270);
             _countdown.text = "00:00"; 
         }
+        _currentHealth.style.width = player.health;
     }
 
     void OnDayStart(int day) {

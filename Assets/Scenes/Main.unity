@@ -9731,7 +9731,7 @@ VisualEffect:
         m_Overridden: 1
     m_Vector4f:
       m_Array:
-      - m_Value: {x: 20.35221, y: 7.622103, z: 0.92604977, w: 1}
+      - m_Value: {x: 0.95900404, y: 10.703425, z: 20.35221, w: 1}
         m_Name: Firefly
         m_Overridden: 1
     m_Uint:
@@ -63805,6 +63805,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameManager: {fileID: 1328368777}
   inventory: {fileID: 1789711318}
+  player: {fileID: 0}
 --- !u!1001 &2021604533
 PrefabInstance:
   m_ObjectHideFlags: 0
