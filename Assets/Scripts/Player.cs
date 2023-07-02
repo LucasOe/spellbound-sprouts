@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
     private Enemy targetEnemy;
 
     public AudioSource AudioSource;
+    public AudioSource AudioSourceItems;
     public AudioClip AttackAudioClip;
     public AttackParticle AttackParticle;
 
@@ -196,7 +197,8 @@ public class Player : MonoBehaviour
 
     public void PlaySound(AudioClip audioclip, float vol)
     {
-        AudioSource.PlayOneShot(audioclip, vol);
+        AudioSourceItems.pitch = (Random.Range(0.6f, .9f));
+        AudioSourceItems.PlayOneShot(audioclip, vol);
     }
 
     private void AttackEvent()
