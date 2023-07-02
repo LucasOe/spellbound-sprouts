@@ -615,9 +615,12 @@ MonoBehaviour:
   Animator: {fileID: 8328138558595626394}
   movementSpeed: 10
   damage: 4
+  Range: 10
   distanceToCursor: 0
   AudioSource: {fileID: 3943774334872337552}
   AttackAudioClip: {fileID: 8300000, guid: 4d03c8ec4519bc14fa000dda2e1aa770, type: 3}
+  AttackParticle: {fileID: 6603059628715771232, guid: 87262bed19f9ab6469f7349e376e2284,
+    type: 3}
 --- !u!114 &1374843163789428268
 MonoBehaviour:
   m_ObjectHideFlags: 0
