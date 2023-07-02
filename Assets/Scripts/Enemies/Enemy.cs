@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public float MaxHealth = 10.0f;
     public float AttackRange = 1.0f;
     public float AttackDamage = 1.0f;
-    public ItemDrop[] ItemDrops;
+    public Item[] ItemDrops;
 
     public Outline Outline;
     public NavMeshAgent Agent;
@@ -37,7 +37,11 @@ public class Enemy : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public void Destroy(GameManager gameManager)
     {
-
+        foreach (Item item in ItemDrops)
+        {
+            if (Random.value <= item.Dropchance)
+                gameManager.CreateItem(item, transform.position);
+        }
     }
 
     private void Update()
