@@ -27,6 +27,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         Inventory.ResetInventory();
+        GameManager.CreatedPlant += OnCreatePlant;
     }
 
     private void Update()
@@ -180,6 +181,11 @@ public class Player : MonoBehaviour
             Debug.Log("Skipped to Night");
             GameManager.TimeManger.SkipDay();
         }
+    }
+
+    private void OnCreatePlant(Plant plant)
+    {
+        ui.RefreshAmounts();
     }
 
     public void PlaySound(AudioClip audioclip, float vol)

@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     public List<Plant> Plants;
 
     //Item Drops
-    public List<ItemDrop> ItemDrops;
+    public List<Item> Items;
 
     // Day Night Cycle
     public TimeManger TimeManger;
@@ -62,11 +62,7 @@ public class GameManager : MonoBehaviour
         Enemies.Remove(enemy);
         enemy.Destroy(this);
         DestroyedEnemy?.Invoke(enemy);
-
-        GameObject obj = enemy.gameObject;
-
-        CreateItemDrop(enemy.ItemDrops[0], obj.transform.position);
-        Destroy(obj);
+        Destroy(enemy.gameObject);
     }
 
     public Plant CreatePlant(Plant plant, Vector3 position, Quaternion rotation, MonoBehaviour parent = null)
@@ -86,25 +82,24 @@ public class GameManager : MonoBehaviour
         Plants.Remove(plant);
         plant.Destroy(this);
         DestroyedPlant?.Invoke(plant);
-        Player.ui.RefreshAmounts();
         Destroy(plant.gameObject);
     }
 
-    public ItemDrop CreateItemDrop(ItemDrop itemDrop, Vector3 position, MonoBehaviour parent = null)
+    public Item CreateItem(Item item, Vector3 position, MonoBehaviour parent = null)
     {
-        ItemDrop spawnedItemDrop = Instantiate(itemDrop, position, Quaternion.Euler(0, UnityEngine.Random.Range(0.0f, 360.0f), 0));
+        Item spawnedItem = Instantiate(item, position, Quaternion.Euler(0, UnityEngine.Random.Range(0.0f, 360.0f), 0));
         if (parent)
-            spawnedItemDrop.transform.SetParent(parent.transform, true);
+            spawnedItem.transform.SetParent(parent.transform, true);
 
-        spawnedItemDrop.Setup(this);
-        ItemDrops.Add(spawnedItemDrop);
-        return spawnedItemDrop;
+        spawnedItem.Setup(this);
+        Items.Add(spawnedItem);
+        return spawnedItem;
     }
 
-    public void DestroyItemDrop(ItemDrop ItemDrop)
+    public void DestroyItem(Item item)
     {
-        ItemDrops.Remove(ItemDrop);
-        ItemDrop.Destroy(this);
-        Destroy(ItemDrop.gameObject);
+        Items.Remove(item);
+        item.Destroy(this);
+        Destroy(item.gameObject);
     }
 }
