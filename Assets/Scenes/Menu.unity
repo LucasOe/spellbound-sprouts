@@ -2266,7 +2266,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c16ddaa8143009f40b3ae82311a6a1fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameManager: {fileID: 0}
   inventory: {fileID: 0}
 --- !u!4 &181081224 stripped
 Transform:
