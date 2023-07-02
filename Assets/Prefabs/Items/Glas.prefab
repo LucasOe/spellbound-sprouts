@@ -51,6 +51,7 @@ MonoBehaviour:
   _dropchance: 0
   obj: {fileID: 6518737132829352197}
   Agent: {fileID: 135012687949987866}
+  CollectEffect: {fileID: 0}
 --- !u!114 &6463070802350411153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74,8 +75,8 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.1
-  m_Speed: 6
-  m_Acceleration: 12
+  m_Speed: 12
+  m_Acceleration: 25
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 1
