@@ -9,6 +9,7 @@ public class DayCycleController : MonoBehaviour
     public Animator Animator;
     public Light sun;
     public Light moon;
+    public GameObject Fireflies;
 
     void Start()
     {
@@ -22,6 +23,7 @@ public class DayCycleController : MonoBehaviour
         Animator.SetTrigger("SetDay");
         sun.shadows = LightShadows.Soft;
         moon.shadows = LightShadows.None;
+        Fireflies.SetActive(false);
     }
 
     public void OnNightStart(int day)
@@ -29,5 +31,6 @@ public class DayCycleController : MonoBehaviour
         Animator.SetTrigger("SetNight");
         moon.shadows = LightShadows.Soft;
         sun.shadows = LightShadows.None;
+        Fireflies.SetActive(true);
     }
 }
