@@ -343,6 +343,7 @@ GameObject:
   - component: {fileID: 1543812842737496346}
   - component: {fileID: 3315166315397763816}
   - component: {fileID: 1374843163789428268}
+  - component: {fileID: 7043409570337320792}
   m_Layer: 2
   m_Name: Player
   m_TagString: Player
@@ -618,6 +619,7 @@ MonoBehaviour:
   Range: 10
   distanceToCursor: 0
   AudioSource: {fileID: 3943774334872337552}
+  AudioSourceItems: {fileID: 0}
   AttackAudioClip: {fileID: 8300000, guid: 4d03c8ec4519bc14fa000dda2e1aa770, type: 3}
   AttackParticle: {fileID: 6603059628715771232, guid: 87262bed19f9ab6469f7349e376e2284,
     type: 3}
@@ -669,6 +671,26 @@ MonoBehaviour:
     type: 3}
   EnemyDrops: []
   ui: {fileID: 0}
+--- !u!114 &7043409570337320792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5107954962007069713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7245a997ac4ce44d893ed1bb76c6de3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Clips:
+  - {fileID: 8300000, guid: 6f5ca3e15d73789408645c3d6b482059, type: 3}
+  - {fileID: 8300000, guid: 7d002ca6ed360aa45aa73f6ccc8671b9, type: 3}
+  - {fileID: 8300000, guid: 39f4806e033f48c408190f72fb10f319, type: 3}
+  - {fileID: 8300000, guid: 94a29ff3019c11d458fab4f353f5a4d5, type: 3}
+  - {fileID: 8300000, guid: 54a7e84820f5920409b472530380f53d, type: 3}
+  AudioSource: {fileID: 3943774334872337552}
+  Volume: 0.5
 --- !u!1 &8635253863767577216
 GameObject:
   m_ObjectHideFlags: 0
