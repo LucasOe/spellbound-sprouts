@@ -40,16 +40,11 @@ public class UI : MonoBehaviour
 
     public Inventory inventory;
 
-    public void Setup(GameManager gameManager)
-    {
-        this.GameManager = gameManager;
-        // Subscribe to events
-        GameManager.DayStart += OnDayStart;
-        GameManager.NightStart += OnDayStart;
-    }
-
     private void OnEnable()
     {
+        // Subscribe to events
+        GameManager.DayStart += OnDayStart;
+        GameManager.NightStart += OnNightStart;
         VisualElement root = GetComponent<UIDocument>().rootVisualElement;
         _herb = root.Q<Button>("Herb");
         _plant = root.Q<Button>("Plant");
@@ -107,7 +102,7 @@ public class UI : MonoBehaviour
         _nightWand.RemoveFromClassList("visible");
     }
 
-    void OnNightStart() {
+    void OnNightStart(int day) {
         _nightWand.AddToClassList("visible");
     }
 
