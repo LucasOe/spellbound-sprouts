@@ -13,6 +13,8 @@ public class DayCycleController : MonoBehaviour
     public Light moon;
     public GameObject Fireflies;
     public Volume volumeProfile;
+    public float DayFogDensity = 100;
+    public float NightFogDensity = 25;
 
     
     public AudioClip NightAmbienceClip;
@@ -23,6 +25,12 @@ public class DayCycleController : MonoBehaviour
         // Subscribe to events
         GameManager.DayStart += OnDayStart;
         GameManager.NightStart += OnNightStart;
+
+        VolumeProfile profile = volumeProfile.sharedProfile;
+        if (profile.TryGet<Fog>(out var fog))
+        {
+            fog.meanFreePath.value = DayFogDensity;
+        }
     }
 
     public void OnDayStart(int day)
@@ -55,8 +63,8 @@ public class DayCycleController : MonoBehaviour
             Timer timer = Timer.CreateTimer(this.gameObject, 1.5f);
             timer.OnUpdate += (timeRemaining) =>
             {
-                var min = value ? 25 : 100;
-                var max = value ? 100 : 25;
+                var min = value ? NightFogDensity : DayFogDensity;
+                var max = value ? DayFogDensity : NightFogDensity;
                 var attenuation = Mathf.Lerp(min, max, timeRemaining / timer.duration);
                 fog.meanFreePath.value = attenuation;
             };
