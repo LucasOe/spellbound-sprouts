@@ -151,19 +151,6 @@ public class Player : MonoBehaviour
         }
     }
 
-
-    public void OnSelectHerb(InputValue value)
-    {
-        Inventory.SetTool(Inventory.HerbSeeds);
-        ui.ToggleToolType(Inventory.activeTool);
-    }
-
-    public void OnSelectPlant(InputValue value)
-    {
-        Inventory.SetTool(Inventory.PlantSeeds);
-        ui.ToggleToolType(Inventory.activeTool);
-    }
-
     public void OnSelectItem1(InputValue value)
     {
         Inventory.SetSeed(0);
@@ -206,6 +193,13 @@ public class Player : MonoBehaviour
     {
         AudioSourceItems.pitch = (Random.Range(0.6f, .9f));
         AudioSourceItems.PlayOneShot(audioclip, vol);
+    }
+
+    public void PlayAmbience(AudioClip audioclip)
+    {
+        AudioSource.clip = audioclip;
+        AudioSource.loop = true;
+        AudioSource.Play();
     }
 
     private void AttackEvent()
