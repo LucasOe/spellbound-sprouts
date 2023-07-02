@@ -25183,6 +25183,8 @@ MonoBehaviour:
   moon: {fileID: 1496368766}
   Fireflies: {fileID: 458776759}
   volumeProfile: {fileID: 1206530552}
+  DayFogDensity: 100
+  NightFogDensity: 25
   NightAmbienceClip: {fileID: 8300000, guid: f2cde66314609314590185c7ddc0c076, type: 3}
   DayAmbienceClip: {fileID: 8300000, guid: 87b98b13df83cbc4ab180963e3d3aa1e, type: 3}
 --- !u!4 &1029318141
@@ -25477,6 +25479,11 @@ PrefabInstance:
       propertyPath: currentHealth
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 3315166315397763816, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
+        type: 3}
+      propertyPath: AttackAudioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: f5ba9857358aac34a935a3fb64eb671f, type: 3}
     - target: {fileID: 3315166315397763816, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
         type: 3}
       propertyPath: AudioSourceItems
