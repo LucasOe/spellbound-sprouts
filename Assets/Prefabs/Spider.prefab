@@ -71,7 +71,7 @@ NavMeshAgent:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5107954962007069713}
   m_Enabled: 1
-  m_AgentTypeID: -334000983
+  m_AgentTypeID: 0
   m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
@@ -240,8 +240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMaterial: {fileID: 2100000, guid: 22e9780c925fdad4da0899331c212e6c, type: 2}
-  meshRenderers:
-  - {fileID: 9049041901635390341}
+  SkinnedMeshRenderer: {fileID: 9049041901635390341}
 --- !u!114 &1640859530225862544
 MonoBehaviour:
   m_ObjectHideFlags: 0
