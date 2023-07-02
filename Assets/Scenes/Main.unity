@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 6252.6763, g: 12674.424, b: 17410.44, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -24403,6 +24403,10 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5107954962007069713, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1789711324}
     - targetCorrespondingSourceObject: {fileID: 8635253863767577216, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
         type: 3}
       insertIndex: -1
@@ -24414,7 +24418,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1041968237}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1658752785}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bc6da8795ab598c44b5b63b9116197d9, type: 3}
@@ -31500,6 +31504,7 @@ MonoBehaviour:
   GameManager: {fileID: 1328368777}
   cooldownTime: 30
   timerText: {fileID: 611588135}
+  timer: {fileID: 0}
 --- !u!114 &1328368777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51573,6 +51578,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60a79a33d47e67545bab53da1de874d0, type: 3}
+--- !u!1 &1658752785 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5107954962007069713, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1041968237}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1660516709
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55361,12 +55372,40 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1041968237}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1658752785}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 536f09ed8f0867e468e30b0ec501dc42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &1789711320 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3943774334872337552, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1041968237}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1789711324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658752785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7245a997ac4ce44d893ed1bb76c6de3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Clips:
+  - {fileID: 8300000, guid: 348d0645e256e184591cdfc3836beb41, type: 3}
+  - {fileID: 8300000, guid: 008121068b067a6429847bbadea2ab8b, type: 3}
+  - {fileID: 8300000, guid: 9af99e202ce102a45b00686533037de4, type: 3}
+  - {fileID: 8300000, guid: 06433a4c7edffa846b9d0fd5ecd98759, type: 3}
+  - {fileID: 8300000, guid: d01619d54b209c14db62ca57da3ec001, type: 3}
+  - {fileID: 8300000, guid: 2b2a4cc3bc2d4314dab7b881b171ed95, type: 3}
+  - {fileID: 8300000, guid: 273dfd53c8bcfe44aaf61cba3fe6a495, type: 3}
+  AudioSource: {fileID: 1789711320}
+  Volume: 1
 --- !u!1001 &1791012030
 PrefabInstance:
   m_ObjectHideFlags: 0

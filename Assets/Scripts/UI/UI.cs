@@ -38,6 +38,11 @@ public class UI : MonoBehaviour
     Label _3HAmount;
     Label _4HAmount;
 
+    //Clock
+    Timer timer;
+    VisualElement _face;
+    Label _countdown;
+
     public Inventory inventory;
 
     private void OnEnable()
@@ -69,6 +74,8 @@ public class UI : MonoBehaviour
         Label _2HAmount = root.Q<Label>("2HAmount");
         Label _3HAmount = root.Q<Label>("3HAmount");
         Label _4HAmount = root.Q<Label>("4HAmount");
+        _countdown = root.Q<Label>("Countdown");
+        _face = root.Q<VisualElement>("Face");
         _plantSeeds.Add(_1P);
         _plantSeeds.Add(_2P);
         _plantSeeds.Add(_3P);
@@ -95,7 +102,11 @@ public class UI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (!GameManager.IsNight && GameManager.TimeManger.timer.IsRunning) {
+            
+        _face.transform.rotation *= Quaternion.Euler(0, 0, GameManager.TimeManger.timer.GetSeconds()/120);
+        _countdown.text = GameManager.TimeManger.timer.DisplayTime(); 
+        }
     }
 
     void OnDayStart(int day) {
