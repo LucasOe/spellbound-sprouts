@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 5388985159672852223}
   - component: {fileID: 1817795642227795184}
   - component: {fileID: 5845701973679248946}
-  - component: {fileID: 1640859530225862544}
   - component: {fileID: 6697586220843091184}
   m_Layer: 0
   m_Name: Spider
@@ -242,26 +241,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outlineMaterial: {fileID: 2100000, guid: 22e9780c925fdad4da0899331c212e6c, type: 2}
   SkinnedMeshRenderer: {fileID: 9049041901635390341}
---- !u!114 &1640859530225862544
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5107954962007069713}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7245a997ac4ce44d893ed1bb76c6de3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Clips:
-  - {fileID: 8300000, guid: 6f5ca3e15d73789408645c3d6b482059, type: 3}
-  - {fileID: 8300000, guid: 7d002ca6ed360aa45aa73f6ccc8671b9, type: 3}
-  - {fileID: 8300000, guid: 39f4806e033f48c408190f72fb10f319, type: 3}
-  - {fileID: 8300000, guid: 94a29ff3019c11d458fab4f353f5a4d5, type: 3}
-  - {fileID: 8300000, guid: 54a7e84820f5920409b472530380f53d, type: 3}
-  AudioSource: {fileID: 5388985159672852223}
-  Volume: 0.5
 --- !u!54 &6697586220843091184
 Rigidbody:
   m_ObjectHideFlags: 0
