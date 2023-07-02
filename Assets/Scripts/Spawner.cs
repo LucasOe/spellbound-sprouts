@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,7 +18,8 @@ public class Spawner : MonoBehaviour
     public Enemy Spider;
     public float SpawnCooldown = 5.0f;
     public EnemySpawnInfo[] EnemySpawnInfo;
-    public bool IsFinished = true;
+    public Action SpawnerFinished;
+    public bool FinishedSpawning;
 
     void Start()
     {
@@ -26,42 +28,66 @@ public class Spawner : MonoBehaviour
 
     public void OnNightStart(int day)
     {
-        IsFinished = false;
+        FinishedSpawning = false;
         if (day <= EnemySpawnInfo.Length)
         {
-            // Spawn Skeleton
-            if (EnemySpawnInfo[day].skeletonCount > 0)
+            // Spawn Enemy
+            if (EnemySpawnInfo[day].skeletonCount > 0 || EnemySpawnInfo[day].spiderCount > 0)
             {
+                var enemyCount = EnemySpawnInfo[day].skeletonCount + EnemySpawnInfo[day].spiderCount;
                 Timer timer = Timer.CreateTimer(this.gameObject, SpawnCooldown, () =>
                 {
-                    GameManager.CreateEnemy(Skeleton, transform.position, transform.rotation);
-                    EnemySpawnInfo[day].skeletonCount--;
-                    if (EnemySpawnInfo[day].skeletonCount <= 0 && EnemySpawnInfo[day].spiderCount <= 0)
+                    if (EnemySpawnInfo[day].spiderCount <= 0 && EnemySpawnInfo[day].skeletonCount > 0)
                     {
-                        IsFinished = true;
+                        SpawnSkeleton(day);
                     }
-                }, EnemySpawnInfo[day].skeletonCount - 1);
-                timer.SkipTimer(); // Skip first cooldown
-            }
-
-            // Spawn Spiders
-            if (EnemySpawnInfo[day].spiderCount > 0)
-            {
-                Timer timer = Timer.CreateTimer(this.gameObject, SpawnCooldown, () =>
-                {
-                    GameManager.CreateEnemy(Spider, transform.position, transform.rotation);
-                    EnemySpawnInfo[day].spiderCount--;
-                    if (EnemySpawnInfo[day].skeletonCount <= 0 && EnemySpawnInfo[day].spiderCount <= 0)
+                    else if (EnemySpawnInfo[day].spiderCount > 0 && EnemySpawnInfo[day].skeletonCount <= 0)
                     {
-                        IsFinished = true;
+                        SpawnSpider(day);
                     }
-                }, EnemySpawnInfo[day].spiderCount - 1);
+                    else if (EnemySpawnInfo[day].spiderCount > 0 && EnemySpawnInfo[day].skeletonCount > 0)
+                    {
+                        if (UnityEngine.Random.value >= 0.5f)
+                            SpawnSkeleton(day);
+                        else
+                            SpawnSpider(day);
+                    }
+                    else
+                    {
+                        FinishedSpawning = true;
+                        SpawnerFinished?.Invoke();
+                    }
+                }, enemyCount - 1);
                 timer.SkipTimer(); // Skip first cooldown
             }
         }
         else
         {
             Debug.Log("No spawn info");
+        }
+    }
+
+    private void SpawnSkeleton(int day)
+    {
+        GameManager.CreateEnemy(Skeleton, transform.position, transform.rotation);
+        EnemySpawnInfo[day].skeletonCount--;
+
+        if (EnemySpawnInfo[day].skeletonCount <= 0 && EnemySpawnInfo[day].spiderCount <= 0)
+        {
+            FinishedSpawning = true;
+            SpawnerFinished?.Invoke();
+        }
+    }
+
+    private void SpawnSpider(int day)
+    {
+        GameManager.CreateEnemy(Spider, transform.position, transform.rotation);
+        EnemySpawnInfo[day].spiderCount--;
+
+        if (EnemySpawnInfo[day].skeletonCount <= 0 && EnemySpawnInfo[day].spiderCount <= 0)
+        {
+            FinishedSpawning = true;
+            SpawnerFinished?.Invoke();
         }
     }
 }
