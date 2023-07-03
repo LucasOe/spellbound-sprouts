@@ -18,13 +18,14 @@ public class Player : MonoBehaviour
     public float movementSpeed = 25.0f;
     public float damage = 4.0f;
     public float Range = 10.0f;
+    public float AttackCooldown = 0.5f;
     public float MaxHealth = 100f;
     public float currentHealth = 100f;
+    private Timer attackCooldownTimer;
 
     private Vector3 velocity = new();
     private Vector2 mousePosition;
     public float distanceToCursor;
-    private Enemy targetEnemy;
 
     public AudioSource AudioSource;
     public AudioSource AudioSourceItems;
@@ -108,14 +109,23 @@ public class Player : MonoBehaviour
 
     public void ClickedEnemy(Enemy enemy)
     {
-        if (!Animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+        if (!attackCooldownTimer)
         {
+            // Play Animation and Sound
+            Animator.SetTrigger("attack");
             AudioSource.PlayOneShot(AttackAudioClip, .4f);
+
+            // Spawn Particle
+            AttackParticle particle = Instantiate(AttackParticle, transform.position, Quaternion.identity);
+            particle.Setup(enemy, damage);
+
+            // Rotate towards Enemy
             var direction = (enemy.transform.position - transform.position).normalized;
             player.transform.rotation = Quaternion.LookRotation(direction, Vector3.up);
 
-            Animator.SetTrigger("attack");
-            targetEnemy = enemy;
+            // Start Attack cooldown
+            attackCooldownTimer = this.CreateTimer(AttackCooldown);
+            attackCooldownTimer.StartTimer();
         }
     }
 
@@ -212,15 +222,6 @@ public class Player : MonoBehaviour
         AudioSource.clip = audioclip;
         AudioSource.loop = true;
         AudioSource.Play();
-    }
-
-    private void AttackEvent()
-    {
-        if (targetEnemy)
-        {
-            AttackParticle particle = Instantiate(AttackParticle, transform.position, Quaternion.identity);
-            particle.Setup(targetEnemy, damage);
-        }
     }
 
     public void Damage(float amount)
