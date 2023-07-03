@@ -17,11 +17,13 @@ public class Tile : MonoBehaviour
 
     void OnMouseEnter()
     {
-        if (gameManager.Player.distanceToCursor <= gameManager.Player.Range && !gameManager.IsNight)
-        {
-            highlight.SetActive(true);
-            if (Plant)
-                Plant.SetHealthbarActive(true);
+        if (!PauseMenu.isPaused) {
+            if (gameManager.Player.distanceToCursor <= gameManager.Player.Range && !gameManager.IsNight)
+            {
+                highlight.SetActive(true);
+                if (Plant)
+                    Plant.SetHealthbarActive(true);
+            }
         }
     }
 

@@ -391,7 +391,7 @@ CharacterController:
   m_Height: 2
   m_Radius: 0.5
   m_SlopeLimit: 0
-  m_StepOffset: 0.3
+  m_StepOffset: 0.05
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1, z: 0}
@@ -617,6 +617,8 @@ MonoBehaviour:
   movementSpeed: 10
   damage: 4
   Range: 10
+  MaxHealth: 100
+  currentHealth: 100
   distanceToCursor: 0
   AudioSource: {fileID: 3943774334872337552}
   AudioSourceItems: {fileID: 0}
@@ -784,7 +786,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 55cf2eb4da8fbd14c80a3683541328e7,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 55cf2eb4da8fbd14c80a3683541328e7,
         type: 3}
@@ -794,7 +796,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 55cf2eb4da8fbd14c80a3683541328e7,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 55cf2eb4da8fbd14c80a3683541328e7,
         type: 3}
