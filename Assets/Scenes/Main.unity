@@ -13021,7 +13021,7 @@ GameObject:
   - component: {fileID: 408453749}
   - component: {fileID: 408453748}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: Igrendient2 Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14485,15 +14485,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 033e084dd7432164db2be81feca4cda2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredient1: {fileID: 2061118558}
-  ingredient2: {fileID: 1178466040}
-  ingredient3: {fileID: 1934958977}
+  ingredientText1: {fileID: 838557131}
+  ingredientText2: {fileID: 408453748}
+  ingredientText3: {fileID: 1113333153}
+  ingredientAmount1: {fileID: 2061118558}
+  ingredientAmount2: {fileID: 1178466040}
+  ingredientAmount3: {fileID: 1934958977}
   ItemAmounts:
   - Item1: {fileID: 11400000, guid: b979f49b7a1d44a4f84684a389c3df4a, type: 2}
     Amount1: 3
-    Item2: {fileID: 11400000, guid: c2f2ee3599f20954285743bb5edb3f3b, type: 2}
+    Item2: {fileID: 11400000, guid: 26ae8d07e05efe84687d7db21ccc744d, type: 2}
     Amount2: 3
-    Item3: {fileID: 11400000, guid: 26ae8d07e05efe84687d7db21ccc744d, type: 2}
+    Item3: {fileID: 11400000, guid: c2f2ee3599f20954285743bb5edb3f3b, type: 2}
     Amount3: 3
 --- !u!1001 &452626419
 PrefabInstance:
@@ -28869,7 +28872,7 @@ GameObject:
   - component: {fileID: 838557132}
   - component: {fileID: 838557131}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Igrendient1 Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38343,7 +38346,7 @@ GameObject:
   - component: {fileID: 1113333154}
   - component: {fileID: 1113333153}
   m_Layer: 5
-  m_Name: Text (TMP) (2)
+  m_Name: Igrendient3 Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40772,7 +40775,7 @@ GameObject:
   - component: {fileID: 1178466041}
   - component: {fileID: 1178466040}
   m_Layer: 5
-  m_Name: Text (TMP) (4)
+  m_Name: Igrendient2 Amount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -81028,7 +81031,7 @@ GameObject:
   - component: {fileID: 1934958978}
   - component: {fileID: 1934958977}
   m_Layer: 5
-  m_Name: Text (TMP) (5)
+  m_Name: Igrendient3 Amount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -85711,7 +85714,7 @@ GameObject:
   - component: {fileID: 2061118559}
   - component: {fileID: 2061118558}
   m_Layer: 5
-  m_Name: Text (TMP) (3)
+  m_Name: Igrendient1 Amount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
