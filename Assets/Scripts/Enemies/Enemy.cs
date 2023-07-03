@@ -111,10 +111,12 @@ public class Enemy : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         if (currentTarget.TryGetComponent(out Plant plant))
         {
+            AudioSource.pitch = (Random.Range(0.6f, .9f));
             AudioSource.PlayOneShot(AttackAudioClip);
             plant.Damage(AttackDamage);
         }
         if (currentTarget.TryGetComponent(out Player player)) {
+            AudioSource.pitch = (Random.Range(0.6f, .9f));
             AudioSource.PlayOneShot(AttackAudioClip);
             gameManager.Player.Damage(AttackDamage);
         }

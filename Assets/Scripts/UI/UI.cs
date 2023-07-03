@@ -43,7 +43,10 @@ public class UI : MonoBehaviour
     //Clock
     Timer timer;
     VisualElement _face;
+    float _faceRotation = 0;
+    float _faceNightRotation = 270;
     Label _countdown;
+    bool _nightStarted = false;
 
     public Inventory inventory;
     public Player player;
@@ -109,12 +112,17 @@ public class UI : MonoBehaviour
     {
         if (!GameManager.IsNight)
         {
-            _face.transform.rotation *= Quaternion.Euler(0, 0, GameManager.TimeManger.timer.GetSeconds() / 120);
+            _faceRotation = (30 - GameManager.TimeManger.timer.timeRemaining) * 6;
+            _face.transform.rotation = Quaternion.Euler(0, 0, _faceRotation);
             _countdown.text = GameManager.TimeManger.timer.DisplayTime();
         }
         else if (GameManager.IsNight)
         {
-            _face.transform.rotation = Quaternion.Euler(0, 0, 270);
+            if(_nightStarted && _faceRotation < _faceNightRotation) {
+                _faceRotation += 10;
+                _faceRotation = _faceRotation > _faceNightRotation ? _faceNightRotation : _faceRotation;
+                _face.transform.rotation = Quaternion.Euler(0, 0, _faceRotation);
+            }
             _countdown.text = "00:00";
         }
         _currentHealth.style.width = player.currentHealth * 2;
@@ -124,12 +132,14 @@ public class UI : MonoBehaviour
     {
         _nightWand.RemoveFromClassList("visible");
         _day.RemoveFromClassList("hidden");
+        _nightStarted = false;
     }
 
     void OnNightStart(int day)
     {
         _nightWand.AddToClassList("visible");
         _day.AddToClassList("hidden");
+        _nightStarted = true;
     }
 
     public void RefreshAmounts()
