@@ -14297,6 +14297,7 @@ GameObject:
   - component: {fileID: 451428202}
   - component: {fileID: 451428201}
   - component: {fileID: 451428200}
+  - component: {fileID: 451428203}
   m_Layer: 5
   m_Name: CauldronCanvas
   m_TagString: Untagged
@@ -14388,6 +14389,21 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &451428203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451428198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 033e084dd7432164db2be81feca4cda2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ingredient1: {fileID: 2061118558}
+  ingredient2: {fileID: 1178466040}
+  ingredient3: {fileID: 1934958977}
 --- !u!1001 &452626419
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35756,6 +35772,11 @@ PrefabInstance:
       propertyPath: AudioSourceItems
       value: 
       objectReference: {fileID: 516000138}
+    - target: {fileID: 3923410607729698262, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
+        type: 3}
+      propertyPath: GameManager
+      value: 
+      objectReference: {fileID: 1328368777}
     - target: {fileID: 3943774334872337552, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
         type: 3}
       propertyPath: m_Volume
@@ -46174,6 +46195,7 @@ MonoBehaviour:
   Enemies: []
   Plants: []
   Items: []
+  CauldronCanvas: {fileID: 451428203}
   TimeManger: {fileID: 1328368776}
   DayCycleController: {fileID: 1029318140}
   Day: 0
