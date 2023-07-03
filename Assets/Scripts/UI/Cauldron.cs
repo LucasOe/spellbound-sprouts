@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using TMPro;
 
 [System.Serializable]
@@ -16,8 +17,10 @@ public struct ItemAmounts
     public int Amount3;
 }
 
-public class Cauldron : MonoBehaviour
+public class Cauldron : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
+    public Outline Outline;
+
     public TextMeshProUGUI ingredientText1;
     public TextMeshProUGUI ingredientText2;
     public TextMeshProUGUI ingredientText3;
@@ -36,5 +39,20 @@ public class Cauldron : MonoBehaviour
         ingredientAmount1.text = string.Format("{0}/{1}", inventoryDrops.GetAmount(ItemAmounts[index].Item1), ItemAmounts[index].Amount1);
         ingredientAmount2.text = string.Format("{0}/{1}", inventoryDrops.GetAmount(ItemAmounts[index].Item2), ItemAmounts[index].Amount2);
         ingredientAmount3.text = string.Format("{0}/{1}", inventoryDrops.GetAmount(ItemAmounts[index].Item3), ItemAmounts[index].Amount3);
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        Outline.Enable();
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        Outline.Disable();
+    }
+
+    public void OnClick()
+    {
+        Debug.Log("Clicked");
     }
 }

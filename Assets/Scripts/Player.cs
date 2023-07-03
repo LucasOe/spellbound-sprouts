@@ -104,11 +104,16 @@ public class Player : MonoBehaviour
                 {
                     ClickedTile(tile);
                 }
+
+                if (clickedObject.TryGetComponent(out Cauldron cauldron))
+                {
+                    ClickedCauldron(cauldron);
+                }
             }
         }
     }
 
-    public void ClickedEnemy(Enemy enemy)
+    private void ClickedEnemy(Enemy enemy)
     {
         if (!attackCooldownTimer)
         {
@@ -130,12 +135,17 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void ClickedTile(Tile tile)
+    private void ClickedTile(Tile tile)
     {
         if (distanceToCursor <= Range && !GameManager.IsNight)
         {
             HandleTileInteraction(tile);
         }
+    }
+
+    private void ClickedCauldron(Cauldron cauldron)
+    {
+        cauldron.OnClick();
     }
 
     private void HandleTileInteraction(Tile tile)
