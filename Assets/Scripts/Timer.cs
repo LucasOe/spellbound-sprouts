@@ -78,14 +78,29 @@ public class Timer : MonoBehaviour
         this.OnUpdate += callback;
     }
 
+    public float GetDuration()
+    {
+        return this.TimerState.Duration;
+    }
+
     public float GetRemainingDuration()
     {
         return this.TimerState.RemainingDuration;
     }
 
+    public float GetCycles()
+    {
+        return this.TimerState.Cycles;
+    }
+
+    public float GetRemainingCycles()
+    {
+        return this.TimerState.RemainingCycles;
+    }
+
     public float GetPercent()
     {
-        return this.TimerState.Duration / this.TimerState.RemainingDuration;
+        return this.TimerState.RemainingDuration / this.TimerState.Duration;
     }
 
     public float GetMinutes()
@@ -100,6 +115,6 @@ public class Timer : MonoBehaviour
 
     public string DisplayTime()
     {
-        return string.Format("{0:00}:{1:00}", GetMinutes(), GetSeconds());
+        return TimerState.IsRunning ? string.Format("{0:00}:{1:00}", GetMinutes(), GetSeconds()) : "00:00";
     }
 }

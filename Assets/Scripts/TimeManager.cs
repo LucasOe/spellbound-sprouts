@@ -77,4 +77,15 @@ public class TimeManger : MonoBehaviour
         }
         return true;
     }
+
+    public float FinishedPercent()
+    {
+        var enemiesCount = 0;
+        foreach (Spawner spawner in GameManager.Spawners)
+        {
+            enemiesCount += spawner.EnemySpawnInfo[GameManager.Day].skeletonCount;
+            enemiesCount += spawner.EnemySpawnInfo[GameManager.Day].spiderCount;
+        }
+        return enemiesCount;
+    }
 }

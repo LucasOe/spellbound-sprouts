@@ -41,15 +41,9 @@ public class UI : MonoBehaviour
     Label _4HAmount;
 
     //Clock
-    Timer timer;
     VisualElement _face;
-    float _faceRotation = 0;
-    float _faceNightRotation = 270;
     Label _countdown;
-    bool _nightStarted = false;
-
-    public Inventory inventory;
-    public Player player;
+    private int enemyCount;
 
     private void OnEnable()
     {
@@ -101,50 +95,41 @@ public class UI : MonoBehaviour
         _seedAmountLabels.Add(_3HAmount);
         _seedAmountLabels.Add(_4HAmount);
     }
-    // Start is called before the first frame update
+
     void Start()
     {
         RefreshAmounts();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (!GameManager.IsNight)
-        {
-            _faceRotation = (30 - GameManager.TimeManger.timer.GetRemainingDuration()) * 6;
-            _face.transform.rotation = Quaternion.Euler(0, 0, _faceRotation);
-            _countdown.text = GameManager.TimeManger.timer.DisplayTime();
-        }
-        else if (GameManager.IsNight)
-        {
-            if (_nightStarted && _faceRotation < _faceNightRotation)
-            {
-                _faceRotation += 10;
-                _faceRotation = _faceRotation > _faceNightRotation ? _faceNightRotation : _faceRotation;
-                _face.transform.rotation = Quaternion.Euler(0, 0, _faceRotation);
-            }
-            _countdown.text = "00:00";
-        }
-        _currentHealth.style.width = player.currentHealth * 2;
+        float _faceRotation = !GameManager.IsNight
+            ? Mathf.Lerp(-90.0f, -270.0f, GameManager.TimeManger.timer.GetPercent()) // Day
+            : Mathf.Lerp(90.0f, -90.0f, (float)GameManager.Enemies.Count / enemyCount); // Night
+
+        _face.transform.rotation = Quaternion.Euler(0, 0, _faceRotation);
+        _countdown.text = GameManager.TimeManger.timer ? GameManager.TimeManger.timer.DisplayTime() : "00:00";
+
+        // Set Health
+        _currentHealth.style.width = GameManager.Player.currentHealth * 2;
     }
 
     void OnDayStart(int day)
     {
         _nightWand.RemoveFromClassList("visible");
         _day.RemoveFromClassList("hidden");
-        _nightStarted = false;
     }
 
     void OnNightStart(int day)
     {
+        GameManager.Spawners.ForEach((spawner) => enemyCount += spawner.GetEnemyCount(day));
         _nightWand.AddToClassList("visible");
         _day.AddToClassList("hidden");
-        _nightStarted = true;
     }
 
     public void RefreshAmounts()
     {
+        var inventory = GameManager.Player.Inventory;
         for (int i = 0; i < inventory.seeds.Length; i++)
         {
             _seedAmountLabels[i].text = inventory.seeds[i]._amount.ToString();
