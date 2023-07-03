@@ -4,9 +4,16 @@ using UnityEngine;
 
 public class InventoryDrops : MonoBehaviour
 {
+    public GameManager GameManager;
+
     public int boneAmount;
     public int spidereyeAmount;
     public int glassAmount;
+
+    private void Awake()
+    {
+        GameManager.CauldronCanvas.UpdateIngredients(this);
+    }
 
     public void AddItem(Item.Type type)
     {
@@ -17,5 +24,6 @@ public class InventoryDrops : MonoBehaviour
             Item.Type.Glass => glassAmount += 1,
             _ => throw new System.NotImplementedException(),
         };
+        GameManager.CauldronCanvas.UpdateIngredients(this);
     }
 }

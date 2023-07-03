@@ -26,6 +26,9 @@ public class GameManager : MonoBehaviour
     //Item Drops
     public List<Item> Items;
 
+    // Cauldron
+    public Cauldron CauldronCanvas;
+
     // Day Night Cycle
     public TimeManger TimeManger;
     public DayCycleController DayCycleController;
