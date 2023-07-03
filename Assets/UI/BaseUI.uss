@@ -179,3 +179,8 @@
     opacity: 1;
     translate: 0 250px;
 }
+
+.plant {
+    rotate: 360deg;
+    transition-duration: 0s;
+}

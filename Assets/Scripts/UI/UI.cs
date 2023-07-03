@@ -189,10 +189,10 @@ public class UI : MonoBehaviour
                 _wheel.RemoveFromClassList("harvest");
                 _wheel.RemoveFromClassList("herb");
                 _wheel.AddToClassList("plant");
-                Debug.Log("waiting");
-                Timer timer = this.CreateTimer(1.0f);
-                timer.RunOnFinish(() =>
+                Timer timer = this.CreateTimer(.3f);
+                timer.RunOnFinish((state) =>
                 {
+                    Debug.Log("waiting");
                     _wheel.RemoveFromClassList("plant");
                 });
                 timer.StartTimer();
