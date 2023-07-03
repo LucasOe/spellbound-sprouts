@@ -18,17 +18,23 @@ public struct ItemAmounts
 
 public class Cauldron : MonoBehaviour
 {
-    public TextMeshProUGUI ingredient1;
-    public TextMeshProUGUI ingredient2;
-    public TextMeshProUGUI ingredient3;
+    public TextMeshProUGUI ingredientText1;
+    public TextMeshProUGUI ingredientText2;
+    public TextMeshProUGUI ingredientText3;
+    public TextMeshProUGUI ingredientAmount1;
+    public TextMeshProUGUI ingredientAmount2;
+    public TextMeshProUGUI ingredientAmount3;
 
     public ItemAmounts[] ItemAmounts;
 
     public void UpdateIngredients(InventoryDrops inventoryDrops)
     {
         var index = 0;
-        ingredient1.text = string.Format("{0}/{1}", inventoryDrops.GetAmount(ItemAmounts[index].Item1), ItemAmounts[index].Amount1);
-        ingredient2.text = string.Format("{0}/{1}", inventoryDrops.GetAmount(ItemAmounts[index].Item2), ItemAmounts[index].Amount2);
-        ingredient3.text = string.Format("{0}/{1}", inventoryDrops.GetAmount(ItemAmounts[index].Item3), ItemAmounts[index].Amount3);
+        ingredientText1.text = string.Format("{0}:", ItemAmounts[index].Item1.DisplayName);
+        ingredientText2.text = string.Format("{0}:", ItemAmounts[index].Item2.DisplayName);
+        ingredientText3.text = string.Format("{0}:", ItemAmounts[index].Item3.DisplayName);
+        ingredientAmount1.text = string.Format("{0}/{1}", inventoryDrops.GetAmount(ItemAmounts[index].Item1), ItemAmounts[index].Amount1);
+        ingredientAmount2.text = string.Format("{0}/{1}", inventoryDrops.GetAmount(ItemAmounts[index].Item2), ItemAmounts[index].Amount2);
+        ingredientAmount3.text = string.Format("{0}/{1}", inventoryDrops.GetAmount(ItemAmounts[index].Item3), ItemAmounts[index].Amount3);
     }
 }
