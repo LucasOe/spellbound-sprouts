@@ -917,7 +917,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 4dddebd263978da4da02c8490f8ebc64,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.85
+      value: -2.32
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4dddebd263978da4da02c8490f8ebc64,
         type: 3}
@@ -927,12 +927,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 4dddebd263978da4da02c8490f8ebc64,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10.48
+      value: -11.03
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4dddebd263978da4da02c8490f8ebc64,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9287158
+      value: 0.961796
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4dddebd263978da4da02c8490f8ebc64,
         type: 3}
@@ -942,7 +942,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 4dddebd263978da4da02c8490f8ebc64,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.37079245
+      value: 0.27376717
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4dddebd263978da4da02c8490f8ebc64,
         type: 3}
@@ -957,7 +957,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 4dddebd263978da4da02c8490f8ebc64,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 43.529
+      value: 31.777
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4dddebd263978da4da02c8490f8ebc64,
         type: 3}
@@ -13841,7 +13841,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 4dddebd263978da4da02c8490f8ebc64,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.84
+      value: -7.74
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4dddebd263978da4da02c8490f8ebc64,
         type: 3}
@@ -13851,7 +13851,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 4dddebd263978da4da02c8490f8ebc64,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -15.17
+      value: -10.48
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4dddebd263978da4da02c8490f8ebc64,
         type: 3}
@@ -14398,7 +14398,6 @@ GameObject:
   - component: {fileID: 451428199}
   - component: {fileID: 451428202}
   - component: {fileID: 451428201}
-  - component: {fileID: 451428200}
   - component: {fileID: 451428203}
   m_Layer: 5
   m_Name: CauldronCanvas
@@ -14428,23 +14427,6 @@ RectTransform:
   m_AnchoredPosition: {x: -8, y: 3}
   m_SizeDelta: {x: 4, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &451428200
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 451428198}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
 --- !u!114 &451428201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18042,16 +18024,6 @@ PrefabInstance:
       propertyPath: GameManager
       value: 
       objectReference: {fileID: 1328368777}
-    - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
-        type: 3}
-      propertyPath: EnemySpawnInfo.Array.data[1].spiderCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
-        type: 3}
-      propertyPath: EnemySpawnInfo.Array.data[0].skeletonCount
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -26264,16 +26236,6 @@ PrefabInstance:
       propertyPath: GameManager
       value: 
       objectReference: {fileID: 1328368777}
-    - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
-        type: 3}
-      propertyPath: EnemySpawnInfo.Array.data[1].spiderCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
-        type: 3}
-      propertyPath: EnemySpawnInfo.Array.data[0].skeletonCount
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -26629,16 +26591,6 @@ PrefabInstance:
       propertyPath: GameManager
       value: 
       objectReference: {fileID: 1328368777}
-    - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
-        type: 3}
-      propertyPath: EnemySpawnInfo.Array.data[1].spiderCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
-        type: 3}
-      propertyPath: EnemySpawnInfo.Array.data[0].skeletonCount
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -41534,16 +41486,6 @@ PrefabInstance:
       propertyPath: GameManager
       value: 
       objectReference: {fileID: 1328368777}
-    - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
-        type: 3}
-      propertyPath: EnemySpawnInfo.Array.data[1].spiderCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
-        type: 3}
-      propertyPath: EnemySpawnInfo.Array.data[0].skeletonCount
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -46644,6 +46586,31 @@ PrefabInstance:
     - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
         type: 3}
       propertyPath: EnemySpawnInfo.Array.data[0].skeletonCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
+        type: 3}
+      propertyPath: EnemySpawnInfo.Array.data[1].skeletonCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
+        type: 3}
+      propertyPath: EnemySpawnInfo.Array.data[2].skeletonCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
+        type: 3}
+      propertyPath: EnemySpawnInfo.Array.data[3].skeletonCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
+        type: 3}
+      propertyPath: EnemySpawnInfo.Array.data[4].skeletonCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
+        type: 3}
+      propertyPath: EnemySpawnInfo.Array.data[5].skeletonCount
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -54716,16 +54683,6 @@ PrefabInstance:
       propertyPath: GameManager
       value: 
       objectReference: {fileID: 1328368777}
-    - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
-        type: 3}
-      propertyPath: EnemySpawnInfo.Array.data[1].spiderCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
-        type: 3}
-      propertyPath: EnemySpawnInfo.Array.data[0].skeletonCount
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -55486,16 +55443,6 @@ PrefabInstance:
       propertyPath: GameManager
       value: 
       objectReference: {fileID: 1328368777}
-    - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
-        type: 3}
-      propertyPath: EnemySpawnInfo.Array.data[1].spiderCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
-        type: 3}
-      propertyPath: EnemySpawnInfo.Array.data[0].skeletonCount
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -66951,16 +66898,6 @@ PrefabInstance:
       propertyPath: GameManager
       value: 
       objectReference: {fileID: 1328368777}
-    - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
-        type: 3}
-      propertyPath: EnemySpawnInfo.Array.data[1].spiderCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
-        type: 3}
-      propertyPath: EnemySpawnInfo.Array.data[0].skeletonCount
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -76000,16 +75937,6 @@ PrefabInstance:
       propertyPath: GameManager
       value: 
       objectReference: {fileID: 1328368777}
-    - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
-        type: 3}
-      propertyPath: EnemySpawnInfo.Array.data[1].spiderCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
-        type: 3}
-      propertyPath: EnemySpawnInfo.Array.data[0].skeletonCount
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -85446,16 +85373,6 @@ PrefabInstance:
       propertyPath: GameManager
       value: 
       objectReference: {fileID: 1328368777}
-    - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
-        type: 3}
-      propertyPath: EnemySpawnInfo.Array.data[1].spiderCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
-        type: 3}
-      propertyPath: EnemySpawnInfo.Array.data[0].skeletonCount
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -86047,16 +85964,6 @@ PrefabInstance:
       propertyPath: GameManager
       value: 
       objectReference: {fileID: 1328368777}
-    - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
-        type: 3}
-      propertyPath: EnemySpawnInfo.Array.data[1].spiderCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
-        type: 3}
-      propertyPath: EnemySpawnInfo.Array.data[0].skeletonCount
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -88186,16 +88093,6 @@ PrefabInstance:
       propertyPath: GameManager
       value: 
       objectReference: {fileID: 1328368777}
-    - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
-        type: 3}
-      propertyPath: EnemySpawnInfo.Array.data[1].spiderCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
-        type: 3}
-      propertyPath: EnemySpawnInfo.Array.data[0].skeletonCount
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
