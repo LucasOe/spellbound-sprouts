@@ -10,7 +10,8 @@ public class Plant : MonoBehaviour
     public GameObject ActiveStage;
     public float MaxHealth = 10.0f;
     private float currentHealth;
-    public Seed seed;
+    public ItemData ItemDrop;
+    public int ItemDropAmount;
 
     public int age = 0;
     public bool mature;
@@ -28,9 +29,13 @@ public class Plant : MonoBehaviour
 
     public void Destroy(GameManager gameManager)
     {
-        seed.AddHarvest(mature);
         // Unsubscribe from events
         gameManager.DayStart -= OnDayStart;
+
+        if (mature)
+        {
+            gameManager.Player.InventoryDrops.AddItem(ItemDrop, ItemDropAmount);
+        }
     }
 
     protected virtual void Start()
