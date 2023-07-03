@@ -56,7 +56,7 @@ MonoBehaviour:
   - {fileID: 664645865070872746}
   drops: 2
   EffectDuration: 5
-  EffectStrength: 1
+  EffectStrength: 2
   AttackRange: 2
   AttackSpeed: 0.2
 --- !u!1001 &430131377404802555

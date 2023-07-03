@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class Slowed : StatusEffect
 {
+    private readonly float strength;
+
     public Slowed(Enemy enemy, float duration, float strength) : base(enemy, duration)
     {
-        Debug.Log("Slowed Start");
+        this.strength = strength;
+
+        enemy.Agent.speed *= 1 / strength;
     }
 
     protected override void EndEffect()
     {
-        Debug.Log("Slowed End");
+        enemy.Agent.speed *= strength;
     }
 }
