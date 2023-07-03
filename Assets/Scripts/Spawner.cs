@@ -43,6 +43,10 @@ public class Spawner : MonoBehaviour
                 // Skip cooldown so the first wave spawns instantly
                 timer.SkipTimer();
             }
+            else
+            {
+                FinishedSpawning = true;
+            }
         }
         else
         {
@@ -81,19 +85,18 @@ public class Spawner : MonoBehaviour
     {
         GameManager.CreateEnemy(Skeleton, transform.position, transform.rotation);
         EnemySpawnInfo[day].skeletonCount--;
-
-        if (EnemySpawnInfo[day].skeletonCount <= 0 && EnemySpawnInfo[day].spiderCount <= 0)
-        {
-            FinishedSpawning = true;
-            SpawnerFinished?.Invoke();
-        }
+        TestFinished(day);
     }
 
     private void SpawnSpider(int day)
     {
         GameManager.CreateEnemy(Spider, transform.position, transform.rotation);
         EnemySpawnInfo[day].spiderCount--;
+        TestFinished(day);
+    }
 
+    private void TestFinished(int day)
+    {
         if (EnemySpawnInfo[day].skeletonCount <= 0 && EnemySpawnInfo[day].spiderCount <= 0)
         {
             FinishedSpawning = true;
