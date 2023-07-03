@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Dornrose : DefensivePlant
@@ -17,7 +18,7 @@ public class Dornrose : DefensivePlant
         attackTimer = this.CreateTimer(AttackSpeed, -1);
         attackTimer.RunOnFinish((state) =>
         {
-            gameManager.Enemies.ForEach((enemy) =>
+            gameManager.Enemies.ToList().ForEach((enemy) =>
             {
                 if (this.GetDistance(enemy) <= AttackRange)
                 {

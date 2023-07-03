@@ -35796,8 +35796,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2674156083949954083, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
         type: 3}
+      propertyPath: dithering
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674156083949954083, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
+        type: 3}
       propertyPath: m_Version
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674156083949954083, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
+        type: 3}
+      propertyPath: customRenderingSettings
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3315166315397763816, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
         type: 3}
