@@ -629,6 +629,10 @@ MonoBehaviour:
   AttackAudioClip: {fileID: 8300000, guid: 4d03c8ec4519bc14fa000dda2e1aa770, type: 3}
   AttackParticle: {fileID: 6603059628715771232, guid: 87262bed19f9ab6469f7349e376e2284,
     type: 3}
+  DayMusic:
+  - {fileID: 8300000, guid: c28af5c09ece12942a86f4bf1bb44e13, type: 3}
+  - {fileID: 8300000, guid: 4aa6011b62dbe214fa0e95f4588a4402, type: 3}
+  NightMusic: []
 --- !u!114 &1374843163789428268
 MonoBehaviour:
   m_ObjectHideFlags: 0
