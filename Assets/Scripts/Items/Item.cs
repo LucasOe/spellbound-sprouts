@@ -5,9 +5,16 @@ using UnityEngine.AI;
 
 public class Item : MonoBehaviour
 {
+    public enum Type
+    {
+        Bone,
+        Eye,
+        Glass,
+    }
+
     protected GameManager gameManager;
+    public Type type;
     public float Dropchance = 1.0f;
-    public PotionLoot lootSlot;
     public NavMeshAgent Agent;
     public AudioClip CollectEffect;
 
@@ -29,10 +36,11 @@ public class Item : MonoBehaviour
             gameManager.DestroyItem(this);
         }
     }
+
     public void Destroy(GameManager gameManager)
     {
-        lootSlot.AddAmount(1);
         gameManager.Player.PlaySound(CollectEffect, 0.3f);
+        gameManager.Player.InventoryDrops.AddItem(type); // Add item to Inventory
     }
 
 }

@@ -20,7 +20,7 @@ public class Inventory : MonoBehaviour
     public Plant activePlant = null;
     public Plant activeHerb = null;
 
-    public PotionLoot[] EnemyDrops;
+    public InventoryDrops InventoryDrops;
 
     public UI ui;
 
@@ -44,22 +44,24 @@ public class Inventory : MonoBehaviour
         ui.selectActiveSeed(i, activeTool);
     }
 
-    public void ScrollSeed(int i) 
+    public void ScrollSeed(int i)
     {
         if (activeTool == PlantSeeds)
         {
-            if(plantIndex + i >= 0 && plantIndex + i < plants.Length) {
-            plantIndex = plantIndex + i;
-            this.activePlant = plants[plantIndex];
-            ui.selectActiveSeed(plantIndex, activeTool);
+            if (plantIndex + i >= 0 && plantIndex + i < plants.Length)
+            {
+                plantIndex = plantIndex + i;
+                this.activePlant = plants[plantIndex];
+                ui.selectActiveSeed(plantIndex, activeTool);
             }
         }
         else if (activeTool == HerbSeeds)
         {
-            if(herbIndex + i >= 0 && herbIndex + i < plants.Length) {
-            herbIndex = herbIndex + i;
-            this.activeHerb = herbs[herbIndex];
-            ui.selectActiveSeed(herbIndex, activeTool);
+            if (herbIndex + i >= 0 && herbIndex + i < plants.Length)
+            {
+                herbIndex = herbIndex + i;
+                this.activeHerb = herbs[herbIndex];
+                ui.selectActiveSeed(herbIndex, activeTool);
             }
         }
     }
