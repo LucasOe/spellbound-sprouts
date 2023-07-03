@@ -194,6 +194,8 @@ public class UI : MonoBehaviour
                 timer.RunOnFinish((state) =>
                 {
                     _wheel.AddToClassList("instantAnimation");
+                    _wheel.RemoveFromClassList("plant");
+                    _wheel.RemoveFromClassList("instantAnimation");
                 });
                 timer.StartTimer();
                 break;

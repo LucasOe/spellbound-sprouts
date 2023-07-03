@@ -197,3 +197,14 @@
 
 .instantAnimation {
 }
+
+.itemTypeIndicator {
+    height: 16px;
+    width: 16px;
+    align-self: auto;
+    position: relative;
+    margin-left: 10px;
+}
+
+.itemTypeWrap {
+}
