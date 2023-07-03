@@ -107,7 +107,7 @@ public class Player : MonoBehaviour
     {
         if (!Animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
         {
-            AudioSource.PlayOneShot(AttackAudioClip);
+            AudioSource.PlayOneShot(AttackAudioClip, .4f);
             var direction = (enemy.transform.position - transform.position).normalized;
             player.transform.rotation = Quaternion.LookRotation(direction, Vector3.up);
 
