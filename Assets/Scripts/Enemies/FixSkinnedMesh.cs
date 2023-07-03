@@ -4,19 +4,17 @@ using UnityEngine;
 
 public class FixSkinnedMesh : MonoBehaviour
 {
-    public GameObject[] Objects;
+    public Mesh[] Meshes;
 
     private void Start()
     {
-        foreach (GameObject obj in Objects)
+        foreach (Mesh mesh in Meshes)
         {
-            SkinnedMeshRenderer meshRenderer = obj.GetComponentInChildren<SkinnedMeshRenderer>();
-
             // https://discussions.unity.com/t/quickoutline-how-can-i-change-the-shader-to-work-with-objects-with-two-materials/234528/3
-            if (meshRenderer.sharedMesh.subMeshCount > 1)
+            if (mesh.subMeshCount > 1)
             {
-                meshRenderer.sharedMesh.subMeshCount = meshRenderer.sharedMesh.subMeshCount + 1;
-                meshRenderer.sharedMesh.SetTriangles(meshRenderer.sharedMesh.triangles, meshRenderer.sharedMesh.subMeshCount - 1);
+                mesh.subMeshCount = mesh.subMeshCount + 1;
+                mesh.SetTriangles(mesh.triangles, mesh.subMeshCount - 1);
             }
         }
     }

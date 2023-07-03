@@ -239,7 +239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMaterial: {fileID: 2100000, guid: 22e9780c925fdad4da0899331c212e6c, type: 2}
-  SkinnedMeshRenderer: {fileID: 3849638382362340694}
+  Renderer: {fileID: 3849638382362340694}
 --- !u!54 &1022010972366483746
 Rigidbody:
   m_ObjectHideFlags: 0
