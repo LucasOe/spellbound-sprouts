@@ -20,7 +20,7 @@ public class Inventory : MonoBehaviour
     public Plant activePlant = null;
     public Plant activeHerb = null;
 
-    public Item[] EnemyDrops;
+    public PotionLoot[] EnemyDrops;
 
     public UI ui;
 
