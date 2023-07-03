@@ -50,9 +50,15 @@ MonoBehaviour:
   ActiveStage: {fileID: 664645865070872746}
   MaxHealth: 70
   seed: {fileID: 5713623275764549774, guid: a9a56ef5b0a7e04458a93c86f4c91722, type: 3}
+  age: 0
+  mature: 0
   Stages:
   - {fileID: 664645865070872746}
   drops: 2
+  EffectDuration: 5
+  EffectStrength: 1
+  AttackRange: 2
+  AttackSpeed: 0.2
 --- !u!1001 &430131377404802555
 PrefabInstance:
   m_ObjectHideFlags: 0

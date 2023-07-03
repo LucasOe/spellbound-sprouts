@@ -63,6 +63,9 @@ public class Plant : MonoBehaviour
 
     protected virtual void OnDayStart(int day)
     {
+        if (Stages.Length == 1)
+            mature = true;
+
         // Grow plants
         if (!mature)
         {
