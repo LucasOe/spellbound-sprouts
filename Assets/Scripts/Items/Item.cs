@@ -7,7 +7,7 @@ public class Item : MonoBehaviour
 {
     protected GameManager gameManager;
     public float Dropchance = 1.0f;
-
+    public PotionLoot lootSlot;
     public NavMeshAgent Agent;
     public AudioClip CollectEffect;
 
@@ -31,6 +31,7 @@ public class Item : MonoBehaviour
     }
     public void Destroy(GameManager gameManager)
     {
+        lootSlot.AddAmount(1);
         gameManager.Player.PlaySound(CollectEffect, 0.3f);
     }
 
