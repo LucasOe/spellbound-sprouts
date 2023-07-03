@@ -116,6 +116,7 @@ public class UI : MonoBehaviour
 
     void OnDayStart(int day)
     {
+        enemyCount = 0;
         _nightWand.RemoveFromClassList("visible");
         _day.RemoveFromClassList("hidden");
     }
