@@ -193,9 +193,7 @@ public class UI : MonoBehaviour
                 Timer timer = this.CreateTimer(.3f);
                 timer.RunOnFinish((state) =>
                 {
-                    Debug.Log("waiting");
                     _wheel.AddToClassList("instantAnimation");
-                    _wheel.RemoveFromClassList("plant");
                 });
                 timer.StartTimer();
                 break;

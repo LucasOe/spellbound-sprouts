@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
     public float distanceToCursor;
 
     public AudioSource AudioSource;
+    public AudioSource AudioSourceMusic;
     public AudioSource AudioSourceItems;
     public AudioClip AttackAudioClip;
     public AttackParticle AttackParticle;
@@ -232,6 +233,18 @@ public class Player : MonoBehaviour
         AudioSource.clip = audioclip;
         AudioSource.loop = true;
         AudioSource.Play();
+    }
+
+    public void PlayMusic(AudioClip audioclip)
+    {
+        AudioSourceMusic.clip = audioclip;
+        AudioSourceMusic.loop = true;
+        AudioSourceMusic.Play();
+    }
+
+    public void StopMusic()
+    {
+        AudioSourceMusic.Stop();
     }
 
     public void Damage(float amount)
