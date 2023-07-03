@@ -78,9 +78,24 @@ public class Timer : MonoBehaviour
         this.OnUpdate += callback;
     }
 
+    public float GetDuration()
+    {
+        return this.TimerState.Duration;
+    }
+
     public float GetRemainingDuration()
     {
         return this.TimerState.RemainingDuration;
+    }
+
+    public float GetCycles()
+    {
+        return this.TimerState.Cycles;
+    }
+
+    public float GetRemainingCycles()
+    {
+        return this.TimerState.RemainingCycles;
     }
 
     public float GetPercent()
