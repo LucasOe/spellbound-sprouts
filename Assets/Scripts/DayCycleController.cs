@@ -16,16 +16,20 @@ public class DayCycleController : MonoBehaviour
     public float DayFogDensity = 100;
     public float NightFogDensity = 25;
 
-
+    public AudioSource AudioSource;
+    public AudioClip[] DayMusic;
+    public AudioClip[] NightMusic;
     public AudioClip NightAmbienceClip;
     public AudioClip DayAmbienceClip;
-    public AudioClip[] DayMusic;
 
     void Start()
     {
         // Subscribe to events
         GameManager.DayStart += OnDayStart;
         GameManager.NightStart += OnNightStart;
+
+        PlayAmbience(DayAmbienceClip);
+        PlayMusic();
 
         VolumeProfile profile = volumeProfile.sharedProfile;
         if (profile.TryGet<Fog>(out var fog))
@@ -39,22 +43,20 @@ public class DayCycleController : MonoBehaviour
         Animator.SetTrigger("SetDay");
         sun.shadows = LightShadows.Soft;
         moon.shadows = LightShadows.None;
-        GameManager.Player.PlayAmbience(DayAmbienceClip);
+        PlayAmbience(DayAmbienceClip);
+        PlayMusic();
         Fireflies.SetActive(false);
-        int i = UnityEngine.Random.Range(0, DayMusic.Length);
-        if (DayMusic[i])
-            GameManager.Player.PlayMusic(DayMusic[i]);
 
         SetFog(false);
     }
 
     public void OnNightStart(int day)
     {
-        GameManager.Player.StopMusic();
         Animator.SetTrigger("SetNight");
         moon.shadows = LightShadows.Soft;
         sun.shadows = LightShadows.None;
-        GameManager.Player.PlayAmbience(NightAmbienceClip);
+        PlayAmbience(NightAmbienceClip);
+        StopMusic();
         Fireflies.SetActive(true);
 
         SetFog(true);
@@ -75,5 +77,25 @@ public class DayCycleController : MonoBehaviour
             });
             timer.StartTimer();
         }
+    }
+
+    public void PlayAmbience(AudioClip audioclip)
+    {
+        AudioSource.clip = audioclip;
+        AudioSource.loop = true;
+        AudioSource.Play();
+    }
+
+    public void PlayMusic()
+    {
+        int i = UnityEngine.Random.Range(0, DayMusic.Length);
+        AudioSource.clip = DayMusic[i];
+        AudioSource.loop = true;
+        AudioSource.Play();
+    }
+
+    public void StopMusic()
+    {
+        AudioSource.Stop();
     }
 }

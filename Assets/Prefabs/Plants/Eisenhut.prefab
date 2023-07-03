@@ -51,7 +51,10 @@ MonoBehaviour:
   Healthbar: {fileID: 3994883051995598239}
   ActiveStage: {fileID: 9127173183369860937}
   MaxHealth: 70
-  seed: {fileID: 7687475521246593362, guid: f05b95fbf8536ff48837fb306dd77142, type: 3}
+  ItemDrop: {fileID: 11400000, guid: caf933e844bbaba4fb4a3c43af0cdc64, type: 2}
+  ItemDropAmount: 2
+  age: 0
+  mature: 0
   Stages:
   - {fileID: 9127173183369860937}
   - {fileID: 1584656012216324697}
