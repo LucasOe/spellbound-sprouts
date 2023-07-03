@@ -203,6 +203,14 @@ public class UI : MonoBehaviour
                 _herbs.RemoveFromClassList("open");
                 _wheel.RemoveFromClassList("harvest");
                 _wheel.RemoveFromClassList("herb");
+                _wheel.AddToClassList("plant");
+                Debug.Log("waiting");
+                Timer timer = this.CreateTimer(1.0f);
+                timer.RunOnFinish(() =>
+                {
+                    _wheel.RemoveFromClassList("plant");
+                });
+                timer.StartTimer();
                 break;
             case HerbSeeds:
                 _harvest.RemoveFromClassList("active");
