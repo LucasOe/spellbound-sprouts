@@ -39,7 +39,7 @@
                     <ui:Label tabindex="-1" text="1" display-tooltip-when-elided="true" class="shortcutSeed" />
                 </ui:VisualElement>
                 <ui:VisualElement class="seed" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 24%;">
-                    <ui:Button text="&#x9;" display-tooltip-when-elided="true" name="2H" class="selectedItem" style="width: 100%;" />
+                    <ui:Button text="&#x9;" display-tooltip-when-elided="true" name="2H" class="selectedItem" style="width: 100%; background-image: url(&apos;project://database/Assets/UI/img/eisenhutIcon.png?fileID=2800000&amp;guid=947a135d011bf9045b29bffd23aa96b2&amp;type=3#eisenhutIcon&apos;);" />
                     <ui:Label tabindex="-1" text="0&#x9;" display-tooltip-when-elided="true" name="2HAmount" class="itemAmount" />
                     <ui:Label tabindex="-1" text="2" display-tooltip-when-elided="true" class="shortcutSeed" />
                 </ui:VisualElement>
