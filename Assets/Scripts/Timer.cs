@@ -78,6 +78,11 @@ public class Timer : MonoBehaviour
         this.OnUpdate += callback;
     }
 
+    public bool IsRunning()
+    {
+        return this.TimerState.IsRunning;
+    }
+
     public float GetDuration()
     {
         return this.TimerState.Duration;
