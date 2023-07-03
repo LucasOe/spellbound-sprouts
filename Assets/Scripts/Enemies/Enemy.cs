@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public float AttackRange = 1.0f;
     public float AttackDamage = 1.0f;
     public Item[] ItemDrops;
+    public List<StatusEffect> StatusEffects = new();
 
     public Outline Outline;
     public NavMeshAgent Agent;
@@ -111,14 +112,15 @@ public class Enemy : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         if (currentTarget.TryGetComponent(out Plant plant))
         {
-            AudioSource.pitch = (Random.Range(0.6f, .9f));
+            AudioSource.pitch = Random.Range(0.6f, .9f);
             AudioSource.PlayOneShot(AttackAudioClip);
             plant.Damage(AttackDamage);
         }
-        if (currentTarget.TryGetComponent(out Player player)) {
-            AudioSource.pitch = (Random.Range(0.6f, .9f));
+        if (currentTarget.TryGetComponent(out Player player))
+        {
+            AudioSource.pitch = Random.Range(0.6f, .9f);
             AudioSource.PlayOneShot(AttackAudioClip);
-            gameManager.Player.Damage(AttackDamage);
+            player.Damage(AttackDamage);
         }
     }
 }

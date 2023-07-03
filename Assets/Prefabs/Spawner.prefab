@@ -52,18 +52,18 @@ MonoBehaviour:
   Spider: {fileID: 1817795642227795184, guid: f66f251f55169a8478f77a669f3b6183, type: 3}
   SpawnCooldown: 3
   EnemySpawnInfo:
-  - skeletonCount: 1
+  - skeletonCount: 0
     spiderCount: 0
   - skeletonCount: 0
-    spiderCount: 1
-  - skeletonCount: 1
-    spiderCount: 1
-  - skeletonCount: 2
-    spiderCount: 1
-  - skeletonCount: 1
-    spiderCount: 2
-  - skeletonCount: 2
-    spiderCount: 2
+    spiderCount: 0
+  - skeletonCount: 0
+    spiderCount: 0
+  - skeletonCount: 0
+    spiderCount: 0
+  - skeletonCount: 0
+    spiderCount: 0
+  - skeletonCount: 0
+    spiderCount: 0
   FinishedSpawning: 0
 --- !u!33 &6014585723015511487
 MeshFilter:
