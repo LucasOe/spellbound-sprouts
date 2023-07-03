@@ -219,7 +219,7 @@ MonoBehaviour:
   AttackRange: 1.5
   AttackDamage: 10
   ItemDrops:
-  - {fileID: 6364326429399645585, guid: e0918bca266c5bc428fa0cfc96678756, type: 3}
+  - {fileID: 7215416449985081486, guid: e0918bca266c5bc428fa0cfc96678756, type: 3}
   Outline: {fileID: 5845701973679248946}
   Agent: {fileID: 7002567171017448374}
   Animator: {fileID: 3412099118969808358}
