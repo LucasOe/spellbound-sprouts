@@ -14488,6 +14488,13 @@ MonoBehaviour:
   ingredient1: {fileID: 2061118558}
   ingredient2: {fileID: 1178466040}
   ingredient3: {fileID: 1934958977}
+  ItemAmounts:
+  - Item1: {fileID: 11400000, guid: b979f49b7a1d44a4f84684a389c3df4a, type: 2}
+    Amount1: 3
+    Item2: {fileID: 11400000, guid: c2f2ee3599f20954285743bb5edb3f3b, type: 2}
+    Amount2: 3
+    Item3: {fileID: 11400000, guid: 26ae8d07e05efe84687d7db21ccc744d, type: 2}
+    Amount3: 3
 --- !u!1001 &452626419
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35680,6 +35687,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1374843163789428268, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
         type: 3}
+      propertyPath: UI
+      value: 
+      objectReference: {fileID: 2021263868}
+    - target: {fileID: 1374843163789428268, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
+        type: 3}
       propertyPath: ui
       value: 
       objectReference: {fileID: 2021263868}
@@ -35849,6 +35861,11 @@ PrefabInstance:
       propertyPath: GameManager
       value: 
       objectReference: {fileID: 1328368777}
+    - target: {fileID: 3923410607729698262, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
+        type: 3}
+      propertyPath: ItemAmounts.Array.data[0].amount
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3943774334872337552, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
         type: 3}
       propertyPath: m_Volume

@@ -51,12 +51,18 @@ MonoBehaviour:
   Healthbar: {fileID: 2096057542373003797}
   ActiveStage: {fileID: 4338462699033547837}
   MaxHealth: 70
-  seed: {fileID: 3568759655164840476, guid: a9b99467de082eb4793be0b4e27a7fab, type: 3}
+  ItemDrop: {fileID: 11400000, guid: 5dfb92a7e9ad5e24c8b685fbb47498ab, type: 2}
+  ItemDropAmount: 2
+  age: 0
+  mature: 0
   Stages:
   - {fileID: 4338462699033547837}
   - {fileID: 4489475715137572446}
   - {fileID: 5016430741504871440}
   drops: 2
+  AttackDamage: 4
+  AttackRange: 2
+  AttackSpeed: 0.2
 --- !u!1001 &3527507111625910636
 PrefabInstance:
   m_ObjectHideFlags: 0

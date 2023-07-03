@@ -130,49 +130,32 @@ public class UI : MonoBehaviour
 
     public void RefreshAmounts()
     {
-        var inventory = GameManager.Player.Inventory;
-        for (int i = 0; i < inventory.seeds.Length; i++)
+        var inventory = GameManager.Player.InventoryDrops;
+        for (int i = 0; i < 8; i++)
         {
-            _seedAmountLabels[i].text = inventory.seeds[i]._amount.ToString();
+            _seedAmountLabels[i].text = inventory.GetAmount(i).ToString();
         }
     }
 
-    public void selectActiveSeed(int i, Tool activeTool)
+    public void SelectActiveSeed(int i, Inventory.Tool activeTool)
     {
-        int j = 0;
-        _seeds = _plantSeeds;
-        switch (activeTool)
+        if (activeTool == Inventory.Tool.Plant)
+            _seeds = _plantSeeds;
+        if (activeTool == Inventory.Tool.Herb)
+            _seeds = _herbSeeds;
+
+        _seeds.ForEach((seed) =>
         {
-            case Harvest:
-                break;
-            case PlantSeeds:
-                _seeds = _plantSeeds;
-                break;
-            case HerbSeeds:
-                _seeds = _herbSeeds;
-                break;
-            default:
-                break;
-        }
-        foreach (var seed in _seeds)
-        {
-            if (j == i)
-            {
-                seed.AddToClassList("active");
-            }
-            else
-            {
-                seed.RemoveFromClassList("active");
-            }
-            j++;
-        }
+            seed.RemoveFromClassList("active");
+        });
+        _seeds[i].AddToClassList("active");
     }
 
-    public void ToggleToolType(Tool activeTool)
+    public void ToggleToolType(Inventory.Tool activeTool)
     {
         switch (activeTool)
         {
-            case Harvest:
+            case Inventory.Tool.Harvest:
                 _harvest.AddToClassList("active");
                 _herb.RemoveFromClassList("active");
                 _plant.RemoveFromClassList("active");
@@ -181,7 +164,7 @@ public class UI : MonoBehaviour
                 _wheel.AddToClassList("harvest");
                 _wheel.RemoveFromClassList("herb");
                 break;
-            case PlantSeeds:
+            case Inventory.Tool.Plant:
                 _harvest.RemoveFromClassList("active");
                 _herb.RemoveFromClassList("active");
                 _plant.AddToClassList("active");
@@ -199,7 +182,7 @@ public class UI : MonoBehaviour
                 });
                 timer.StartTimer();
                 break;
-            case HerbSeeds:
+            case Inventory.Tool.Herb:
                 _harvest.RemoveFromClassList("active");
                 _herb.AddToClassList("active");
                 _plant.RemoveFromClassList("active");

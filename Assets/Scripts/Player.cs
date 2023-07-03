@@ -38,7 +38,6 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        Inventory.ResetInventory();
         GameManager.CreatedPlant += OnCreatePlant;
     }
 
@@ -143,16 +142,16 @@ public class Player : MonoBehaviour
 
     private void HandleTileInteraction(Tile tile)
     {
-        Tool ActiveTool = Inventory.activeTool;
+        Inventory.Tool ActiveTool = Inventory.ActiveTool;
 
-        if (!tile.Plant && ActiveTool != Inventory.Harvest && Inventory.GetPlant().seed._amount > 0)
+        if (!tile.Plant && ActiveTool != Inventory.Tool.Harvest && InventoryDrops.GetAmount(Inventory.GetPlant().ItemDrop) > 0)
         {
             Plant tileContent = GameManager.CreatePlant(Inventory.GetPlant(), tile.transform.position, Quaternion.identity, tile);
             tile.Plant = tileContent;
-            tileContent.seed.PlantSeed();
+            InventoryDrops.RemoveItem(Inventory.GetPlant().ItemDrop, 1);
             ui.RefreshAmounts();
         }
-        else if (tile.Plant && ActiveTool == Inventory.Harvest)
+        else if (tile.Plant && ActiveTool == Inventory.Tool.Harvest)
         {
             GameManager.DestroyPlant(tile.Plant);
         }
@@ -162,20 +161,20 @@ public class Player : MonoBehaviour
     {
         if (!toolCooldownTimer)
         {
-            if (Inventory.activeTool == Inventory.Harvest)
+            if (Inventory.ActiveTool == Inventory.Tool.Harvest)
             {
-                Inventory.SetTool(Inventory.PlantSeeds);
-                ui.ToggleToolType(Inventory.activeTool);
+                Inventory.SetTool(Inventory.Tool.Plant);
+                ui.ToggleToolType(Inventory.ActiveTool);
             }
-            else if (Inventory.activeTool == Inventory.PlantSeeds)
+            else if (Inventory.ActiveTool == Inventory.Tool.Plant)
             {
-                Inventory.SetTool(Inventory.HerbSeeds);
-                ui.ToggleToolType(Inventory.activeTool);
+                Inventory.SetTool(Inventory.Tool.Herb);
+                ui.ToggleToolType(Inventory.ActiveTool);
             }
-            else if (Inventory.activeTool == Inventory.HerbSeeds)
+            else if (Inventory.ActiveTool == Inventory.Tool.Herb)
             {
-                Inventory.SetTool(Inventory.Harvest);
-                ui.ToggleToolType(Inventory.activeTool);
+                Inventory.SetTool(Inventory.Tool.Harvest);
+                ui.ToggleToolType(Inventory.ActiveTool);
             }
 
             // Start Tool cooldown
@@ -187,25 +186,25 @@ public class Player : MonoBehaviour
     public void OnSelectItem1(InputValue value)
     {
         Inventory.SetSeed(0);
-        ui.selectActiveSeed(0, Inventory.activeTool);
+        ui.SelectActiveSeed(0, Inventory.ActiveTool);
     }
 
     public void OnSelectItem2(InputValue value)
     {
         Inventory.SetSeed(1);
-        ui.selectActiveSeed(1, Inventory.activeTool);
+        ui.SelectActiveSeed(1, Inventory.ActiveTool);
     }
 
     public void OnSelectItem3(InputValue value)
     {
         Inventory.SetSeed(2);
-        ui.selectActiveSeed(2, Inventory.activeTool);
+        ui.SelectActiveSeed(2, Inventory.ActiveTool);
     }
 
     public void OnSelectItem4(InputValue value)
     {
         Inventory.SetSeed(3);
-        ui.selectActiveSeed(3, Inventory.activeTool);
+        ui.SelectActiveSeed(3, Inventory.ActiveTool);
     }
 
     public void OnSkipDay(InputValue value)

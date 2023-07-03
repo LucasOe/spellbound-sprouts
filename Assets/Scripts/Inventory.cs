@@ -4,88 +4,74 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
+    public enum Tool
+    {
+        Plant,
+        Herb,
+        Harvest,
+    }
 
-    //Tools
-    public Tool Harvest;
-    public Tool Wand;
-    public Tool PlantSeeds;
-    public Tool HerbSeeds;
-    public Tool activeTool;
-
-    public Plant[] plants;
-    public Plant[] herbs;
-    public Seed[] seeds;
-    public int plantIndex;
-    public int herbIndex;
-    public Plant activePlant = null;
-    public Plant activeHerb = null;
+    public Plant[] Plants;
+    public Plant[] Herbs;
+    private int plantIndex;
+    private int herbIndex;
+    public Tool ActiveTool = Tool.Plant;
+    public Plant ActivePlant = null;
+    public Plant ActiveHerb = null;
 
     public InventoryDrops InventoryDrops;
+    public UI UI;
 
-    public UI ui;
+    public void Start()
+    {
+        ActivePlant = Plants[0];
+        ActiveHerb = Herbs[0];
+    }
 
     public void SetTool(Tool activeTool)
     {
-        this.activeTool = activeTool;
+        this.ActiveTool = activeTool;
     }
 
-    public void SetSeed(int i)
+    public void SetSeed(int index)
     {
-        if (activeTool == PlantSeeds)
+        if (ActiveTool == Tool.Plant)
         {
-            plantIndex = i;
-            this.activePlant = plants[i];
+            plantIndex = index;
+            this.ActivePlant = Plants[index];
         }
-        else if (activeTool == HerbSeeds)
+        else if (ActiveTool == Tool.Herb)
         {
-            herbIndex = i;
-            this.activeHerb = herbs[i];
+            herbIndex = index;
+            this.ActiveHerb = Herbs[index];
         }
-        ui.selectActiveSeed(i, activeTool);
+        UI.SelectActiveSeed(index, ActiveTool);
     }
 
-    public void ScrollSeed(int i)
+    public void ScrollSeed(int index)
     {
-        if (activeTool == PlantSeeds)
+        if (ActiveTool == Tool.Plant)
         {
-            if (plantIndex + i >= 0 && plantIndex + i < plants.Length)
+            if (plantIndex + index >= 0 && plantIndex + index < Plants.Length)
             {
-                plantIndex = plantIndex + i;
-                this.activePlant = plants[plantIndex];
-                ui.selectActiveSeed(plantIndex, activeTool);
+                plantIndex += index;
+                this.ActivePlant = Plants[plantIndex];
+                UI.SelectActiveSeed(plantIndex, ActiveTool);
             }
         }
-        else if (activeTool == HerbSeeds)
+        else if (ActiveTool == Tool.Herb)
         {
-            if (herbIndex + i >= 0 && herbIndex + i < plants.Length)
+            if (herbIndex + index >= 0 && herbIndex + index < Plants.Length)
             {
-                herbIndex = herbIndex + i;
-                this.activeHerb = herbs[herbIndex];
-                ui.selectActiveSeed(herbIndex, activeTool);
+                herbIndex += index;
+                this.ActiveHerb = Herbs[herbIndex];
+                UI.SelectActiveSeed(herbIndex, ActiveTool);
             }
         }
     }
 
     public Plant GetPlant()
     {
-        if (activeTool == PlantSeeds)
-        {
-            return activePlant;
-        }
-        else
-        {
-            return activeHerb;
-        }
+        return ActiveTool == Tool.Plant ? ActivePlant : ActiveHerb;
     }
-
-    public void ResetInventory()
-    {
-        for (int i = 0; i < seeds.Length; i++)
-        {
-            seeds[i].SetStartAmount();
-        }
-        plantIndex = 0;
-        herbIndex = 0;
-    }
-
 }
