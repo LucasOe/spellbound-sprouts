@@ -31,8 +31,6 @@ public class Player : MonoBehaviour
     public float distanceToCursor;
 
     public AudioSource AudioSource;
-    public AudioSource AudioSourceMusic;
-    public AudioSource AudioSourceItems;
     public AudioClip AttackAudioClip;
     public AttackParticle AttackParticle;
 
@@ -223,27 +221,8 @@ public class Player : MonoBehaviour
 
     public void PlaySound(AudioClip audioclip, float vol)
     {
-        AudioSourceItems.pitch = (Random.Range(0.6f, .9f));
-        AudioSourceItems.PlayOneShot(audioclip, vol);
-    }
-
-    public void PlayAmbience(AudioClip audioclip)
-    {
-        AudioSource.clip = audioclip;
-        AudioSource.loop = true;
-        AudioSource.Play();
-    }
-
-    public void PlayMusic(AudioClip audioclip)
-    {
-        AudioSourceMusic.clip = audioclip;
-        AudioSourceMusic.loop = true;
-        AudioSourceMusic.Play();
-    }
-
-    public void StopMusic()
-    {
-        AudioSourceMusic.Stop();
+        AudioSource.pitch = Random.Range(0.6f, .9f);
+        AudioSource.PlayOneShot(audioclip, vol);
     }
 
     public void Damage(float amount)
