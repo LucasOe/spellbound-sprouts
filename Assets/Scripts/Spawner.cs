@@ -35,35 +35,46 @@ public class Spawner : MonoBehaviour
             if (EnemySpawnInfo[day].skeletonCount > 0 || EnemySpawnInfo[day].spiderCount > 0)
             {
                 var enemyCount = EnemySpawnInfo[day].skeletonCount + EnemySpawnInfo[day].spiderCount;
-                Timer timer = Timer.CreateTimer(this.gameObject, SpawnCooldown, () =>
+                Timer timer = this.CreateTimer(SpawnCooldown, enemyCount - 1);
+                timer.RunOnFinish((state) =>
                 {
-                    if (EnemySpawnInfo[day].spiderCount <= 0 && EnemySpawnInfo[day].skeletonCount > 0)
-                    {
-                        SpawnSkeleton(day);
-                    }
-                    else if (EnemySpawnInfo[day].spiderCount > 0 && EnemySpawnInfo[day].skeletonCount <= 0)
-                    {
-                        SpawnSpider(day);
-                    }
-                    else if (EnemySpawnInfo[day].spiderCount > 0 && EnemySpawnInfo[day].skeletonCount > 0)
-                    {
-                        if (UnityEngine.Random.value >= 0.5f)
-                            SpawnSkeleton(day);
-                        else
-                            SpawnSpider(day);
-                    }
-                    else
-                    {
-                        FinishedSpawning = true;
-                        SpawnerFinished?.Invoke();
-                    }
-                }, enemyCount - 1);
-                timer.SkipTimer(); // Skip first cooldown
+                    SpawnEnemies(day);
+                });
+                timer.StartTimer();
+                // Skip cooldown so the first wave spawns instantly
+                timer.SkipTimer();
             }
         }
         else
         {
-            Debug.Log("No spawn info");
+            Debug.Log("No spawn info for this day");
+        }
+    }
+
+    private void SpawnEnemies(int day)
+    {
+        var spiderCount = EnemySpawnInfo[day].spiderCount;
+        var skeletonCount = EnemySpawnInfo[day].skeletonCount;
+
+        if (spiderCount <= 0 && skeletonCount > 0)
+        {
+            SpawnSkeleton(day);
+        }
+        else if (spiderCount > 0 && skeletonCount <= 0)
+        {
+            SpawnSpider(day);
+        }
+        else if (spiderCount > 0 && skeletonCount > 0)
+        {
+            if (UnityEngine.Random.value >= 0.5f)
+                SpawnSkeleton(day);
+            else
+                SpawnSpider(day);
+        }
+        else
+        {
+            FinishedSpawning = true;
+            SpawnerFinished?.Invoke();
         }
     }
 

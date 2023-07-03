@@ -49,4 +49,19 @@ public static class Utils
             action();
         }
     }
+
+    // Creates a new Timer that runs for duration in seconds.
+    // 0 cycles runs the Timer once. -1 will run the timer indefinitely.
+    public static Timer CreateTimer(this MonoBehaviour where, float _duration = 1.0f, int _cycles = 0)
+    {
+        Timer timer = where.gameObject.AddComponent<Timer>();
+        timer.Setup(new TimerState
+        {
+            Duration = _duration,
+            RemainingDuration = _duration,
+            Cycles = _cycles,
+            RemainingCycles = _cycles,
+        });
+        return timer;
+    }
 }

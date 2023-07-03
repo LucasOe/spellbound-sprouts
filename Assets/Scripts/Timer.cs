@@ -3,34 +3,38 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public struct TimerState
+{
+    public bool IsRunning;
+
+    public float Duration;
+    public float RemainingDuration;
+
+    public int Cycles;
+    public int RemainingCycles;
+}
+
 public class Timer : MonoBehaviour
 {
-    public float duration;
-    public float timeRemaining;
-    public int RepeatCount;
-    private bool isRunning;
-    private Action callback;
-    public Action<float> OnUpdate;
+    private TimerState TimerState;
+    private Action<TimerState> OnFinish;
+    private Action<TimerState> OnUpdate;
 
-    public static Timer CreateTimer(GameObject where, float duration, Action callback = null, int repeat = 0)
+    // Creates a new Timer that runs for duration in seconds.
+    // 0 cycles runs the Timer once. -1 will run the timer indefinitely.
+    public void Setup(TimerState state)
     {
-        Timer timer = where.AddComponent<Timer>();
-        timer.duration = duration;
-        timer.timeRemaining = duration;
-        timer.callback = callback;
-        timer.RepeatCount = repeat;
-        timer.isRunning = true;
-        return timer;
+        this.TimerState = state;
     }
 
     void Update()
     {
-        if (isRunning)
+        if (this.TimerState.IsRunning)
         {
-            if (timeRemaining >= 0)
+            if (this.TimerState.RemainingDuration >= 0)
             {
-                timeRemaining -= Time.deltaTime;
-                OnUpdate?.Invoke(timeRemaining);
+                this.TimerState.RemainingDuration -= Time.deltaTime;
+                OnUpdate?.Invoke(this.TimerState);
             }
             else
             {
@@ -39,34 +43,54 @@ public class Timer : MonoBehaviour
         }
     }
 
-    // Skip remaining time and execute the callback
+    public void StartTimer()
+    {
+        this.TimerState.IsRunning = true;
+    }
+
+    public void StopTimer()
+    {
+        this.TimerState.IsRunning = false;
+    }
+
+    // Skip to the end of the current cycle
     public void SkipTimer()
     {
-        if (RepeatCount <= 0)
+        if (this.TimerState.RemainingCycles == 0)
         {
             Destroy(this);
         }
         else
         {
-            timeRemaining = duration;
-            RepeatCount--;
+            this.TimerState.RemainingDuration = this.TimerState.Duration;
+            this.TimerState.RemainingCycles -= 1;
         }
-        callback?.Invoke();
+        OnFinish?.Invoke(this.TimerState);
+    }
+
+    public void RunOnFinish(Action<TimerState> callback)
+    {
+        this.OnFinish += callback;
+    }
+
+    public void RunOnUpdate(Action<TimerState> callback)
+    {
+        this.OnUpdate += callback;
     }
 
     public float GetPercent()
     {
-        return duration / timeRemaining;
+        return this.TimerState.Duration / this.TimerState.RemainingDuration;
     }
 
     public float GetMinutes()
     {
-        return Mathf.FloorToInt(timeRemaining / 60);
+        return Mathf.FloorToInt(this.TimerState.RemainingDuration / 60);
     }
 
     public float GetSeconds()
     {
-        return Mathf.FloorToInt(timeRemaining % 60);
+        return Mathf.FloorToInt(this.TimerState.RemainingDuration % 60);
     }
 
     public string DisplayTime()
