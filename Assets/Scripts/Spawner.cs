@@ -34,8 +34,7 @@ public class Spawner : MonoBehaviour
             // Spawn Enemy
             if (EnemySpawnInfo[day].skeletonCount > 0 || EnemySpawnInfo[day].spiderCount > 0)
             {
-                var enemyCount = EnemySpawnInfo[day].skeletonCount + EnemySpawnInfo[day].spiderCount;
-                Timer timer = this.CreateTimer(SpawnCooldown, enemyCount - 1);
+                Timer timer = this.CreateTimer(SpawnCooldown, GetEnemyCount(day) - 1);
                 timer.RunOnFinish((state) =>
                 {
                     SpawnEnemies(day);
@@ -100,5 +99,10 @@ public class Spawner : MonoBehaviour
             FinishedSpawning = true;
             SpawnerFinished?.Invoke();
         }
+    }
+
+    public int GetEnemyCount(int day)
+    {
+        return EnemySpawnInfo[day].skeletonCount + EnemySpawnInfo[day].spiderCount;
     }
 }

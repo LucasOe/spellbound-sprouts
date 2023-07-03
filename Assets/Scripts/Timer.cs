@@ -100,7 +100,7 @@ public class Timer : MonoBehaviour
 
     public float GetPercent()
     {
-        return this.TimerState.Duration / this.TimerState.RemainingDuration;
+        return this.TimerState.RemainingDuration / this.TimerState.Duration;
     }
 
     public float GetMinutes()
@@ -115,6 +115,6 @@ public class Timer : MonoBehaviour
 
     public string DisplayTime()
     {
-        return string.Format("{0:00}:{1:00}", GetMinutes(), GetSeconds());
+        return TimerState.IsRunning ? string.Format("{0:00}:{1:00}", GetMinutes(), GetSeconds()) : "00:00";
     }
 }
