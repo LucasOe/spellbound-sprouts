@@ -26177,19 +26177,19 @@ PrefabInstance:
         type: 3}
       propertyPath: EnemyDrops.Array.data[0]
       value: 
-      objectReference: {fileID: 6463070802350411153, guid: 7c5b76a29c354fe4a9dbab7cb0c1586f,
+      objectReference: {fileID: 7347564833580797630, guid: 395e809e43bf81a41ba598685e5266f2,
         type: 3}
     - target: {fileID: 1374843163789428268, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
         type: 3}
       propertyPath: EnemyDrops.Array.data[1]
       value: 
-      objectReference: {fileID: 6364326429399645585, guid: e0918bca266c5bc428fa0cfc96678756,
+      objectReference: {fileID: 6165146548915605610, guid: bcb18d1903d2cce4b83fca4832440fb6,
         type: 3}
     - target: {fileID: 1374843163789428268, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
         type: 3}
       propertyPath: EnemyDrops.Array.data[2]
       value: 
-      objectReference: {fileID: 836902625095918240, guid: 0e683959fd42245439c6bd5641f7baf0,
+      objectReference: {fileID: -2455392046275383447, guid: 8119894f2a067ca45afb9639fe54d6b6,
         type: 3}
     - target: {fileID: 1543812842737496346, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
         type: 3}

@@ -47,6 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Dropchance: 0.5
+  lootSlot: {fileID: 7347564833580797630, guid: 395e809e43bf81a41ba598685e5266f2,
+    type: 3}
   Agent: {fileID: 4030650788085334222}
   CollectEffect: {fileID: 8300000, guid: 2b28466736701e243b14607a40619d5f, type: 3}
 --- !u!195 &4030650788085334222
