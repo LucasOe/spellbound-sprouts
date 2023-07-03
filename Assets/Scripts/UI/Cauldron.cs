@@ -19,7 +19,10 @@ public struct ItemAmounts
 
 public class Cauldron : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    public Outline Outline;
+    public GameManager GameManager;
+
+    public Outline OutlineValid;
+    public Outline OutlineInvalid;
 
     public TextMeshProUGUI ingredientText1;
     public TextMeshProUGUI ingredientText2;
@@ -41,14 +44,40 @@ public class Cauldron : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         ingredientAmount3.text = string.Format("{0}/{1}", inventoryDrops.GetAmount(ItemAmounts[index].Item3), ItemAmounts[index].Amount3);
     }
 
+    private bool GetValidState()
+    {
+        var index = 0;
+        if (GameManager.Player.InventoryDrops.GetAmount(ItemAmounts[index].Item1) >= ItemAmounts[index].Amount1 &&
+            GameManager.Player.InventoryDrops.GetAmount(ItemAmounts[index].Item2) >= ItemAmounts[index].Amount2 &&
+            GameManager.Player.InventoryDrops.GetAmount(ItemAmounts[index].Item3) >= ItemAmounts[index].Amount3)
+        {
+            return true;
+        }
+        return false;
+    }
+
     public void OnPointerEnter(PointerEventData eventData)
     {
-        Outline.Enable();
+        if (GetValidState())
+        {
+            OutlineValid.Enable();
+        }
+        else
+        {
+            OutlineInvalid.Enable();
+        }
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        Outline.Disable();
+        if (GetValidState())
+        {
+            OutlineValid.Disable();
+        }
+        else
+        {
+            OutlineInvalid.Disable();
+        }
     }
 
     public void OnClick()

@@ -23774,6 +23774,7 @@ GameObject:
   - component: {fileID: 697100115}
   - component: {fileID: 697100116}
   - component: {fileID: 697100117}
+  - component: {fileID: 697100118}
   m_Layer: 0
   m_Name: Cauldron
   m_TagString: Untagged
@@ -23833,7 +23834,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 033e084dd7432164db2be81feca4cda2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Outline: {fileID: 697100117}
+  GameManager: {fileID: 1328368777}
+  OutlineValid: {fileID: 697100117}
+  OutlineInvalid: {fileID: 697100118}
   ingredientText1: {fileID: 838557131}
   ingredientText2: {fileID: 408453748}
   ingredientText3: {fileID: 1113333153}
@@ -23848,6 +23851,20 @@ MonoBehaviour:
     Item3: {fileID: 11400000, guid: c2f2ee3599f20954285743bb5edb3f3b, type: 2}
     Amount3: 3
 --- !u!114 &697100117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697100113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4c657a93ac65964a9954b472de72245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMaterial: {fileID: 2100000, guid: e5b53cf791a054b4f9d0415b6d3a433f, type: 2}
+  Renderer: {fileID: 1679536007}
+--- !u!114 &697100118
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
