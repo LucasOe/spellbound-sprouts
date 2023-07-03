@@ -86,16 +86,20 @@ public class Player : MonoBehaviour
 
     public void OnFire(InputValue value)
     {
-        Ray ray = camera.ScreenPointToRay(mousePosition);
-        if (Physics.Raycast(ray, out RaycastHit hitInfo, 100))
-        {
-            var clickedObject = hitInfo.transform.gameObject;
+        if (!PauseMenu.isPaused) {
+            Ray ray = camera.ScreenPointToRay(mousePosition);
+            if (Physics.Raycast(ray, out RaycastHit hitInfo, 100))
+            {
+                var clickedObject = hitInfo.transform.gameObject;
 
-            if (clickedObject.TryGetComponent(out Enemy enemy))
-                ClickedEnemy(enemy);
+                if (clickedObject.TryGetComponent(out Enemy enemy)) {
+                    ClickedEnemy(enemy);
+                }
 
-            if (clickedObject.TryGetComponent(out Tile tile))
-                ClickedTile(tile);
+                if (clickedObject.TryGetComponent(out Tile tile)) {
+                    ClickedTile(tile);
+                }
+            }
         }
     }
 
