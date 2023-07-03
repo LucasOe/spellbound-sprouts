@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1395406993698474488}
-  - component: {fileID: 6463070802350411153}
   - component: {fileID: 135012687949987866}
+  - component: {fileID: 219116242785831106}
   m_Layer: 0
   m_Name: Glass
   m_TagString: Untagged
@@ -34,22 +34,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6463070802350411153
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8198780576880642720}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94704099e70432949b546b1a05d5bc3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 2
-  Dropchance: 0.5
-  Agent: {fileID: 135012687949987866}
-  CollectEffect: {fileID: 8300000, guid: abce6684b4b1a3f43bd649fe2fd6a87d, type: 3}
 --- !u!195 &135012687949987866
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -72,6 +56,22 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &219116242785831106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8198780576880642720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b97cb3f1e5422d46b9e56676f115c98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemData: {fileID: 11400000, guid: c2f2ee3599f20954285743bb5edb3f3b, type: 2}
+  Dropchance: 0.5
+  Agent: {fileID: 135012687949987866}
+  CollectEffect: {fileID: 8300000, guid: abce6684b4b1a3f43bd649fe2fd6a87d, type: 3}
 --- !u!1001 &6248284009172573268
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -40,6 +40,7 @@ public class Enemy : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         foreach (Item item in ItemDrops)
         {
+            Debug.Log("Test");
             if (Random.value <= item.Dropchance)
                 gameManager.CreateItem(item, transform.position);
         }

@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4117696357251573305}
-  - component: {fileID: 836902625095918240}
   - component: {fileID: -5878706996046635068}
+  - component: {fileID: 2888568842252360093}
   m_Layer: 0
   m_Name: Spinnenauge
   m_TagString: Untagged
@@ -34,22 +34,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -50.89}
---- !u!114 &836902625095918240
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1892444408137276025}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94704099e70432949b546b1a05d5bc3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 1
-  Dropchance: 0.5
-  Agent: {fileID: -5878706996046635068}
-  CollectEffect: {fileID: 8300000, guid: 3eb7cba22530bd14c89f1bb112699653, type: 3}
 --- !u!195 &-5878706996046635068
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -72,6 +56,22 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &2888568842252360093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1892444408137276025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b97cb3f1e5422d46b9e56676f115c98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemData: {fileID: 11400000, guid: 26ae8d07e05efe84687d7db21ccc744d, type: 2}
+  Dropchance: 0.5
+  Agent: {fileID: -5878706996046635068}
+  CollectEffect: {fileID: 8300000, guid: 3eb7cba22530bd14c89f1bb112699653, type: 3}
 --- !u!1001 &1140466030862522009
 PrefabInstance:
   m_ObjectHideFlags: 0
