@@ -31,8 +31,8 @@ Transform:
   m_Children:
   - {fileID: 4313761602220548979}
   - {fileID: 183419765913989789}
-  - {fileID: 1191700276666049949}
   - {fileID: 1729477678972553611}
+  - {fileID: 1191700276666049949}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -56,8 +56,8 @@ MonoBehaviour:
   mature: 0
   Stages:
   - {fileID: 702688959366883367}
-  - {fileID: 2000185077138095911}
   - {fileID: 1390352681353089841}
+  - {fileID: 2000185077138095911}
   drops: 2
   AttackDamage: 4
   AttackRange: 2
@@ -233,7 +233,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 133e995607e50d742b668f2ea9e0a18f,
         type: 3}
       propertyPath: m_Name
-      value: Rose_2
+      value: Rose_3
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 133e995607e50d742b668f2ea9e0a18f,
         type: 3}
@@ -323,7 +323,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: eaaea856cb4e37c45adb67e059c07b87,
         type: 3}
       propertyPath: m_Name
-      value: Rose_3
+      value: Rose_2
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: eaaea856cb4e37c45adb67e059c07b87,
         type: 3}
