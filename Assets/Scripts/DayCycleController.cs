@@ -16,7 +16,7 @@ public class DayCycleController : MonoBehaviour
     public float DayFogDensity = 100;
     public float NightFogDensity = 25;
 
-    
+
     public AudioClip NightAmbienceClip;
     public AudioClip DayAmbienceClip;
 
@@ -60,14 +60,15 @@ public class DayCycleController : MonoBehaviour
         VolumeProfile profile = volumeProfile.sharedProfile;
         if (profile.TryGet<Fog>(out var fog))
         {
-            Timer timer = Timer.CreateTimer(this.gameObject, 1.5f);
-            timer.OnUpdate += (timeRemaining) =>
+            Timer timer = this.CreateTimer(1.5f);
+            timer.RunOnUpdate((state) =>
             {
                 var min = value ? NightFogDensity : DayFogDensity;
                 var max = value ? DayFogDensity : NightFogDensity;
-                var attenuation = Mathf.Lerp(min, max, timeRemaining / timer.duration);
+                var attenuation = Mathf.Lerp(min, max, state.RemainingDuration / state.Duration);
                 fog.meanFreePath.value = attenuation;
-            };
+            });
+            timer.StartTimer();
         }
     }
 }

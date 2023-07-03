@@ -15,10 +15,12 @@ public class TimeManger : MonoBehaviour
         GameManager.DestroyedEnemy += OnEnemyDeath;
         GameManager.Spawners.ForEach((spawner) => spawner.SpawnerFinished += OnSpawnerFinished);
 
-        timer = Timer.CreateTimer(this.gameObject, cooldownTime, () =>
+        timer = this.CreateTimer(cooldownTime);
+        timer.RunOnFinish((state) =>
         {
             StartNight(GameManager.Day);
         });
+        timer.StartTimer();
     }
 
     public void StartNight(int day)
@@ -34,10 +36,12 @@ public class TimeManger : MonoBehaviour
         GameManager.DayStart.Invoke(day);
         GameManager.IsNight = false;
 
-        timer = Timer.CreateTimer(this.gameObject, cooldownTime, () =>
+        timer = this.CreateTimer(cooldownTime);
+        timer.RunOnFinish((state) =>
         {
             StartNight(GameManager.Day);
         });
+        timer.StartTimer();
     }
 
     public void SkipDay()
