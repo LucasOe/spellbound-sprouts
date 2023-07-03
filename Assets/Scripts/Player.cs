@@ -21,7 +21,9 @@ public class Player : MonoBehaviour
     public float AttackCooldown = 0.5f;
     public float MaxHealth = 100f;
     public float currentHealth = 100f;
+
     private Timer attackCooldownTimer;
+    private Timer toolCooldownTimer;
 
     private Vector3 velocity = new();
     private Vector2 mousePosition;
@@ -156,20 +158,27 @@ public class Player : MonoBehaviour
 
     public void OnSelectHarvest(InputValue value)
     {
-        if (Inventory.activeTool == Inventory.Harvest)
+        if (!toolCooldownTimer)
         {
-            Inventory.SetTool(Inventory.PlantSeeds);
-            ui.ToggleToolType(Inventory.activeTool);
-        }
-        else if (Inventory.activeTool == Inventory.PlantSeeds)
-        {
-            Inventory.SetTool(Inventory.HerbSeeds);
-            ui.ToggleToolType(Inventory.activeTool);
-        }
-        else if (Inventory.activeTool == Inventory.HerbSeeds)
-        {
-            Inventory.SetTool(Inventory.Harvest);
-            ui.ToggleToolType(Inventory.activeTool);
+            if (Inventory.activeTool == Inventory.Harvest)
+            {
+                Inventory.SetTool(Inventory.PlantSeeds);
+                ui.ToggleToolType(Inventory.activeTool);
+            }
+            else if (Inventory.activeTool == Inventory.PlantSeeds)
+            {
+                Inventory.SetTool(Inventory.HerbSeeds);
+                ui.ToggleToolType(Inventory.activeTool);
+            }
+            else if (Inventory.activeTool == Inventory.HerbSeeds)
+            {
+                Inventory.SetTool(Inventory.Harvest);
+                ui.ToggleToolType(Inventory.activeTool);
+            }
+
+            // Start Tool cooldown
+            toolCooldownTimer = this.CreateTimer(0.25f);
+            toolCooldownTimer.StartTimer();
         }
     }
 
