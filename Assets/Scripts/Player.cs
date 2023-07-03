@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     public new Camera camera;
     public CharacterController Controller;
     public Inventory Inventory;
+    public InventoryDrops InventoryDrops;
     public UI ui;
     public Animator Animator;
 

@@ -343,6 +343,7 @@ GameObject:
   - component: {fileID: 1543812842737496346}
   - component: {fileID: 3315166315397763816}
   - component: {fileID: 1374843163789428268}
+  - component: {fileID: 3923410607729698262}
   - component: {fileID: 7043409570337320792}
   m_Layer: 2
   m_Name: Player
@@ -612,11 +613,13 @@ MonoBehaviour:
   camera: {fileID: 5053911396999072649}
   Controller: {fileID: 6149167700650982278}
   Inventory: {fileID: 1374843163789428268}
+  InventoryDrops: {fileID: 3923410607729698262}
   ui: {fileID: 0}
   Animator: {fileID: 8328138558595626394}
   movementSpeed: 10
   damage: 4
   Range: 10
+  AttackCooldown: 0.5
   MaxHealth: 100
   currentHealth: 100
   distanceToCursor: 0
@@ -671,8 +674,23 @@ MonoBehaviour:
     type: 3}
   activeHerb: {fileID: 3131694317889342675, guid: 3207d2f1ec9c87e4f9a880e7ea6e3604,
     type: 3}
-  EnemyDrops: []
+  InventoryDrops: {fileID: 0}
   ui: {fileID: 0}
+--- !u!114 &3923410607729698262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5107954962007069713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 711eb7eba457f2d4abca8258b5361e2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boneAmount: 0
+  spidereyeAmount: 0
+  glassAmount: 0
 --- !u!114 &7043409570337320792
 MonoBehaviour:
   m_ObjectHideFlags: 0

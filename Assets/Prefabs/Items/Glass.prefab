@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6463070802350411153}
   - component: {fileID: 135012687949987866}
   m_Layer: 0
-  m_Name: Glas
+  m_Name: Glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,9 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94704099e70432949b546b1a05d5bc3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 2
   Dropchance: 0.5
-  lootSlot: {fileID: -2455392046275383447, guid: 8119894f2a067ca45afb9639fe54d6b6,
-    type: 3}
   Agent: {fileID: 135012687949987866}
   CollectEffect: {fileID: 8300000, guid: abce6684b4b1a3f43bd649fe2fd6a87d, type: 3}
 --- !u!195 &135012687949987866
