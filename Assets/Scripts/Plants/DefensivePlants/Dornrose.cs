@@ -17,13 +17,14 @@ public class Dornrose : DefensivePlant
         attackTimer = this.CreateTimer(AttackSpeed, -1);
         attackTimer.RunOnFinish((state) =>
         {
-            // gameManager.Enemies.ForEach((enemy) =>
-            // {
-            //     if (this.GetDistance(enemy) <= AttackRange)
-            //     {
-            //         enemy.Damage(AttackDamage);
-            //     }
-            // });
+            Debug.Log("Attack!");
+            gameManager.Enemies.ForEach((enemy) =>
+            {
+                if (this.GetDistance(enemy) <= AttackRange)
+                {
+                    enemy.Damage(AttackDamage);
+                }
+            });
         });
     }
 
