@@ -41,11 +41,9 @@ public class DayCycleController : MonoBehaviour
         moon.shadows = LightShadows.None;
         GameManager.Player.PlayAmbience(DayAmbienceClip);
         Fireflies.SetActive(false);
-        if(UnityEngine.Random.Range(1,11)>4) {
-            int i = UnityEngine.Random.Range(0,3);
-            Debug.Log(i);
-                GameManager.Player.PlayMusic(DayMusic[i]);
-        }
+        int i = UnityEngine.Random.Range(0, DayMusic.Length);
+        if (DayMusic[i])
+            GameManager.Player.PlayMusic(DayMusic[i]);
 
         SetFog(false);
     }
