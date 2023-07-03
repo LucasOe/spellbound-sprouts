@@ -12,8 +12,8 @@ public class Plant : MonoBehaviour
     private float currentHealth;
     public Seed seed;
 
-    private int age = 0;
-    private bool mature;
+    public int age = 0;
+    public bool mature;
     public GameObject[] Stages;
 
     public int drops = 2;
@@ -23,6 +23,7 @@ public class Plant : MonoBehaviour
         this.gameManager = gameManager;
         // Subscribe to events
         gameManager.DayStart += OnDayStart;
+        gameManager.NightStart += OnNightStart;
     }
 
     public void Destroy(GameManager gameManager)
@@ -32,7 +33,7 @@ public class Plant : MonoBehaviour
         gameManager.DayStart -= OnDayStart;
     }
 
-    private void Start()
+    protected virtual void Start()
     {
         currentHealth = MaxHealth;
         Healthbar.UpdateHealthBar(currentHealth, MaxHealth);
@@ -60,7 +61,7 @@ public class Plant : MonoBehaviour
         }
     }
 
-    public void OnDayStart(int day)
+    protected virtual void OnDayStart(int day)
     {
         // Plant reached max age
         if (age >= Stages.Length - 1)
@@ -77,6 +78,11 @@ public class Plant : MonoBehaviour
 
         var growthPercent = (float)age / (Stages.Length - 1);
         Healthbar.UpdateGrowth(growthPercent);
+    }
+
+    protected virtual void OnNightStart(int day)
+    {
+
     }
 
     public void SetHealthbarActive(bool value)

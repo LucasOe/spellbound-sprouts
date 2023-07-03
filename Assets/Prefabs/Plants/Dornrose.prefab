@@ -31,8 +31,8 @@ Transform:
   m_Children:
   - {fileID: 4313761602220548979}
   - {fileID: 183419765913989789}
-  - {fileID: 1729477678972553611}
   - {fileID: 1191700276666049949}
+  - {fileID: 1729477678972553611}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -52,13 +52,16 @@ MonoBehaviour:
   ActiveStage: {fileID: 702688959366883367}
   MaxHealth: 70
   seed: {fileID: 7986783823863777260, guid: 44863a7c469df3643b3ca4f4621a649b, type: 3}
+  age: 0
+  mature: 0
   Stages:
   - {fileID: 702688959366883367}
-  - {fileID: 1390352681353089841}
   - {fileID: 2000185077138095911}
+  - {fileID: 1390352681353089841}
   drops: 2
-  damage: 4
-  range: 5
+  AttackDamage: 4
+  AttackRange: 2
+  AttackSpeed: 0.2
 --- !u!1001 &360598252966106486
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -145,7 +148,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: cbb5e6a6ca647a247b451440191fcf47,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -230,7 +233,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 133e995607e50d742b668f2ea9e0a18f,
         type: 3}
       propertyPath: m_Name
-      value: Rose_3
+      value: Rose_2
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 133e995607e50d742b668f2ea9e0a18f,
         type: 3}
@@ -320,7 +323,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: eaaea856cb4e37c45adb67e059c07b87,
         type: 3}
       propertyPath: m_Name
-      value: Rose_2
+      value: Rose_3
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: eaaea856cb4e37c45adb67e059c07b87,
         type: 3}
