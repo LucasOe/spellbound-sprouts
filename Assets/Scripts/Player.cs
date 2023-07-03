@@ -47,7 +47,7 @@ public class Player : MonoBehaviour
 
         if (velocity.magnitude != 0)
         {
-            var toRoation = Quaternion.LookRotation(velocity, Vector3.up);
+            var toRoation = Quaternion.LookRotation(new Vector3(relativeVelocity.x, 0, relativeVelocity.z), Vector3.up);
             player.transform.rotation = Quaternion.RotateTowards(player.transform.rotation, toRoation, 720.0f * Time.deltaTime);
         }
 
@@ -86,16 +86,20 @@ public class Player : MonoBehaviour
 
     public void OnFire(InputValue value)
     {
-        Ray ray = camera.ScreenPointToRay(mousePosition);
-        if (Physics.Raycast(ray, out RaycastHit hitInfo, 100))
-        {
-            var clickedObject = hitInfo.transform.gameObject;
+        if (!PauseMenu.isPaused) {
+            Ray ray = camera.ScreenPointToRay(mousePosition);
+            if (Physics.Raycast(ray, out RaycastHit hitInfo, 100))
+            {
+                var clickedObject = hitInfo.transform.gameObject;
 
-            if (clickedObject.TryGetComponent(out Enemy enemy))
-                ClickedEnemy(enemy);
+                if (clickedObject.TryGetComponent(out Enemy enemy)) {
+                    ClickedEnemy(enemy);
+                }
 
-            if (clickedObject.TryGetComponent(out Tile tile))
-                ClickedTile(tile);
+                if (clickedObject.TryGetComponent(out Tile tile)) {
+                    ClickedTile(tile);
+                }
+            }
         }
     }
 
@@ -103,6 +107,10 @@ public class Player : MonoBehaviour
     {
         if (!Animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
         {
+            AudioSource.PlayOneShot(AttackAudioClip);
+            var direction = (enemy.transform.position - transform.position).normalized;
+            player.transform.rotation = Quaternion.LookRotation(direction, Vector3.up);
+
             Animator.SetTrigger("attack");
             targetEnemy = enemy;
         }
@@ -209,7 +217,6 @@ public class Player : MonoBehaviour
         {
             AttackParticle particle = Instantiate(AttackParticle, transform.position, Quaternion.identity);
             particle.Setup(targetEnemy, damage);
-            AudioSource.PlayOneShot(AttackAudioClip);
         }
     }
 

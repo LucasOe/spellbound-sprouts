@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class AttackParticle : MonoBehaviour
 {
     public NavMeshAgent NavMeshAgent;
+    public ParticleSystem HitParticle;
     private Enemy targetEnemy;
     private float damage;
 
@@ -33,6 +34,7 @@ public class AttackParticle : MonoBehaviour
         {
             if (ReferenceEquals(collision.gameObject, targetEnemy.gameObject))
             {
+                Instantiate(HitParticle, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
                 targetEnemy.Damage(damage);
                 Destroy(this.gameObject);
             }
