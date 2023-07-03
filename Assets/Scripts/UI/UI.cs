@@ -112,13 +112,14 @@ public class UI : MonoBehaviour
     {
         if (!GameManager.IsNight)
         {
-            _faceRotation = (30 - GameManager.TimeManger.timer.timeRemaining) * 6;
+            _faceRotation = (30 - GameManager.TimeManger.timer.GetRemainingDuration()) * 6;
             _face.transform.rotation = Quaternion.Euler(0, 0, _faceRotation);
             _countdown.text = GameManager.TimeManger.timer.DisplayTime();
         }
         else if (GameManager.IsNight)
         {
-            if(_nightStarted && _faceRotation < _faceNightRotation) {
+            if (_nightStarted && _faceRotation < _faceNightRotation)
+            {
                 _faceRotation += 10;
                 _faceRotation = _faceRotation > _faceNightRotation ? _faceNightRotation : _faceRotation;
                 _face.transform.rotation = Quaternion.Euler(0, 0, _faceRotation);
