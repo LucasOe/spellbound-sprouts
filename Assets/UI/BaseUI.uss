@@ -157,10 +157,12 @@
 
 .herb {
     rotate: 120deg;
+    transition-duration: 0.3s;
 }
 
 .harvest {
     rotate: 240deg;
+    transition-duration: 0.3s;
 }
 
 .wand {
@@ -182,5 +184,8 @@
 
 .plant {
     rotate: 360deg;
-    transition-duration: 0s;
+    transition-duration: 0.3s;
+}
+
+.instantAnimation {
 }
