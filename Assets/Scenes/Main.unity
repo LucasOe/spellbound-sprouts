@@ -24556,7 +24556,7 @@ CapsuleCollider:
   m_Radius: 1
   m_Height: 1
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &697100116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24585,7 +24585,9 @@ MonoBehaviour:
     Amount2: 1
     Item3: {fileID: 11400000, guid: c2f2ee3599f20954285743bb5edb3f3b, type: 2}
     Amount3: 1
-    Reward: {fileID: 0}
+    Reward:
+    - {fileID: 2888568842252360093, guid: 8a3e407eff65a90458a213e5accb4154, type: 3}
+    - {fileID: 7215416449985081486, guid: 56706beafb4622647b8081835c59a1f5, type: 3}
     RewardAmount: 2
   - Item1: {fileID: 11400000, guid: caf933e844bbaba4fb4a3c43af0cdc64, type: 2}
     Amount1: 1
@@ -24593,7 +24595,9 @@ MonoBehaviour:
     Amount2: 3
     Item3: {fileID: 11400000, guid: c2f2ee3599f20954285743bb5edb3f3b, type: 2}
     Amount3: 1
-    Reward: {fileID: 0}
+    Reward:
+    - {fileID: 7215416449985081486, guid: 69d635b70a6e6014aa3a240b50073880, type: 3}
+    - {fileID: 2888568842252360093, guid: b381ded72213ff54a85a0e967248d171, type: 3}
     RewardAmount: 2
   - Item1: {fileID: 11400000, guid: b979f49b7a1d44a4f84684a389c3df4a, type: 2}
     Amount1: 4
@@ -24601,7 +24605,9 @@ MonoBehaviour:
     Amount2: 1
     Item3: {fileID: 11400000, guid: c2f2ee3599f20954285743bb5edb3f3b, type: 2}
     Amount3: 1
-    Reward: {fileID: 0}
+    Reward:
+    - {fileID: 2888568842252360093, guid: a21cb3a33687659449dbb18fe6eb56a3, type: 3}
+    - {fileID: 2888568842252360093, guid: e67e665e73574524992b8ec4d129ada7, type: 3}
     RewardAmount: 2
 --- !u!114 &697100117
 MonoBehaviour:
@@ -37314,6 +37320,21 @@ PrefabInstance:
         type: 3}
       propertyPath: ItemAmounts.Array.data[0].amount
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3923410607729698262, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
+        type: 3}
+      propertyPath: ItemAmounts.Array.data[8].amount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3923410607729698262, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
+        type: 3}
+      propertyPath: ItemAmounts.Array.data[9].amount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3923410607729698262, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
+        type: 3}
+      propertyPath: ItemAmounts.Array.data[10].amount
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3943774334872337552, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
         type: 3}
