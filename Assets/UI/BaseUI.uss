@@ -7,7 +7,7 @@
     border-radius: 12px;
     margin-left: 0;
     margin-right: 0;
-    margin-top: 0;
+    margin-top: 4px;
     margin-bottom: 0;
     -unity-font-style: bold;
     font-size: 9px;
@@ -24,6 +24,7 @@
     transition-duration: 0.3s;
     transition-timing-function: ease-in-out;
     height: 92px;
+    scale: 0.8 0.8;
 }
 
 .harvestTool {
@@ -51,6 +52,7 @@
     color: rgb(0, 0, 0);
     transition-duration: 0.3s;
     transition-timing-function: ease-in-out;
+    scale: 0.8 0.8;
 }
 
 .selectedItem {
@@ -61,7 +63,7 @@
     border-bottom-width: 0;
     margin-left: 0;
     margin-right: 0;
-    margin-top: 13px;
+    margin-top: 9px;
     margin-bottom: 0;
     padding-left: 0;
     padding-right: 0;
@@ -71,7 +73,7 @@
     color: rgb(0, 0, 0);
     -unity-background-scale-mode: scale-to-fit;
     -unity-background-image-tint-color: rgb(87, 87, 87);
-    height: 65%;
+    height: 75%;
     background-image: url('project://database/Assets/UI/img/icn_placeholder.png?fileID=2800000&guid=e8e224234354aa740abf3d181d1bd934&type=3#icn_placeholder');
     justify-content: center;
     align-self: center;
@@ -81,12 +83,16 @@
     flex-direction: column;
     flex-wrap: nowrap;
     position: relative;
+    transition-duration: 0.2s;
+    scale: 0.8 0.8;
 }
 
 .active {
     background-color: rgba(75, 47, 31, 0);
     color: rgb(255, 255, 255);
     -unity-background-image-tint-color: rgb(255, 255, 255);
+    transition-duration: 0.2s;
+    scale: 1 1;
 }
 
 .shortcut {

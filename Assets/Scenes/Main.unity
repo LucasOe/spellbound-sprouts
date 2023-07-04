@@ -35713,6 +35713,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c28af5c09ece12942a86f4bf1bb44e13, type: 3}
   - {fileID: 8300000, guid: 4aa6011b62dbe214fa0e95f4588a4402, type: 3}
   - {fileID: 8300000, guid: 57fe4faab8711e7428500f584cfa5a5a, type: 3}
+  - {fileID: 8300000, guid: bb21d36d79e67ff4297c64e80beb6809, type: 3}
   NightMusic:
   - {fileID: 8300000, guid: 0f1b7a242cd1ae04d902070c76266229, type: 3}
   - {fileID: 8300000, guid: 069d05031f516744c88a88ce3eee3f31, type: 3}
@@ -35865,7 +35866,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.183
   m_Pitch: 1
   Loop: 1
   Mute: 0
