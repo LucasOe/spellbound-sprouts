@@ -63,8 +63,8 @@ MonoBehaviour:
   drops: 2
   EffectDuration: 10
   EffectDamage: 1
-  AttackRange: 2
-  AttackSpeed: 0.2
+  AttackRange: 5
+  AttackSpeed: 0.1
 --- !u!1001 &509779463968031305
 PrefabInstance:
   m_ObjectHideFlags: 0
