@@ -111,6 +111,12 @@ public class Player : MonoBehaviour
                 {
                     ClickedCauldron(cauldron);
                 }
+
+                if (clickedObject.TryGetComponent(out EasterEgg easterEgg))
+                {
+                    Debug.Log("EasterEgg");
+                    ClickedEasterEgg(easterEgg);
+                }
             }
         }
     }
@@ -169,6 +175,11 @@ public class Player : MonoBehaviour
     {
         cauldron.OnClick();
     }
+    private void ClickedEasterEgg(EasterEgg easterEgg)
+    {
+        easterEgg.PlayEasterEggSound();
+    }
+
 
     public void OnSelectTool(InputValue value)
     {
