@@ -21,10 +21,8 @@ public abstract class StatusEffect
             OnUpdate();
         });
         timer.StartTimer();
-        OnStart();
     }
 
-    protected abstract void OnStart();
     protected abstract void OnEnd();
     protected abstract void OnUpdate();
 }
