@@ -153,11 +153,11 @@ public class Player : MonoBehaviour
     {
         Inventory.Tool ActiveTool = Inventory.ActiveTool;
 
-        if (!tile.Plant && ActiveTool != Inventory.Tool.Harvest && InventoryDrops.GetAmount(Inventory.GetPlant().ItemDrop) > 0)
+        if (!tile.Plant && ActiveTool != Inventory.Tool.Harvest && InventoryDrops.GetAmount(Inventory.GetPlant().ItemDrop.ItemData) > 0)
         {
             Plant tileContent = GameManager.CreatePlant(Inventory.GetPlant(), tile.transform.position, Quaternion.identity, tile);
             tile.Plant = tileContent;
-            InventoryDrops.RemoveItem(Inventory.GetPlant().ItemDrop, 1);
+            InventoryDrops.RemoveItem(Inventory.GetPlant().ItemDrop.ItemData, 1);
             ui.RefreshAmounts();
         }
         else if (tile.Plant && ActiveTool == Inventory.Tool.Harvest)
