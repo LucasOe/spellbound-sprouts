@@ -9,6 +9,7 @@ public class Titanwurz : DefensivePlant
     public float EffectDamage = 1.0f;
     public float AttackRange = 2.0f;
     public float AttackSpeed = 0.2f;
+    public GameObject ParticleEffect;
 
     private Timer attackTimer;
 
@@ -23,7 +24,7 @@ public class Titanwurz : DefensivePlant
             {
                 if (this.GetDistance(enemy) <= AttackRange && enemy.StatusEffects.Count <= 0)
                 {
-                    Poisoned poisoned = new(enemy, EffectDuration, EffectDamage);
+                    Poisoned poisoned = new(enemy, EffectDuration, EffectDamage, ParticleEffect);
                 }
             });
         });

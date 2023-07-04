@@ -65,6 +65,8 @@ MonoBehaviour:
   EffectStrength: 2
   AttackRange: 2
   AttackSpeed: 0.2
+  ParticleEffect: {fileID: 578242772327201639, guid: de5647c739e08644c830bc005a919e1a,
+    type: 3}
 --- !u!1001 &2665363071305904437
 PrefabInstance:
   m_ObjectHideFlags: 0
