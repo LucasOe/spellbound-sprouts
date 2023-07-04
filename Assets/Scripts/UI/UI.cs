@@ -17,26 +17,26 @@ public class UI : MonoBehaviour
     VisualElement _nightWand;
     VisualElement _currentHealth;
     GroupBox _itemTypeWrap;
-    List<Button> _plantSeeds = new List<Button>();
-    List<Button> _herbSeeds = new List<Button>();
-    List<Button> _seeds;
+    List<VisualElement> _plantSeeds = new List<VisualElement>();
+    List<VisualElement> _herbSeeds = new List<VisualElement>();
+    List<VisualElement> _seeds;
     List<Label> _seedAmountLabels = new List<Label>();
 
     //Plant Types
-    Button _1P;
-    Button _2P;
-    Button _3P;
-    Button _4P;
+    VisualElement _1P;
+    VisualElement _2P;
+    VisualElement _3P;
+    VisualElement _4P;
     Label _1PAmount;
     Label _2PAmount;
     Label _3PAmount;
     Label _4PAmount;
 
     //Herbs Types
-    Button _1H;
-    Button _2H;
-    Button _3H;
-    Button _4H;
+    VisualElement _1H;
+    VisualElement _2H;
+    VisualElement _3H;
+    VisualElement _4H;
     Label _1HAmount;
     Label _2HAmount;
     Label _3HAmount;
@@ -56,13 +56,13 @@ public class UI : MonoBehaviour
         _herb = root.Q<Button>("Herb");
         _plant = root.Q<Button>("Plant");
         _harvest = root.Q<Button>("Harvest");
-        Button _1P = root.Q<Button>("1P");
-        Button _2P = root.Q<Button>("2P");
-        Button _3P = root.Q<Button>("3P");
-        Button _4P = root.Q<Button>("4P");
-        Button _1H = root.Q<Button>("1H");
-        Button _2H = root.Q<Button>("2H");
-        Button _3H = root.Q<Button>("3H");
+        VisualElement _1P = root.Q<VisualElement>("1P");
+        VisualElement _2P = root.Q<VisualElement>("2P");
+        VisualElement _3P = root.Q<VisualElement>("3P");
+        VisualElement _4P = root.Q<VisualElement>("4P");
+        VisualElement _1H = root.Q<VisualElement>("1H");
+        VisualElement _2H = root.Q<VisualElement>("2H");
+        VisualElement _3H = root.Q<VisualElement>("3H");
         Button _4H = root.Q<Button>("4H");
         _buttonSkip = root.Q<Button>("ButtonSkip");
         _defensivePlants = root.Q<VisualElement>("DefensivePlants");
@@ -98,13 +98,15 @@ public class UI : MonoBehaviour
         _seedAmountLabels.Add(_2HAmount);
         _seedAmountLabels.Add(_3HAmount);
         _seedAmountLabels.Add(_4HAmount);
+        _seeds = _plantSeeds;
     }
 
     void Start()
     {
         RefreshAmounts();
 
-        _buttonSkip.clicked += () => {
+        _buttonSkip.clicked += () =>
+        {
             GameManager.TimeManger.SkipDay();
         };
     }
@@ -171,7 +173,7 @@ public class UI : MonoBehaviour
                 _herbs.RemoveFromClassList("open");
                 _wheel.AddToClassList("harvest");
                 _wheel.RemoveFromClassList("herb");
-                _itemTypeWrap.style.left = -54; 
+                _itemTypeWrap.style.left = -54;
                 break;
             case Inventory.Tool.Plant:
                 _harvest.RemoveFromClassList("active");
@@ -182,21 +184,21 @@ public class UI : MonoBehaviour
                 _wheel.RemoveFromClassList("harvest");
                 _wheel.RemoveFromClassList("herb");
                 _wheel.AddToClassList("plant");
-                _itemTypeWrap.style.left = -78; 
+                _itemTypeWrap.style.left = -78;
                 Timer timer = this.CreateTimer(.3f);
                 timer.RunOnFinish((state) =>
                 {
                     _itemTypeWrap.AddToClassList("instantAnimation");
                     _wheel.AddToClassList("instantAnimation");
                     Timer timer2 = this.CreateTimer(.01f);
-                    _itemTypeWrap.style.left = 0; 
+                    _itemTypeWrap.style.left = 0;
                     timer2.RunOnFinish((state) =>
                     {
                         _itemTypeWrap.RemoveFromClassList("instantAnimation");
                     });
                     timer2.StartTimer();
                     _wheel.RemoveFromClassList("plant");
-                        _wheel.RemoveFromClassList("instantAnimation");
+                    _wheel.RemoveFromClassList("instantAnimation");
                 });
                 timer.StartTimer();
                 break;
@@ -208,7 +210,7 @@ public class UI : MonoBehaviour
                 _herbs.AddToClassList("open");
                 _wheel.RemoveFromClassList("harvest");
                 _wheel.AddToClassList("herb");
-                _itemTypeWrap.style.left = -27; 
+                _itemTypeWrap.style.left = -27;
                 break;
             default:
                 break;
