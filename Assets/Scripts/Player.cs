@@ -146,6 +146,12 @@ public class Player : MonoBehaviour
 
             if (!tile.Plant && ActiveTool != Inventory.Tool.Harvest && InventoryDrops.GetAmount(Inventory.GetPlant().ItemDrop.ItemData) > 0)
             {
+
+                // Rotate towards Tile
+                var direction = (tile.highlight.transform.position - transform.position).normalized;
+                player.transform.rotation = Quaternion.LookRotation(direction, Vector3.up);
+
+                Animator.SetTrigger("harvest");
                 Plant tileContent = GameManager.CreatePlant(Inventory.GetPlant(), tile.transform.position, Quaternion.identity, tile);
                 tile.Plant = tileContent;
                 InventoryDrops.RemoveItem(Inventory.GetPlant().ItemDrop.ItemData, 1);
@@ -164,7 +170,7 @@ public class Player : MonoBehaviour
         cauldron.OnClick();
     }
 
-    public void OnSelectHarvest()
+    public void OnSelectTool(InputValue value)
     {
         if (!toolCooldownTimer && !interactCooldownTimer)
         {
@@ -185,7 +191,7 @@ public class Player : MonoBehaviour
             }
 
             // Start Tool cooldown
-            toolCooldownTimer = this.CreateTimer(0.35f);
+            toolCooldownTimer = this.CreateTimer(0.3f);
             toolCooldownTimer.StartTimer();
         }
     }
@@ -229,7 +235,7 @@ public class Player : MonoBehaviour
         interactCooldownTimer.StartTimer();
     }
 
-    public void PlaySound(AudioClip audioclip, float vol)
+    public void PlaySound(AudioClip audioclip, float vol = 1f)
     {
         AudioSource.pitch = Random.Range(0.6f, .9f);
         AudioSource.PlayOneShot(audioclip, vol);

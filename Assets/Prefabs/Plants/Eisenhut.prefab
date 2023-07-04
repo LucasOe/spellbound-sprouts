@@ -60,6 +60,7 @@ MonoBehaviour:
   - {fileID: 9127173183369860937}
   - {fileID: 1584656012216324697}
   - {fileID: 8394507985553187111}
+  HarvestClip: {fileID: 8300000, guid: f382802417682df419c47c42c4ffa91b, type: 3}
   drops: 2
 --- !u!1001 &1818537182392643336
 PrefabInstance:
