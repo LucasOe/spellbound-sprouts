@@ -108,7 +108,8 @@ public class UI : MonoBehaviour
 
         _buttonSkip.clicked += () =>
         {
-            GameManager.TimeManger.SkipDay();
+            if (!GameManager.IsNight)
+                GameManager.TimeManger.SkipDay();
         };
     }
 
