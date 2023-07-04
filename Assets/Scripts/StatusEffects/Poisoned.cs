@@ -4,14 +4,25 @@ using UnityEngine;
 
 public class Poisoned : StatusEffect
 {
-    public Poisoned(Enemy enemy, float duration, float cooldown, float damage) : base(enemy, duration)
+    private readonly float damage;
+
+    public Poisoned(Enemy enemy, float duration, float damage) : base(enemy, duration)
     {
-        Debug.Log("Poisoned Start");
+        this.damage = damage;
     }
 
-    protected override void EndEffect()
+    protected override void OnStart()
     {
-        Debug.Log("Poisoned End");
+
     }
 
+    protected override void OnUpdate()
+    {
+        enemy.Damage(damage * Time.deltaTime);
+    }
+
+    protected override void OnEnd()
+    {
+
+    }
 }
