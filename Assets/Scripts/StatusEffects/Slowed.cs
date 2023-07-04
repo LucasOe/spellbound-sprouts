@@ -9,11 +9,19 @@ public class Slowed : StatusEffect
     public Slowed(Enemy enemy, float duration, float strength) : base(enemy, duration)
     {
         this.strength = strength;
+    }
 
+    protected override void OnStart()
+    {
         enemy.Agent.speed *= 1 / strength;
     }
 
-    protected override void EndEffect()
+    protected override void OnUpdate()
+    {
+
+    }
+
+    protected override void OnEnd()
     {
         enemy.Agent.speed *= strength;
     }

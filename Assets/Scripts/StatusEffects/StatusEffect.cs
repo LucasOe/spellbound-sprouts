@@ -14,10 +14,17 @@ public abstract class StatusEffect
         timer.RunOnFinish((state) =>
         {
             enemy.StatusEffects.Remove(this);
-            EndEffect();
+            OnEnd();
+        });
+        timer.RunOnUpdate((state) =>
+        {
+            OnUpdate();
         });
         timer.StartTimer();
+        OnStart();
     }
 
-    protected abstract void EndEffect();
+    protected abstract void OnStart();
+    protected abstract void OnEnd();
+    protected abstract void OnUpdate();
 }

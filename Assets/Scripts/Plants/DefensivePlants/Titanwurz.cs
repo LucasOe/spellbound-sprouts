@@ -6,7 +6,6 @@ using UnityEngine;
 public class Titanwurz : DefensivePlant
 {
     public float EffectDuration = 1.0f;
-    public float EffectCooldown = 1.0f;
     public float EffectDamage = 1.0f;
     public float AttackRange = 2.0f;
     public float AttackSpeed = 0.2f;
@@ -24,7 +23,7 @@ public class Titanwurz : DefensivePlant
             {
                 if (this.GetDistance(enemy) <= AttackRange && enemy.StatusEffects.Count <= 0)
                 {
-                    Poisoned poisoned = new(enemy, EffectDuration, EffectCooldown, EffectDamage);
+                    Poisoned poisoned = new(enemy, EffectDuration, EffectDamage);
                 }
             });
         });

@@ -15,6 +15,9 @@ public struct ItemAmounts
 
     public ItemData Item3;
     public int Amount3;
+
+    public ItemData Reward;
+    public int RewardAmount;
 }
 
 public class Cauldron : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
@@ -33,27 +36,24 @@ public class Cauldron : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public ItemAmounts[] ItemAmounts;
 
-    public void UpdateIngredients(InventoryDrops inventoryDrops)
+    private int currentState = 0;
+
+    public void UpdateIngredients()
     {
-        var index = 0;
-        ingredientText1.text = string.Format("{0}:", ItemAmounts[index].Item1.DisplayName);
-        ingredientText2.text = string.Format("{0}:", ItemAmounts[index].Item2.DisplayName);
-        ingredientText3.text = string.Format("{0}:", ItemAmounts[index].Item3.DisplayName);
-        ingredientAmount1.text = string.Format("{0}/{1}", inventoryDrops.GetAmount(ItemAmounts[index].Item1), ItemAmounts[index].Amount1);
-        ingredientAmount2.text = string.Format("{0}/{1}", inventoryDrops.GetAmount(ItemAmounts[index].Item2), ItemAmounts[index].Amount2);
-        ingredientAmount3.text = string.Format("{0}/{1}", inventoryDrops.GetAmount(ItemAmounts[index].Item3), ItemAmounts[index].Amount3);
+        ingredientText1.text = string.Format("{0}:", ItemAmounts[currentState].Item1.DisplayName);
+        ingredientText2.text = string.Format("{0}:", ItemAmounts[currentState].Item2.DisplayName);
+        ingredientText3.text = string.Format("{0}:", ItemAmounts[currentState].Item3.DisplayName);
+        ingredientAmount1.text = string.Format("{0}/{1}", GameManager.Player.InventoryDrops.GetAmount(ItemAmounts[currentState].Item1), ItemAmounts[currentState].Amount1);
+        ingredientAmount2.text = string.Format("{0}/{1}", GameManager.Player.InventoryDrops.GetAmount(ItemAmounts[currentState].Item2), ItemAmounts[currentState].Amount2);
+        ingredientAmount3.text = string.Format("{0}/{1}", GameManager.Player.InventoryDrops.GetAmount(ItemAmounts[currentState].Item3), ItemAmounts[currentState].Amount3);
     }
 
     private bool GetValidState()
     {
-        var index = 0;
-        if (GameManager.Player.InventoryDrops.GetAmount(ItemAmounts[index].Item1) >= ItemAmounts[index].Amount1 &&
-            GameManager.Player.InventoryDrops.GetAmount(ItemAmounts[index].Item2) >= ItemAmounts[index].Amount2 &&
-            GameManager.Player.InventoryDrops.GetAmount(ItemAmounts[index].Item3) >= ItemAmounts[index].Amount3)
-        {
-            return true;
-        }
-        return false;
+        return
+            GameManager.Player.InventoryDrops.GetAmount(ItemAmounts[currentState].Item1) >= ItemAmounts[currentState].Amount1 &&
+            GameManager.Player.InventoryDrops.GetAmount(ItemAmounts[currentState].Item2) >= ItemAmounts[currentState].Amount2 &&
+            GameManager.Player.InventoryDrops.GetAmount(ItemAmounts[currentState].Item3) >= ItemAmounts[currentState].Amount3;
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -82,6 +82,11 @@ public class Cauldron : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public void OnClick()
     {
-        Debug.Log("Clicked");
+        if (GetValidState())
+        {
+            currentState += 1;
+            GameManager.Player.InventoryDrops.AddItem(ItemAmounts[currentState].Reward, ItemAmounts[currentState].RewardAmount);
+            UpdateIngredients();
+        }
     }
 }
