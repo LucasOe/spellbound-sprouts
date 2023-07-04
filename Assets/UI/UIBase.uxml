@@ -18,47 +18,47 @@
         </ui:GroupBox>
         <ui:GroupBox name="GroupBox" style="width: 226px; height: 92px; position: relative;">
             <ui:VisualElement name="DefensivePlants" class="open abilities" style="width: 100%; flex-direction: row; flex-wrap: nowrap; position: absolute;">
-                <ui:VisualElement name="1P" class="seed active" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 24%;">
+                <ui:VisualElement name="1P" class="seed active" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 24%; margin-right: 0; margin-top: 10px; margin-left: 5px;">
                     <ui:Button text="&#x9;" display-tooltip-when-elided="true" class="selectedItem" style="width: 100%; -unity-background-scale-mode: scale-to-fit; background-image: url(&apos;project://database/Assets/UI/Icons/Rose840x840.png?fileID=2800000&amp;guid=2793a763441ede849b1306519e07b1ee&amp;type=3#Rose840x840&apos;);" />
                     <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="1PAmount" class="itemAmount" style="margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0;" />
-                    <ui:Label tabindex="-1" text="1" display-tooltip-when-elided="true" class="shortcutSeed" style="width: 5px;" />
+                    <ui:Label tabindex="-1" text="1" display-tooltip-when-elided="true" class="shortcutSeed" style="width: 6px; height: 9px; top: -4px;" />
                 </ui:VisualElement>
-                <ui:VisualElement name="2P" class="seed" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 24%;">
+                <ui:VisualElement name="2P" class="seed" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 24%; height: auto;">
                     <ui:Button text="&#x9;" display-tooltip-when-elided="true" enable-rich-text="false" class="selectedItem" style="width: 100%; background-image: url(&apos;project://database/Assets/UI/Icons/Venus840x840.png?fileID=2800000&amp;guid=be274b97972fd7147a0f37a11c47d315&amp;type=3#Venus840x840&apos;);" />
                     <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="2PAmount" class="itemAmount" style="margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0;" />
-                    <ui:Label tabindex="-1" text="2" display-tooltip-when-elided="true" class="shortcutSeed" style="left: 19.5px; width: 7px;" />
+                    <ui:Label tabindex="-1" text="2" display-tooltip-when-elided="true" class="shortcutSeed" style="left: 19.5px; width: 9px; height: 18px; top: -4px;" />
                 </ui:VisualElement>
                 <ui:VisualElement name="3P" class="seed" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 24%;">
                     <ui:Button text="&#x9;" display-tooltip-when-elided="true" class="selectedItem" style="width: 100%; background-image: url(&apos;project://database/Assets/UI/Icons/Klette840x840.png?fileID=2800000&amp;guid=493943064af4dc54bb2ae803122c4002&amp;type=3#Klette840x840&apos;);" />
                     <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="3PAmount" class="itemAmount" style="margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0;" />
-                    <ui:Label tabindex="-1" text="3" display-tooltip-when-elided="true" class="shortcutSeed" style="left: 20px; width: 8px;" />
+                    <ui:Label tabindex="-1" text="3" display-tooltip-when-elided="true" class="shortcutSeed" style="left: 20px; width: 8px; height: 18px; top: -4px;" />
                 </ui:VisualElement>
                 <ui:VisualElement name="4P" class="seed" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 24%;">
                     <ui:Button text="&#x9;" display-tooltip-when-elided="true" class="selectedItem" style="width: 100%; background-image: url(&apos;project://database/Assets/UI/Icons/Titanwurz840x840.png?fileID=2800000&amp;guid=35a4ae4e3a16aae49b11e5bf3b86eca3&amp;type=3#Titanwurz840x840&apos;);" />
                     <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="4PAmount" class="itemAmount" style="margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0;" />
-                    <ui:Label tabindex="-1" text="4" display-tooltip-when-elided="true" class="shortcutSeed" style="left: 19px; width: 8px;" />
+                    <ui:Label tabindex="-1" text="4" display-tooltip-when-elided="true" class="shortcutSeed" style="left: 19px; width: 10px; height: 18px; top: -4px;" />
                 </ui:VisualElement>
             </ui:VisualElement>
             <ui:VisualElement name="Herbs" class="abilities" style="width: 100%; flex-wrap: nowrap; flex-direction: row; justify-content: center; position: absolute; transition-duration: 0.4s;">
                 <ui:VisualElement name="1H" class="seed active" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 24%;">
                     <ui:Button text="&#x9;" display-tooltip-when-elided="true" class="selectedItem" style="width: 100%; padding-right: 6px; padding-left: 6px; background-image: url(&apos;project://database/Assets/UI/Icons/Habicht840x840.png?fileID=2800000&amp;guid=1d18a57a7938a8b40bf4dc820a4276da&amp;type=3#Habicht840x840&apos;);" />
                     <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="1HAmount" class="itemAmount" style="margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0;" />
-                    <ui:Label tabindex="-1" text="1" display-tooltip-when-elided="true" class="shortcutSeed" style="left: 21px; width: 7px;" />
+                    <ui:Label tabindex="-1" text="1" display-tooltip-when-elided="true" class="shortcutSeed" style="left: 21px; width: 7px; height: 18px; top: -4px;" />
                 </ui:VisualElement>
                 <ui:VisualElement name="2H" class="seed" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 24%;">
                     <ui:Button text="&#x9;" display-tooltip-when-elided="true" class="selectedItem" style="width: 100%; background-image: url(&apos;project://database/Assets/UI/Icons/Eisenhut840x840.png?fileID=2800000&amp;guid=0a7b9f3c574328f4a8e25c4a614e212e&amp;type=3#Eisenhut840x840&apos;);" />
                     <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="2HAmount" class="itemAmount" style="margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0;" />
-                    <ui:Label tabindex="-1" text="2" display-tooltip-when-elided="true" class="shortcutSeed" style="left: 19.8px; margin-left: 2px; margin-top: 2.5px; top: -2.5px; width: 8px; height: 15px;" />
+                    <ui:Label tabindex="-1" text="2" display-tooltip-when-elided="true" class="shortcutSeed" style="left: 19.8px; margin-left: 2px; margin-top: 2.5px; top: -3px; width: 9px; height: 16px;" />
                 </ui:VisualElement>
                 <ui:VisualElement name="3H" class="seed" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 24%;">
                     <ui:Button text="&#x9;" display-tooltip-when-elided="true" class="selectedItem" style="width: 100%; background-image: url(&apos;project://database/Assets/UI/Icons/Blossom840x840.png?fileID=2800000&amp;guid=efa4590dc3a49ba439fc7beb3676e19a&amp;type=3#Blossom840x840&apos;);" />
                     <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="3HAmount" class="itemAmount" style="margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0;" />
-                    <ui:Label tabindex="-1" text="3" display-tooltip-when-elided="true" class="shortcutSeed" style="left: 20.5px; margin-left: 1px; width: 9px;" />
+                    <ui:Label tabindex="-1" text="3" display-tooltip-when-elided="true" class="shortcutSeed" style="left: 20.5px; margin-left: 1px; width: 10px; height: 18px; top: -4px;" />
                 </ui:VisualElement>
                 <ui:VisualElement name="4H" class="seed" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 24%;">
                     <ui:Button text="&#x9;" display-tooltip-when-elided="true" class="selectedItem" style="width: 100%; background-image: url(&apos;project://database/Assets/UI/Icons/Knobi840x840.png?fileID=2800000&amp;guid=3577e2b006ea06242ac24411f6fd9d67&amp;type=3#Knobi840x840&apos;);" />
                     <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="4HAmount" class="itemAmount" style="margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0;" />
-                    <ui:Label tabindex="-1" text="4" display-tooltip-when-elided="true" class="shortcutSeed" style="left: 19.5px; width: 9px;" />
+                    <ui:Label tabindex="-1" text="4" display-tooltip-when-elided="true" class="shortcutSeed" style="left: 19.5px; width: 8px; height: 18px; top: -4px;" />
                 </ui:VisualElement>
             </ui:VisualElement>
         </ui:GroupBox>
