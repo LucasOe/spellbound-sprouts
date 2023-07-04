@@ -187,7 +187,7 @@ public class Player : MonoBehaviour
             }
 
             // Start Tool cooldown
-            toolCooldownTimer = this.CreateTimer(0.25f);
+            toolCooldownTimer = this.CreateTimer(0.35f);
             toolCooldownTimer.StartTimer();
         }
     }
@@ -246,7 +246,8 @@ public class Player : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
-    public void OnStopTimerTesting() {
+    public void OnStopTimerTesting()
+    {
         GameManager.TimeManger.timer.StopTimer();
     }
 }
