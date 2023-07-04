@@ -50,7 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Healthbar: {fileID: 6533889287906697376}
   ActiveStage: {fileID: 7707439193417762693}
-  MaxHealth: 70
+  MaxHealth: 40
   ItemDrop: {fileID: 2888568842252360093, guid: a21cb3a33687659449dbb18fe6eb56a3,
     type: 3}
   ItemDropAmount: 2
@@ -63,7 +63,7 @@ MonoBehaviour:
   drops: 2
   EffectDuration: 1
   EffectDamage: 2
-  AttackRange: 10
+  AttackRange: 15
   AttackSpeed: 0.1
   ParticleEffect: {fileID: 2866241825745442684, guid: e191e67ad8011ef42a55985008c576fa,
     type: 3}

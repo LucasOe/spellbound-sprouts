@@ -63,7 +63,7 @@ public class UI : MonoBehaviour
         VisualElement _1H = root.Q<VisualElement>("1H");
         VisualElement _2H = root.Q<VisualElement>("2H");
         VisualElement _3H = root.Q<VisualElement>("3H");
-        Button _4H = root.Q<Button>("4H");
+        VisualElement _4H = root.Q<VisualElement>("4H");
         _buttonSkip = root.Q<Button>("ButtonSkip");
         _defensivePlants = root.Q<VisualElement>("DefensivePlants");
         _herbs = root.Q<VisualElement>("Herbs");
