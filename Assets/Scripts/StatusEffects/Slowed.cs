@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class Slowed : StatusEffect
 {
-    private float strength;
-    private GameObject particle;
-    private GameObject particleInstance;
+    private readonly float strength;
+    private readonly GameObject particleInstance;
 
     public Slowed(Enemy enemy, float duration, float strength, GameObject particle) : base(enemy, duration)
     {
         this.strength = strength;
-        this.particle = particle;
 
         particleInstance = GameObject.Instantiate(particle, new Vector3(0, 1, 0), Quaternion.identity);
         particleInstance.transform.SetParent(enemy.transform, false);

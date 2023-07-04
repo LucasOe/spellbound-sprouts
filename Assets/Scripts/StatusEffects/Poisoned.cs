@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class Poisoned : StatusEffect
 {
-    private float damage;
-    private GameObject particle;
-    private GameObject particleInstance;
+    private readonly float damage;
+    private readonly GameObject particleInstance;
 
     public Poisoned(Enemy enemy, float duration, float damage, GameObject particle) : base(enemy, duration)
     {
         this.damage = damage;
-        this.particle = particle;
 
         particleInstance = GameObject.Instantiate(particle, new Vector3(0, 1, 0), Quaternion.identity);
         particleInstance.transform.SetParent(enemy.transform, false);
