@@ -24090,11 +24090,17 @@ MonoBehaviour:
   ingredientAmount3: {fileID: 1934958977}
   ItemAmounts:
   - Item1: {fileID: 11400000, guid: b979f49b7a1d44a4f84684a389c3df4a, type: 2}
-    Amount1: 3
+    Amount1: 2
     Item2: {fileID: 11400000, guid: 26ae8d07e05efe84687d7db21ccc744d, type: 2}
-    Amount2: 3
+    Amount2: 1
     Item3: {fileID: 11400000, guid: c2f2ee3599f20954285743bb5edb3f3b, type: 2}
-    Amount3: 3
+    Amount3: 1
+  - Item1: {fileID: 11400000, guid: b979f49b7a1d44a4f84684a389c3df4a, type: 2}
+    Amount1: 2
+    Item2: {fileID: 11400000, guid: 26ae8d07e05efe84687d7db21ccc744d, type: 2}
+    Amount2: 1
+    Item3: {fileID: 11400000, guid: c2f2ee3599f20954285743bb5edb3f3b, type: 2}
+    Amount3: 1
 --- !u!114 &697100117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42594,7 +42600,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: 8ba92e2dd7f884a0f88b98fa2d235fe7, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 7c9024209c979e5438099ad4bc1b1c02, type: 2}
 --- !u!1001 &1220050703
 PrefabInstance:
   m_ObjectHideFlags: 0
