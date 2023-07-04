@@ -61,9 +61,9 @@ MonoBehaviour:
   - {fileID: 4489475715137572446}
   - {fileID: 5016430741504871440}
   drops: 2
-  AttackDamage: 4
+  AttackDamage: 10
   AttackRange: 2
-  AttackSpeed: 0.2
+  AttackSpeed: 0.5
 --- !u!1001 &3527507111625910636
 PrefabInstance:
   m_ObjectHideFlags: 0
