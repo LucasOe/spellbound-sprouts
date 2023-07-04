@@ -16,7 +16,7 @@ public class InventoryDrops : MonoBehaviour
 
     private void Awake()
     {
-        GameManager.CauldronCanvas.UpdateIngredients(this);
+        GameManager.CauldronCanvas.UpdateIngredients();
     }
 
     public void AddItem(ItemData item, int amount)
@@ -27,7 +27,7 @@ public class InventoryDrops : MonoBehaviour
                 _item.amount += amount;
         });
         GameManager.Player.ui.RefreshAmounts();
-        GameManager.CauldronCanvas.UpdateIngredients(this);
+        GameManager.CauldronCanvas.UpdateIngredients();
     }
 
     public void RemoveItem(ItemData item, int amount)
@@ -38,7 +38,7 @@ public class InventoryDrops : MonoBehaviour
                 _item.amount -= amount;
         });
         GameManager.Player.ui.RefreshAmounts();
-        GameManager.CauldronCanvas.UpdateIngredients(this);
+        GameManager.CauldronCanvas.UpdateIngredients();
     }
 
     public int GetAmount(ItemData item)
