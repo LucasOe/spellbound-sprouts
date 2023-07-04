@@ -24095,12 +24095,16 @@ MonoBehaviour:
     Amount2: 1
     Item3: {fileID: 11400000, guid: c2f2ee3599f20954285743bb5edb3f3b, type: 2}
     Amount3: 1
+    Reward: {fileID: 0}
+    RewardAmount: 0
   - Item1: {fileID: 11400000, guid: b979f49b7a1d44a4f84684a389c3df4a, type: 2}
     Amount1: 2
     Item2: {fileID: 11400000, guid: 26ae8d07e05efe84687d7db21ccc744d, type: 2}
     Amount2: 1
     Item3: {fileID: 11400000, guid: c2f2ee3599f20954285743bb5edb3f3b, type: 2}
     Amount3: 1
+    Reward: {fileID: 0}
+    RewardAmount: 0
 --- !u!114 &697100117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47098,6 +47102,7 @@ MonoBehaviour:
   Meshes:
   - {fileID: -5495902117074765545, guid: 3ca1911df41a9f245a4d026e88b3ef8f, type: 3}
   - {fileID: 212370497460711607, guid: 3c263f6a9f246f443a2dd720bebfbff7, type: 3}
+  - {fileID: 3880286678147477144, guid: 42c95ec392ff78b4db924c0f7e4ce3ac, type: 3}
 --- !u!114 &1328368780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78219,7 +78224,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[3]
       value: 
-      objectReference: {fileID: 2100000, guid: 22e9780c925fdad4da0899331c212e6c, type: 2}
+      objectReference: {fileID: 2100000, guid: e5b53cf791a054b4f9d0415b6d3a433f, type: 2}
     - target: {fileID: 919132149155446097, guid: 42c95ec392ff78b4db924c0f7e4ce3ac,
         type: 3}
       propertyPath: m_Name
