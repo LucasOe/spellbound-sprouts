@@ -71,7 +71,7 @@ MonoBehaviour:
   ItemData: {fileID: 11400000, guid: cef6e7889e0a57848a87630348d32f6f, type: 2}
   Dropchance: 1
   Agent: {fileID: 135012687949987866}
-  CollectEffect: {fileID: 8300000, guid: abce6684b4b1a3f43bd649fe2fd6a87d, type: 3}
+  CollectEffect: {fileID: 8300000, guid: 975243d2415586c429aff9a8c3961507, type: 3}
 --- !u!1001 &7360892697980668611
 PrefabInstance:
   m_ObjectHideFlags: 0
