@@ -153,6 +153,7 @@ public class Player : MonoBehaviour
             }
             else if (tile.Plant && ActiveTool == Inventory.Tool.Harvest)
             {
+                Animator.SetTrigger("harvest");
                 GameManager.DestroyPlant(tile.Plant);
             }
         }
@@ -192,25 +193,21 @@ public class Player : MonoBehaviour
     public void OnSelectItem1(InputValue value)
     {
         Inventory.SetSeed(0);
-        ui.SelectActiveSeed(0, Inventory.ActiveTool);
     }
 
     public void OnSelectItem2(InputValue value)
     {
         Inventory.SetSeed(1);
-        ui.SelectActiveSeed(1, Inventory.ActiveTool);
     }
 
     public void OnSelectItem3(InputValue value)
     {
         Inventory.SetSeed(2);
-        ui.SelectActiveSeed(2, Inventory.ActiveTool);
     }
 
     public void OnSelectItem4(InputValue value)
     {
         Inventory.SetSeed(3);
-        ui.SelectActiveSeed(3, Inventory.ActiveTool);
     }
 
     public void OnSkipDay(InputValue value)

@@ -5,6 +5,8 @@ using UnityEngine.UIElements;
 public class UI : MonoBehaviour
 {
     public GameManager GameManager;
+    public AudioSource Clicker;
+    public AudioClip Click;
 
     Button _herb;
     Button _plant;
@@ -20,6 +22,7 @@ public class UI : MonoBehaviour
     List<VisualElement> _herbSeeds = new List<VisualElement>();
     List<VisualElement> _seeds;
     List<Label> _seedAmountLabels = new List<Label>();
+
 
     //Plant Types
     VisualElement _1P;
@@ -147,20 +150,25 @@ public class UI : MonoBehaviour
 
     public void SelectActiveSeed(int i, Inventory.Tool activeTool)
     {
-        if (activeTool == Inventory.Tool.Plant)
-            _seeds = _plantSeeds;
-        if (activeTool == Inventory.Tool.Herb)
-            _seeds = _herbSeeds;
-
-        _seeds.ForEach((seed) =>
+        if (!GameManager.IsNight)
         {
-            seed.RemoveFromClassList("active");
-        });
-        _seeds[i].AddToClassList("active");
+            if (activeTool == Inventory.Tool.Plant)
+                _seeds = _plantSeeds;
+            if (activeTool == Inventory.Tool.Herb)
+                _seeds = _herbSeeds;
+
+            _seeds.ForEach((seed) =>
+            {
+                seed.RemoveFromClassList("active");
+                ClickSound(0.3f);
+            });
+            _seeds[i].AddToClassList("active");
+        }
     }
 
     public void ToggleToolType(Inventory.Tool activeTool)
     {
+        ClickSound(1f, 0.6f);
         switch (activeTool)
         {
             case Inventory.Tool.Harvest:
@@ -204,5 +212,11 @@ public class UI : MonoBehaviour
             default:
                 break;
         }
+    }
+
+    public void ClickSound(float vol, float pitch = 1f)
+    {
+        Clicker.pitch = pitch * Random.Range(0.8f, 1.2f);
+        Clicker.PlayOneShot(Click, vol);
     }
 }
