@@ -16,7 +16,7 @@ public struct ItemAmounts
     public ItemData Item3;
     public int Amount3;
 
-    public ItemData Reward;
+    public Item[] Reward;
     public int RewardAmount;
 }
 
@@ -85,7 +85,13 @@ public class Cauldron : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         if (GetValidState())
         {
             currentState += 1;
-            GameManager.Player.InventoryDrops.AddItem(ItemAmounts[currentState].Reward, ItemAmounts[currentState].RewardAmount);
+            for (int i = 0; i < ItemAmounts[currentState].Reward.Length(); i++)
+            {
+                for (int i = 0; i < RewardAmount; i++)
+                {
+                    GameManager.CreateItem(ItemAmounts[currentState].Reward[i], transform.position);
+                }
+            }
             UpdateIngredients();
         }
     }
