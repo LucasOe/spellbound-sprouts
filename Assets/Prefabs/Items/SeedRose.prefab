@@ -69,7 +69,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemData: {fileID: 11400000, guid: cef6e7889e0a57848a87630348d32f6f, type: 2}
-  Dropchance: 0.5
+  Dropchance: 1
   Agent: {fileID: 135012687949987866}
   CollectEffect: {fileID: 8300000, guid: abce6684b4b1a3f43bd649fe2fd6a87d, type: 3}
 --- !u!1001 &6248284009172573268
