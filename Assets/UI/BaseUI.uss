@@ -218,3 +218,11 @@
 .instantAnimation {
     transition-duration: 0s;
 }
+
+.buttonSkip:hover {
+    scale: 1.1;
+}
+
+.buttonSkip:active {
+    scale: 1;
+}
