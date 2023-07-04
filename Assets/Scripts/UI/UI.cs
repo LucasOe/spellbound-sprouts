@@ -16,7 +16,6 @@ public class UI : MonoBehaviour
     VisualElement _wheel;
     VisualElement _nightWand;
     VisualElement _currentHealth;
-    GroupBox _itemTypeWrap;
     List<VisualElement> _plantSeeds = new List<VisualElement>();
     List<VisualElement> _herbSeeds = new List<VisualElement>();
     List<VisualElement> _seeds;
@@ -71,7 +70,6 @@ public class UI : MonoBehaviour
         _nightWand = root.Q<VisualElement>("NightWand");
         _currentHealth = root.Q<VisualElement>("CurrentHealth");
         _day = root.Q<VisualElement>("Day");
-        _itemTypeWrap = root.Q<GroupBox>("ItemTypeWrap");
         Label _1PAmount = root.Q<Label>("1PAmount");
         Label _2PAmount = root.Q<Label>("2PAmount");
         Label _3PAmount = root.Q<Label>("3PAmount");
@@ -173,7 +171,6 @@ public class UI : MonoBehaviour
                 _herbs.RemoveFromClassList("open");
                 _wheel.AddToClassList("harvest");
                 _wheel.RemoveFromClassList("herb");
-                _itemTypeWrap.style.left = -54;
                 break;
             case Inventory.Tool.Plant:
                 _harvest.RemoveFromClassList("active");
@@ -184,18 +181,11 @@ public class UI : MonoBehaviour
                 _wheel.RemoveFromClassList("harvest");
                 _wheel.RemoveFromClassList("herb");
                 _wheel.AddToClassList("plant");
-                _itemTypeWrap.style.left = -78;
                 Timer timer = this.CreateTimer(.3f);
                 timer.RunOnFinish((state) =>
                 {
-                    _itemTypeWrap.AddToClassList("instantAnimation");
                     _wheel.AddToClassList("instantAnimation");
                     Timer timer2 = this.CreateTimer(.01f);
-                    _itemTypeWrap.style.left = 0;
-                    timer2.RunOnFinish((state) =>
-                    {
-                        _itemTypeWrap.RemoveFromClassList("instantAnimation");
-                    });
                     timer2.StartTimer();
                     _wheel.RemoveFromClassList("plant");
                     _wheel.RemoveFromClassList("instantAnimation");
@@ -210,7 +200,6 @@ public class UI : MonoBehaviour
                 _herbs.AddToClassList("open");
                 _wheel.RemoveFromClassList("harvest");
                 _wheel.AddToClassList("herb");
-                _itemTypeWrap.style.left = -27;
                 break;
             default:
                 break;
