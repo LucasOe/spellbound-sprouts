@@ -68,6 +68,8 @@ public class Plant : MonoBehaviour
 
     protected virtual void OnDayStart(int day)
     {
+        this.currentHealth +=  MaxHealth*.5f;
+        this.currentHealth = (currentHealth > MaxHealth) ? MaxHealth : currentHealth;
         if (Stages.Length == 1)
             mature = true;
 
@@ -83,14 +85,17 @@ public class Plant : MonoBehaviour
             if (age >= Stages.Length - 1)
                 mature = true;
         }
+        
+        SetHealthbarActive(false);
 
         var growthPercent = (float)age / (Stages.Length - 1);
         Healthbar.UpdateGrowth(growthPercent);
+        Healthbar.UpdateHealthBar(currentHealth, MaxHealth);
     }
 
     protected virtual void OnNightStart(int day)
     {
-
+        SetHealthbarActive(true);
     }
 
     public void SetHealthbarActive(bool value)

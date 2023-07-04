@@ -246,4 +246,7 @@ public class Player : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
+    public void OnStopTimerTesting() {
+        GameManager.TimeManger.timer.StopTimer();
+    }
 }
