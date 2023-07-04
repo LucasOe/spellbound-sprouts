@@ -88,7 +88,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void OnFire(InputValue value)
+    public void OnFire()
     {
         if (!PauseMenu.isPaused)
         {
@@ -196,27 +196,27 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void OnSelectItem1(InputValue value)
+    public void OnSelectItem1()
     {
         Inventory.SetSeed(0);
     }
 
-    public void OnSelectItem2(InputValue value)
+    public void OnSelectItem2()
     {
         Inventory.SetSeed(1);
     }
 
-    public void OnSelectItem3(InputValue value)
+    public void OnSelectItem3()
     {
         Inventory.SetSeed(2);
     }
 
-    public void OnSelectItem4(InputValue value)
+    public void OnSelectItem4()
     {
         Inventory.SetSeed(3);
     }
 
-    public void OnSkipDay(InputValue value)
+    public void OnSkipDay()
     {
         if (!GameManager.IsNight && !interactCooldownTimer)
         {

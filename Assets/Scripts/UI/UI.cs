@@ -108,7 +108,7 @@ public class UI : MonoBehaviour
 
         _buttonSkip.clicked += () =>
         {
-            GameManager.TimeManger.SkipDay();
+            GameManager.Player.OnSkipDay();
         };
     }
 
