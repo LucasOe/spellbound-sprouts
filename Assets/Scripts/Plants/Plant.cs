@@ -17,6 +17,8 @@ public class Plant : MonoBehaviour
     public bool mature;
     public GameObject[] Stages;
 
+    public AudioClip HarvestClip;
+
     public int drops = 2;
 
     public void Setup(GameManager gameManager)
@@ -34,13 +36,18 @@ public class Plant : MonoBehaviour
 
         if (mature)
         {
-            for(int i = 0; i < ItemDropAmount; i++) {
+            for (int i = 0; i < ItemDropAmount; i++)
+            {
                 gameManager.CreateItem(ItemDrop, transform.position);
             }
         }
-        else {
+        else
+        {
             gameManager.CreateItem(ItemDrop, transform.position);
-        }        
+        }
+
+        //Sound
+        gameManager.Player.PlaySound(HarvestClip);
     }
 
     protected virtual void Start()
@@ -58,6 +65,9 @@ public class Plant : MonoBehaviour
         // Random Rotation
         var rotation = Random.Range(0.0f, 360.0f);
         transform.rotation = Quaternion.Euler(0, rotation, 0);
+
+        //Sound
+        gameManager.Player.PlaySound(HarvestClip);
     }
 
     public void Damage(float amount)
@@ -73,7 +83,7 @@ public class Plant : MonoBehaviour
 
     protected virtual void OnDayStart(int day)
     {
-        this.currentHealth +=  MaxHealth*.5f;
+        this.currentHealth += MaxHealth * .5f;
         this.currentHealth = (currentHealth > MaxHealth) ? MaxHealth : currentHealth;
         if (Stages.Length == 1)
             mature = true;
@@ -90,7 +100,7 @@ public class Plant : MonoBehaviour
             if (age >= Stages.Length - 1)
                 mature = true;
         }
-        
+
         SetHealthbarActive(false);
 
         var growthPercent = (float)age / (Stages.Length - 1);
