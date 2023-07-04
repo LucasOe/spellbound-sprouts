@@ -8,220 +8,6 @@ ShaderVariantCollection:
   m_PrefabAsset: {fileID: 0}
   m_Name: ShaderVariants
   m_Shaders:
-  - first: {fileID: 0}
-    second:
-      variants:
-      - keywords: 
-        passType: 8
-  - first: {fileID: 0}
-    second:
-      variants:
-      - keywords: 
-        passType: 8
-  - first: {fileID: 0}
-    second:
-      variants:
-      - keywords: 
-        passType: 8
-  - first: {fileID: 0}
-    second:
-      variants:
-      - keywords: 
-        passType: 0
-  - first: {fileID: 0}
-    second:
-      variants:
-      - keywords: 
-        passType: 0
-  - first: {fileID: 0}
-    second:
-      variants:
-      - keywords: 
-        passType: 8
-  - first: {fileID: 0}
-    second:
-      variants:
-      - keywords: 
-        passType: 0
-  - first: {fileID: 0}
-    second:
-      variants:
-      - keywords: 
-        passType: 0
-  - first: {fileID: 0}
-    second:
-      variants:
-      - keywords: 
-        passType: 0
-  - first: {fileID: 0}
-    second:
-      variants:
-      - keywords: 
-        passType: 0
-  - first: {fileID: 0}
-    second:
-      variants:
-      - keywords: 
-        passType: 0
-  - first: {fileID: 0}
-    second:
-      variants:
-      - keywords: 
-        passType: 0
-  - first: {fileID: 0}
-    second:
-      variants:
-      - keywords: 
-        passType: 8
-  - first: {fileID: 0}
-    second:
-      variants:
-      - keywords: 
-        passType: 8
-  - first: {fileID: 0}
-    second:
-      variants:
-      - keywords: 
-        passType: 8
-  - first: {fileID: 0}
-    second:
-      variants:
-      - keywords: 
-        passType: 8
-  - first: {fileID: 0}
-    second:
-      variants:
-      - keywords: 
-        passType: 8
-  - first: {fileID: 0}
-    second:
-      variants:
-      - keywords: 
-        passType: 0
-  - first: {fileID: 0}
-    second:
-      variants:
-      - keywords: 
-        passType: 0
-  - first: {fileID: 0}
-    second:
-      variants:
-      - keywords: 
-        passType: 0
-  - first: {fileID: 0}
-    second:
-      variants:
-      - keywords: 
-        passType: 0
-  - first: {fileID: 0}
-    second:
-      variants:
-      - keywords: 
-        passType: 0
-  - first: {fileID: 0}
-    second:
-      variants:
-      - keywords: 
-        passType: 0
-  - first: {fileID: 0}
-    second:
-      variants:
-      - keywords: 
-        passType: 0
-  - first: {fileID: 0}
-    second:
-      variants:
-      - keywords: 
-        passType: 13
-  - first: {fileID: 0}
-    second:
-      variants:
-      - keywords: 
-        passType: 8
-  - first: {fileID: 0}
-    second:
-      variants:
-      - keywords: 
-        passType: 0
-  - first: {fileID: 0}
-    second:
-      variants:
-      - keywords: 
-        passType: 0
-  - first: {fileID: 0}
-    second:
-      variants:
-      - keywords: 
-        passType: 0
-  - first: {fileID: 0}
-    second:
-      variants:
-      - keywords: 
-        passType: 0
-  - first: {fileID: 0}
-    second:
-      variants:
-      - keywords: 
-        passType: 0
-  - first: {fileID: 0}
-    second:
-      variants:
-      - keywords: 
-        passType: 0
-  - first: {fileID: 0}
-    second:
-      variants:
-      - keywords: 
-        passType: 0
-  - first: {fileID: 0}
-    second:
-      variants:
-      - keywords: 
-        passType: 0
-  - first: {fileID: 0}
-    second:
-      variants:
-      - keywords: 
-        passType: 0
-  - first: {fileID: 0}
-    second:
-      variants:
-      - keywords: 
-        passType: 0
-  - first: {fileID: 0}
-    second:
-      variants:
-      - keywords: 
-        passType: 0
-  - first: {fileID: 0}
-    second:
-      variants:
-      - keywords: 
-        passType: 0
-  - first: {fileID: 0}
-    second:
-      variants:
-      - keywords: 
-        passType: 0
-  - first: {fileID: 0}
-    second:
-      variants:
-      - keywords: 
-        passType: 13
-      - keywords: AREA_SHADOW_MEDIUM DECALS_4RT PROBE_VOLUMES_OFF SCREEN_SPACE_SHADOWS_OFF
-          SHADOW_HIGH USE_CLUSTERED_LIGHTLIST _DISABLE_SSR_TRANSPARENT
-        passType: 13
-      - keywords: DECALS_4RT LIGHT_LAYERS PROBE_VOLUMES_OFF _DISABLE_SSR_TRANSPARENT
-        passType: 13
-      - keywords: DECALS_4RT PROBE_VOLUMES_OFF _DISABLE_SSR_TRANSPARENT
-        passType: 13
-      - keywords: _DISABLE_SSR_TRANSPARENT
-        passType: 13
-  - first: {fileID: 0}
-    second:
-      variants:
-      - keywords: 
-        passType: 8
   - first: {fileID: 10770, guid: 0000000000000000f000000000000000, type: 0}
     second:
       variants:
@@ -239,38 +25,20 @@ ShaderVariantCollection:
         passType: 4
       - keywords: 
         passType: 8
-  - first: {fileID: 106, guid: 0000000000000000f000000000000000, type: 0}
-    second:
-      variants:
-      - keywords: _SUNDISK_SIMPLE
-        passType: 0
-  - first: {fileID: 203, guid: 0000000000000000f000000000000000, type: 0}
-    second:
-      variants:
-      - keywords: 
-        passType: 0
   - first: {fileID: 211, guid: 0000000000000000f000000000000000, type: 0}
     second:
       variants:
-      - keywords: 
-        passType: 0
       - keywords: _ALPHABLEND_ON
         passType: 0
       - keywords: _ALPHABLEND_ON _COLORADDSUBDIFF_ON
         passType: 0
-      - keywords: _ALPHATEST_ON _COLOROVERLAY_ON
-        passType: 0
       - keywords: _EMISSION
         passType: 0
-      - keywords: PROCEDURAL_INSTANCING_ON SHADOWS_DEPTH
+      - keywords: 
+        passType: 8
+      - keywords: PROCEDURAL_INSTANCING_ON
         passType: 8
       - keywords: PROCEDURAL_INSTANCING_ON _ALPHABLEND_ON
-        passType: 8
-      - keywords: PROCEDURAL_INSTANCING_ON _ALPHATEST_ON
-        passType: 8
-      - keywords: SHADOWS_DEPTH
-        passType: 8
-      - keywords: _ALPHATEST_ON
         passType: 8
       - keywords: 
         passType: 13
@@ -326,11 +94,6 @@ ShaderVariantCollection:
       variants:
       - keywords: 
         passType: 0
-  - first: {fileID: 9104, guid: 0000000000000000f000000000000000, type: 0}
-    second:
-      variants:
-      - keywords: 
-        passType: 0
   - first: {fileID: 18002, guid: 0000000000000000f000000000000000, type: 0}
     second:
       variants:
@@ -346,12 +109,8 @@ ShaderVariantCollection:
         passType: 8
       - keywords: INSTANCING_ON _DISABLE_SSR_TRANSPARENT _NORMALMAP_TANGENT_SPACE
         passType: 8
-      - keywords: INSTANCING_ON _DISABLE_SSR_TRANSPARENT _SURFACE_TYPE_TRANSPARENT
-        passType: 8
       - keywords: _DISABLE_SSR_TRANSPARENT _ENABLE_FOG_ON_TRANSPARENT _MATERIAL_FEATURE_SPECULAR_COLOR
           _NORMALMAP_TANGENT_SPACE _SURFACE_TYPE_TRANSPARENT
-        passType: 8
-      - keywords: _DISABLE_SSR_TRANSPARENT _NORMALMAP _NORMALMAP_TANGENT_SPACE
         passType: 8
       - keywords: _DISABLE_SSR_TRANSPARENT _NORMALMAP_TANGENT_SPACE
         passType: 8
@@ -367,17 +126,12 @@ ShaderVariantCollection:
       - keywords: DECALS_4RT LIGHT_LAYERS PROBE_VOLUMES_OFF _DISABLE_SSR_TRANSPARENT
           _NORMALMAP_TANGENT_SPACE
         passType: 13
-      - keywords: DECALS_4RT PROBE_VOLUMES_OFF _DISABLE_SSR_TRANSPARENT _NORMALMAP
-          _NORMALMAP_TANGENT_SPACE
-        passType: 13
       - keywords: DECALS_4RT PROBE_VOLUMES_OFF _DISABLE_SSR_TRANSPARENT _NORMALMAP_TANGENT_SPACE
         passType: 13
       - keywords: INSTANCING_ON _DISABLE_SSR_TRANSPARENT _NORMALMAP_TANGENT_SPACE
         passType: 13
       - keywords: _DISABLE_SSR_TRANSPARENT _ENABLE_FOG_ON_TRANSPARENT _MATERIAL_FEATURE_SPECULAR_COLOR
           _NORMALMAP_TANGENT_SPACE _SURFACE_TYPE_TRANSPARENT
-        passType: 13
-      - keywords: _DISABLE_SSR_TRANSPARENT _NORMALMAP
         passType: 13
       - keywords: _DISABLE_SSR_TRANSPARENT _NORMALMAP_TANGENT_SPACE
         passType: 13
@@ -489,8 +243,6 @@ ShaderVariantCollection:
       - keywords: INSTANCING_ON _ENABLE_FOG_ON_TRANSPARENT _SURFACE_TYPE_TRANSPARENT
         passType: 8
       - keywords: _ENABLE_FOG_ON_TRANSPARENT _SURFACE_TYPE_TRANSPARENT
-        passType: 8
-      - keywords: _ENABLE_FOG_ON_TRANSPARENT _SURFACE_TYPE_TRANSPARENT
         passType: 13
   - first: {fileID: 4800000, guid: eb607f5e8fc16e140b732f33d26c8c31, type: 3}
     second:
@@ -533,18 +285,6 @@ ShaderVariantCollection:
   - first: {fileID: 4800000, guid: fe393ace9b354375a9cb14cdbbc28be4, type: 3}
     second:
       variants:
-      - keywords: OUTLINE_ON
-        passType: 0
-      - keywords: OUTLINE_ON UNDERLAY_ON
-        passType: 0
-  - first: {fileID: 4800000, guid: 50b406436c6214c49aaaa6011b71dde8, type: 3}
-    second:
-      variants:
-      - keywords: 
-        passType: 0
-  - first: {fileID: 4800000, guid: 5caf62d8bd7c44596ace77ef9eb8ea31, type: 3}
-    second:
-      variants:
       - keywords: 
         passType: 0
   - first: {fileID: 4800000, guid: 263f12c7593cf8841b5ccdbb717e3389, type: 3}
@@ -566,19 +306,12 @@ ShaderVariantCollection:
         passType: 8
       - keywords: INSTANCING_ON _TERRAIN_INSTANCED_PERPIXEL_NORMAL
         passType: 8
-      - keywords: _TERRAIN_INSTANCED_PERPIXEL_NORMAL
-        passType: 8
   - first: {fileID: 4800000, guid: 68e6db2ebdc24f95958faec2be5558d6, type: 3}
     second:
       variants:
       - keywords: 
         passType: 0
       - keywords: UNDERLAY_ON
-        passType: 0
-  - first: {fileID: 4800000, guid: c8d12adcee749c344b8117cf7c7eb912, type: 3}
-    second:
-      variants:
-      - keywords: 
         passType: 0
   - first: {fileID: 4800000, guid: c8e7914f24bbabe4ba7583c8ca942806, type: 3}
     second:
@@ -591,40 +324,17 @@ ShaderVariantCollection:
       variants:
       - keywords: 
         passType: 8
-      - keywords: INSTANCING_ON
-        passType: 8
       - keywords: INSTANCING_ON _DISABLE_SSR_TRANSPARENT
-        passType: 8
-      - keywords: INSTANCING_ON _DISABLE_SSR_TRANSPARENT _DOUBLESIDED_ON
-        passType: 8
-      - keywords: INSTANCING_ON _DOUBLESIDED_ON
         passType: 8
       - keywords: _DISABLE_SSR_TRANSPARENT
         passType: 8
-      - keywords: _DISABLE_SSR_TRANSPARENT _DOUBLESIDED_ON
-        passType: 8
-      - keywords: _DOUBLESIDED_ON
-        passType: 8
-      - keywords: 
-        passType: 13
       - keywords: DECALS_4RT INSTANCING_ON LIGHT_LAYERS PROBE_VOLUMES_OFF _DISABLE_SSR_TRANSPARENT
         passType: 13
       - keywords: DECALS_4RT LIGHT_LAYERS PROBE_VOLUMES_OFF _DISABLE_SSR_TRANSPARENT
         passType: 13
-      - keywords: DECALS_4RT LIGHT_LAYERS PROBE_VOLUMES_OFF _DISABLE_SSR_TRANSPARENT
-          _DOUBLESIDED_ON
-        passType: 13
       - keywords: DECALS_4RT PROBE_VOLUMES_OFF _DISABLE_SSR_TRANSPARENT
-        passType: 13
-      - keywords: DECALS_4RT PROBE_VOLUMES_OFF _DISABLE_SSR_TRANSPARENT _DOUBLESIDED_ON
-        passType: 13
-      - keywords: INSTANCING_ON
         passType: 13
       - keywords: INSTANCING_ON _DISABLE_SSR_TRANSPARENT
         passType: 13
       - keywords: _DISABLE_SSR_TRANSPARENT
-        passType: 13
-      - keywords: _DISABLE_SSR_TRANSPARENT _DOUBLESIDED_ON
-        passType: 13
-      - keywords: _DOUBLESIDED_ON
         passType: 13
