@@ -1,0 +1,3 @@
+WASD - Bewegung
+Linke Maustaste - Aktion (Nacht: Angriff, Tag: Anbauen/Ernten)
+F - Tag überspringen
