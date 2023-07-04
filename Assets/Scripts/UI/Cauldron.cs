@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public struct ItemAmounts
@@ -18,6 +19,8 @@ public struct ItemAmounts
 
     public Item[] Reward;
     public int RewardAmount;
+
+    public bool IsWinCondition;
 }
 
 public class Cauldron : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
@@ -84,15 +87,24 @@ public class Cauldron : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         if (GetValidState())
         {
-            currentState += 1;
-            for (int i = 0; i < ItemAmounts[currentState].Reward.Length; i++)
+            if (ItemAmounts[currentState].IsWinCondition)
             {
-                for (int j = 0; j < ItemAmounts[currentState].RewardAmount; j++)
-                {
-                    GameManager.CreateItem(ItemAmounts[currentState].Reward[i], transform.position);
-                }
+                Debug.Log("You WIN!");
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
-            UpdateIngredients();
+            else
+            {
+                currentState += 1;
+                for (int i = 0; i < ItemAmounts[currentState].Reward.Length; i++)
+                {
+                    for (int j = 0; j < ItemAmounts[currentState].RewardAmount; j++)
+                    {
+                        GameManager.CreateItem(ItemAmounts[currentState].Reward[i], transform.position);
+                    }
+                }
+                UpdateIngredients();
+
+            }
         }
     }
 }
