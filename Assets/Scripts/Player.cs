@@ -244,7 +244,6 @@ public class Player : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            Debug.Log("Ded");
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
