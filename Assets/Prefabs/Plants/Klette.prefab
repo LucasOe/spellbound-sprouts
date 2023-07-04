@@ -60,6 +60,7 @@ MonoBehaviour:
   - {fileID: 4537460659217972635}
   - {fileID: 4902241830171959991}
   - {fileID: 7677131652189187884}
+  HarvestClip: {fileID: 8300000, guid: f382802417682df419c47c42c4ffa91b, type: 3}
   drops: 2
   EffectDuration: 5
   EffectStrength: 2

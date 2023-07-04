@@ -33,7 +33,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "SelectHarvest",
+                    "name": "SelectTool",
                     "type": "Button",
                     "id": "c1a273b8-ebed-4f9c-9eb9-634cbe963729",
                     "expectedControlType": "Button",
@@ -324,7 +324,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "SelectHarvest",
+                    "action": "SelectTool",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
