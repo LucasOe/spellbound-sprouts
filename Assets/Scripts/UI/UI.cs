@@ -168,7 +168,7 @@ public class UI : MonoBehaviour
 
     public void ToggleToolType(Inventory.Tool activeTool)
     {
-        ClickSound(1f, 0.6f);
+        ClickSound(1f, 0.7f);
         switch (activeTool)
         {
             case Inventory.Tool.Harvest:
