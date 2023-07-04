@@ -17,6 +17,8 @@ public class DayCycleController : MonoBehaviour
     public float NightFogDensity = 25;
 
     public AudioSource AudioSource;
+    //Necessary, because an AudioSource can only loop one file
+    public AudioSource AudioAmbientSource;
     public AudioClip[] DayMusic;
     public AudioClip[] NightMusic;
     public AudioClip NightAmbienceClip;
@@ -57,6 +59,7 @@ public class DayCycleController : MonoBehaviour
         sun.shadows = LightShadows.None;
         PlayAmbience(NightAmbienceClip);
         StopMusic();
+        PlayNightMusic();
         Fireflies.SetActive(true);
 
         SetFog(true);
@@ -81,9 +84,9 @@ public class DayCycleController : MonoBehaviour
 
     public void PlayAmbience(AudioClip audioclip)
     {
-        AudioSource.clip = audioclip;
-        AudioSource.loop = true;
-        AudioSource.Play();
+        AudioAmbientSource.clip = audioclip;
+        AudioAmbientSource.loop = true;
+        AudioAmbientSource.Play();
     }
 
     public void PlayMusic()
@@ -93,6 +96,15 @@ public class DayCycleController : MonoBehaviour
         AudioSource.loop = true;
         AudioSource.Play();
     }
+
+    public void PlayNightMusic()
+    {
+        int i = UnityEngine.Random.Range(0, NightMusic.Length);
+        AudioSource.clip = NightMusic[i];
+        AudioSource.loop = true;
+        AudioSource.Play();
+    }
+
 
     public void StopMusic()
     {
