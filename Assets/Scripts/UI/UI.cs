@@ -5,6 +5,8 @@ using UnityEngine.UIElements;
 public class UI : MonoBehaviour
 {
     public GameManager GameManager;
+    public AudioSource Clicker;
+    public AudioClip Click;
 
     Button _herb;
     Button _plant;
@@ -16,11 +18,11 @@ public class UI : MonoBehaviour
     VisualElement _wheel;
     VisualElement _nightWand;
     VisualElement _currentHealth;
-    GroupBox _itemTypeWrap;
     List<VisualElement> _plantSeeds = new List<VisualElement>();
     List<VisualElement> _herbSeeds = new List<VisualElement>();
     List<VisualElement> _seeds;
     List<Label> _seedAmountLabels = new List<Label>();
+
 
     //Plant Types
     VisualElement _1P;
@@ -71,7 +73,6 @@ public class UI : MonoBehaviour
         _nightWand = root.Q<VisualElement>("NightWand");
         _currentHealth = root.Q<VisualElement>("CurrentHealth");
         _day = root.Q<VisualElement>("Day");
-        _itemTypeWrap = root.Q<GroupBox>("ItemTypeWrap");
         Label _1PAmount = root.Q<Label>("1PAmount");
         Label _2PAmount = root.Q<Label>("2PAmount");
         Label _3PAmount = root.Q<Label>("3PAmount");
@@ -107,7 +108,7 @@ public class UI : MonoBehaviour
 
         _buttonSkip.clicked += () =>
         {
-            GameManager.TimeManger.SkipDay();
+            GameManager.Player.OnSkipDay();
         };
     }
 
@@ -149,20 +150,25 @@ public class UI : MonoBehaviour
 
     public void SelectActiveSeed(int i, Inventory.Tool activeTool)
     {
-        if (activeTool == Inventory.Tool.Plant)
-            _seeds = _plantSeeds;
-        if (activeTool == Inventory.Tool.Herb)
-            _seeds = _herbSeeds;
-
-        _seeds.ForEach((seed) =>
+        if (!GameManager.IsNight)
         {
-            seed.RemoveFromClassList("active");
-        });
-        _seeds[i].AddToClassList("active");
+            if (activeTool == Inventory.Tool.Plant)
+                _seeds = _plantSeeds;
+            if (activeTool == Inventory.Tool.Herb)
+                _seeds = _herbSeeds;
+
+            _seeds.ForEach((seed) =>
+            {
+                seed.RemoveFromClassList("active");
+                ClickSound(0.3f);
+            });
+            _seeds[i].AddToClassList("active");
+        }
     }
 
     public void ToggleToolType(Inventory.Tool activeTool)
     {
+        ClickSound(1f, 0.6f);
         switch (activeTool)
         {
             case Inventory.Tool.Harvest:
@@ -173,7 +179,6 @@ public class UI : MonoBehaviour
                 _herbs.RemoveFromClassList("open");
                 _wheel.AddToClassList("harvest");
                 _wheel.RemoveFromClassList("herb");
-                _itemTypeWrap.style.left = -54;
                 break;
             case Inventory.Tool.Plant:
                 _harvest.RemoveFromClassList("active");
@@ -184,18 +189,11 @@ public class UI : MonoBehaviour
                 _wheel.RemoveFromClassList("harvest");
                 _wheel.RemoveFromClassList("herb");
                 _wheel.AddToClassList("plant");
-                _itemTypeWrap.style.left = -78;
                 Timer timer = this.CreateTimer(.3f);
                 timer.RunOnFinish((state) =>
                 {
-                    _itemTypeWrap.AddToClassList("instantAnimation");
                     _wheel.AddToClassList("instantAnimation");
                     Timer timer2 = this.CreateTimer(.01f);
-                    _itemTypeWrap.style.left = 0;
-                    timer2.RunOnFinish((state) =>
-                    {
-                        _itemTypeWrap.RemoveFromClassList("instantAnimation");
-                    });
                     timer2.StartTimer();
                     _wheel.RemoveFromClassList("plant");
                     _wheel.RemoveFromClassList("instantAnimation");
@@ -210,10 +208,15 @@ public class UI : MonoBehaviour
                 _herbs.AddToClassList("open");
                 _wheel.RemoveFromClassList("harvest");
                 _wheel.AddToClassList("herb");
-                _itemTypeWrap.style.left = -27;
                 break;
             default:
                 break;
         }
+    }
+
+    public void ClickSound(float vol, float pitch = 1f)
+    {
+        Clicker.pitch = pitch * Random.Range(0.8f, 1.2f);
+        Clicker.PlayOneShot(Click, vol);
     }
 }

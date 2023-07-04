@@ -88,7 +88,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void OnFire(InputValue value)
+    public void OnFire()
     {
         if (!PauseMenu.isPaused)
         {
@@ -153,6 +153,7 @@ public class Player : MonoBehaviour
             }
             else if (tile.Plant && ActiveTool == Inventory.Tool.Harvest)
             {
+                Animator.SetTrigger("harvest");
                 GameManager.DestroyPlant(tile.Plant);
             }
         }
@@ -163,7 +164,7 @@ public class Player : MonoBehaviour
         cauldron.OnClick();
     }
 
-    public void OnSelectHarvest(InputValue value)
+    public void OnSelectHarvest()
     {
         if (!toolCooldownTimer && !interactCooldownTimer)
         {
@@ -189,31 +190,27 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void OnSelectItem1(InputValue value)
+    public void OnSelectItem1()
     {
         Inventory.SetSeed(0);
-        ui.SelectActiveSeed(0, Inventory.ActiveTool);
     }
 
-    public void OnSelectItem2(InputValue value)
+    public void OnSelectItem2()
     {
         Inventory.SetSeed(1);
-        ui.SelectActiveSeed(1, Inventory.ActiveTool);
     }
 
-    public void OnSelectItem3(InputValue value)
+    public void OnSelectItem3()
     {
         Inventory.SetSeed(2);
-        ui.SelectActiveSeed(2, Inventory.ActiveTool);
     }
 
-    public void OnSelectItem4(InputValue value)
+    public void OnSelectItem4()
     {
         Inventory.SetSeed(3);
-        ui.SelectActiveSeed(3, Inventory.ActiveTool);
     }
 
-    public void OnSkipDay(InputValue value)
+    public void OnSkipDay()
     {
         if (!GameManager.IsNight && !interactCooldownTimer)
         {
