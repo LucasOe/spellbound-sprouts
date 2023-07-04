@@ -85,6 +85,7 @@ public class Cauldron : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         if (GetValidState())
         {
             currentState += 1;
+            GameManager.Player.InventoryDrops.AddItem(ItemAmounts[currentState].Reward, ItemAmounts[currentState].RewardAmount);
             UpdateIngredients();
         }
     }
