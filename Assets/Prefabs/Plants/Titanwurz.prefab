@@ -411,6 +411,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Titanwurz_1
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 17b612fab28133548b01b4d0eaa06667,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 3af2442906d0086428b4c9f74298e592, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -521,6 +526,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 71ce3788cfe31a847be68d08d5e9da02,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 3125243e843819b45b17a787b615f084, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
