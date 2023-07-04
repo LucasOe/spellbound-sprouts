@@ -170,7 +170,7 @@ public class UI : MonoBehaviour
 
     public void ToggleToolType(Inventory.Tool activeTool)
     {
-        ClickSound(1f);
+        ClickSound(1f, 0.6f);
         switch (activeTool)
         {
             case Inventory.Tool.Harvest:
@@ -225,9 +225,9 @@ public class UI : MonoBehaviour
         }
     }
 
-    public void ClickSound(float vol)
+    public void ClickSound(float vol, float pitch = 1f)
     {
-        Clicker.pitch = Random.Range(0.8f, 1.2f);
+        Clicker.pitch = pitch * Random.Range(0.8f, 1.2f);
         Clicker.PlayOneShot(Click, vol);
     }
 }
