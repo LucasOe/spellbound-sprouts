@@ -60,8 +60,7 @@ MonoBehaviour:
   - {fileID: 7454624511821433396}
   - {fileID: 851866877202775832}
   drops: 2
-  EffectDuration: 1
-  EffectCooldown: 1
+  EffectDuration: 10
   EffectDamage: 1
   AttackRange: 2
   AttackSpeed: 0.2

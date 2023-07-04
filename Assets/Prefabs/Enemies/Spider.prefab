@@ -73,7 +73,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 1
-  m_Speed: 3.5
+  m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -217,7 +217,7 @@ MonoBehaviour:
   Healthbar: {fileID: 9172773670176694367}
   MaxHealth: 10
   AttackRange: 1.5
-  AttackDamage: 5
+  AttackDamage: 10
   ItemDrops:
   - {fileID: 2888568842252360093, guid: 0e683959fd42245439c6bd5641f7baf0, type: 3}
   - {fileID: 219116242785831106, guid: 7c5b76a29c354fe4a9dbab7cb0c1586f, type: 3}
