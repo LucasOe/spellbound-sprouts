@@ -88,17 +88,23 @@ public class Cauldron : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         if (GetValidState())
         {
             if (ItemAmounts[currentState].IsWinCondition)
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-
-            currentState += 1;
-            for (int i = 0; i < ItemAmounts[currentState].Reward.Length; i++)
             {
-                for (int j = 0; j < ItemAmounts[currentState].RewardAmount; j++)
-                {
-                    GameManager.CreateItem(ItemAmounts[currentState].Reward[i], transform.position);
-                }
+                Debug.Log("You WIN!");
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
-            UpdateIngredients();
+            else
+            {
+                currentState += 1;
+                for (int i = 0; i < ItemAmounts[currentState].Reward.Length; i++)
+                {
+                    for (int j = 0; j < ItemAmounts[currentState].RewardAmount; j++)
+                    {
+                        GameManager.CreateItem(ItemAmounts[currentState].Reward[i], transform.position);
+                    }
+                }
+                UpdateIngredients();
+
+            }
         }
     }
 }
