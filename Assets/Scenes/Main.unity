@@ -35302,11 +35302,12 @@ MonoBehaviour:
   volumeProfile: {fileID: 1206530552}
   DayFogDensity: 100
   NightFogDensity: 25
-  AudioSource: {fileID: 1900177021}
+  AudioSource: {fileID: 516000138}
   AudioAmbientSource: {fileID: 287239905}
   DayMusic:
   - {fileID: 8300000, guid: c28af5c09ece12942a86f4bf1bb44e13, type: 3}
   - {fileID: 8300000, guid: 4aa6011b62dbe214fa0e95f4588a4402, type: 3}
+  - {fileID: 8300000, guid: 57fe4faab8711e7428500f584cfa5a5a, type: 3}
   NightMusic:
   - {fileID: 8300000, guid: 0f1b7a242cd1ae04d902070c76266229, type: 3}
   - {fileID: 8300000, guid: 069d05031f516744c88a88ce3eee3f31, type: 3}
@@ -35869,7 +35870,7 @@ PrefabInstance:
     - target: {fileID: 3943774334872337552, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
         type: 3}
       propertyPath: m_Volume
-      value: 0.452
+      value: 0.088
       objectReference: {fileID: 0}
     - target: {fileID: 3943774334872337552, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
         type: 3}
@@ -79061,12 +79062,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 31a62c6c0055cf84a803987701acd68f,
     type: 3}
   m_PrefabInstance: {fileID: 1900107535}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &1900177021 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 3943774334872337552, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
-    type: 3}
-  m_PrefabInstance: {fileID: 1041968237}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1900262144
 PrefabInstance:
