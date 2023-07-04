@@ -25,6 +25,7 @@ public class Player : MonoBehaviour
 
     private Timer attackCooldownTimer;
     private Timer toolCooldownTimer;
+    private Timer interactCooldownTimer;
 
     private Vector3 velocity = new();
     private Vector2 mousePosition;
@@ -37,6 +38,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         GameManager.CreatedPlant += OnCreatePlant;
+        GameManager.DayStart += OnDayStart;
     }
 
     private void Update()
@@ -138,9 +140,21 @@ public class Player : MonoBehaviour
 
     private void ClickedTile(Tile tile)
     {
-        if (distanceToCursor <= Range && !GameManager.IsNight)
+        if (distanceToCursor <= Range && !GameManager.IsNight && !interactCooldownTimer)
         {
-            HandleTileInteraction(tile);
+            Inventory.Tool ActiveTool = Inventory.ActiveTool;
+
+            if (!tile.Plant && ActiveTool != Inventory.Tool.Harvest && InventoryDrops.GetAmount(Inventory.GetPlant().ItemDrop.ItemData) > 0)
+            {
+                Plant tileContent = GameManager.CreatePlant(Inventory.GetPlant(), tile.transform.position, Quaternion.identity, tile);
+                tile.Plant = tileContent;
+                InventoryDrops.RemoveItem(Inventory.GetPlant().ItemDrop.ItemData, 1);
+                ui.RefreshAmounts();
+            }
+            else if (tile.Plant && ActiveTool == Inventory.Tool.Harvest)
+            {
+                GameManager.DestroyPlant(tile.Plant);
+            }
         }
     }
 
@@ -149,26 +163,9 @@ public class Player : MonoBehaviour
         cauldron.OnClick();
     }
 
-    private void HandleTileInteraction(Tile tile)
-    {
-        Inventory.Tool ActiveTool = Inventory.ActiveTool;
-
-        if (!tile.Plant && ActiveTool != Inventory.Tool.Harvest && InventoryDrops.GetAmount(Inventory.GetPlant().ItemDrop.ItemData) > 0)
-        {
-            Plant tileContent = GameManager.CreatePlant(Inventory.GetPlant(), tile.transform.position, Quaternion.identity, tile);
-            tile.Plant = tileContent;
-            InventoryDrops.RemoveItem(Inventory.GetPlant().ItemDrop.ItemData, 1);
-            ui.RefreshAmounts();
-        }
-        else if (tile.Plant && ActiveTool == Inventory.Tool.Harvest)
-        {
-            GameManager.DestroyPlant(tile.Plant);
-        }
-    }
-
     public void OnSelectHarvest(InputValue value)
     {
-        if (!toolCooldownTimer)
+        if (!toolCooldownTimer && !interactCooldownTimer)
         {
             if (Inventory.ActiveTool == Inventory.Tool.Harvest)
             {
@@ -218,9 +215,8 @@ public class Player : MonoBehaviour
 
     public void OnSkipDay(InputValue value)
     {
-        if (!GameManager.IsNight)
+        if (!GameManager.IsNight && !interactCooldownTimer)
         {
-            Debug.Log("Skipped to Night");
             GameManager.TimeManger.SkipDay();
         }
     }
@@ -228,6 +224,12 @@ public class Player : MonoBehaviour
     private void OnCreatePlant(Plant plant)
     {
         ui.RefreshAmounts();
+    }
+
+    private void OnDayStart(int day)
+    {
+        interactCooldownTimer = this.CreateTimer(1.0f);
+        interactCooldownTimer.StartTimer();
     }
 
     public void PlaySound(AudioClip audioclip, float vol)
