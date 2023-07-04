@@ -24091,13 +24091,19 @@ MonoBehaviour:
   ItemAmounts:
   - Item1: {fileID: 11400000, guid: b979f49b7a1d44a4f84684a389c3df4a, type: 2}
     Amount1: 2
-    Item2: {fileID: 11400000, guid: 26ae8d07e05efe84687d7db21ccc744d, type: 2}
+    Item2: {fileID: 11400000, guid: c9590f6fe34e0ca49ba42359719c1ba2, type: 2}
     Amount2: 1
     Item3: {fileID: 11400000, guid: c2f2ee3599f20954285743bb5edb3f3b, type: 2}
     Amount3: 1
-  - Item1: {fileID: 11400000, guid: b979f49b7a1d44a4f84684a389c3df4a, type: 2}
-    Amount1: 2
+  - Item1: {fileID: 11400000, guid: caf933e844bbaba4fb4a3c43af0cdc64, type: 2}
+    Amount1: 1
     Item2: {fileID: 11400000, guid: 26ae8d07e05efe84687d7db21ccc744d, type: 2}
+    Amount2: 3
+    Item3: {fileID: 11400000, guid: c2f2ee3599f20954285743bb5edb3f3b, type: 2}
+    Amount3: 1
+  - Item1: {fileID: 11400000, guid: b979f49b7a1d44a4f84684a389c3df4a, type: 2}
+    Amount1: 4
+    Item2: {fileID: 11400000, guid: 8a5538f2d2f24874d8d45180a522e416, type: 2}
     Amount2: 1
     Item3: {fileID: 11400000, guid: c2f2ee3599f20954285743bb5edb3f3b, type: 2}
     Amount3: 1

@@ -10,7 +10,7 @@ public class Plant : MonoBehaviour
     public GameObject ActiveStage;
     public float MaxHealth = 10.0f;
     private float currentHealth;
-    public ItemData ItemDrop;
+    public Item ItemDrop;
     public int ItemDropAmount;
 
     public int age = 0;
@@ -34,8 +34,13 @@ public class Plant : MonoBehaviour
 
         if (mature)
         {
-            gameManager.Player.InventoryDrops.AddItem(ItemDrop, ItemDropAmount);
+            for(int i = 0; i < ItemDropAmount; i++) {
+                gameManager.CreateItem(ItemDrop, transform.position);
+            }
         }
+        else {
+            gameManager.CreateItem(ItemDrop, transform.position);
+        }        
     }
 
     protected virtual void Start()
