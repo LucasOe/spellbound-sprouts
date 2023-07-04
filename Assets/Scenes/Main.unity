@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 6252.6763, g: 12674.424, b: 17410.44, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -24586,7 +24586,7 @@ MonoBehaviour:
     Item3: {fileID: 11400000, guid: c2f2ee3599f20954285743bb5edb3f3b, type: 2}
     Amount3: 1
     Reward: {fileID: 0}
-    RewardAmount: 0
+    RewardAmount: 2
   - Item1: {fileID: 11400000, guid: caf933e844bbaba4fb4a3c43af0cdc64, type: 2}
     Amount1: 1
     Item2: {fileID: 11400000, guid: 26ae8d07e05efe84687d7db21ccc744d, type: 2}
@@ -24594,7 +24594,7 @@ MonoBehaviour:
     Item3: {fileID: 11400000, guid: c2f2ee3599f20954285743bb5edb3f3b, type: 2}
     Amount3: 1
     Reward: {fileID: 0}
-    RewardAmount: 0
+    RewardAmount: 2
   - Item1: {fileID: 11400000, guid: b979f49b7a1d44a4f84684a389c3df4a, type: 2}
     Amount1: 4
     Item2: {fileID: 11400000, guid: 8a5538f2d2f24874d8d45180a522e416, type: 2}
@@ -24602,7 +24602,7 @@ MonoBehaviour:
     Item3: {fileID: 11400000, guid: c2f2ee3599f20954285743bb5edb3f3b, type: 2}
     Amount3: 1
     Reward: {fileID: 0}
-    RewardAmount: 0
+    RewardAmount: 2
 --- !u!114 &697100117
 MonoBehaviour:
   m_ObjectHideFlags: 0
