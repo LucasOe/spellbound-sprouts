@@ -9,6 +9,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Glass1
     second: {fileID: 2100000, guid: 4150b159edca20a41a2b630dd400ff56, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Potion
+    second: {fileID: 2100000, guid: 944ac4370a4194c449323258174c8190, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

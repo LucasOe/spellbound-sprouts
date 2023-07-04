@@ -50,7 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Healthbar: {fileID: 7593561792831349173}
   ActiveStage: {fileID: 4537460659217972635}
-  MaxHealth: 70
+  MaxHealth: 30
   ItemDrop: {fileID: 7215416449985081486, guid: 69d635b70a6e6014aa3a240b50073880,
     type: 3}
   ItemDropAmount: 2
