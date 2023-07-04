@@ -122,7 +122,7 @@
 
 .itemAmount {
     position: absolute;
-    font-size: 8px;
+    font-size: 7px;
     padding-top: 2px;
     margin-top: 0;
     color: rgb(0, 0, 0);
@@ -138,6 +138,7 @@
     width: 43px;
     -unity-text-outline-width: 1px;
     -unity-text-outline-color: rgb(0, 0, 0);
+    -unity-background-image-tint-color: rgb(0, 0, 0);
 }
 
 .shortcutSeed {
@@ -229,9 +230,6 @@
 
 .seed.active {
     background-image: url('project://database/Assets/UI/img/ItemBoxActive.png?fileID=2800000&guid=1cf2e34c48b0f0a41afe90115d9904c5&type=3#ItemBoxActive');
-    scale: 1.2;
-    margin-right: 10px;
-    margin-left: 10px;
 }
 
 .seed.active button {
