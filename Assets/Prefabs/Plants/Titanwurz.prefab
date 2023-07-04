@@ -61,9 +61,9 @@ MonoBehaviour:
   - {fileID: 7454624511821433396}
   - {fileID: 851866877202775832}
   drops: 2
-  EffectDuration: 10
-  EffectDamage: 1
-  AttackRange: 5
+  EffectDuration: 1
+  EffectDamage: 2
+  AttackRange: 10
   AttackSpeed: 0.1
 --- !u!1001 &509779463968031305
 PrefabInstance:
