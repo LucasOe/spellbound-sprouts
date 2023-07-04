@@ -30,7 +30,7 @@ public class Tile : MonoBehaviour
     void OnMouseExit()
     {
         highlight.SetActive(false);
-        if (Plant)
+        if (Plant && gameManager.IsNight);
             Plant.SetHealthbarActive(false);
     }
 }
