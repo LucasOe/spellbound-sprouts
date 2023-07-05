@@ -62,7 +62,7 @@ Material:
     - _EnableBlendModePreserveSpecularLighting: 0
     - _EnableFogOnTransparent: 1
     - _OpaqueCullMode: 1
-    - _Outline_Width: 0.01
+    - _Outline_Width: 0.02
     - _RenderQueueType: 2
     - _SrcBlend: 1
     - _StencilRef: 0
