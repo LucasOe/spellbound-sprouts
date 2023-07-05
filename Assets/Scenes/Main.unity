@@ -25265,7 +25265,7 @@ MonoBehaviour:
   - Item1: {fileID: 7215416449985081486, guid: e0918bca266c5bc428fa0cfc96678756, type: 3}
     Amount1: 2
     Item2: {fileID: 7215416449985081486, guid: 52023a84015166b47a1c9f3f32a9c869, type: 3}
-    Amount2: 1
+    Amount2: 3
     Item3: {fileID: 219116242785831106, guid: 7c5b76a29c354fe4a9dbab7cb0c1586f, type: 3}
     Amount3: 1
     Reward:
@@ -38308,18 +38308,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2674156083949954083, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
         type: 3}
-      propertyPath: dithering
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674156083949954083, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
-        type: 3}
       propertyPath: m_Version
       value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674156083949954083, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
-        type: 3}
-      propertyPath: customRenderingSettings
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3315166315397763816, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
         type: 3}
@@ -38431,16 +38421,6 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 87b98b13df83cbc4ab180963e3d3aa1e, type: 3}
-    - target: {fileID: 5053911396999072649, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
-        type: 3}
-      propertyPath: orthographic
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5053911396999072649, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
-        type: 3}
-      propertyPath: field of view
-      value: 47.448402
-      objectReference: {fileID: 0}
     - target: {fileID: 5107954962007069713, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
         type: 3}
       propertyPath: m_Name
@@ -75336,7 +75316,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0810c21a40567474890e54af15ebc0b6, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.486
+  m_Volume: 0.376
   m_Pitch: 1
   Loop: 1
   Mute: 0

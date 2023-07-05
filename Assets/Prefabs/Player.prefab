@@ -68,7 +68,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 58.707016
+  field of view: 47.448402
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -115,7 +115,7 @@ MonoBehaviour:
   volumeAnchorOverride: {fileID: 0}
   antialiasing: 3
   SMAAQuality: 2
-  dithering: 0
+  dithering: 1
   stopNaNs: 0
   taaSharpenStrength: 0.5
   TAAQuality: 1
@@ -624,15 +624,10 @@ MonoBehaviour:
   currentHealth: 100
   distanceToCursor: 0
   AudioSource: {fileID: 3943774334872337552}
-  AudioSourceMusic: {fileID: 0}
-  AudioSourceItems: {fileID: 0}
   AttackAudioClip: {fileID: 8300000, guid: 4d03c8ec4519bc14fa000dda2e1aa770, type: 3}
+  DamageAudioClip: {fileID: 0}
   AttackParticle: {fileID: 6603059628715771232, guid: 87262bed19f9ab6469f7349e376e2284,
     type: 3}
-  DayMusic:
-  - {fileID: 8300000, guid: c28af5c09ece12942a86f4bf1bb44e13, type: 3}
-  - {fileID: 8300000, guid: 4aa6011b62dbe214fa0e95f4588a4402, type: 3}
-  NightMusic: []
 --- !u!114 &1374843163789428268
 MonoBehaviour:
   m_ObjectHideFlags: 0

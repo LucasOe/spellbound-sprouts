@@ -14205,7 +14205,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Quit
+  m_text: Spiel Verlassen
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 99f950d39ad68d14db452b8b257310c9, type: 2}
   m_sharedMaterial: {fileID: -7643349144967183034, guid: 99f950d39ad68d14db452b8b257310c9,
@@ -14234,13 +14234,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
-  m_fontSizeBase: 35
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
   m_fontSizeMax: 0
-  m_fontStyle: 1
+  m_fontStyle: 33
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -19235,7 +19235,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Play
+  m_text: Spiel Starten
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 99f950d39ad68d14db452b8b257310c9, type: 2}
   m_sharedMaterial: {fileID: -7643349144967183034, guid: 99f950d39ad68d14db452b8b257310c9,
@@ -19264,8 +19264,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
-  m_fontSizeBase: 35
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
