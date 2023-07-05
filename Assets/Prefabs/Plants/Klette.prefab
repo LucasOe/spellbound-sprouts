@@ -64,7 +64,7 @@ MonoBehaviour:
   drops: 2
   EffectDuration: 5
   EffectStrength: 2
-  AttackRange: 2
+  AttackRange: 15
   AttackSpeed: 0.2
   ParticleEffect: {fileID: 578242772327201639, guid: de5647c739e08644c830bc005a919e1a,
     type: 3}
