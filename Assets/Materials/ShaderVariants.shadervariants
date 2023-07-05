@@ -8,13 +8,6 @@ ShaderVariantCollection:
   m_PrefabAsset: {fileID: 0}
   m_Name: ShaderVariants
   m_Shaders:
-  - first: {fileID: 75, guid: 0000000000000000f000000000000000, type: 0}
-    second:
-      variants:
-      - keywords: 
-        passType: 0
-      - keywords: 
-        passType: 12
   - first: {fileID: 10770, guid: 0000000000000000f000000000000000, type: 0}
     second:
       variants:
@@ -32,6 +25,11 @@ ShaderVariantCollection:
         passType: 4
       - keywords: 
         passType: 8
+  - first: {fileID: 106, guid: 0000000000000000f000000000000000, type: 0}
+    second:
+      variants:
+      - keywords: _SUNDISK_SIMPLE
+        passType: 0
   - first: {fileID: 203, guid: 0000000000000000f000000000000000, type: 0}
     second:
       variants:
@@ -126,6 +124,12 @@ ShaderVariantCollection:
         passType: 8
       - keywords: _DISABLE_SSR_TRANSPARENT _NORMALMAP_TANGENT_SPACE
         passType: 12
+      - keywords: AREA_SHADOW_MEDIUM DEBUG_DISPLAY DECALS_4RT PROBE_VOLUMES_OFF SCREEN_SPACE_SHADOWS_OFF
+          SHADOW_HIGH USE_CLUSTERED_LIGHTLIST _DISABLE_SSR_TRANSPARENT _NORMALMAP_TANGENT_SPACE
+        passType: 13
+      - keywords: DEBUG_DISPLAY DECALS_4RT LIGHT_LAYERS PROBE_VOLUMES_OFF _DISABLE_SSR_TRANSPARENT
+          _NORMALMAP_TANGENT_SPACE
+        passType: 13
       - keywords: DECALS_4RT INSTANCING_ON LIGHT_LAYERS PROBE_VOLUMES_OFF _DISABLE_SSR_TRANSPARENT
           _NORMALMAP_TANGENT_SPACE
         passType: 13
@@ -201,11 +205,6 @@ ShaderVariantCollection:
       variants:
       - keywords: AREA_SHADOW_MEDIUM SHADOW_HIGH USE_FPTL_LIGHTLIST
         passType: 0
-  - first: {fileID: 4800000, guid: 48db2705cf2856d4e893eb30a6892d1b, type: 3}
-    second:
-      variants:
-      - keywords: 
-        passType: 0
   - first: {fileID: 4800000, guid: 123f13d52852ef547b2962de4bd9eaad, type: 3}
     second:
       variants:
@@ -241,11 +240,7 @@ ShaderVariantCollection:
       variants:
       - keywords: APPLY_AFTER_POST
         passType: 0
-      - keywords: APPLY_AFTER_POST ENABLE_ALPHA
-        passType: 0
-      - keywords: APPLY_AFTER_POST ENABLE_ALPHA GRAIN
-        passType: 0
-      - keywords: APPLY_AFTER_POST GRAIN
+      - keywords: APPLY_AFTER_POST DITHER
         passType: 0
   - first: {fileID: 4800000, guid: 9655f4aa89a469c49aceaceabf9bc77b, type: 3}
     second:
@@ -270,14 +265,8 @@ ShaderVariantCollection:
         passType: 8
       - keywords: INSTANCING_ON _TERRAIN_INSTANCED_PERPIXEL_NORMAL
         passType: 8
-      - keywords: _TERRAIN_8_LAYERS _TERRAIN_INSTANCED_PERPIXEL_NORMAL
-        passType: 8
-      - keywords: _TERRAIN_INSTANCED_PERPIXEL_NORMAL
-        passType: 8
       - keywords: DECALS_4RT INSTANCING_ON LIGHT_LAYERS PROBE_VOLUMES_OFF _TERRAIN_8_LAYERS
           _TERRAIN_INSTANCED_PERPIXEL_NORMAL
-        passType: 13
-      - keywords: DECALS_4RT LIGHT_LAYERS PROBE_VOLUMES_OFF _TERRAIN_8_LAYERS _TERRAIN_INSTANCED_PERPIXEL_NORMAL
         passType: 13
       - keywords: INSTANCING_ON _NORMALMAP _TERRAIN_INSTANCED_PERPIXEL_NORMAL
         passType: 13
@@ -318,20 +307,14 @@ ShaderVariantCollection:
         passType: 8
       - keywords: INSTANCING_ON _TERRAIN_INSTANCED_PERPIXEL_NORMAL
         passType: 8
-      - keywords: _TERRAIN_INSTANCED_PERPIXEL_NORMAL
-        passType: 8
   - first: {fileID: 4800000, guid: 68e6db2ebdc24f95958faec2be5558d6, type: 3}
     second:
       variants:
-      - keywords: 
-        passType: 0
       - keywords: UNDERLAY_ON
         passType: 0
   - first: {fileID: 4800000, guid: c8e7914f24bbabe4ba7583c8ca942806, type: 3}
     second:
       variants:
-      - keywords: 
-        passType: 13
       - keywords: INSTANCING_ON
         passType: 13
   - first: {fileID: -6465566751694194690, guid: e459d6dc92431bf45ab2d9c3b14e4c11,
