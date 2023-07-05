@@ -15,6 +15,7 @@ public class UI : MonoBehaviour
     VisualElement _day;
     VisualElement _defensivePlants;
     VisualElement _herbs;
+    Label _harvestLabel;
     VisualElement _wheel;
     VisualElement _nightWand;
     VisualElement _currentHealth;
@@ -72,6 +73,9 @@ public class UI : MonoBehaviour
         _defensivePlants = root.Q<VisualElement>("DefensivePlants");
         _herbs = root.Q<VisualElement>("Herbs");
         _wheel = root.Q<VisualElement>("Wheel");
+        _harvestLabel = root.Q<Label>("Harvest");
+        Debug.Log(_harvestLabel);
+        Debug.Log(_herbs);
         _nightWand = root.Q<VisualElement>("NightWand");
         _currentHealth = root.Q<VisualElement>("CurrentHealth");
         _day = root.Q<VisualElement>("Day");
@@ -187,6 +191,7 @@ public class UI : MonoBehaviour
                 _plant.RemoveFromClassList("active");
                 _defensivePlants.RemoveFromClassList("open");
                 _herbs.RemoveFromClassList("open");
+                _harvestLabel.AddToClassList("open");
                 _wheel.AddToClassList("harvest");
                 _wheel.RemoveFromClassList("herb");
                 break;
@@ -196,6 +201,7 @@ public class UI : MonoBehaviour
                 _plant.AddToClassList("active");
                 _defensivePlants.AddToClassList("open");
                 _herbs.RemoveFromClassList("open");
+                _harvestLabel.RemoveFromClassList("open");
                 _wheel.RemoveFromClassList("harvest");
                 _wheel.RemoveFromClassList("herb");
                 _wheel.AddToClassList("plant");
@@ -216,6 +222,7 @@ public class UI : MonoBehaviour
                 _plant.RemoveFromClassList("active");
                 _defensivePlants.RemoveFromClassList("open");
                 _herbs.AddToClassList("open");
+                _harvestLabel.RemoveFromClassList("open");
                 _wheel.RemoveFromClassList("harvest");
                 _wheel.AddToClassList("herb");
                 break;
