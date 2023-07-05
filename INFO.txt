@@ -1,3 +1,6 @@
 WASD - Bewegung
 Linke Maustaste - Aktion (Nacht: Angriff, Tag: Anbauen/Ernten)
 F - Tag überspringen
+
+Spielfortschritt:
+Der Spieler muss seine Kräuter mit den Verteidigungspflanzen und seinem Zauberstab beschützen. Er kann mit dem Kessel interagieren, indem er die gernteten Kräuter und aufgesammelte Gegnerdrops in den den Kessel wirft. Bis Tag X, müssen wiederholt neue Kräuter gerntet werden, bis die letzte Potion gebraut werden kann, um das Spiel zu gewinnen.
