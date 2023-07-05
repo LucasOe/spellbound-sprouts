@@ -101,7 +101,11 @@ public class DayCycleController : MonoBehaviour
     public void PlayNightMusic(int day)
     {
         int i = UnityEngine.Random.Range(0, NightMusic.Length);
-        AudioSource.clip = day != 2 ? NightMusic[i] : BossMusic;
+        AudioSource.clip = NightMusic[i];
+        if (day == 5 || day == 10 || day == 20 || day == 30 || day == 35)
+        {
+            AudioSource.clip = BossMusic;
+        }
         AudioSource.loop = true;
         AudioSource.Play();
     }
