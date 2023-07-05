@@ -124,12 +124,10 @@ public class Cauldron : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             }
             else
             {
-                foreach (var itemAmount in ItemAmounts)
+                foreach (var reward in ItemAmounts[currentState].Rewards)
                 {
-                    foreach (var reward in itemAmount.Rewards)
-                    {
+                    for (int i = 0; i < reward.Amount; i++)
                         GameManager.CreateItem(reward.Item, transform.position);
-                    }
                 }
                 currentState += 1;
                 CauldronAudio.PlayOneShot(Bubbles, .7f);
