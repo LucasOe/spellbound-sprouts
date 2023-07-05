@@ -7,6 +7,7 @@ public class Klette : DefensivePlant
 {
     public float EffectDuration = 5.0f;
     public float EffectStrength = 1.0f;
+    public float AttackDamage = 2.0f;
     public float AttackRange = 2.0f;
     public float AttackSpeed = 0.2f;
     public GameObject ParticleEffect;
@@ -25,6 +26,7 @@ public class Klette : DefensivePlant
                 if (this.GetDistance(enemy) <= AttackRange && enemy.StatusEffects.Count <= 0)
                 {
                     Slowed slowed = new(enemy, EffectDuration, EffectStrength, ParticleEffect);
+                    enemy.Damage(AttackDamage);
                 }
             });
         });

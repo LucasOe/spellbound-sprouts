@@ -62,7 +62,7 @@ MonoBehaviour:
   HarvestClip: {fileID: 8300000, guid: f382802417682df419c47c42c4ffa91b, type: 3}
   drops: 2
   AttackDamage: 4
-  AttackRange: 1
+  AttackRange: 1.5
   AttackSpeed: 0.2
 --- !u!1001 &360598252966106486
 PrefabInstance:
