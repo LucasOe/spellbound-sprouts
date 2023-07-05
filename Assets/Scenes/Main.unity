@@ -36668,6 +36668,7 @@ MonoBehaviour:
   NightMusic:
   - {fileID: 8300000, guid: 0f1b7a242cd1ae04d902070c76266229, type: 3}
   - {fileID: 8300000, guid: 069d05031f516744c88a88ce3eee3f31, type: 3}
+  BossMusic: {fileID: 8300000, guid: ce91654589a93fb449fadaf2122ade94, type: 3}
   NightAmbienceClip: {fileID: 8300000, guid: 0e33279497261984cbea151d1bf9037b, type: 3}
   DayAmbienceClip: {fileID: 8300000, guid: 87b98b13df83cbc4ab180963e3d3aa1e, type: 3}
 --- !u!4 &1029318141
@@ -48508,6 +48509,11 @@ PrefabInstance:
       objectReference: {fileID: 1328368777}
     - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
         type: 3}
+      propertyPath: EnemySpawnInfo.Array.size
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
+        type: 3}
       propertyPath: EnemySpawnInfo.Array.data[1].spiderCount
       value: 0
       objectReference: {fileID: 0}
@@ -48529,6 +48535,81 @@ PrefabInstance:
     - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
         type: 3}
       propertyPath: EnemySpawnInfo.Array.data[5].spiderCount
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
+        type: 3}
+      propertyPath: EnemySpawnInfo.Array.data[6].spiderCount
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
+        type: 3}
+      propertyPath: EnemySpawnInfo.Array.data[7].spiderCount
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
+        type: 3}
+      propertyPath: EnemySpawnInfo.Array.data[8].spiderCount
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
+        type: 3}
+      propertyPath: EnemySpawnInfo.Array.data[9].spiderCount
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
+        type: 3}
+      propertyPath: EnemySpawnInfo.Array.data[10].spiderCount
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
+        type: 3}
+      propertyPath: EnemySpawnInfo.Array.data[11].spiderCount
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
+        type: 3}
+      propertyPath: EnemySpawnInfo.Array.data[12].spiderCount
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
+        type: 3}
+      propertyPath: EnemySpawnInfo.Array.data[13].spiderCount
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
+        type: 3}
+      propertyPath: EnemySpawnInfo.Array.data[14].spiderCount
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
+        type: 3}
+      propertyPath: EnemySpawnInfo.Array.data[15].spiderCount
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
+        type: 3}
+      propertyPath: EnemySpawnInfo.Array.data[16].spiderCount
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
+        type: 3}
+      propertyPath: EnemySpawnInfo.Array.data[17].spiderCount
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
+        type: 3}
+      propertyPath: EnemySpawnInfo.Array.data[18].spiderCount
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
+        type: 3}
+      propertyPath: EnemySpawnInfo.Array.data[19].spiderCount
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
+        type: 3}
+      propertyPath: EnemySpawnInfo.Array.data[20].spiderCount
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
@@ -48559,6 +48640,81 @@ PrefabInstance:
     - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
         type: 3}
       propertyPath: EnemySpawnInfo.Array.data[5].skeletonCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
+        type: 3}
+      propertyPath: EnemySpawnInfo.Array.data[6].skeletonCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
+        type: 3}
+      propertyPath: EnemySpawnInfo.Array.data[7].skeletonCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
+        type: 3}
+      propertyPath: EnemySpawnInfo.Array.data[8].skeletonCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
+        type: 3}
+      propertyPath: EnemySpawnInfo.Array.data[9].skeletonCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
+        type: 3}
+      propertyPath: EnemySpawnInfo.Array.data[10].skeletonCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
+        type: 3}
+      propertyPath: EnemySpawnInfo.Array.data[11].skeletonCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
+        type: 3}
+      propertyPath: EnemySpawnInfo.Array.data[12].skeletonCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
+        type: 3}
+      propertyPath: EnemySpawnInfo.Array.data[13].skeletonCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
+        type: 3}
+      propertyPath: EnemySpawnInfo.Array.data[14].skeletonCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
+        type: 3}
+      propertyPath: EnemySpawnInfo.Array.data[15].skeletonCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
+        type: 3}
+      propertyPath: EnemySpawnInfo.Array.data[16].skeletonCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
+        type: 3}
+      propertyPath: EnemySpawnInfo.Array.data[17].skeletonCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
+        type: 3}
+      propertyPath: EnemySpawnInfo.Array.data[18].skeletonCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
+        type: 3}
+      propertyPath: EnemySpawnInfo.Array.data[19].skeletonCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
+        type: 3}
+      propertyPath: EnemySpawnInfo.Array.data[20].skeletonCount
       value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
