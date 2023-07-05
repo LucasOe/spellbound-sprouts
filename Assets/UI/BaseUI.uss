@@ -165,8 +165,12 @@
 }
 
 .abilities {
-    translate: 0 273px;
+    translate: 0 170px;
     transition-duration: 0.4s;
+}
+
+.harvestToolLabel {
+    translate: 0 180px;
 }
 
 .open {
