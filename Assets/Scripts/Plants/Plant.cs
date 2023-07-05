@@ -56,7 +56,6 @@ public class Plant : MonoBehaviour
         currentHealth = MaxHealth;
         Healthbar.UpdateHealthBar(currentHealth, MaxHealth);
         Healthbar.UpdateGrowth(0);
-        SetHealthbarActive(false);
 
         // Set first growth stage active
         Stages.ForEach(stage => stage.SetActive(false));
@@ -106,8 +105,6 @@ public class Plant : MonoBehaviour
                 mature = true;
         }
 
-        SetHealthbarActive(false);
-
         var growthPercent = (float)age / (Stages.Length - 1);
         Healthbar.UpdateGrowth(growthPercent);
         Healthbar.UpdateHealthBar(currentHealth, MaxHealth);
@@ -115,11 +112,6 @@ public class Plant : MonoBehaviour
 
     protected virtual void OnNightStart(int day)
     {
-        SetHealthbarActive(true);
-    }
 
-    public void SetHealthbarActive(bool value)
-    {
-        Healthbar.gameObject.SetActive(value);
     }
 }

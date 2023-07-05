@@ -243,6 +243,8 @@ public class Player : MonoBehaviour
 
     private void OnDayStart(int day)
     {
+        this.currentHealth += MaxHealth * .5f;
+        this.currentHealth = (currentHealth > MaxHealth) ? MaxHealth : currentHealth;
         interactCooldownTimer = this.CreateTimer(1.0f);
         interactCooldownTimer.StartTimer();
     }

@@ -22,8 +22,6 @@ public class Tile : MonoBehaviour
             if (gameManager.Player.distanceToCursor <= gameManager.Player.Range && !gameManager.IsNight)
             {
                 highlight.SetActive(true);
-                if (Plant)
-                    Plant.SetHealthbarActive(true);
             }
         }
     }
@@ -31,9 +29,5 @@ public class Tile : MonoBehaviour
     void OnMouseExit()
     {
         highlight.SetActive(false);
-        if (Plant && !gameManager.IsNight) 
-        {
-            Plant.SetHealthbarActive(false);
-        }
     }
 }
