@@ -52,7 +52,7 @@ MonoBehaviour:
   ActiveStage: {fileID: 702688959366883367}
   MaxHealth: 120
   ItemDrop: {fileID: 219116242785831106, guid: e469e407eb25f7844bb6f06c0cda0f59, type: 3}
-  ItemDropAmount: 2
+  ItemDropAmount: 3
   age: 0
   mature: 0
   Stages:
@@ -62,7 +62,7 @@ MonoBehaviour:
   HarvestClip: {fileID: 8300000, guid: f382802417682df419c47c42c4ffa91b, type: 3}
   PlantDamageClip: {fileID: 8300000, guid: 06623c0405cea974db8eab1babe73c4c, type: 3}
   drops: 2
-  AttackDamage: 4
+  AttackDamage: 2
   AttackRange: 1.5
   AttackSpeed: 0.2
 --- !u!1001 &360598252966106486
