@@ -33,6 +33,7 @@ public class Player : MonoBehaviour
 
     public AudioSource AudioSource;
     public AudioClip AttackAudioClip;
+    public AudioClip DamageAudioClip;
     public AttackParticle AttackParticle;
 
     private void Start()
@@ -255,6 +256,7 @@ public class Player : MonoBehaviour
     public void Damage(float amount)
     {
         currentHealth -= amount;
+        PlaySound(DamageAudioClip, 0.3f);
 
         if (currentHealth <= 0)
         {

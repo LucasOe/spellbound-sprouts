@@ -66,9 +66,9 @@ public class Cauldron : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public void Update()
     {
         objectRotate++;
-        instance1.transform.rotation = Quaternion.Euler(0, objectRotate, 10);
-        instance2.transform.rotation = Quaternion.Euler(0, objectRotate, 10);
-        instance3.transform.rotation = Quaternion.Euler(0, objectRotate, 10);
+        instance1.transform.rotation = Quaternion.Euler(objectRotate / 10, 30 + objectRotate, 30);
+        instance2.transform.rotation = Quaternion.Euler(objectRotate / 10, -30 + objectRotate, 30);
+        instance3.transform.rotation = Quaternion.Euler(objectRotate / 10, 90 + objectRotate, 30);
     }
 
     public void Start()
@@ -115,7 +115,7 @@ public class Cauldron : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             if (ItemAmounts[currentState].IsWinCondition)
             {
                 Debug.Log("You WIN!");
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                SceneManager.LoadScene(3);
             }
             else
             {
