@@ -24,14 +24,12 @@ public class TimeManger : MonoBehaviour
 
     public void StartNight(int day)
     {
-        Debug.Log("Starting Night: " + day);
         GameManager.NightStart.Invoke(day);
         GameManager.IsNight = true;
     }
 
     public void StartDay(int day)
     {
-        Debug.Log("Starting Day: " + day);
         GameManager.DayStart.Invoke(day);
         GameManager.IsNight = false;
 
