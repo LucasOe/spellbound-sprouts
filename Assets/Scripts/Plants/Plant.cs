@@ -18,6 +18,7 @@ public class Plant : MonoBehaviour
     public GameObject[] Stages;
 
     public AudioClip HarvestClip;
+    public AudioClip PlantDamageClip;
 
     public int drops = 2;
 
@@ -74,6 +75,10 @@ public class Plant : MonoBehaviour
     {
         currentHealth -= amount;
         Healthbar.UpdateHealthBar(currentHealth, MaxHealth);
+
+        //Sound
+        gameManager.Player.PlaySound(PlantDamageClip, .1f);
+
 
         if (currentHealth <= 0)
         {

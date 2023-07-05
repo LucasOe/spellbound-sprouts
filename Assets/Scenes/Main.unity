@@ -37416,6 +37416,11 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 2676c120c701f0d4c90d3483a42ce89b, type: 3}
     - target: {fileID: 3315166315397763816, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
         type: 3}
+      propertyPath: DamageAudioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: ef5a17c41bc4ecd40bbe7b3ea89fd477, type: 3}
+    - target: {fileID: 3315166315397763816, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
+        type: 3}
       propertyPath: AudioSourceItems
       value: 
       objectReference: {fileID: 516000138}
