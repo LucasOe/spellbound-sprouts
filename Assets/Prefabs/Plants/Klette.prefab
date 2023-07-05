@@ -66,7 +66,7 @@ MonoBehaviour:
   PlantDamageClip: {fileID: 8300000, guid: 06623c0405cea974db8eab1babe73c4c, type: 3}
   drops: 2
   EffectDuration: 5
-  EffectStrength: 2
+  EffectStrength: 3
   AttackDamage: 2
   AttackRange: 15
   AttackSpeed: 2

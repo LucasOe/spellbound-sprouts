@@ -215,7 +215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Healthbar: {fileID: 9172773670176694367}
-  MaxHealth: 10
+  MaxHealth: 12
   AttackRange: 1.5
   AttackDamage: 10
   ItemDrops:
