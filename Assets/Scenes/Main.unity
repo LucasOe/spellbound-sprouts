@@ -19246,7 +19246,7 @@ PrefabInstance:
     - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
         type: 3}
       propertyPath: EnemySpawnInfo.Array.data[2].spiderCount
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
         type: 3}
@@ -19271,7 +19271,7 @@ PrefabInstance:
     - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
         type: 3}
       propertyPath: EnemySpawnInfo.Array.data[2].skeletonCount
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
         type: 3}
@@ -49942,6 +49942,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
         type: 3}
+      propertyPath: EnemySpawnInfo.Array.data[0].spiderCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
+        type: 3}
       propertyPath: EnemySpawnInfo.Array.data[1].spiderCount
       value: 0
       objectReference: {fileID: 0}
@@ -50043,7 +50048,7 @@ PrefabInstance:
     - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
         type: 3}
       propertyPath: EnemySpawnInfo.Array.data[0].skeletonCount
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
         type: 3}
@@ -92138,6 +92143,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
         type: 3}
+      propertyPath: EnemySpawnInfo.Array.data[1].spiderCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
+        type: 3}
       propertyPath: EnemySpawnInfo.Array.data[4].spiderCount
       value: 1
       objectReference: {fileID: 0}
@@ -92159,7 +92169,7 @@ PrefabInstance:
     - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
         type: 3}
       propertyPath: EnemySpawnInfo.Array.data[1].skeletonCount
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6014585723015511485, guid: 679fccc69100dca48b1840611f7b02ca,
         type: 3}
