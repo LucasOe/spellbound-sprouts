@@ -122,10 +122,10 @@
 
 .itemAmount {
     position: absolute;
-    font-size: 7px;
-    padding-top: 2px;
+    font-size: 9px;
+    padding-top: 1px;
     margin-top: 0;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     padding-left: 0;
     -unity-font-definition: url('project://database/Assets/Fonts/JosefinSlab-VariableFont_wght%20SDF2.asset?fileID=11400000&guid=a864f39d2b2a0ce48a90e41372aa076c&type=2#JosefinSlab-VariableFont_wght SDF2');
     -unity-font-style: bold;
@@ -137,20 +137,22 @@
     -unity-background-scale-mode: scale-to-fit;
     width: 43px;
     -unity-text-outline-width: 1px;
-    -unity-text-outline-color: rgb(0, 0, 0);
+    -unity-text-outline-color: rgb(255, 255, 255);
     -unity-background-image-tint-color: rgb(0, 0, 0);
 }
 
 .shortcutSeed {
     position: absolute;
     -unity-font-style: bold;
-    font-size: 8px;
+    font-size: 9px;
     color: rgb(255, 255, 255);
     -unity-background-scale-mode: scale-to-fit;
     -unity-font-definition: url('project://database/Assets/Fonts/JosefinSlab-VariableFont_wght%20SDF2.asset?fileID=11400000&guid=a864f39d2b2a0ce48a90e41372aa076c&type=2#JosefinSlab-VariableFont_wght SDF2');
     top: -3px;
     align-self: center;
     left: 21px;
+    -unity-text-outline-color: rgb(255, 255, 255);
+    -unity-text-outline-width: 0.5px;
 }
 
 .seed {
