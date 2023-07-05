@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public struct EnemySpawnInfo
@@ -51,6 +51,7 @@ public class Spawner : MonoBehaviour
         else
         {
             Debug.Log("No spawn info for this day");
+            SceneManager.LoadScene(2);
         }
     }
 
