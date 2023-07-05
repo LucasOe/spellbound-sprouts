@@ -109,7 +109,6 @@ public class DayCycleController : MonoBehaviour
 
     public void StopAmbience()
     {
-        Debug.Log("asd");
         AudioAmbientSource.Stop();
     }
 }

@@ -115,7 +115,6 @@ public class Player : MonoBehaviour
 
                 if (clickedObject.TryGetComponent(out EasterEgg easterEgg))
                 {
-                    Debug.Log("EasterEgg");
                     ClickedEasterEgg(easterEgg);
                 }
             }
