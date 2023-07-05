@@ -24669,6 +24669,8 @@ MonoBehaviour:
   ingredientAmount2: {fileID: 1178466040}
   ingredientAmount3: {fileID: 1934958977}
   objectRotate: 0
+  CauldronAudio: {fileID: 1679536011}
+  Bubbles: {fileID: 8300000, guid: 93025e4d77ee5624dae92d4e5e13781a, type: 3}
   _rotation: {x: 0, y: 0, z: 0}
   ItemAmounts:
   - Item1: {fileID: 7215416449985081486, guid: e0918bca266c5bc428fa0cfc96678756, type: 3}

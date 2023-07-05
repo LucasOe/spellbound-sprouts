@@ -20,7 +20,6 @@ public struct ItemAmounts
     public Item[] Reward;
     public int RewardAmount;
 
-
     public bool IsWinCondition;
 }
 
@@ -44,6 +43,9 @@ public class Cauldron : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public TextMeshProUGUI ingredientAmount2;
     public TextMeshProUGUI ingredientAmount3;
     public int objectRotate;
+
+    public AudioSource CauldronAudio;
+    public AudioClip Bubbles;
 
     [SerializeField] private Vector3 _rotation;
 
@@ -117,7 +119,6 @@ public class Cauldron : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             }
             else
             {
-                currentState += 1;
                 for (int i = 0; i < ItemAmounts[currentState].Reward.Length; i++)
                 {
                     for (int j = 0; j < ItemAmounts[currentState].RewardAmount; j++)
@@ -125,11 +126,11 @@ public class Cauldron : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
                         GameManager.CreateItem(ItemAmounts[currentState].Reward[i], transform.position);
                     }
                 }
-                if (GetValidState())
-                {
-                    UpdateIngredients();
-                    GetPotionModels();
-                }
+                Debug.Log("payy");
+                CauldronAudio.PlayOneShot(Bubbles, .7f);
+                UpdateIngredients();
+                GetPotionModels();
+                currentState += 1;
 
             }
         }
