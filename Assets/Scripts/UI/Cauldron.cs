@@ -126,11 +126,10 @@ public class Cauldron : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
                         GameManager.CreateItem(ItemAmounts[currentState].Reward[i], transform.position);
                     }
                 }
-                Debug.Log("payy");
+                currentState += 1;
                 CauldronAudio.PlayOneShot(Bubbles, .7f);
                 UpdateIngredients();
                 GetPotionModels();
-                currentState += 1;
 
             }
         }
@@ -138,6 +137,7 @@ public class Cauldron : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public void GetPotionModels()
     {
+        Debug.Log(ItemAmounts[currentState].Item2);
         Destroy(instance1);
         Destroy(instance2);
         Destroy(instance3);

@@ -79,17 +79,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 092812e1f7d576a4d9d9a6b1c78ba623,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 092812e1f7d576a4d9d9a6b1c78ba623,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 092812e1f7d576a4d9d9a6b1c78ba623,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 092812e1f7d576a4d9d9a6b1c78ba623,
         type: 3}
@@ -156,6 +156,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 092812e1f7d576a4d9d9a6b1c78ba623,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: bb94c63b1d0109a44be770946f4b3f28, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -189,17 +194,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 7268f9de22d9cc6489b9696e01db03c8,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7268f9de22d9cc6489b9696e01db03c8,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7268f9de22d9cc6489b9696e01db03c8,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7268f9de22d9cc6489b9696e01db03c8,
         type: 3}
@@ -261,6 +266,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Eisenhut_1
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 7268f9de22d9cc6489b9696e01db03c8,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 917e69b5b68a60348937df876c9aea7d, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -294,17 +304,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: a16e54b5e6eb1024e8c00ca91521efe6,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a16e54b5e6eb1024e8c00ca91521efe6,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a16e54b5e6eb1024e8c00ca91521efe6,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a16e54b5e6eb1024e8c00ca91521efe6,
         type: 3}
@@ -371,6 +381,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: a16e54b5e6eb1024e8c00ca91521efe6,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 48899fd0f4a94c045b387f39544c373b, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -404,7 +419,7 @@ PrefabInstance:
     - target: {fileID: 5590189805588446448, guid: 24c5a8f9870a091458ed0f55268f7d51,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5590189805588446450, guid: 24c5a8f9870a091458ed0f55268f7d51,
         type: 3}
@@ -494,7 +509,7 @@ PrefabInstance:
     - target: {fileID: 5590189805588446450, guid: 24c5a8f9870a091458ed0f55268f7d51,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 2.25
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 5590189805588446450, guid: 24c5a8f9870a091458ed0f55268f7d51,
         type: 3}
