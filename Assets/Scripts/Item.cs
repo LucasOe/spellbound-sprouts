@@ -8,6 +8,7 @@ public class Item : MonoBehaviour
     protected GameManager gameManager;
     public ItemData ItemData;
     public float Dropchance = 1.0f;
+    public GameObject UIGameobject;
     public NavMeshAgent Agent;
     public AudioClip CollectEffect;
 

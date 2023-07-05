@@ -70,6 +70,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemData: {fileID: 11400000, guid: c2f2ee3599f20954285743bb5edb3f3b, type: 2}
   Dropchance: 1
+  UIGameobject: {fileID: 919132149155446097, guid: 555ff5b1c093d3f49a9e10b3383b764c,
+    type: 3}
   Agent: {fileID: 135012687949987866}
   CollectEffect: {fileID: 8300000, guid: 5ba08d738620c724ea8e3043afad7e0e, type: 3}
 --- !u!1001 &7046387192979217661
