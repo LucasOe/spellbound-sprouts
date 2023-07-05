@@ -74,8 +74,6 @@ public class UI : MonoBehaviour
         _herbs = root.Q<VisualElement>("Herbs");
         _wheel = root.Q<VisualElement>("Wheel");
         _harvestLabel = root.Q<Label>("Harvest");
-        Debug.Log(_harvestLabel);
-        Debug.Log(_herbs);
         _nightWand = root.Q<VisualElement>("NightWand");
         _currentHealth = root.Q<VisualElement>("CurrentHealth");
         _day = root.Q<VisualElement>("Day");

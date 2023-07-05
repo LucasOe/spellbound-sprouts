@@ -21,14 +21,23 @@ public class Klette : DefensivePlant
         attackTimer = this.CreateTimer(AttackSpeed, -1);
         attackTimer.RunOnFinish((state) =>
         {
-            gameManager.Enemies.ToList().ForEach((enemy) =>
+            List<Enemy> enemiesNotSlowed = new(gameManager.Enemies);
+            enemiesNotSlowed.ToList().ForEach((enemy) =>
             {
-                if (this.GetDistance(enemy) <= AttackRange && enemy.StatusEffects.Count <= 0)
+                if (enemy.StatusEffects.OfType<Slowed>().Any())
                 {
-                    Slowed slowed = new(enemy, EffectDuration, EffectStrength, ParticleEffect);
-                    enemy.Damage(AttackDamage);
+                    enemiesNotSlowed.Remove(enemy);
                 }
             });
+
+            if (enemiesNotSlowed != null)
+            {
+                Enemy nearestEnemy = this.GetClosestObject(enemiesNotSlowed);
+                if (nearestEnemy && this.GetDistance(nearestEnemy) <= AttackRange)
+                {
+                    Slowed slowed = new(nearestEnemy, EffectDuration, EffectStrength, ParticleEffect);
+                }
+            }
         });
     }
 
