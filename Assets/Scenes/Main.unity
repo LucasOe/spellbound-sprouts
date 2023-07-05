@@ -25311,7 +25311,7 @@ MonoBehaviour:
     Reward:
     - {fileID: 7215416449985081486, guid: 69d635b70a6e6014aa3a240b50073880, type: 3}
     - {fileID: 7215416449985081486, guid: 56706beafb4622647b8081835c59a1f5, type: 3}
-    RewardAmount: 3
+    RewardAmount: 2
     IsWinCondition: 0
   - Item1: {fileID: 7215416449985081486, guid: 56706beafb4622647b8081835c59a1f5, type: 3}
     Amount1: 5
@@ -25322,7 +25322,7 @@ MonoBehaviour:
     Reward:
     - {fileID: 2888568842252360093, guid: 8a3e407eff65a90458a213e5accb4154, type: 3}
     - {fileID: 2888568842252360093, guid: b381ded72213ff54a85a0e967248d171, type: 3}
-    RewardAmount: 2
+    RewardAmount: 3
     IsWinCondition: 0
   - Item1: {fileID: 2888568842252360093, guid: b381ded72213ff54a85a0e967248d171, type: 3}
     Amount1: 5
