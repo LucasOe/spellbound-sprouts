@@ -69,7 +69,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemData: {fileID: 11400000, guid: c2f2ee3599f20954285743bb5edb3f3b, type: 2}
-  Dropchance: 0.1
+  Dropchance: 0.2
   UIGameobject: {fileID: 919132149155446097, guid: 555ff5b1c093d3f49a9e10b3383b764c,
     type: 3}
   Agent: {fileID: 135012687949987866}
