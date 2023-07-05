@@ -64,7 +64,7 @@ MonoBehaviour:
   PlantDamageClip: {fileID: 8300000, guid: 06623c0405cea974db8eab1babe73c4c, type: 3}
   drops: 2
   AttackDamage: 10
-  AttackRange: 3
+  AttackRange: 4
   AttackSpeed: 0.5
 --- !u!1001 &3527507111625910636
 PrefabInstance:
