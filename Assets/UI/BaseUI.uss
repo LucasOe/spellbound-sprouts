@@ -122,8 +122,8 @@
 
 .itemAmount {
     position: absolute;
-    font-size: 9px;
-    padding-top: 1px;
+    font-size: 8px;
+    padding-top: 2px;
     margin-top: 0;
     color: rgb(255, 255, 255);
     padding-left: 0;
@@ -165,8 +165,12 @@
 }
 
 .abilities {
-    translate: 0 273px;
+    translate: 0 170px;
     transition-duration: 0.4s;
+}
+
+.harvestToolLabel {
+    translate: 0 180px;
 }
 
 .open {

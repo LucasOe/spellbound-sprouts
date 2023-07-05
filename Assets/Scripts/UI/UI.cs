@@ -15,6 +15,7 @@ public class UI : MonoBehaviour
     VisualElement _day;
     VisualElement _defensivePlants;
     VisualElement _herbs;
+    Label _harvestLabel;
     VisualElement _wheel;
     VisualElement _nightWand;
     VisualElement _currentHealth;
@@ -22,6 +23,8 @@ public class UI : MonoBehaviour
     List<VisualElement> _herbSeeds = new List<VisualElement>();
     List<VisualElement> _seeds;
     List<Label> _seedAmountLabels = new List<Label>();
+    Label _plantSeedName;
+    Label _herbSeedName;
 
 
     //Plant Types
@@ -70,6 +73,9 @@ public class UI : MonoBehaviour
         _defensivePlants = root.Q<VisualElement>("DefensivePlants");
         _herbs = root.Q<VisualElement>("Herbs");
         _wheel = root.Q<VisualElement>("Wheel");
+        _harvestLabel = root.Q<Label>("Harvest");
+        Debug.Log(_harvestLabel);
+        Debug.Log(_herbs);
         _nightWand = root.Q<VisualElement>("NightWand");
         _currentHealth = root.Q<VisualElement>("CurrentHealth");
         _day = root.Q<VisualElement>("Day");
@@ -81,6 +87,8 @@ public class UI : MonoBehaviour
         Label _2HAmount = root.Q<Label>("2HAmount");
         Label _3HAmount = root.Q<Label>("3HAmount");
         Label _4HAmount = root.Q<Label>("4HAmount");
+        _plantSeedName = root.Q<Label>("PlantSeedName");
+        _herbSeedName = root.Q<Label>("HerbSeedName");
         _countdown = root.Q<Label>("Countdown");
         _face = root.Q<VisualElement>("Face");
         _plantSeeds.Add(_1P);
@@ -105,7 +113,7 @@ public class UI : MonoBehaviour
     void Start()
     {
         RefreshAmounts();
-
+        SetItemName(0);
         _buttonSkip.clicked += () =>
         {
             GameManager.Player.OnSkipDay();
@@ -153,9 +161,15 @@ public class UI : MonoBehaviour
         if (!GameManager.IsNight)
         {
             if (activeTool == Inventory.Tool.Plant)
+            {
                 _seeds = _plantSeeds;
+            }
             if (activeTool == Inventory.Tool.Herb)
+            {
                 _seeds = _herbSeeds;
+            }
+
+            SetItemName(i);
 
             _seeds.ForEach((seed) =>
             {
@@ -177,6 +191,7 @@ public class UI : MonoBehaviour
                 _plant.RemoveFromClassList("active");
                 _defensivePlants.RemoveFromClassList("open");
                 _herbs.RemoveFromClassList("open");
+                _harvestLabel.AddToClassList("open");
                 _wheel.AddToClassList("harvest");
                 _wheel.RemoveFromClassList("herb");
                 break;
@@ -186,6 +201,7 @@ public class UI : MonoBehaviour
                 _plant.AddToClassList("active");
                 _defensivePlants.AddToClassList("open");
                 _herbs.RemoveFromClassList("open");
+                _harvestLabel.RemoveFromClassList("open");
                 _wheel.RemoveFromClassList("harvest");
                 _wheel.RemoveFromClassList("herb");
                 _wheel.AddToClassList("plant");
@@ -206,6 +222,7 @@ public class UI : MonoBehaviour
                 _plant.RemoveFromClassList("active");
                 _defensivePlants.RemoveFromClassList("open");
                 _herbs.AddToClassList("open");
+                _harvestLabel.RemoveFromClassList("open");
                 _wheel.RemoveFromClassList("harvest");
                 _wheel.AddToClassList("herb");
                 break;
@@ -218,5 +235,11 @@ public class UI : MonoBehaviour
     {
         Clicker.pitch = pitch * Random.Range(0.8f, 1.2f);
         Clicker.PlayOneShot(Click, vol);
+    }
+
+    public void SetItemName(int i)
+    {
+        _plantSeedName.text = "Abwehr: " + GameManager.Player.InventoryDrops.ItemAmounts[i].ItemData.DisplayName;
+        _herbSeedName.text = "Kraut: " + GameManager.Player.InventoryDrops.ItemAmounts[i + 4].ItemData.DisplayName;
     }
 }
