@@ -6,6 +6,13 @@ using TMPro;
 using UnityEngine.SceneManagement;
 
 [System.Serializable]
+public struct RewardAmounts
+{
+    public Item Item;
+    public int Amount;
+}
+
+[System.Serializable]
 public struct ItemAmounts
 {
     public Item Item1;
@@ -17,8 +24,7 @@ public struct ItemAmounts
     public Item Item3;
     public int Amount3;
 
-    public Item[] Reward;
-    public int RewardAmount;
+    public RewardAmounts[] Rewards;
 
     public bool IsWinCondition;
 }
@@ -118,12 +124,10 @@ public class Cauldron : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             }
             else
             {
-                for (int i = 0; i < ItemAmounts[currentState].Reward.Length; i++)
+                foreach (var reward in ItemAmounts[currentState].Rewards)
                 {
-                    for (int j = 0; j < ItemAmounts[currentState].RewardAmount; j++)
-                    {
-                        GameManager.CreateItem(ItemAmounts[currentState].Reward[i], transform.position);
-                    }
+                    for (int i = 0; i < reward.Amount; i++)
+                        GameManager.CreateItem(reward.Item, transform.position);
                 }
                 currentState += 1;
                 CauldronAudio.PlayOneShot(Bubbles, .7f);
