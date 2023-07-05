@@ -38308,18 +38308,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2674156083949954083, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
         type: 3}
-      propertyPath: dithering
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674156083949954083, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
-        type: 3}
       propertyPath: m_Version
       value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674156083949954083, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
-        type: 3}
-      propertyPath: customRenderingSettings
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3315166315397763816, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
         type: 3}
@@ -38431,16 +38421,6 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 87b98b13df83cbc4ab180963e3d3aa1e, type: 3}
-    - target: {fileID: 5053911396999072649, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
-        type: 3}
-      propertyPath: orthographic
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5053911396999072649, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
-        type: 3}
-      propertyPath: field of view
-      value: 47.448402
-      objectReference: {fileID: 0}
     - target: {fileID: 5107954962007069713, guid: 3e312085b6fd0224c9a8d92b647f3aa2,
         type: 3}
       propertyPath: m_Name
