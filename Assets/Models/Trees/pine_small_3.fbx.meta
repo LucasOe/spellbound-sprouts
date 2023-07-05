@@ -7,6 +7,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Pine
+    second: {fileID: 2100000, guid: eacd0a4c830128a44bcc066cdfbdbe45, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: PineTree.001
     second: {fileID: 2100000, guid: 0cb031debf8573f449a9a9351aaa86f8, type: 2}
   - first:
