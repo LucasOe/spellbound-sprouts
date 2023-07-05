@@ -256,7 +256,7 @@ public class Player : MonoBehaviour
     public void Damage(float amount)
     {
         currentHealth -= amount;
-        PlaySound(DamageAudioClip, 0.3f);
+        PlaySound(DamageAudioClip, 0.2f);
 
         if (currentHealth <= 0)
         {
