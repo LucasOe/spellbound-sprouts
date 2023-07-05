@@ -85,17 +85,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 8ffd1887e539a6b49beb4ad9943f58a7,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8ffd1887e539a6b49beb4ad9943f58a7,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8ffd1887e539a6b49beb4ad9943f58a7,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8ffd1887e539a6b49beb4ad9943f58a7,
         type: 3}
@@ -290,7 +290,7 @@ PrefabInstance:
     - target: {fileID: 5590189805588446450, guid: 24c5a8f9870a091458ed0f55268f7d51,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.75
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 5590189805588446450, guid: 24c5a8f9870a091458ed0f55268f7d51,
         type: 3}
@@ -417,6 +417,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Titanwurz_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 17b612fab28133548b01b4d0eaa06667,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 17b612fab28133548b01b4d0eaa06667,
         type: 3}
