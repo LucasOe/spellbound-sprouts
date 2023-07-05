@@ -58,7 +58,6 @@ public class DayCycleController : MonoBehaviour
         moon.shadows = LightShadows.Soft;
         sun.shadows = LightShadows.None;
         PlayAmbience(NightAmbienceClip);
-        StopMusic();
         PlayNightMusic();
         Fireflies.SetActive(true);
 
@@ -107,8 +106,9 @@ public class DayCycleController : MonoBehaviour
     }
 
 
-    public void StopMusic()
+    public void StopAmbience()
     {
-        AudioSource.Stop();
+        Debug.Log("asd");
+        AudioAmbientSource.Stop();
     }
 }

@@ -129,7 +129,7 @@ public class Player : MonoBehaviour
             // Play Animation and Sound
             Animator.SetTrigger("attack");
             AudioSource.pitch = Random.Range(0.8f, 1.2f);
-            AudioSource.PlayOneShot(AttackAudioClip, .7f);
+            AudioSource.PlayOneShot(AttackAudioClip, .9f);
 
             // Spawn Particle
             AttackParticle particle = Instantiate(AttackParticle, transform.position, Quaternion.identity);

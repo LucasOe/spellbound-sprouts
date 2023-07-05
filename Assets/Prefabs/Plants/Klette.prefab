@@ -61,9 +61,11 @@ MonoBehaviour:
   - {fileID: 4902241830171959991}
   - {fileID: 7677131652189187884}
   HarvestClip: {fileID: 8300000, guid: f382802417682df419c47c42c4ffa91b, type: 3}
+  PlantDamageClip: {fileID: 8300000, guid: 06623c0405cea974db8eab1babe73c4c, type: 3}
   drops: 2
   EffectDuration: 5
   EffectStrength: 2
+  AttackDamage: 2
   AttackRange: 15
   AttackSpeed: 0.2
   ParticleEffect: {fileID: 578242772327201639, guid: de5647c739e08644c830bc005a919e1a,

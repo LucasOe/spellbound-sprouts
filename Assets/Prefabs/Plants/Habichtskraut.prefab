@@ -61,6 +61,7 @@ MonoBehaviour:
   - {fileID: 5407465988555119057}
   - {fileID: 3807092567013711948}
   HarvestClip: {fileID: 8300000, guid: f382802417682df419c47c42c4ffa91b, type: 3}
+  PlantDamageClip: {fileID: 8300000, guid: 06623c0405cea974db8eab1babe73c4c, type: 3}
   drops: 2
 --- !u!1001 &648763038562647166
 PrefabInstance:

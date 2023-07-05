@@ -60,6 +60,7 @@ MonoBehaviour:
   - {fileID: 2000185077138095911}
   - {fileID: 1390352681353089841}
   HarvestClip: {fileID: 8300000, guid: f382802417682df419c47c42c4ffa91b, type: 3}
+  PlantDamageClip: {fileID: 8300000, guid: 06623c0405cea974db8eab1babe73c4c, type: 3}
   drops: 2
   AttackDamage: 4
   AttackRange: 1.5

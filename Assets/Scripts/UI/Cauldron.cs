@@ -66,9 +66,9 @@ public class Cauldron : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public void Update()
     {
         objectRotate++;
-        instance1.transform.rotation = Quaternion.Euler(objectRotate / 10, 30 + objectRotate, 30);
-        instance2.transform.rotation = Quaternion.Euler(objectRotate / 10, -30 + objectRotate, 30);
-        instance3.transform.rotation = Quaternion.Euler(objectRotate / 10, 90 + objectRotate, 30);
+        instance1.transform.rotation = Quaternion.Euler(10, 30 + objectRotate, 30);
+        instance2.transform.rotation = Quaternion.Euler(30, -30 + objectRotate, 30);
+        instance3.transform.rotation = Quaternion.Euler(-30, 90 + objectRotate, 30);
     }
 
     public void Start()
