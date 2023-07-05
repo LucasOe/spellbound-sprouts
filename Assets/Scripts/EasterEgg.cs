@@ -15,6 +15,5 @@ public class EasterEgg : MonoBehaviour
     {
         AudioSource.pitch = Random.Range(0.85f, 1.1f);
         AudioSource.PlayOneShot(EasterEggClip, 0.4f);
-        Debug.Log("Spider");
     }
 }

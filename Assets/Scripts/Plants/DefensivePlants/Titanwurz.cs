@@ -20,13 +20,23 @@ public class Titanwurz : DefensivePlant
         attackTimer = this.CreateTimer(AttackSpeed, -1);
         attackTimer.RunOnFinish((state) =>
         {
-            gameManager.Enemies.ToList().ForEach((enemy) =>
+            List<Enemy> enemiesNotPoisoned = new(gameManager.Enemies);
+            enemiesNotPoisoned.ToList().ForEach((enemy) =>
             {
-                if (this.GetDistance(enemy) <= AttackRange && enemy.StatusEffects.Count <= 0)
+                if (enemy.StatusEffects.OfType<Poisoned>().Any())
                 {
-                    Poisoned poisoned = new(enemy, EffectDuration, EffectDamage, ParticleEffect);
+                    enemiesNotPoisoned.Remove(enemy);
                 }
             });
+
+            if (enemiesNotPoisoned != null)
+            {
+                Enemy nearestEnemy = this.GetClosestObject(enemiesNotPoisoned);
+                if (nearestEnemy && this.GetDistance(nearestEnemy) <= AttackRange)
+                {
+                    Poisoned poisoned = new(nearestEnemy, EffectDuration, EffectDamage, ParticleEffect);
+                }
+            }
         });
     }
 

@@ -114,7 +114,6 @@ public class Cauldron : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         {
             if (ItemAmounts[currentState].IsWinCondition)
             {
-                Debug.Log("You WIN!");
                 SceneManager.LoadScene(3);
             }
             else
@@ -137,7 +136,6 @@ public class Cauldron : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public void GetPotionModels()
     {
-        Debug.Log(ItemAmounts[currentState].Item2);
         Destroy(instance1);
         Destroy(instance2);
         Destroy(instance3);
