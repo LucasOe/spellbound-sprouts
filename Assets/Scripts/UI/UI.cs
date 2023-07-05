@@ -50,13 +50,16 @@ public class UI : MonoBehaviour
     //Clock
     VisualElement _face;
     Label _countdown;
-    private int enemyCount;
+    private float enemyCount;
+    private float enemiesKilled;
 
     private void OnEnable()
     {
         // Subscribe to events
         GameManager.DayStart += OnDayStart;
         GameManager.NightStart += OnNightStart;
+        GameManager.DestroyedEnemy += OnDestroyedEnemy;
+
         VisualElement root = GetComponent<UIDocument>().rootVisualElement;
         _herb = root.Q<Button>("Herb");
         _plant = root.Q<Button>("Plant");
@@ -122,7 +125,7 @@ public class UI : MonoBehaviour
     {
         float _faceRotation = !GameManager.IsNight
             ? Mathf.Lerp(-90.0f, -270.0f, GameManager.TimeManger.timer.GetPercent()) // Day
-            : Mathf.Lerp(90.0f, -90.0f, (float)GameManager.Enemies.Count / enemyCount); // Night
+            : Mathf.Lerp(90.0f, -90.0f, (enemyCount - enemiesKilled) / enemyCount); // Night
 
         _face.transform.rotation = Quaternion.Euler(0, 0, _faceRotation);
         _countdown.text = GameManager.TimeManger.timer ? GameManager.TimeManger.timer.DisplayTime() : "00:00";
@@ -141,8 +144,14 @@ public class UI : MonoBehaviour
     void OnNightStart(int day)
     {
         GameManager.Spawners.ForEach((spawner) => enemyCount += spawner.GetEnemyCount(day));
+        enemiesKilled = 0;
         _nightWand.AddToClassList("visible");
         _day.AddToClassList("hidden");
+    }
+
+    void OnDestroyedEnemy(Enemy enemy)
+    {
+        enemiesKilled += 1;
     }
 
     public void RefreshAmounts()
