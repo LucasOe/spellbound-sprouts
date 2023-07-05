@@ -3,4 +3,11 @@ Linke Maustaste - Aktion (Nacht: Angriff, Tag: Anbauen/Ernten)
 F - Tag überspringen
 
 Spielfortschritt:
-Der Spieler muss seine Kräuter mit den Verteidigungspflanzen und seinem Zauberstab beschützen. Er kann mit dem Kessel interagieren, indem er die gernteten Kräuter und aufgesammelte Gegnerdrops in den den Kessel wirft. Bis Tag X, müssen wiederholt neue Kräuter gerntet werden, bis die letzte Potion gebraut werden kann, um das Spiel zu gewinnen.
+Der Spieler muss seine Kräuter mit den Verteidigungspflanzen und seinem Zauberstab beschützen. 
+Er kann mit dem Kessel interagieren, indem er geerntete Kräuter und aufgesammelte Gegnerdrops in den den Kessel wirft. 
+Ausgewachsene Pflanzen werfen beim Ernten mehr Samen ab, als heranwachsende.
+Durch das Brauen der Zaubertränke kreiert die Hexe Samen für neue Pflanzen und Kräuter.
+Innerhalb von 35 Tagen müssen wiederholt neue Kräuter gerntet werden, bis die letzte Trank gebraut werden kann, um das Spiel zu gewinnen. 
+Schafft der Spieler dies nicht, wird die Hexenfarm von bösen Kreaturen überrollt.
+
+Pflanzen:
