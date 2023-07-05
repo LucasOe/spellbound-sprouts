@@ -60,7 +60,7 @@ MonoBehaviour:
   Stages:
   - {fileID: 4537460659217972635}
   - {fileID: 4902241830171959991}
-  - {fileID: 919132149155446097, guid: 9df1dfb1f8cb02f4793417d56a58bbc8, type: 3}
+  - {fileID: 312651039671874200}
   - {fileID: 7677131652189187884}
   HarvestClip: {fileID: 8300000, guid: f382802417682df419c47c42c4ffa91b, type: 3}
   PlantDamageClip: {fileID: 8300000, guid: 06623c0405cea974db8eab1babe73c4c, type: 3}
@@ -158,7 +158,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9df1dfb1f8cb02f4793417d56a58bbc8,
         type: 3}
       propertyPath: m_Name
-      value: Klette_2
+      value: Klette_2.5
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9df1dfb1f8cb02f4793417d56a58bbc8,
         type: 3}
@@ -170,6 +170,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9df1dfb1f8cb02f4793417d56a58bbc8, type: 3}
+--- !u!1 &312651039671874200 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 9df1dfb1f8cb02f4793417d56a58bbc8,
+    type: 3}
+  m_PrefabInstance: {fileID: 619152208243544009}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1089047413831510050 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9df1dfb1f8cb02f4793417d56a58bbc8,
