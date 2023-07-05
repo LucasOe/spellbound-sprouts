@@ -16,12 +16,12 @@
                     <ui:Label tabindex="-1" text="1" display-tooltip-when-elided="true" class="shortcutSeed" style="width: 8px; height: 10px; top: -4px; left: 20px;" />
                 </ui:VisualElement>
                 <ui:VisualElement name="2P" class="seed" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 24%; height: auto;">
-                    <ui:Button text="&#x9;" display-tooltip-when-elided="true" enable-rich-text="false" class="selectedItem" style="width: 100%; background-image: url(&apos;project://database/Assets/UI/Icons/Venus840x840.png?fileID=2800000&amp;guid=be274b97972fd7147a0f37a11c47d315&amp;type=3#Venus840x840&apos;);" />
+                    <ui:Button text="&#x9;" display-tooltip-when-elided="true" enable-rich-text="false" class="selectedItem" style="width: 100%; background-image: url(&apos;project://database/Assets/UI/Icons/Klette840x840.png?fileID=2800000&amp;guid=493943064af4dc54bb2ae803122c4002&amp;type=3#Klette840x840&apos;);" />
                     <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="2PAmount" class="itemAmount" style="margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0;" />
                     <ui:Label tabindex="-1" text="2" display-tooltip-when-elided="true" class="shortcutSeed" style="left: 19px; width: 11px; height: 10px; top: -4px;" />
                 </ui:VisualElement>
                 <ui:VisualElement name="3P" class="seed" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 24%;">
-                    <ui:Button text="&#x9;" display-tooltip-when-elided="true" class="selectedItem" style="width: 100%; background-image: url(&apos;project://database/Assets/UI/Icons/Klette840x840.png?fileID=2800000&amp;guid=493943064af4dc54bb2ae803122c4002&amp;type=3#Klette840x840&apos;);" />
+                    <ui:Button text="&#x9;" display-tooltip-when-elided="true" class="selectedItem" style="width: 100%; background-image: url(&apos;project://database/Assets/UI/Icons/Venus840x840.png?fileID=2800000&amp;guid=be274b97972fd7147a0f37a11c47d315&amp;type=3#Venus840x840&apos;);" />
                     <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="3PAmount" class="itemAmount" style="margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0;" />
                     <ui:Label tabindex="-1" text="3" display-tooltip-when-elided="true" class="shortcutSeed" style="left: 20px; width: 8px; height: 10px; top: -4px;" />
                 </ui:VisualElement>

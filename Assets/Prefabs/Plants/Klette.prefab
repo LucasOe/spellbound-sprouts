@@ -59,6 +59,7 @@ MonoBehaviour:
   Stages:
   - {fileID: 4537460659217972635}
   - {fileID: 4902241830171959991}
+  - {fileID: 919132149155446097, guid: 9df1dfb1f8cb02f4793417d56a58bbc8, type: 3}
   - {fileID: 7677131652189187884}
   HarvestClip: {fileID: 8300000, guid: f382802417682df419c47c42c4ffa91b, type: 3}
   PlantDamageClip: {fileID: 8300000, guid: 06623c0405cea974db8eab1babe73c4c, type: 3}
