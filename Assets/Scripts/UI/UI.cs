@@ -232,7 +232,7 @@ public class UI : MonoBehaviour
 
     public void SetItemName(int i)
     {
-        _plantSeedName.text = GameManager.Player.InventoryDrops.ItemAmounts[i].ItemData.DisplayName;
-        _herbSeedName.text = GameManager.Player.InventoryDrops.ItemAmounts[i + 4].ItemData.DisplayName;
+        _plantSeedName.text = "Abwehr: " + GameManager.Player.InventoryDrops.ItemAmounts[i].ItemData.DisplayName;
+        _herbSeedName.text = "Kraut: " + GameManager.Player.InventoryDrops.ItemAmounts[i + 4].ItemData.DisplayName;
     }
 }
