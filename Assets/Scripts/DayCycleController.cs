@@ -21,6 +21,7 @@ public class DayCycleController : MonoBehaviour
     public AudioSource AudioAmbientSource;
     public AudioClip[] DayMusic;
     public AudioClip[] NightMusic;
+    public AudioClip BossMusic;
     public AudioClip NightAmbienceClip;
     public AudioClip DayAmbienceClip;
 
@@ -58,7 +59,7 @@ public class DayCycleController : MonoBehaviour
         moon.shadows = LightShadows.Soft;
         sun.shadows = LightShadows.None;
         PlayAmbience(NightAmbienceClip);
-        PlayNightMusic();
+        PlayNightMusic(day);
         Fireflies.SetActive(true);
 
         SetFog(true);
@@ -97,10 +98,10 @@ public class DayCycleController : MonoBehaviour
         AudioSource.Play();
     }
 
-    public void PlayNightMusic()
+    public void PlayNightMusic(int day)
     {
         int i = UnityEngine.Random.Range(0, NightMusic.Length);
-        AudioSource.clip = NightMusic[i];
+        AudioSource.clip = day != 2 ? NightMusic[i] : BossMusic;
         AudioSource.loop = true;
         AudioSource.Play();
     }
