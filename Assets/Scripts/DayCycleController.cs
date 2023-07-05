@@ -84,6 +84,7 @@ public class DayCycleController : MonoBehaviour
 
     public void PlayAmbience(AudioClip audioclip)
     {
+        AudioAmbientSource.Stop();
         AudioAmbientSource.clip = audioclip;
         AudioAmbientSource.loop = true;
         AudioAmbientSource.Play();
