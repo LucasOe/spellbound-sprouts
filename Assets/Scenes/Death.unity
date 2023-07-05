@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 51.21131, g: 872.8146, b: 2528.4348, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -13270,7 +13270,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Quit
+  m_text: Spiel Verlassen
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 99f950d39ad68d14db452b8b257310c9, type: 2}
   m_sharedMaterial: {fileID: -7643349144967183034, guid: 99f950d39ad68d14db452b8b257310c9,
@@ -17838,7 +17838,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Play Again
+  m_text: 'Nochmal Spielen
 
 '
   m_isRightToLeft: 0
