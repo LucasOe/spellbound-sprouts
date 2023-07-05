@@ -225,7 +225,7 @@ MonoBehaviour:
   Agent: {fileID: 7002567171017448374}
   Animator: {fileID: 3412099118969808358}
   AudioSource: {fileID: 5388985159672852223}
-  AttackAudioClip: {fileID: 8300000, guid: bec0d6ddc7b20ee4db3f148fa7d93218, type: 3}
+  AttackAudioClip: {fileID: 8300000, guid: 88e1d5cfde00e8f49a52a04dd9d14828, type: 3}
   currentTarget: {fileID: 0}
 --- !u!114 &5845701973679248946
 MonoBehaviour:
