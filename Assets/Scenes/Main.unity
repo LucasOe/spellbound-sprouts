@@ -25265,7 +25265,7 @@ MonoBehaviour:
   - Item1: {fileID: 7215416449985081486, guid: e0918bca266c5bc428fa0cfc96678756, type: 3}
     Amount1: 2
     Item2: {fileID: 7215416449985081486, guid: 52023a84015166b47a1c9f3f32a9c869, type: 3}
-    Amount2: 1
+    Amount2: 3
     Item3: {fileID: 219116242785831106, guid: 7c5b76a29c354fe4a9dbab7cb0c1586f, type: 3}
     Amount3: 1
     Reward:
