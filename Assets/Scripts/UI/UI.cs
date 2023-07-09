@@ -55,12 +55,27 @@ public class UI : MonoBehaviour
 
     private void OnEnable()
     {
+        InitUi();
+        RefreshAmounts();
+        SetItemName(0);
+        _buttonSkip.clicked += () =>
+        {
+            GameManager.Player.OnSkipDay();
+        };
+    }
+
+    public void InitUi()
+    {
+
         // Subscribe to events
         GameManager.DayStart += OnDayStart;
         GameManager.NightStart += OnNightStart;
         GameManager.DestroyedEnemy += OnDestroyedEnemy;
 
         VisualElement root = GetComponent<UIDocument>().rootVisualElement;
+        _seedAmountLabels.Clear();
+        _plantSeeds.Clear();
+        _herbSeeds.Clear();
         _herb = root.Q<Button>("Herb");
         _plant = root.Q<Button>("Plant");
         _harvest = root.Q<Button>("Harvest");
@@ -156,10 +171,10 @@ public class UI : MonoBehaviour
 
     public void RefreshAmounts()
     {
-        var inventory = GameManager.Player.InventoryDrops;
+        var inventoryDrops = GameManager.Player.InventoryDrops;
         for (int i = 0; i < 8; i++)
         {
-            _seedAmountLabels[i].text = inventory.GetAmount(i).ToString();
+            _seedAmountLabels[i].text = inventoryDrops.GetAmount(i).ToString();
         }
     }
 
