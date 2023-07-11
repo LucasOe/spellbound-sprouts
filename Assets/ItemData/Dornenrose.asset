@@ -12,6 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea645c632e1d7d945887e9f0838f2144, type: 3}
   m_Name: Dornenrose
   m_EditorClassIdentifier: 
-  ItemType: 3
-  DisplayName: Dronenrose
-  Amount: 0
+  DisplayName: Dornenrose
