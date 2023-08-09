@@ -75,6 +75,3 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
 # End of https://www.toptal.com/developers/gitignore/api/unity
-.vscode/launch.json
-
-/CSharpProjFolders/
