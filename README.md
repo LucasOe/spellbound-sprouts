@@ -2,6 +2,8 @@
 
 "Spellbound Sprouts" is a mixture of farming and tower defense game. During the day, the player cultivates plants, which must be defended from skeletons and spiders at night. It is important to build up a strong defense to protect your herbs from enemies.
 
+[Gameplay Showcase](https://www.youtube.com/watch?v=l9ik5Rarx8o)
+
 ## How does it work?
 
 The game is divided into two phases. In the day phase, the player can grow new plants and herbs and prepare for the night. The plants help the player to defend themselves from enemies. The herbs can be sacrificed in the cauldron to progress in the game and unlock new plants. In the night phase, skeletons and spiders try to destroy the seeds.
