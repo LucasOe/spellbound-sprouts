@@ -24,7 +24,7 @@ The player has won the game as soon as they have collected enough herbs and enem
 This game is made by:
 
 - [**Julian Gutknecht**](https://julz.life/) - UI, Environment Artist
-- [**Markus Essing**](https://markus-essing.me/) - UI, Programmer
+- [**Markus Essing**](https://markus-essing.me/) - UI, Programmer, Composer
 - **Vanessa Frey** - Concept Artist
-- [**Lucas Oelker**](https://lucasoe.com/) - Programmer, Technical Art
+- [**Lucas Oelker**](https://lucasoe.com/) - Programmer, Technical Artist
 - **Titus Hellinge** - 3D Artist
